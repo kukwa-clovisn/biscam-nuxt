@@ -711,13 +711,13 @@ export default {
 
     const getCategory = (e) => {
       console.log(e.target.value);
-      if (e.target.value === "all") router.push("/spare-part");
+      if (e.target.value === "all") router.push({path: "/spare-part"});
 
-      if (e.target.value === "manifold") router.push("/spare-part/manifold");
-      if (e.target.value === "shaft") router.push("/spare-part/shaft");
-      if (e.target.value === "engines") router.push("/spare-part/engine");
+      if (e.target.value === "manifold") router.push({path: "/spare-part/manifold"});
+      if (e.target.value === "shaft") router.push({path: "/spare-part/shaft"});
+      if (e.target.value === "engines") router.push({path: "/spare-part/engine"});
       if (e.target.value === "car key starter")
-        router.push("/spare-part/key-starter");
+        router.push({path:"/spare-part/key-starter"});
     };
 
     return { car_images, category, getCategory };

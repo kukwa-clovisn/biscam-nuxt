@@ -143,11 +143,7 @@
       <h1>browse our services</h1>
       <p>find out what matches your taste.</p>
       <div class="flex-div">
-        <div
-          class="flex-div-content"
-          data-aos="slide-right"
-          @click="$router.push('/car-repairs')"
-        >
+        <div class="flex-div-content" data-aos="slide-right" @click="$router.push({ path: '/car-repairs' })">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="../assets/flight/download.jpg" data-aos="fade" alt="" />
@@ -162,18 +158,10 @@
             <button>learn more</button>
           </div>
         </div>
-        <div
-          class="flex-div-content"
-          data-aos="fade"
-          @click="$router.push('/maritime')"
-        >
+        <div class="flex-div-content" data-aos="fade" @click="$router.push({path:'/maritime'})">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                src="../assets/flight/car-programming.png"
-                data-aos="fade"
-                alt=""
-              />
+              <img src="../assets/flight/car-programming.png" data-aos="fade" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -187,11 +175,7 @@
             <button>get started now</button>
           </div>
         </div>
-        <div
-          class="flex-div-content"
-          data-aos="slide-up"
-          @click="$router.push('/car-repairs')"
-        >
+        <div class="flex-div-content" data-aos="slide-up" @click="$router.push({ path: '/car-repairs' })">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="../assets/flight/car-wash.jpg" data-aos="fade" alt="" />
@@ -206,18 +190,10 @@
             <button>get started now</button>
           </div>
         </div>
-        <div
-          class="flex-div-content"
-          data-aos="slide-left"
-          @click="$router.push('/car-repairs')"
-        >
+        <div class="flex-div-content" data-aos="slide-left" @click="$router.push({ path: '/car-repairs' })">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                src="../assets/flight/car-wiring.png"
-                data-aos="fade"
-                alt=""
-              />
+              <img src="../assets/flight/car-wiring.png" data-aos="fade" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -229,18 +205,10 @@
             <button>shop now</button>
           </div>
         </div>
-        <div
-          class="flex-div-content"
-          data-aos="slide-up"
-          @click="$router.push('/car-repairs')"
-        >
+        <div class="flex-div-content" data-aos="slide-up" @click="$router.push({ path: '/car-repairs' })">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                src="../assets/flight/pana-biting.png"
-                data-aos="fade"
-                alt=""
-              />
+              <img src="../assets/flight/pana-biting.png" data-aos="fade" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
