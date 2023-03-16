@@ -1,0 +1,537 @@
+<template>
+  <header>
+    <div :class="[{ 'show-header': scrollIsActive }, 'header-wrapper']">
+      <div class="logo-wrapper">
+        <div class="logo-image-wrapper">
+          <img src="../assets/biscam-logo.png" alt="" />
+        </div>
+      </div>
+      <div class="header-wrapper-content">
+        <div class="header-wrapper-content-services">
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/" class="route">Home</router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/car-repairs" class="route">
+                car repair
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/maritime" class="route">
+                maritime
+                <!-- <Dropdown :items="maritime" name="maritime" /> -->
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/flight" class="route">
+                flight
+                <!-- <Dropdown :items="flight" name="flight" /> -->
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link
+                to="/cleaning-agency"
+                class="route"
+                title="Biscam cleaning agency"
+              >
+                cleaning agency
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link
+                to="/spare-part"
+                class="route"
+                title="Biscam car spare parts"
+              >
+                spare part
+              </router-link>
+            </button>
+          </div>
+          <div class="menu-button-wrapper">
+            <button @click="($event) => ($store.state.menuState = true)">
+              <i class="fa-solid fa-align-right"></i>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service">
+            <button
+              class="header-route special"
+              @click="($event) => ($store.state.appointment = true)"
+            >
+              book and appointment
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div :class="[{ 'hide-header': scrollIsActive }, 'header-container']">
+      <div class="header-wrapper-content">
+        <div class="header-wrapper-content-services">
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/" class="route">Home</router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/car-repairs" class="route">
+                car repair
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/maritime" class="route">
+                maritime
+                <!-- <Dropdown :items="maritime" name="maritime" /> -->
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link to="/flight" class="route">
+                flight
+                <!-- <Dropdown :items="flight" name="flight" /> -->
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link
+                to="/cleaning-agency"
+                class="route"
+                title="Biscam cleaning agency"
+              >
+                cleaning agency
+              </router-link>
+            </button>
+          </div>
+          <div class="header-wrapper-content-services-service lg">
+            <button class="header-route">
+              <router-link
+                to="/spare-part"
+                class="route"
+                title="Biscam car spare parts"
+              >
+                spare part
+              </router-link>
+            </button>
+          </div>
+          <div class="menu-button-wrapper">
+            <button @click="($event) => ($store.state.menuState = true)">
+              <i class="fa-solid fa-align-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</template>
+<script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
+const store = useStore();
+const scrollIsActive = computed(() => {
+  return store.state.scrollActive;
+});
+
+console.log(scrollIsActive.value);
+</script>
+
+<style lang="scss" scoped>
+header {
+  width: 100vw;
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .header-wrapper {
+    width: 100%;
+    height: 13vh;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px 1px rgb(21, 21, 21);
+
+    .logo-wrapper {
+      width: 13%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(14, 40, 90);
+
+      .logo-image-wrapper {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        overflow: hidden;
+        background: white;
+
+        img {
+          height: 90%;
+          width: auto;
+        }
+      }
+
+      @media screen and (max-width: 790px) {
+        width: 30%;
+      }
+    }
+
+    .header-wrapper-content {
+      width: 85%;
+      height: 100%;
+      padding: 0;
+      padding-right: 3%;
+
+      button.header-route {
+        background: inherit;
+        border: none;
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+
+        a.route {
+          text-decoration: none;
+          color: rgb(11, 30, 63);
+          font-weight: 600;
+          font-size: 14px;
+          text-transform: capitalize;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Montserrat", "Nunito Sans", sans-serif;
+          position: relative;
+
+          &:hover {
+            color: rgb(227, 172, 21);
+            border: none;
+            border-bottom: 1px solid rgb(183, 143, 10);
+          }
+
+          @media screen and (max-width: 1025px) {
+            font-size: 11px;
+          }
+        }
+
+        a.router-link-active.router-link-exact-active {
+          color: rgb(233, 175, 14);
+          padding: 5px;
+          border-bottom: 2px solid rgb(250, 170, 20);
+        }
+
+        @keyframes hovering {
+          from {
+            width: 0;
+          }
+
+          to {
+            width: 100%;
+          }
+        }
+      }
+
+      .header-route.special {
+        background: rgb(230, 150, 2);
+        border-radius: 4px;
+        height: 100%;
+        padding: 5px 10px;
+        color: white;
+        text-transform: capitalize;
+        font-family: "Montserrat", "Nunito Sans", sans-serif;
+
+        &:hover {
+          background: rgb(10, 35, 83);
+
+          &::before {
+            content: "";
+            width: 100%;
+
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgb(207, 122, 2);
+            animation: background_slideX 1s 1 alternate forwards;
+          }
+        }
+
+        @media screen and (max-width: 790px) {
+          background: transparent;
+          color: rgb(34, 34, 34);
+
+          &:hover {
+            color: white;
+          }
+
+          @media screen and (max-width: 500px) {
+            font-size: 8px;
+            width: max-content;
+            height: max-content;
+            padding: 10px 20px;
+          }
+        }
+      }
+
+      @keyframes changeBg {
+        from {
+          background: white;
+        }
+
+        to {
+          background: rgb(11, 57, 90);
+        }
+      }
+
+      .header-wrapper-content-services {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 15px;
+
+        .header-wrapper-content-services-service {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          width: max-content;
+          padding: 5px;
+          height: 70%;
+        }
+
+        .menu-button-wrapper {
+          height: 100%;
+
+          button {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+
+            i {
+              font-size: 30px;
+              color: rgb(13, 31, 64);
+            }
+
+            &:hover {
+              color: rgb(230, 161, 3);
+            }
+          }
+
+          @media screen and (max-width: 1000px) {
+            display: block;
+
+            @media screen and (max-width: 768px) {
+              width: 30%;
+            }
+          }
+        }
+
+        @media screen and (max-width: 790px) {
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          padding-right: 5%;
+
+          .header-wrapper-content-services-service.lg {
+            display: none;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 80%;
+
+        @media screen and (max-width: 790px) {
+          width: 60%;
+
+          @media screen and (max-width: 400px) {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+  .header-wrapper.show-header {
+    display: flex;
+    animation: slide_down 1s linear 1 alternate forwards;
+  }
+
+  .header-container {
+    width: 80%;
+    height: 13vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 2px 1px rgb(237, 237, 237);
+    border-bottom: 1px solid rgb(221, 219, 219);
+
+    .header-wrapper-content {
+      width: 100%;
+      height: 100%;
+    }
+    button.header-route {
+      background: inherit;
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+
+      a.route {
+        text-decoration: none;
+        color: rgb(11, 30, 63);
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: capitalize;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat", "Nunito Sans", sans-serif;
+        position: relative;
+
+        &:hover {
+          color: rgb(227, 172, 21);
+          border: none;
+          border-bottom: 1px solid rgb(183, 143, 10);
+        }
+
+        @media screen and (max-width: 1025px) {
+          font-size: 11px;
+        }
+      }
+
+      a.router-link-active.router-link-exact-active {
+        color: rgb(233, 175, 14);
+        padding: 5px;
+        border-bottom: 2px solid rgb(250, 170, 20);
+      }
+
+      @keyframes hovering {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+    }
+    .header-wrapper-content-services {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 15px;
+
+      .header-wrapper-content-services-service {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: max-content;
+        padding: 5px;
+        height: 70%;
+      }
+
+      .menu-button-wrapper {
+        height: 100%;
+
+        button {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          border: none;
+          background: transparent;
+
+          i {
+            font-size: 30px;
+            color: rgb(13, 31, 64);
+          }
+
+          &:hover {
+            color: rgb(230, 161, 3);
+          }
+        }
+
+        @media screen and (max-width: 1000px) {
+          display: block;
+
+          @media screen and (max-width: 768px) {
+            width: 30%;
+          }
+        }
+      }
+
+      @media screen and (max-width: 790px) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding-right: 5%;
+
+        .header-wrapper-content-services-service.lg {
+          display: none;
+        }
+      }
+    }
+  }
+  .header-container.hide-header {
+    display: none;
+    animation: slide_up 1s 1 linear alternate forwards;
+  }
+
+  @keyframes slide_up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  @keyframes slide_down {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+</style>

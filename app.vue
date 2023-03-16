@@ -1,0 +1,913 @@
+<template>
+  <main>
+    <header>
+      <NuxtLayout name="appHeader" />
+    </header>
+    <!-- <router-view v-slot="{ Component }" data-aos="slide-left">
+      <transition name="routes">
+        <component :is="Component" :class="['componentContainer']" />
+      </transition>
+    </router-view> -->
+    <NuxtPage />
+    <div class="menu-container" v-if="menuState">
+      <div class="blur-wrapper"></div>
+      <div :class="[{ 'is-active': menuState }, 'menu-wrapper']">
+        <button class="close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="menu-header">
+          <div class="logo">
+            <img src="./assets/flight/logo_biscam-transparent.png" alt="" />
+          </div>
+          <p>Book and appointment with us today.</p>
+          <button class="appointment">book an appointment now!</button>
+        </div>
+
+        <div class="services">
+          <h2>Browse our services</h2>
+          <div class="service-wrapper">
+            <NuxtLink to="/"
+              >home <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/car-repairs"
+              >car repair <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/maritime"
+              >maritime <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/flight"
+              >flight <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/cleaning-agency"
+              >cleaning agency <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/spare-part"
+              >spare part <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+          </div>
+          <hr />
+          <h2><i class="fa-solid fa-phone"></i> contact us</h2>
+          <div class="service-wrapper">
+            <NuxtLink to="/about-us"
+              >about us <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/contact"
+              >contact us <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+          </div>
+          <h2>follow us on:</h2>
+          <div class="media-wrapper">
+            <a href="#" class="link" title="Give us a call"
+              ><i class="fa-solid fa-phone"></i
+            ></a>
+            <a href="#" class="link" title="Chat us on whatsapp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="link"
+              ><i class="fa-brands fa-facebook" title="Follow on facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="appointment-container" v-if="appointmentState">
+      <div class="blurred-wrapper"></div>
+      <div class="appointment-wrapper">
+        <form @submit="event.preventDefault()">
+          <button class="close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h1>book an appointment</h1>
+          <el-steps :active="active" finish-status="success">
+            <el-step title="Step 1" />
+            <el-step title="Step 2" />
+            <el-step title="Step 3" />
+          </el-steps>
+          <div class="form-wrapper" v-if="stepOne">
+            <div class="form-data">
+              <label for="name">Name:</label>
+              <input
+                name="name"
+                type="text"
+                placeholder="Enter Your Name"
+                required
+              />
+            </div>
+            <div class="form-data">
+              <label for="email">email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your Email"
+                required
+              />
+            </div>
+            <div class="form-data">
+              <label for="tel">tel:</label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder="Enter You Phone Number"
+              />
+            </div>
+          </div>
+
+          <div class="form-wrapper" v-if="stepTwo">
+            <div class="form-data">
+              <label for="date">date</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="Select Date"
+                required
+              />
+            </div>
+            <div class="form-data">
+              <label for="time">time</label>
+              <input
+                type="time"
+                name="time"
+                id="time"
+                placeholder="Select Time"
+              />
+            </div>
+          </div>
+
+          <div class="form-wrpper" v-if="confirm">
+            <h2>check your info before submitting</h2>
+            <p>Name:</p>
+            <p>email:</p>
+            <p>tel:</p>
+            <p>date:</p>
+            <p>time:</p>
+          </div>
+
+          <el-button style="margin-top: 12px" @click="next" v-if="stepOne"
+            >Next step</el-button
+          >
+          <el-button style="margin-top: 12px" @click="next" v-if="stepTwo"
+            >Next step</el-button
+          >
+          <el-button style="margin-top: 12px" @click="next" v-if="confirm"
+            >Next step</el-button
+          >
+        </form>
+      </div>
+    </div>
+  </main>
+</template>
+<script setup>
+const stepOne = ref(true);
+const stepTwo = ref(false);
+const confirm = ref(false);
+const appointmentState = ref(false);
+const menuState = ref(false);
+const active = ref(0);
+
+const next = () => {
+  if (active.value++ > 2) {
+    active.value = 0;
+    stepOne.value = false;
+    stepTwo.value = true;
+    confirm.value = false;
+  } else if (stepTwo.value) {
+    confirm.value = true;
+    stepOne.value = false;
+    stepTwo.value = false;
+  } else if (confirm.value) {
+    stepOne.value = true;
+    stepTwo.value = false;
+    confirm.value = false;
+  }
+};
+</script>
+
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Grand+Hotel&family=Jacques+Francois&family=Jacques+Francois+Shadow&family=Noto+Sans:wght@100;300;400;600;700;900&family=Nunito+Sans:ital,wght@0,300;0,600;0,700;0,900;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+main {
+  width: 100vw;
+  height: fit-content;
+
+  header {
+    width: 100vw;
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .componentContainer {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    top: 13vh;
+    left: 0;
+  }
+
+  .menu-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .blur-wrapper {
+      background: rgb(44, 44, 44);
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    .menu-wrapper {
+      width: 28vw;
+      height: 100%;
+      background: rgb(9, 31, 72);
+      position: relative;
+      padding-left: 3%;
+
+      .close {
+        width: 50px;
+        height: 40px;
+        position: absolute;
+        top: 2%;
+        right: 3%;
+        border: none;
+        background: transparent;
+        font-size: 25px;
+        color: rgb(237, 236, 236);
+
+        &:hover {
+          transform: scale(1.2) rotateZ(-180deg);
+          color: rgb(217, 144, 7);
+        }
+      }
+
+      .menu-header {
+        width: 95%;
+        height: 38vh;
+        padding-top: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        border-bottom: 2px solid orange;
+
+        .logo {
+          width: fit-content;
+          height: 15vh;
+          overflow: hidden;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          background: white;
+          border-radius: 100%;
+
+          img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+          }
+        }
+
+        p {
+          font-size: 12px;
+          text-align: center;
+          color: rgb(252, 249, 242);
+        }
+
+        .appointment {
+          border: none;
+          background: rgb(231, 174, 3);
+          color: white;
+          width: 70%;
+          height: 45px;
+          text-transform: uppercase;
+          border-radius: 4px;
+          overflow: hidden;
+          position: relative;
+
+          &:hover {
+            background: rgb(21, 50, 105);
+
+            &::before {
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background: rgb(183, 137, 2);
+              border-radius: 0 30px 30px 0;
+              animation: background_slideX 1s 1 linear alternate forwards;
+            }
+          }
+
+          &:focus {
+            background: white;
+          }
+        }
+      }
+
+      .services {
+        width: 100%;
+        height: 62vh;
+        padding: 30px 0;
+        overflow: hidden;
+        overflow-y: scroll;
+        background: rgb(9, 31, 72);
+
+        h2 {
+          padding: 10px 0;
+          text-transform: uppercase;
+          text-align: left;
+          color: rgb(239, 153, 25);
+          font-size: 20px;
+        }
+
+        .service-wrapper {
+          width: 100%;
+          height: fit-content;
+
+          a {
+            display: block;
+            width: 100%;
+            height: fit-content;
+
+            text-decoration: none;
+            text-transform: capitalize;
+            text-align: left;
+            padding: 10px 15px;
+            color: white;
+
+            i {
+              visibility: hidden;
+            }
+
+            &:hover {
+              color: rgb(251, 184, 39);
+
+              i {
+                visibility: visible;
+              }
+            }
+          }
+        }
+
+        .media-wrapper {
+          width: 90%;
+          height: fit-content;
+          display: flex;
+          margin: 5px auto;
+          justify-content: flex-start;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 15px;
+
+          .link {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: rgb(220, 145, 5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+
+            i {
+              color: white;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 40vw;
+
+        @media screen and (max-width: 790px) {
+          width: 50vw;
+
+          @media screen and (max-width: 610px) {
+            width: 100vw;
+          }
+        }
+      }
+    }
+
+    .menu-wrapper.is-active {
+      animation: menu_active 0.5s 1 linear alternate forwards;
+    }
+  }
+
+  @keyframes menu_active {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .appointment-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    animation: popUp 1s 1 linear alternate forwards;
+
+    .blurred-wrapper {
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(31, 31, 31);
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .appointment-wrapper {
+      width: 80%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      form {
+        width: 90%;
+        height: fit-content;
+        background: white;
+        border-radius: 5px;
+        padding: 30px 20px;
+        position: relative;
+        box-shadow: 0px 0px 10px 5px rgb(39, 39, 39);
+        z-index: 1;
+
+        button.close {
+          position: absolute;
+          top: 3%;
+          right: 4%;
+          border: none;
+          background: transparent;
+          width: fit-content;
+          height: fit-content;
+          padding: 10px;
+
+          i {
+            font-size: 30px;
+          }
+
+          &:hover {
+            i {
+              color: rgb(255, 208, 0);
+            }
+          }
+        }
+
+        h1 {
+          text-transform: uppercase;
+          padding: 20px 10px;
+          font: 700 35px "Montserrat", sans-serif;
+        }
+
+        .form-wrapper {
+          width: 90%;
+          height: fit-content;
+          margin: 10px auto;
+
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 15px;
+
+          .form-data {
+            width: 300px;
+            height: fit-content;
+
+            label {
+              display: block;
+              text-align: left;
+              padding: 5px 0;
+              text-transform: capitalize;
+            }
+
+            input {
+              width: 100%;
+              height: 45px;
+              outline: none;
+              border: 1px solid black;
+              padding: 10px 15px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contact-container {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    top: 13vh;
+  }
+}
+
+// custom styles that go for all tags with same class name
+.custom-header-2 {
+  font-size: 45px;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  padding: 30px auto;
+  position: relative;
+  line-height: 70px;
+}
+
+.blur-wrapper {
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.6;
+  z-index: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flex-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  width: 95%;
+  gap: 40px 30px;
+
+  .flex-div-content {
+    background: rgb(242, 248, 251);
+    width: 30%;
+    min-height: 300px;
+    padding: 20px;
+    box-shadow: 0 0 2px 1px #313131;
+    border-radius: 10px;
+    cursor: pointer;
+
+    .flex-div-content-top {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .flex-div-content-top-img {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 100%;
+        border: 4px solid #313131;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .flex-div-content-bottom {
+      height: 50%;
+      width: 100%;
+      padding: 10px;
+      position: relative;
+
+      h2 {
+        padding: 10px;
+        text-align: center;
+        text-transform: capitalize;
+        font: 700 20px "Montserrat", "Nunito Sans", sans-serif;
+        color: #313131;
+      }
+
+      p {
+        width: 100%;
+        color: rgb(48, 47, 47);
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+      }
+
+      button {
+        width: 150px;
+        height: 45px;
+        border: none;
+        cursor: pointer;
+        margin: 10px auto;
+        background: rgb(13, 66, 97);
+        border-radius: 5px;
+        color: white;
+        text-transform: capitalize;
+
+        a {
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          text-transform: capitalize;
+
+          color: white;
+        }
+      }
+    }
+
+    &:hover {
+      border: 3px solid rgb(253, 173, 24);
+      box-shadow: none;
+      background: rgb(255, 252, 246);
+      transform: translateY(-10px);
+
+      .flex-div-content-top,
+      .flex-div-content-bottom {
+        .flex-div-content-top-img {
+          border-color: rgb(253, 173, 24);
+        }
+
+        h2 {
+          color: rgb(253, 173, 24);
+        }
+
+        button {
+          background: rgb(212, 130, 6);
+        }
+      }
+    }
+
+    @media screen and (max-width: 820px) {
+      width: 46%;
+
+      @media screen and (max-width: 500px) {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.address-container {
+  width: 100%;
+  min-height: 60vh;
+  position: relative;
+
+  .blur-wrapper {
+    background: rgb(212, 115, 4);
+    opacity: 0.8;
+  }
+
+  .address-wrapper {
+    padding: 30px auto;
+    width: 100%;
+    height: fit-content;
+
+    h1 {
+      padding: 30px 20px;
+      font: 700 50px/90px "Poppins", sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      color: white;
+      position: relative;
+    }
+
+    .content {
+      width: 90%;
+      margin: 10px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+
+      .address {
+        width: 45%;
+        height: fit-content;
+
+        h2 {
+          color: white;
+          text-transform: uppercase;
+          padding: 10px;
+          text-align: left;
+        }
+
+        p {
+          padding: 6px 10px;
+          text-transform: capitalize;
+          text-align: left;
+          color: rgb(22, 21, 21);
+
+          a {
+            text-decoration: none;
+            color: rgb(22, 21, 21);
+          }
+        }
+      }
+    }
+  }
+}
+
+.hover-animation {
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    background: rgb(9, 31, 72);
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgb(249, 163, 42);
+      animation: background_slideY 0.6s 1 linear alternate forwards;
+    }
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.move-in-enter-active,
+.move-in-leave-active,
+.refresh-enter-active,
+.refresh-leave-active {
+  transition: all 1s ease;
+}
+
+.appear-enter-active,
+.appear-leave-active {
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+.move-in-enter-from {
+  transform: translateY(-70vh);
+}
+
+.move-in-leave-to {
+  transform: translateX(100vw);
+}
+
+.appear-enter-to {
+  opacity: 0;
+}
+
+.refresh-enter-from,
+.refresh-in-enter-from {
+  transform: translateX(80vw);
+}
+
+.slide-in-enter-from {
+  transform: translateY(15vh);
+}
+
+.refresh-in-enter-active,
+.refresh-in-leave-active,
+.slide-in-active {
+  transition: all 0.3s ease;
+}
+
+.refresh-in-leave-to {
+  transform: translateX(90vw);
+}
+
+.slide-in-leave-to {
+  transform: translateY(20vh);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(177, 176, 176);
+  border-radius: 30px;
+}
+
+#app {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.cafe-mode {
+  filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
+}
+
+.routes-enter-from {
+  transform: translateX(110vw);
+}
+
+.routes-enter-active {
+  transition: all 1s ease;
+}
+
+.routes-enter-to {
+  transform: transformX(0);
+}
+
+.routes-leave-from {
+  transform: transformX(0);
+}
+
+.routes-leave-active {
+  transition: all 0.5s ease;
+}
+
+.routes-leave-to {
+  transform: transformX(-110vw);
+}
+
+button,
+a,
+label {
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(0.9);
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.NuxtLink-exact-active {
+  color: #42b983;
+}
+
+@keyframes background_slideX {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes background_slideY {
+  from {
+    transform: translateY(10%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+</style>

@@ -1,0 +1,473 @@
+<template>
+  <main>
+    <div class="landing-page">
+      <div class="blur-wrapper"></div>
+      <div class="content">
+        <h1>
+          biscam <br />
+          cleaning agency
+        </h1>
+        <p>keep it clean always</p>
+        <button>
+          <a href="#about">learn more</a>
+        </button>
+      </div>
+      <div class="image-wrapper">
+        <img src="../assets/flight/cleaning-cartoon-transparent.png" alt="" />
+      </div>
+    </div>
+    <div class="about-div" id="about">
+      <div class="about-wrapper">
+        <div class="content">
+          <h1 data-aos="slide-right">about us</h1>
+          <p data-aos="slide-up">
+            BISCAM Cleaning Services is a branch of the Biscam Investment Group
+            with an eco-friendly perspective. We are dedicated to providing
+            professional services at the best prices to all our clients.Our
+            motto is <b>“KEEPING IT CLEAN ALWAYS”.</b>
+          </p>
+        </div>
+        <div class="about-img" data-aos="slide-up">
+          <img data-aos="fade-up" src="../assets/flight/images.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="section" data-aos="slide-right">
+      <div class="blur-wrapper"></div>
+      <h2 data-aos="slide-up">let us <span>keep it clean</span> for you</h2>
+      <div class="image-wrapper">
+        <img data-aos="slide-up" src="../assets/flight/cleaning-cartoon-tranparent.png" alt="" />
+        <div class="blur-wrapper">
+
+          <a href="#contactForm">contact us</a>
+        </div>
+      </div>
+    </div>
+    <div class="services-div" id="services">
+      <h1>our cleaning services</h1>
+      <div class="flex-div">
+        <div class="flex-div-content" data-aos="slide-up">
+          <div class="blur-wrapper">
+            <img data-aos="slide-up" src="../assets/flight/cleaning-equipments-1.jpg" alt="" />
+          </div>
+          <div class="blur-wrapper cover"></div>
+          <div class="flex-div-content-top">
+            <div class="flex-div-content-top-img">
+              <img data-aos="slide-left" src="../assets/flight/cleaning-equipment.jpg" alt="" />
+            </div>
+          </div>
+
+          <div class="flex-div-content-bottom">
+            <h2 data-aos="slide-up">custom cleaning</h2>
+            <button data-aos="slide-up">
+              <a href="#contactForm">contact us</a>
+            </button>
+          </div>
+        </div>
+        <div class="flex-div-content">
+          <div class="blur-wrapper">
+            <img data-aos="slide-up" src="../assets/flight/hotel-cleaning.jpg" alt="" />
+          </div>
+          <div class="blur-wrapper cover"></div>
+          <div class="flex-div-content-top">
+            <div class="flex-div-content-top-img">
+              <img data-aos="slide-up" src="../assets/flight/cleaning-equipmens-2.jpg" alt="" />
+            </div>
+          </div>
+
+          <div class="flex-div-content-bottom">
+            <h2 data-aos="slide-up">hotels and office cleaning</h2>
+            <button data-aos="slide-up">
+              <a href="#contactForm">contact us</a>
+            </button>
+          </div>
+        </div>
+        <div class="flex-div-content">
+          <div class="blur-wrapper">
+            <img data-aos="slide-up" src="../assets/flight/cleaning.jpg" alt="" />
+          </div>
+          <div class="blur-wrapper cover"></div>
+          <div class="flex-div-content-top">
+            <div class="flex-div-content-top-img">
+              <img data-aos="slide-up" src="../assets/flight/cleaning-equipments-3.png" alt="" />
+            </div>
+          </div>
+
+          <div class="flex-div-content-bottom">
+            <h2 data-aos="slide-up">genral house cleaning</h2>
+            <button data-aos="slide-up">
+              <a href="#contactForm">contact us</a>
+            </button>
+          </div>
+        </div>
+        <div class="flex-div-content">
+          <div class="blur-wrapper">
+            <img data-aos="slide-up" src="../assets/flight/ship-deck-cleaning.jpg" alt="" />
+          </div>
+          <div class="blur-wrapper cover"></div>
+          <div class="flex-div-content-top">
+            <div class="flex-div-content-top-img">
+              <img data-aos="slide-up" src="../assets/flight/office-cleaning.jpg" alt="" />
+            </div>
+          </div>
+
+          <div class="flex-div-content-bottom">
+            <h2 data-aos="slide-up">ship deck cleaning</h2>
+            <button data-aos="slide-up">
+              <a href="#contactForm">contact us</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="display-div">
+      <div class="display-wrapper">
+        <div class="image-wrapper">
+          <img src="../assets/flight/cleaning-services.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="address-container" data-aos="slide-left">
+      <div class="blur-wrapper"></div>
+
+      <div class="address-wrapper">
+        <h1 data-aos="slide-up">
+          with just a call, <br />
+          you will enjoy our services!
+        </h1>
+
+        <div class="content">
+          <div class="address" data-aos="slide-up">
+            <h2 data-aos="slide-up">address</h2>
+            <p data-aos="slide-up">anciente route</p>
+            <p data-aos="slide-up">bonaberi, douala</p>
+            <p data-aos="slide-up">p.o box 1159 douala</p>
+          </div>
+          <div class="address" data-aos="slide-up">
+            <h2 data-aos="slide-up">contact</h2>
+            <p data-aos="slide-up"><a href="tel:+237683079785">Telephone: (+237) 683 079 785</a> </p>
+            <p data-aos="slide-up"><a href="https://wa.link/wrxet8"> whatsapp: (+237) 679 450 640</a></p>
+            <p data-aos="slide-up"> <a href="mailto:biscamcleaning@gmail.com">Email:biscamcleaning@gmail.com</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-container" id="contactForm">
+      <contactForm whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
+        email="biscamcleaning@gmail.com" />
+    </div>
+  </main>
+</template>
+
+<script>
+import contactForm from '@/components/contact.vue'
+export default {
+  name: 'Cleaning Agency',
+  components: { contactForm }
+}
+</script>
+
+<style lang="scss" scoped>
+.landing-page {
+  width: 100vw;
+  height: 94vh;
+  position: relative;
+  background: url(../assets/flight/cleaning.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .blur-wrapper {
+    opacity: 0.5;
+  }
+
+  .content {
+    width: 50%;
+    height: fit-content;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      font: 800 70px "Montserrat", "Nunito Sans", sans-serif;
+      letter-spacing: 1px;
+      color: white;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+    }
+
+    p {
+      text-align: left;
+      color: white;
+      text-transform: capitalize;
+      padding: 10px;
+      letter-spacing: 1px;
+    }
+
+    button {
+      width: 200px;
+      height: 50px;
+      background: rgb(241, 162, 42);
+      border: none;
+      border-radius: 4px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font: 600 18px "Nunito Sans", sans-serif;
+      }
+    }
+  }
+
+  .image-wrapper {
+    width: 40%;
+    height: fit-content;
+    position: relative;
+
+    img {
+      width: 80%;
+      height: auto;
+      animation: move 3s infinite linear alternate forwards;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(10%);
+  }
+}
+
+.about-div {
+  width: 100%;
+  height: fit-content;
+
+  padding: 20px 10px;
+
+  .about-wrapper {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    .content {
+      width: 60%;
+      height: fit-content;
+
+      h1 {
+        padding: 20px;
+        text-align: left;
+        text-decoration: underline;
+        text-transform: uppercase;
+        color: rgb(238, 146, 9);
+        font: 800 50px "Montserrat", "Nunito Sans", sans-serif;
+      }
+
+      p {
+        font: 500 17px/30px "Poppins", sans-serif;
+        text-align: left;
+        padding: 10px 20px;
+      }
+    }
+
+    .about-img {
+      width: 40%;
+      height: fit-content;
+
+      img {
+        width: 90%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.section {
+  width: 100%;
+  height: fit-content;
+  background: url(../assets/flight/cleaning-equipmens-2.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: fit-content;
+  position: relative;
+  padding: 30px 0;
+
+  .blur-wrapper {
+    opacity: 0.4;
+  }
+
+  h2 {
+    padding: 20px;
+    text-transform: capitalize;
+    font: 600 30px "Nunito Sans", sans-serif;
+    position: relative;
+
+    span {
+      color: orange;
+      text-transform: uppercase;
+      padding: 0 5px;
+      font-size: 1.2em;
+    }
+  }
+
+  .image-wrapper {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: 4px solid rgb(222, 84, 4);
+    outline: 6px solid rgb(209, 134, 3);
+    overflow: hidden;
+    margin: 10px auto;
+    position: relative;
+
+    .blur-wrapper {
+      display: none;
+    }
+
+    img {
+      width: auto;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    h2 {
+      color: white;
+    }
+
+    .blur-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.6;
+
+      a {
+        text-decoration: none;
+        width: max-content;
+        height: max-content;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background: white;
+        color: rgb(182, 128, 2);
+        position: relative;
+      }
+    }
+
+    .image-wrapper {
+      border-color: rgb(207, 137, 8);
+      outline-color: white;
+
+      .blur-wrapper {
+        cursor: pointer;
+      }
+    }
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.display-div {
+  width: 100%;
+  height: 90vh;
+
+  .display-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.services-div {
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+
+  h1 {
+    padding: 20px;
+    color: rgb(238, 146, 9);
+    font: 700 40px "Montserrat", "Nunito Sans", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .flex-div-content {
+    position: relative;
+    overflow: hidden;
+
+    .blur-wrapper {
+      overflow: hidden;
+      opacity: 0.9;
+      background: black;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+      }
+    }
+
+    .blur-wrapper.cover {
+      opacity: 0.5;
+    }
+
+    .flex-div-content-bottom {
+      h2 {
+        color: white;
+      }
+    }
+
+    &:hover {
+      .cover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.address-container {
+  background: url(../assets/flight/office-cleaning.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+</style>
