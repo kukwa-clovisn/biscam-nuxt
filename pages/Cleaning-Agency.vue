@@ -36,9 +36,12 @@
       <div class="blur-wrapper"></div>
       <h2 data-aos="slide-up">let us <span>keep it clean</span> for you</h2>
       <div class="image-wrapper">
-        <img data-aos="slide-up" src="../assets/flight/cleaning-cartoon-tranparent.png" alt="" />
+        <img
+          data-aos="slide-up"
+          src="../assets/flight/cleaning-cartoon-tranparent.png"
+          alt=""
+        />
         <div class="blur-wrapper">
-
           <a href="#contactForm">contact us</a>
         </div>
       </div>
@@ -48,12 +51,20 @@
       <div class="flex-div">
         <div class="flex-div-content" data-aos="slide-up">
           <div class="blur-wrapper">
-            <img data-aos="slide-up" src="../assets/flight/cleaning-equipments-1.jpg" alt="" />
+            <img
+              data-aos="slide-up"
+              src="../assets/flight/cleaning-equipments-1.jpg"
+              alt=""
+            />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="slide-left" src="../assets/flight/cleaning-equipment.jpg" alt="" />
+              <img
+                data-aos="slide-left"
+                src="../assets/flight/cleaning-equipment.jpg"
+                alt=""
+              />
             </div>
           </div>
 
@@ -66,12 +77,20 @@
         </div>
         <div class="flex-div-content">
           <div class="blur-wrapper">
-            <img data-aos="slide-up" src="../assets/flight/hotel-cleaning.jpg" alt="" />
+            <img
+              data-aos="slide-up"
+              src="../assets/flight/hotel-cleaning.jpg"
+              alt=""
+            />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="slide-up" src="../assets/flight/cleaning-equipmens-2.jpg" alt="" />
+              <img
+                data-aos="slide-up"
+                src="../assets/flight/cleaning-equipmens-2.jpg"
+                alt=""
+              />
             </div>
           </div>
 
@@ -84,12 +103,20 @@
         </div>
         <div class="flex-div-content">
           <div class="blur-wrapper">
-            <img data-aos="slide-up" src="../assets/flight/cleaning.jpg" alt="" />
+            <img
+              data-aos="slide-up"
+              src="../assets/flight/cleaning.jpg"
+              alt=""
+            />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="slide-up" src="../assets/flight/cleaning-equipments-3.png" alt="" />
+              <img
+                data-aos="slide-up"
+                src="../assets/flight/cleaning-equipments-3.png"
+                alt=""
+              />
             </div>
           </div>
 
@@ -102,12 +129,20 @@
         </div>
         <div class="flex-div-content">
           <div class="blur-wrapper">
-            <img data-aos="slide-up" src="../assets/flight/ship-deck-cleaning.jpg" alt="" />
+            <img
+              data-aos="slide-up"
+              src="../assets/flight/ship-deck-cleaning.jpg"
+              alt=""
+            />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="slide-up" src="../assets/flight/office-cleaning.jpg" alt="" />
+              <img
+                data-aos="slide-up"
+                src="../assets/flight/office-cleaning.jpg"
+                alt=""
+              />
             </div>
           </div>
 
@@ -123,7 +158,7 @@
     <div class="display-div">
       <div class="display-wrapper">
         <div class="image-wrapper">
-          <img src="../assets/flight/cleaning-services.jpg" alt="">
+          <img src="../assets/flight/cleaning-services.jpg" alt="" />
         </div>
       </div>
     </div>
@@ -145,27 +180,32 @@
           </div>
           <div class="address" data-aos="slide-up">
             <h2 data-aos="slide-up">contact</h2>
-            <p data-aos="slide-up"><a href="tel:+237683079785">Telephone: (+237) 683 079 785</a> </p>
-            <p data-aos="slide-up"><a href="https://wa.link/wrxet8"> whatsapp: (+237) 679 450 640</a></p>
-            <p data-aos="slide-up"> <a href="mailto:biscamcleaning@gmail.com">Email:biscamcleaning@gmail.com</a> </p>
+            <p data-aos="slide-up">
+              <a href="tel:+237683079785">Telephone: (+237) 683 079 785</a>
+            </p>
+            <p data-aos="slide-up">
+              <a href="https://wa.link/wrxet8"> whatsapp: (+237) 679 450 640</a>
+            </p>
+            <p data-aos="slide-up">
+              <a href="mailto:biscamcleaning@gmail.com"
+                >Email:biscamcleaning@gmail.com</a
+              >
+            </p>
           </div>
         </div>
       </div>
     </div>
     <div class="contact-container" id="contactForm">
-      <contactForm whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
-        email="biscamcleaning@gmail.com" />
+      <contactForm
+        whatsappLink="https://wa.link/wrxet8"
+        whatsappTel="+237679450640"
+        tel="+237683079785"
+        email="biscamcleaning@gmail.com"
+      />
     </div>
   </main>
 </template>
 
-<script>
-import contactForm from '@/components/contact.vue'
-export default {
-  name: 'Cleaning Agency',
-  components: { contactForm }
-}
-</script>
 
 <style lang="scss" scoped>
 .landing-page {

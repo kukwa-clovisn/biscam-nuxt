@@ -11,7 +11,7 @@
           garage
         </h1>
         <button>
-          <NuxtLink to="/contact">contact us</NuxtLink>
+          <NuxtLink to="/contact-page">contact us</NuxtLink>
         </button>
       </div>
       <div class="image-wrapper">
@@ -33,7 +33,7 @@
           <div class="flex-div-content-bottom">
             <h2>car programming</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact">contact us</NuxtLink></button>
+            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
           </div>
         </div>
         <div class="flex-div-content">
@@ -46,7 +46,7 @@
           <div class="flex-div-content-bottom">
             <h2>mechanic</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact">contact us</NuxtLink></button>
+            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
           </div>
         </div>
         <div class="flex-div-content">
@@ -59,7 +59,7 @@
           <div class="flex-div-content-bottom">
             <h2>car wash</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact">contact us</NuxtLink></button>
+            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
           </div>
         </div>
         <div class="flex-div-content">
@@ -72,7 +72,7 @@
           <div class="flex-div-content-bottom">
             <h2>painting</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact">contact us</NuxtLink></button>
+            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
           </div>
         </div>
         <div class="flex-div-content">
@@ -85,7 +85,7 @@
           <div class="flex-div-content-bottom">
             <h2>auto elect</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact">contact us</NuxtLink></button>
+            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
           </div>
         </div>
         <div class="flex-div-content">
@@ -98,7 +98,7 @@
           <div class="flex-div-content-bottom">
             <h2>pana biting</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact">contact us</NuxtLink></button>
+            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
               >Email: garagebiscam@gmail.com</a
             >
           </p>
-          <button><NuxtLink to="/contact">contact us</NuxtLink></button>
+          <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
           <button @click="$store.state.appointment = true">
             book an appointment
           </button>
@@ -145,21 +145,12 @@
   </div>
 </template>
 
-<script >
-import slider from "@/components/slider.vue";
-import contactForm from "@/components/contact.vue";
-import { ref } from "vue";
+<script setup>
 import img from "../assets/flight/artificial-lighting-employee-blue.jpg";
 import img1 from "../assets/flight/auto-elect-pic.jpg";
 import img2 from "../assets/flight/auto-elect-two.webp";
 import img3 from "../assets/flight/mechanic-servicing-car.jpg";
-export default {
-  name: "car repairs",
-  components: {
-    slider,
-    contactForm,
-  },
-  setup() {
+
     const dg_images = ref([
       {
         src: img,
@@ -177,16 +168,8 @@ export default {
         src: img3,
         title: "digital center four",
       },
-      // {
-      //   src: img4,
-      //   title: "digital center five",
-      // },
     ]);
-    return {
-      dg_images,
-    };
-  },
-};
+  
 </script>
 <style lang="scss" scoped>
 .main {

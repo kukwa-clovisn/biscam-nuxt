@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <NuxtLayout name="app-header" />
     <div class="main-shadow">
       <div class="landing-page">
         <div class="slider-div">
@@ -47,7 +48,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-right"
-            @click="$router.push({path:'/car-repairs'})"
+            @click="$router.push({ path: '/car-repairs' })"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -69,7 +70,7 @@
           <div
             class="flex-div-content"
             data-aos="fade"
-            @click="$router.push({path:'/car-repairs'})"
+            @click="$router.push({ path: '/car-repairs' })"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -92,7 +93,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-up"
-            @click="$router.push({path:'/car-repairs'})"
+            @click="$router.push({ path: '/car-repairs' })"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -115,7 +116,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-left"
-            @click="$router.push({path:'/car-repairs'})"
+            @click="$router.push({ path: '/car-repairs' })"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -137,7 +138,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-up"
-            @click="$router.push({path:'/car-repairs'})"
+            @click="$router.push({ path: '/car-repairs' })"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -171,7 +172,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-right"
-          @click="$router.push({path:'/flight'})"
+          @click="$router.push({ path: '/flight' })"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -193,7 +194,7 @@
         <div
           class="flex-div-content"
           data-aos="fade"
-          @click="$router.push({path:'/flight'})"
+          @click="$router.push({ path: '/flight' })"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -212,7 +213,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-left"
-          @click="$router.push({path:'/flight'})"
+          @click="$router.push({ path: '/flight' })"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -268,7 +269,7 @@
             calenders, magazines etc
           </p>
           <button class="hover-animation">
-            <NuxtLink to="/contact">visit us now</NuxtLink>
+            <NuxtLink to="/contact-page">visit us now</NuxtLink>
           </button>
         </div>
         <div class="carousel-wrapper" data-aos="slide-up">
@@ -283,9 +284,7 @@
       <h1 data-aos="slide-up">looking for more services?</h1>
       <p data-aos="slide-up">Yes We knew you would...</p>
       <div class="buttons">
-        <NuxtLink to="/about-us" data-aos="slide-up"
-          >browse services</NuxtLink
-        >
+        <NuxtLink to="/about-us" data-aos="slide-up">browse services</NuxtLink>
         <button
           @click="(event) => ($store.state.appointment = true)"
           class="appointment"
@@ -296,7 +295,8 @@
       </div>
     </div>
     <div class="contact-container" id="contactForm">
-      <contactForm
+      <NuxtLayout
+        name="contact"
         whatsappLink="https://wa.link/wrxet8"
         whatsappTel="+237679450640"
         tel="+237683079785"
@@ -306,13 +306,9 @@
   </div>
 </template>
 
-<script>
-import carousel from "@/components/carousel.vue";
-import slider from "@/components/slider.vue";
-import contactForm from "@/components/contact.vue";
-import { ref, computed } from "vue";
+<script setup>
+import { ref } from "vue";
 
-import { useMouse } from "@vueuse/core";
 import maritime_zero from "../assets/maritime/port-pic.jpg";
 import maritime_one from "../assets/flight/boat-floating-sea.jpg";
 import maritime_two from "../assets/flight/maritime-coast.jpg";
@@ -328,75 +324,51 @@ import garageView1 from "../assets/flight/artificial-lighting-employee-blue.jpg"
 import cleaningView from "../assets/flight/black-woman-with-suitcase-airport.jpg";
 import cleaningView1 from "../assets/flight/office-cleaning.jpg";
 import ecommerceView from "../assets/flight/auto-elect-two.webp";
-export default {
-  name: "Home",
-  components: {
-    carousel,
-    slider,
-    contactForm,
+
+const HomeViewImages = ref([
+  flightView,
+  flightView1,
+  maritimeView,
+  maritimeView1,
+  garageView,
+  garageView1,
+  cleaningView,
+  cleaningView1,
+  ecommerceView,
+]);
+const maritime_images = ref([
+  {
+    src: maritime_one,
+    title: "maritime one",
   },
-  setup() {
-    const HomeViewImages = ref([
-      flightView,
-      flightView1,
-      maritimeView,
-      maritimeView1,
-      garageView,
-      garageView1,
-      cleaningView,
-      cleaningView1,
-      ecommerceView,
-    ]);
-    const maritime_images = ref([
-      {
-        src: maritime_one,
-        title: "maritime one",
-      },
-      {
-        src: maritime_two,
-        title: "maritime two",
-      },
-      {
-        src: maritime_zero,
-        title: "maritime three",
-      },
-    ]);
-
-    const dg_images = ref([
-      {
-        src: digital_zero,
-        title: "digital center one",
-      },
-      {
-        src: digital_one,
-        title: "digital center two",
-      },
-      {
-        src: maritime_two,
-        title: "digital center three",
-      },
-      {
-        src: maritime_three,
-        title: "digital center four",
-      },
-    ]);
-
-    // "x" and "y" are refs
-    const { x, y } = useMouse();
-
-    console.log(x.value);
-
-    const mouse = useMouse();
-    let mousePoint = computed(() => mouse.y.value);
-    console.log(mousePoint.value);
-    if (mousePoint.value >= 100) {
-      console.log("its more that 100");
-    }
-    console.log(mouse.x.value);
-
-    return { HomeViewImages, maritime_images, dg_images };
+  {
+    src: maritime_two,
+    title: "maritime two",
   },
-};
+  {
+    src: maritime_zero,
+    title: "maritime three",
+  },
+]);
+
+const dg_images = ref([
+  {
+    src: digital_zero,
+    title: "digital center one",
+  },
+  {
+    src: digital_one,
+    title: "digital center two",
+  },
+  {
+    src: maritime_two,
+    title: "digital center three",
+  },
+  {
+    src: maritime_three,
+    title: "digital center four",
+  },
+]);
 </script>
 <style lang="scss" scoped>
 .main {

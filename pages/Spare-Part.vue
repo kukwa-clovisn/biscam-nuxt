@@ -76,12 +76,8 @@
             <NuxtLink to="/spare-part/manifold" class="route"
               >manifold</NuxtLink
             >
-            <NuxtLink to="/spare-part/engine" class="route"
-              >engines</NuxtLink
-            >
-            <NuxtLink to="/spare-part/shaft" class="route"
-              >shaft</NuxtLink
-            >
+            <NuxtLink to="/spare-part/engine" class="route">engines</NuxtLink>
+            <NuxtLink to="/spare-part/shaft" class="route">shaft</NuxtLink>
           </nav>
         </div>
         <div class="product-menu-bars">
@@ -681,10 +677,7 @@
   </main>
 </template>
 
-<script>
-import { ref, computed } from "vue";
-import { useRouter } from "vue-router";
-import contactForm from "@/components/contact.vue";
+<script setup>
 // bringing in car images
 import car from "../assets/car-images/car.jpg";
 import car1 from "../assets/car-images/car-1.jpg";
@@ -692,36 +685,28 @@ import car2 from "../assets/car-images/car-2.jpg";
 import car3 from "../assets/car-images/car-3.jpg";
 import car4 from "../assets/car-images/car-4.jpg";
 import car5 from "../assets/car-images/car-5.jpg";
-export default {
-  name: "Spare Part",
-  components: {
-    contactForm,
-  },
-  setup() {
-    const router = useRouter();
-    const car_images = ref([car, car1, car2, car3, car4, car5]);
 
-    const category = ref("");
+const router = useRouter();
+const car_images = ref([car, car1, car2, car3, car4, car5]);
 
-    const productCategory = computed(() => {
-      return category.value;
-    });
+const category = ref("");
 
-    console.log(productCategory.value);
+const productCategory = computed(() => {
+  return category.value;
+});
 
-    const getCategory = (e) => {
-      console.log(e.target.value);
-      if (e.target.value === "all") router.push({path: "/spare-part"});
+console.log(productCategory.value);
 
-      if (e.target.value === "manifold") router.push({path: "/spare-part/manifold"});
-      if (e.target.value === "shaft") router.push({path: "/spare-part/shaft"});
-      if (e.target.value === "engines") router.push({path: "/spare-part/engine"});
-      if (e.target.value === "car key starter")
-        router.push({path:"/spare-part/key-starter"});
-    };
+const getCategory = (e) => {
+  console.log(e.target.value);
+  if (e.target.value === "all") router.push({ path: "/spare-part" });
 
-    return { car_images, category, getCategory };
-  },
+  if (e.target.value === "manifold")
+    router.push({ path: "/spare-part/manifold" });
+  if (e.target.value === "shaft") router.push({ path: "/spare-part/shaft" });
+  if (e.target.value === "engines") router.push({ path: "/spare-part/engine" });
+  if (e.target.value === "car key starter")
+    router.push({ path: "/spare-part/key-starter" });
 };
 </script>
 

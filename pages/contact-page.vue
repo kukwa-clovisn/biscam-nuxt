@@ -48,10 +48,7 @@
         </div>
       </div>
     </div>
-    <carousel>
-      <slide> Slide 1 Content </slide>
-      <slide> Slide 2 Content </slide>
-    </carousel>
+
     <div class="map-div">
       <div class="map-wrapper">
         <div class="service-wrapper">
@@ -65,7 +62,7 @@
             width="100%"
             height="auto"
             style="border: 0"
-            allowfullscreen=""
+            allowfullscreen="true"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
@@ -74,12 +71,6 @@
     </div>
   </main>
 </template>
-
-<script>
-export default {
-  name: "Contact",
-};
-</script>
 
 
 <style lang="scss" scoped>

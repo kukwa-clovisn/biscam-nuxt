@@ -158,21 +158,13 @@
   </div>
 </template>
 
-<script>
-import { ref } from "vue";
-import slider from "@/components/slider.vue";
-import contactForm from "@/components/contact.vue"
+<script setup>
 import maritime_zero from "../assets/maritime/port-pic.jpg";
 import maritime_one from "../assets/flight/boat-floating-sea.jpg";
 import maritime_two from "../assets/flight/maritime-coast.jpg";
 import maritime_three from "../assets/maritime/woman-jacket.jpg";
-export default {
-  name: "Maritime",
-  components: {
-    slider, contactForm
-  },
 
-  setup() {
+
     const images = ref([
       {
         src: maritime_zero,
@@ -192,11 +184,6 @@ export default {
       },
     ]);
 
-    return {
-      images,
-    };
-  },
-};
 </script>
 
 <style lang="scss" scoped>

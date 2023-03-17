@@ -1,7 +1,7 @@
 <template>
   <main>
     <header>
-      <NuxtLayout name="appHeader" />
+      <NuxtLayout name="app-header" />
     </header>
     <!-- <router-view v-slot="{ Component }" data-aos="slide-left">
       <transition name="routes">
@@ -11,7 +11,8 @@
     <transition name="routes">
       <NuxtPage />
     </transition>
-    <div class="menu-container">
+
+    <div class="menu-container" v-if="menuState">
       <div class="blur-wrapper"></div>
       <div class="menu-wrapper">
         <button class="close">
@@ -28,29 +29,51 @@
         <div class="services">
           <h2>Browse our services</h2>
           <div class="service-wrapper">
-            <NuxtLink to="/">home <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/car-repairs">car repair <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/maritime">maritime <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/flight">flight <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/cleaning-agency">cleaning agency <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/spare-part">spare part <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/"
+              >home <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/car-repairs"
+              >car repair <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/maritime"
+              >maritime <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/flight"
+              >flight <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/cleaning-agency"
+              >cleaning agency <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/spare-part"
+              >spare part <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
           </div>
           <hr />
           <h2><i class="fa-solid fa-phone"></i> contact us</h2>
           <div class="service-wrapper">
-            <NuxtLink to="/about-us">about us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/contact">contact us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/about-us"
+              >about us <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/contact"
+              >contact us <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
           </div>
           <h2>follow us on:</h2>
           <div class="media-wrapper">
-            <a href="#" class="link" title="Give us a call"><i class="fa-solid fa-phone"></i></a>
-            <a href="#" class="link" title="Chat us on whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="link"><i class="fa-brands fa-facebook" title="Follow on facebook"></i></a>
+            <a href="#" class="link" title="Give us a call"
+              ><i class="fa-solid fa-phone"></i
+            ></a>
+            <a href="#" class="link" title="Chat us on whatsapp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="link"
+              ><i class="fa-brands fa-facebook" title="Follow on facebook"></i
+            ></a>
           </div>
         </div>
       </div>
     </div>
-    <div class="appointment-container">
+    <div class="appointment-container" v-if="appointmentState">
       <div class="blurred-wrapper"></div>
       <div class="appointment-wrapper">
         <form @submit="event.preventDefault()">
@@ -66,26 +89,53 @@
           <div class="form-wrapper" v-if="stepOne">
             <div class="form-data">
               <label for="name">Name:</label>
-              <input name="name" type="text" placeholder="Enter Your Name" required />
+              <input
+                name="name"
+                type="text"
+                placeholder="Enter Your Name"
+                required
+              />
             </div>
             <div class="form-data">
               <label for="email">email:</label>
-              <input type="email" name="email" id="email" placeholder="Enter Your Email" required />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your Email"
+                required
+              />
             </div>
             <div class="form-data">
               <label for="tel">tel:</label>
-              <input type="tel" name="tel" id="tel" placeholder="Enter You Phone Number" />
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder="Enter You Phone Number"
+              />
             </div>
           </div>
 
           <div class="form-wrapper" v-if="stepTwo">
             <div class="form-data">
               <label for="date">date</label>
-              <input type="date" name="date" id="date" placeholder="Select Date" required />
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="Select Date"
+                required
+              />
             </div>
             <div class="form-data">
               <label for="time">time</label>
-              <input type="time" name="time" id="time" placeholder="Select Time" />
+              <input
+                type="time"
+                name="time"
+                id="time"
+                placeholder="Select Time"
+              />
             </div>
           </div>
 
@@ -98,9 +148,15 @@
             <p>time:</p>
           </div>
 
-          <el-button style="margin-top: 12px" @click="next" v-if="stepOne">Next step</el-button>
-          <el-button style="margin-top: 12px" @click="next" v-if="stepTwo">Next step</el-button>
-          <el-button style="margin-top: 12px" @click="next" v-if="confirm">Next step</el-button>
+          <el-button style="margin-top: 12px" @click="next" v-if="stepOne"
+            >Next step</el-button
+          >
+          <el-button style="margin-top: 12px" @click="next" v-if="stepTwo"
+            >Next step</el-button
+          >
+          <el-button style="margin-top: 12px" @click="next" v-if="confirm"
+            >Next step</el-button
+          >
         </form>
       </div>
     </div>
@@ -108,7 +164,6 @@
 </template>
 
 <script setup>
-
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
