@@ -63,15 +63,15 @@
         </div>
         <div class="right-header">
           <nav>
-            <NuxtLink to="/spare-part" class="route">all</NuxtLink>
-            <NuxtLink to="/spare-part/key-starter" class="route">car key starter</NuxtLink>
-            <NuxtLink to="/spare-part/manifold" class="route">manifold</NuxtLink>
-            <NuxtLink to="/spare-part/engine" class="route">engines</NuxtLink>
-            <NuxtLink to="/spare-part/shaft" class="route">shaft</NuxtLink>
+            <a href="#categories" :class="[{'NuxtLink-active NuxtLink-exact-active' : allParts},'route']" @click="getCategoryLg('all')">all</a>
+            <a href="#categories" :class="[{'NuxtLink-active NuxtLink-exact-active' : keystarter},'route']" @click="getCategoryLg('car key starter')">car key starter</a>
+            <a href="#categories" :class="[{'NuxtLink-active NuxtLink-exact-active' : manifold},'route']" @click="getCategoryLg('manifold')">manifold</a>
+            <a href="#categories" :class="[{'NuxtLink-active NuxtLink-exact-active' : engine},'route']" @click="getCategoryLg('engines')">engines</a>
+            <a href="#categories" :class="[{'NuxtLink-active NuxtLink-exact-active' : shaft},'route']" @click="getCategoryLg('shaft')">shaft</a>
           </nav>
         </div>
         <div class="product-menu-bars">
-          <select name="products" id="products" @change="getCategory($event)">
+          <select name="products" id="products" @change="getCategorySm($event)">
             <option value="all">All</option>
             <option value="manifold">Manifold</option>
             <option value="car key starter">Car Key Starter</option>
@@ -80,11 +80,16 @@
           </select>
         </div>
       </div>
-      <router-view v-slot="{ Component }" data-aos="slide-up">
-        <transition name="routes">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+     
+     <div id="categories">
+       <LazySpare-Part-All v-if="allParts" data-aos="slide-right" />
+       <LazySpare-Part-Keystarter v-if="keystarter" data-aos="slide-right" />
+       <LazySpare-Part-Manifold v-if="manifold" data-aos="slide-right" />
+       <LazySpare-Part-Engine v-if="engine" data-aos="slide-right" />
+       <LazySpare-Part-Shaft v-if="shaft" data-aos="slide-right" />
+     </div>
+      
+      
 
       <div class="category-display">
         <div class="category-wrapper">
@@ -451,23 +456,20 @@
       </div>
     </div>
     <div class="contact-container">
-      <contactForm whatsappLink="https://wa.link/rt49uv" whatsappTel="+237677387714" tel="+237695569565"
+      <contact-form whatsappLink="https://wa.link/rt49uv" whatsappTel="+237677387714" tel="+237695569565"
         email="garagebiscam@gmail.com" />
     </div>
   </main>
 </template>
 
 <script setup>
-// bringing in car images
-import car from "~/assets/car-images/car.jpg";
-import car1 from "~/assets/car-images/car-1.jpg";
-import car2 from "~/assets/car-images/car-2.jpg";
-import car3 from "~/assets/car-images/car-3.jpg";
-import car4 from "~/assets/car-images/car-4.jpg";
-import car5 from "~/assets/car-images/car-5.jpg";
 
 const router = useRouter();
-const car_images = ref([car, car1, car2, car3, car4, car5]);
+const allParts = ref(true)
+const manifold = ref(false)
+const shaft = ref(false)
+const keystarter = ref(false)
+const engine = ref(false)
 
 const category = ref("");
 
@@ -477,17 +479,82 @@ const productCategory = computed(() => {
 
 console.log(productCategory.value);
 
-const getCategory = (e) => {
-  console.log(e.target.value);
-  if (e.target.value === "all") router.push({ path: "/spare-part" });
+const getCategoryLg = (val) => {
+  if ( val === "all") {
+    allParts.value = true;
+    manifold.value = false;
+    engine.value = false;
+    shaft.value = false;
+    keystarter.value = false;
+  };
 
-  if (e.target.value === "manifold")
-    router.push({ path: "/spare-part/manifold" });
-  if (e.target.value === "shaft") router.push({ path: "/spare-part/shaft" });
-  if (e.target.value === "engines") router.push({ path: "/spare-part/engine" });
-  if (e.target.value === "car key starter")
-    router.push({ path: "/spare-part/key-starter" });
+  if (val === "manifold"){
+    allParts.value =false ;
+    manifold.value = true;
+    engine.value = false;
+    shaft.value = false;
+    keystarter.value = false;
+  }
+  if ( val === "shaft") {
+    allParts.value =false ;
+    manifold.value = false;
+    engine.value = false;
+    shaft.value = true;
+    keystarter.value = false;
+  }
+  if (val === "engines") {
+    allParts.value =false ;
+    manifold.value = false;
+    engine.value = true;
+    shaft.value = false;
+    keystarter.value = false;
+  }
+  if ( val === "car key starter"){
+    allParts.value =false ;
+    manifold.value = false;
+    engine.value = false;
+    shaft.value = false;
+    keystarter.value = true;
+  }
 };
+const getCategorySm = (e) => {
+  if ( e.target.value === "all") {
+    allParts.value = true;
+    manifold.value = false;
+    engine.value = false;
+    shaft.value = false;
+    keystarter.value = false;
+  };
+
+  if (e.target.value === "manifold"){
+    allParts.value =false ;
+    manifold.value = true;
+    engine.value = false;
+    shaft.value = false;
+    keystarter.value = false;
+  }
+  if ( e.target.value === "shaft") {
+    allParts.value =false ;
+    manifold.value = false;
+    engine.value = false;
+    shaft.value = true;
+    keystarter.value = false;
+  }
+  if (e.target.value === "engines") {
+    allParts.value =false ;
+    manifold.value = false;
+    engine.value = true;
+    shaft.value = false;
+    keystarter.value = false;
+  }
+  if ( e.target.value === "car key starter"){
+    allParts.value =false ;
+    manifold.value = false;
+    engine.value = false;
+    shaft.value = false;
+    keystarter.value = true;
+  }
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -1006,7 +1073,7 @@ main {
         .right-content {
           width: 40%;
           height: 60vh;
-          background: url(~assets/car-images/car-4.jpg);
+          background: url(../../assets/car-images/car-4.jpg);
           background-repeat: no-repeat;
           background-size: cover;
           border-radius: 5px;
@@ -1017,7 +1084,7 @@ main {
     .link-container {
       width: 100%;
       height: fit-content;
-      background: url(~assets/car-images/car-8.jpg);
+      background: url(../../assets/car-images/car-8.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;

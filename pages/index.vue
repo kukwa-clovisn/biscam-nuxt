@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <NuxtLayout name="app-header" />
     <div class="main-shadow">
       <div class="landing-page">
         <div class="slider-div">
@@ -231,7 +230,7 @@
       </div>
     </div>
     <div class="contact-container" id="contactForm">
-      <NuxtLayout name="contact" whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
+      <contact-form whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
         email="biscamcleaning@gmail.com" />
     </div>
   </div>
@@ -250,7 +249,7 @@ const HomeViewImages = ref([
   'office-cleaning.jpg',
   'auto-elect-two.webp',
 ]);
-const maritime_images = ref([
+const maritime_images = ref(['~/assets/flight/airplane-sunset.jpg',
   'port-pic.jpg',
  'boat-floating-sea.jpg',
  'maritime-coast.jpg',
@@ -288,7 +287,7 @@ const dg_images = ref([
       width: 100%;
       height: 94vh;
       position: relative;
-      background: url(~assets/flight/boat-floating-sea.jpg);
+      background: url(../assets/flight/boat-floating-sea.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -571,7 +570,7 @@ const dg_images = ref([
     width: 100vw;
     height: fit-content;
     margin: 0;
-    background: url(~assets/flight/airplane-sunset.jpg);
+    background: url(../assets/flight/airplane-sunset.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -757,7 +756,7 @@ const dg_images = ref([
     width: 100%;
     height: fit-content;
     padding: 20px;
-    background: url(~assets/flight/low-angle-greyscale-shot-airplane-flying-high-rise-buildings.jpg);
+    background: url(../assets/flight/low-angle-greyscale-shot-airplane-flying-high-rise-buildings.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

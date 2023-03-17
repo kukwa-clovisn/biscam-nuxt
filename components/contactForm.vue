@@ -118,29 +118,17 @@
   </div>
 </template>
 
-<script>
-import { ref } from "vue";
-export default {
-  name: "Contact",
-  props: {
-    whatsappLInk: String,
+<script setup>
+
+
+  const props = defineProps({ 
+     whatsappLink: String,
     whatsappTel: String,
     tel: String,
     email: String,
-  },
-  setup(props) {
-    const whatsappLInk = ref(props.whatsappLInk);
-    const whatsappTel = ref(props.whatsappTel);
-    const tel = ref(props.tel);
-    const email = ref(props.email);
-    return {
-      whatsappLInk,
-      whatsappTel,
-      tel,
-      email,
-    };
-  },
-};
+  })
+ 
+
 </script>
 
 <style lang="scss" scoped>
@@ -184,7 +172,7 @@ export default {
       .contact-form {
         width: 100%;
         height: fit-content;
-        padding: 20px;
+        padding: 20px 0;
 
         h1 {
           padding: 10px;
@@ -204,7 +192,7 @@ export default {
         }
 
         .direct-contacts {
-          width: 100%;
+          width: 96%;
           height: fit-content;
           display: flex;
           justify-content: space-between;
@@ -231,7 +219,7 @@ export default {
         }
 
         .form-data {
-          width: 100%;
+          width: 96%;
           height: fit-content;
           margin: 20px auto;
 
@@ -245,7 +233,7 @@ export default {
           }
 
           input {
-            width: 100%;
+            width: 94%;
             height: 45px;
             outline: none;
 
@@ -259,7 +247,7 @@ export default {
           }
 
           textarea {
-            width: 100%;
+            width: 94%;
             height: 200px;
             padding: 20px;
             outline: none;

@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="main">
     <header>
       <NuxtLayout name="app-header" />
     </header>
@@ -9,38 +9,38 @@
       </transition>
     </router-view> -->
     <transition name="routes">
-      <NuxtPage class="componentContainer" data-aos="slide-left" />
-    </transition>
+      <NuxtPage data-aos="slide-left" class="componentContainer" /></transition>
+   
 
     <div class="menu-container" v-if="menuState">
       <div class="blur-wrapper"></div>
-      <div class="menu-wrapper">
-        <button class="close">
+      <div :class="[{'is-active':menuState},'menu-wrapper']">
+        <button class="close"  @click="($event) => menuState = false">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="menu-header">
           <div class="logo">
-            <img src="./assets/flight/logo_biscam-transparent.png" alt="" />
+            <img  @click="($event) => $router.push('/')" src="./assets/flight/logo_biscam-transparent.png" alt="" />
           </div>
           <p>Book and appointment with us today.</p>
-          <button class="appointment">book an appointment now!</button>
+          <button class="appointment" @click="($event) => appointmentState = true">book an appointment now!</button>
         </div>
 
         <div class="services">
           <h2>Browse our services</h2>
           <div class="service-wrapper">
-            <NuxtLink to="/">home <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/car-repairs">car repair <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/maritime">maritime <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/flight">flight <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/cleaning-agency">cleaning agency <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/spare-part">spare part <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/" @click="($event) => menuState = false">home <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/car-repairs" @click="($event) => menuState = false">car repair <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/maritime" @click="($event) => menuState = false">maritime <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/flight" @click="($event) => menuState = false">flight <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/cleaning-agency" @click="($event) => menuState = false">cleaning agency <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/spare-part" @click="($event) => menuState = false">spare part <i class="fa-solid fa-arrow-right"></i></NuxtLink>
           </div>
           <hr />
           <h2><i class="fa-solid fa-phone"></i> contact us</h2>
           <div class="service-wrapper">
-            <NuxtLink to="/about-us">about us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/contact">contact us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/about-us" @click="($event) => menuState = false">about us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/contact-page" @click="($event) => menuState = false">contact us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
           </div>
           <h2>follow us on:</h2>
           <div class="media-wrapper">
@@ -52,10 +52,10 @@
       </div>
     </div>
     <div class="appointment-container" v-if="appointmentState">
-      <div class="blurred-wrapper"></div>
+      <div class="blurred-wrapper" @click="($event) => appointmentState = false"></div>
       <div class="appointment-wrapper">
         <form @submit="event.preventDefault()">
-          <button class="close">
+          <button class="close" @click="($event) => appointmentState = false">
             <i class="fa-solid fa-xmark"></i>
           </button>
           <h1>book an appointment</h1>
@@ -109,11 +109,45 @@
 </template>
 
 <script setup>
+
+useHead({ 
+  title:'Biscam Investment Sarl',
+  viewport:'width:device-width, initial-scale=1',
+  charset:'utf-8',
+  meta:[
+    {
+      name:'description',
+      content:'Biscam companies with multi purpose services like flight ticket booking, cleaning services, car spare part purchase, car repairs, maritime services and more.'
+    }
+  ],
+  link: [
+    {
+      rel:"icon",
+       type:"image/png",
+        href:"./assets/biscam-logo.png"
+    },
+    {
+      href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
+      rel:"stylesheet", integrity:"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==",
+    crossorigin:"anonymous",
+     referrerpolicy:"no-referrer" 
+    },{
+      rel:"preconnect",
+    href:"https://fonts.gstatic.com",
+     crossorigin:'anonymous'
+
+    },{
+      href:"https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap",
+       rel:"stylesheet"
+    }
+  ]
+})
+
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
-const appointmentState = ref(false);
-const menuState = ref(false);
+const appointmentState = useAppointmentState()
+const menuState = useMenuState()
 const active = ref(0);
 
 const next = () => {
@@ -138,9 +172,11 @@ const next = () => {
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Grand+Hotel&family=Jacques+Francois&family=Jacques+Francois+Shadow&family=Noto+Sans:wght@100;300;400;600;700;900&family=Nunito+Sans:ital,wght@0,300;0,600;0,700;0,900;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&family=Russo+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-main {
+#main {
   width: 100vw;
   height: fit-content;
+  overflow:hidden;
+  overflow-y:scroll;
 
   header {
     width: 100vw;
@@ -181,7 +217,7 @@ main {
       padding-left: 3%;
 
       .close {
-        width: 50px;
+        width: 100px;
         height: 40px;
         position: absolute;
         top: 2%;
@@ -190,6 +226,10 @@ main {
         background: transparent;
         font-size: 25px;
         color: rgb(237, 236, 236);
+        // background:red;
+        i{ 
+          color:white;
+        }
 
         &:hover {
           transform: scale(1.2) rotateZ(-180deg);
@@ -199,7 +239,7 @@ main {
 
       .menu-header {
         width: 95%;
-        height: 38vh;
+        height: 36vh;
         padding-top: 30px;
         display: flex;
         justify-content: flex-start;
@@ -207,6 +247,7 @@ main {
         flex-direction: column;
         gap: 20px;
         border-bottom: 2px solid orange;
+        overflow:hidden;
 
         .logo {
           width: fit-content;
@@ -345,7 +386,7 @@ main {
           width: 50vw;
 
           @media screen and (max-width: 610px) {
-            width: 100vw;
+            width: 100%;
           }
         }
       }
@@ -377,6 +418,8 @@ main {
     align-items: center;
     z-index: 1;
     animation: popUp 1s 1 linear alternate forwards;
+    overflow:hidden;
+    overflow-y:scroll;
 
     .blurred-wrapper {
       opacity: 0.6;
@@ -715,6 +758,234 @@ main {
   }
 }
 
+.product-body {
+  width: 100%;
+  height: fit-content;
+  background: rgb(255, 255, 255);
+
+  .product-body-wrapper {
+    width: 80%;
+    height: fit-content;
+    margin: 10px auto;
+
+    .category-header {
+      padding: 20px;
+      text-align: left;
+      text-transform: uppercase;
+      font: 600 30px "Montserrat", "Nunito Sans", sans-serif;
+
+      span {
+        color: rgb(243, 164, 18);
+        border-bottom: 3px solid rgb(228, 151, 8);
+      }
+    }
+
+    .product-intro {
+      padding: 0 20px;
+      text-transform: capitalize;
+      text-align: left;
+    }
+
+    .detail-products {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 30px auto;
+
+      .product {
+        width: 31%;
+        height: fit-content;
+        padding-top: 0;
+        padding-bottom: 20px;
+        position: relative;
+        border-radius: 1px;
+        overflow: hidden;
+        border: 1px solid rgb(234, 236, 245);
+
+        .wrapper {
+          width: 100%;
+          height: 350px;
+          overflow: hidden;
+          position: relative;
+
+          .blur-wrapper {
+            display: none;
+          }
+
+          .image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .info {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            a {
+              text-decoration: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0;
+              font: 700 15px "Poppins", sans-serif;
+              width: 50px;
+              height: 50px;
+              color: rgb(19, 16, 13);
+
+              background: white;
+              transition: all 0.3s ease;
+              border-radius: 100%;
+
+              &:hover {
+                background: rgb(235, 154, 3);
+                color: white;
+
+                i {
+                  transform: scale(1.1);
+                }
+              }
+            }
+          }
+        }
+
+        .details {
+          width: 100%;
+          padding-bottom: 10px;
+
+          h2 {
+            text-transform: capitalize;
+text-align: center;
+            font: 500 17px "Nunito Sans", sans-serif;
+            padding: 10px 0;
+          }
+
+          .stars {
+            width: 90%;
+            height: fit-content;
+            margin: 8px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+              font-size: 12px;
+              color: rgb(248, 194, 95);
+              cursor: pointer;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            text-transform: capitalize;
+            display: block;
+            margin: 0 auto;
+            border-bottom: 3px solid rgb(235, 154, 3);
+            font: 600 16px "Poppins", sans-serif;
+            width: max-content;
+            height: max-content;
+            color: rgb(19, 16, 13);
+            transition: all 0.3s ease;
+
+            &:hover {
+              border: none;
+              background: rgb(238, 184, 7);
+              padding: 10px 20px;
+              border-radius: 2px;
+            }
+          }
+
+          @media screen and (max-width: 600px) {
+            h2 {
+              font-size: 30px;
+            }
+
+            .stars {
+              i {
+                font-size: 16px;
+              }
+            }
+
+            a {
+              font-size: 20px;
+              padding: 10px;
+            }
+          }
+        }
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 0 16px 5px rgb(224, 227, 235);
+
+          .blur-wrapper {
+            display: block;
+            opacity: 0.2;
+          }
+
+          .image {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+
+          .info {
+            display: flex;
+            animation: slideUp 0.5s 1 linear alternate forwards;
+          }
+        }
+
+        @media screen and (max-width: 900px) {
+          width: 44%;
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+          }
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+        }
+
+        to {
+          transform: translateY(0px);
+        }
+      }
+    }
+
+
+
+    @media screen and (max-width: 950px) {
+      width: 95%;
+    }
+  }
+}
+
 .move-in-enter-active,
 .move-in-leave-active,
 .refresh-enter-active,
@@ -773,16 +1044,25 @@ main {
   border-radius: 30px;
 }
 
-#app {
-  font-family: "Poppins", sans-serif;
+#__nuxt{
+  font-family: "Montserrat","Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow:hidden;
+  overflow-y:scroll;
+  width:100vw;
+  height:fit-content;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 * {
   transition: all 0.3s ease;
+  text-align:center;
+  font-family:"Montserrat","Poppins",sans-serif;
 }
 
 html {

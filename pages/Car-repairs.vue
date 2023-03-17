@@ -275,7 +275,7 @@ const dg_images = ref([
   .address-div {
     width: 100%;
     height: 70vh;
-    background: url(~assets/flight/auto-elect-two.webp);
+    background: url(../assets/flight/auto-elect-two.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

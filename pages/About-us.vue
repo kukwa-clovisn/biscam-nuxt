@@ -5,7 +5,7 @@
       <h1>About Us</h1>
 
       <button>
-        <NuxtLink to="/contact">contact us</NuxtLink>
+        <NuxtLink to="/contact-page">contact us</NuxtLink>
       </button>
     </div>
 
@@ -238,7 +238,7 @@ main {
     height: 87vh;
     padding: 10px;
     position: relative;
-    background: url(~assets/flight/artificial-lighting-employee-blue.jpg);
+    background: url(../assets/flight/artificial-lighting-employee-blue.jpg);
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: cover;

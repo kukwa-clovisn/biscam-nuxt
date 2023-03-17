@@ -136,7 +136,7 @@ const next = () => {
     height: fit-content;
     padding: 30px 0;
     padding-bottom: 0;
-    background: url(~assets/flight/airport-terminal.jpg);
+    background: url(../assets/flight/airport-terminal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

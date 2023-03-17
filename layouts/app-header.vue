@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div :class="[{ 'show-header': scrollIsActive }, 'header-wrapper']">
+    <div :class="[{ 'show-header': '' }, 'header-wrapper']">
       <div class="logo-wrapper">
         <div class="logo-image-wrapper">
           <img src="../assets/biscam-logo.png" alt="" />
@@ -10,63 +10,61 @@
         <div class="header-wrapper-content-services">
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/" class="route">Home</router-link>
+              <NuxtLink to="/" class="route">Home</NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/car-repairs" class="route">
+              <NuxtLink to="/car-repairs" class="route">
                 car repair
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/maritime" class="route">
+              <NuxtLink to="/maritime" class="route">
                 maritime
-                <!-- <Dropdown :items="maritime" name="maritime" /> -->
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/flight" class="route">
+              <NuxtLink to="/flight" class="route">
                 flight
-                <!-- <Dropdown :items="flight" name="flight" /> -->
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link
+              <NuxtLink
                 to="/cleaning-agency"
                 class="route"
                 title="Biscam cleaning agency"
               >
                 cleaning agency
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link
-                to="/spare-part"
+              <NuxtLink
+                to="/Spare-Part"
                 class="route"
                 title="Biscam car spare parts"
               >
                 spare part
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="menu-button-wrapper">
-            <button @click="($event) => ($store.state.menuState = true)">
+            <button @click="($event) => (menuState = true)">
               <i class="fa-solid fa-align-right"></i>
             </button>
           </div>
           <div class="header-wrapper-content-services-service">
             <button
               class="header-route special"
-              @click="($event) => ($store.state.appointment = true)"
+              @click="($event) => (appointment = true)"
             >
               book and appointment
             </button>
@@ -74,61 +72,59 @@
         </div>
       </div>
     </div>
-    <div :class="[{ 'hide-header': scrollIsActive }, 'header-container']">
+    <div :class="[{ 'hide-header':  '' }, 'header-container']">
       <div class="header-wrapper-content">
         <div class="header-wrapper-content-services">
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/" class="route">Home</router-link>
+              <NuxtLink to="/" class="route">Home</NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/car-repairs" class="route">
+              <NuxtLink to="/car-repairs" class="route">
                 car repair
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/maritime" class="route">
+              <NuxtLink to="/maritime" class="route">
                 maritime
-                <!-- <Dropdown :items="maritime" name="maritime" /> -->
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link to="/flight" class="route">
+              <NuxtLink to="/flight" class="route">
                 flight
-                <!-- <Dropdown :items="flight" name="flight" /> -->
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link
+              <NuxtLink
                 to="/cleaning-agency"
                 class="route"
                 title="Biscam cleaning agency"
               >
                 cleaning agency
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <router-link
-                to="/spare-part"
+              <NuxtLink
+                to="/Spare-Part"
                 class="route"
                 title="Biscam car spare parts"
               >
                 spare part
-              </router-link>
+              </NuxtLink>
             </button>
           </div>
           <div class="menu-button-wrapper">
-            <button @click="($event) => ($store.state.menuState = true)">
+            <button @click="($event) => (menuState = true)">
               <i class="fa-solid fa-align-right"></i>
             </button>
           </div>
@@ -138,14 +134,9 @@
   </header>
 </template>
 <script setup>
-import { computed } from "vue";
-import { useStore } from "vuex";
-const store = useStore();
-const scrollIsActive = computed(() => {
-  return store.state.scrollActive;
-});
+const appointmentState = useAppointmentState();
+const menuState = useMenuState();
 
-console.log(scrollIsActive.value);
 </script>
 
 <style lang="scss" scoped>
@@ -236,7 +227,7 @@ header {
           }
         }
 
-        a.router-link-active.router-link-exact-active {
+        a.NuxtLink-active.NuxtLink-exact-active {
           color: rgb(233, 175, 14);
           padding: 5px;
           border-bottom: 2px solid rgb(250, 170, 20);
@@ -434,7 +425,7 @@ header {
         }
       }
 
-      a.router-link-active.router-link-exact-active {
+      a.NuxtLink-active.NuxtLink-exact-active {
         color: rgb(233, 175, 14);
         padding: 5px;
         border-bottom: 2px solid rgb(250, 170, 20);

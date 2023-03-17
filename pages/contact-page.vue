@@ -76,7 +76,7 @@ main {
   .landing-page {
     width: 100vw;
     height: 90vh;
-    background: url(~assets/flight/how-screen-printing-works.jpg);
+    background: url(../assets/flight/how-screen-printing-works.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
