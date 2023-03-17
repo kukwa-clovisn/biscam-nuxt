@@ -5,7 +5,7 @@
         <div class="product" data-aos="slide-up">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/manifold-1.jpeg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/manifold-1.jpeg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -26,7 +26,7 @@
         <div class="product" data-aos="flip-left">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/manifold.jpeg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/manifold.jpeg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -47,7 +47,7 @@
         <div class="product" data-aos="flip-right">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/top-cylinder-1.jpg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder-1.jpg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -68,7 +68,7 @@
         <div class="product" data-aos="slide-up">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/manifold-1-transparent.png" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/manifold-1-transparent.png" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -89,7 +89,7 @@
         <div class="product" data-aos="flip-left">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/top-cylinder-2.jpg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder-2.jpg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -110,7 +110,7 @@
         <div class="product" data-aos="slide-up">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/top-cylinder-3.jpg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder-3.jpg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -131,7 +131,7 @@
         <div class="product" data-aos="flip-left">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/top-cylinder-4.jpg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder-4.jpg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -152,7 +152,7 @@
         <div class="product" data-aos="flip-right">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/top-cylinder-5.jpg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder-5.jpg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">
@@ -173,7 +173,7 @@
         <div class="product" data-aos="slide-up">
           <div class="wrapper">
             <div class="image">
-              <img data-aos="slide-up" src="../assets/car-engines/top-cylinder.jpg" alt="" />
+              <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder.jpg" alt="" />
             </div>
             <div class="blur-wrapper"></div>
             <div class="info">

@@ -4,27 +4,20 @@
       <el-carousel-item v-for="(image, index) in images" :key="index">
         <div class="blur-wrapper"></div>
 
-        <img class="carousel-image" :src="image.src ? image.src : image" />
+        <img class="carousel-image" :src="require(`~/assets/${image}`)" />
       </el-carousel-item>
     </el-carousel>
   </div>
 </template>
 
-<script>
-import { ref } from "vue";
-export default {
-  name: "slider",
-  props: {
-    images: { type: Array },
-  },
-  setup(props) {
-    const images = ref(props.images);
+<script setup>
 
-    return {
-      images,
-    };
-  },
-};
+
+const props = defineProps({
+  images: Array,
+})
+
+const images = ref(props.images);
 </script>
 
 

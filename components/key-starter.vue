@@ -7,7 +7,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/car-key-many.jpeg"
+                src="~/assets/car-engines/car-key-many.jpeg"
                 alt=""
               />
             </div>
@@ -41,7 +41,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/car-key-starter-1.jpeg"
+                src="~/assets/car-engines/car-key-starter-1.jpeg"
                 alt=""
               />
             </div>
@@ -75,7 +75,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/car-key-starter.jpeg"
+                src="~/assets/car-engines/car-key-starter.jpeg"
                 alt=""
               />
             </div>
@@ -109,7 +109,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/car-key.jpeg"
+                src="~/assets/car-engines/car-key.jpeg"
                 alt=""
               />
             </div>
@@ -143,7 +143,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/key-starter-1.jpg"
+                src="~/assets/car-engines/key-starter-1.jpg"
                 alt=""
               />
             </div>
@@ -177,7 +177,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/key-starter-2.jpg"
+                src="~/assets/car-engines/key-starter-2.jpg"
                 alt=""
               />
             </div>
@@ -211,7 +211,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/key-starter.jpg"
+                src="~/assets/car-engines/key-starter.jpg"
                 alt=""
               />
             </div>

@@ -59,13 +59,8 @@
         <div class="map-image">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.889999936998!2d9.714111714704378!3d4.042863348135908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061128e4b134dd9%3A0x83dbe2b04e36f866!2sCOGENI%20Camp%20Yabassi!5e0!3m2!1sen!2scm!4v1678379515778!5m2!1sen!2scm"
-            width="100%"
-            height="auto"
-            style="border: 0"
-            allowfullscreen="true"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            width="100%" height="auto" style="border: 0" allowfullscreen="true" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -81,7 +76,7 @@ main {
   .landing-page {
     width: 100vw;
     height: 90vh;
-    background: url(../assets/flight/how-screen-printing-works.jpg);
+    background: url(~assets/flight/how-screen-printing-works.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -199,6 +194,7 @@ main {
           width: 90%;
 
           @media screen and (max-width: 400px) {
+
             p,
             a {
               font-size: 12px;

@@ -13,7 +13,7 @@
         </button>
       </div>
       <div class="image-wrapper">
-        <img src="../assets/flight/cleaning-cartoon-transparent.png" alt="" />
+        <img src="~/assets/flight/cleaning-cartoon-transparent.png" alt="" />
       </div>
     </div>
     <div class="about-div" id="about">
@@ -28,7 +28,7 @@
           </p>
         </div>
         <div class="about-img" data-aos="slide-up">
-          <img data-aos="fade-up" src="../assets/flight/images.png" alt="" />
+          <img data-aos="fade-up" src="~/assets/flight/images.png" alt="" />
         </div>
       </div>
     </div>
@@ -36,11 +36,7 @@
       <div class="blur-wrapper"></div>
       <h2 data-aos="slide-up">let us <span>keep it clean</span> for you</h2>
       <div class="image-wrapper">
-        <img
-          data-aos="slide-up"
-          src="../assets/flight/cleaning-cartoon-tranparent.png"
-          alt=""
-        />
+        <img data-aos="slide-up" src="~/assets/flight/cleaning-cartoon-tranparent.png" alt="" />
         <div class="blur-wrapper">
           <a href="#contactForm">contact us</a>
         </div>
@@ -51,20 +47,12 @@
       <div class="flex-div">
         <div class="flex-div-content" data-aos="slide-up">
           <div class="blur-wrapper">
-            <img
-              data-aos="slide-up"
-              src="../assets/flight/cleaning-equipments-1.jpg"
-              alt=""
-            />
+            <img data-aos="slide-up" src="~/assets/flight/cleaning-equipments-1.jpg" alt="" />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                data-aos="slide-left"
-                src="../assets/flight/cleaning-equipment.jpg"
-                alt=""
-              />
+              <img data-aos="slide-left" src="~/assets/flight/cleaning-equipment.jpg" alt="" />
             </div>
           </div>
 
@@ -77,20 +65,12 @@
         </div>
         <div class="flex-div-content">
           <div class="blur-wrapper">
-            <img
-              data-aos="slide-up"
-              src="../assets/flight/hotel-cleaning.jpg"
-              alt=""
-            />
+            <img data-aos="slide-up" src="~/assets/flight/hotel-cleaning.jpg" alt="" />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                data-aos="slide-up"
-                src="../assets/flight/cleaning-equipmens-2.jpg"
-                alt=""
-              />
+              <img data-aos="slide-up" src="~/assets/flight/cleaning-equipmens-2.jpg" alt="" />
             </div>
           </div>
 
@@ -103,20 +83,12 @@
         </div>
         <div class="flex-div-content">
           <div class="blur-wrapper">
-            <img
-              data-aos="slide-up"
-              src="../assets/flight/cleaning.jpg"
-              alt=""
-            />
+            <img data-aos="slide-up" src="~/assets/flight/cleaning.jpg" alt="" />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                data-aos="slide-up"
-                src="../assets/flight/cleaning-equipments-3.png"
-                alt=""
-              />
+              <img data-aos="slide-up" src="~/assets/flight/cleaning-equipments-3.png" alt="" />
             </div>
           </div>
 
@@ -129,20 +101,12 @@
         </div>
         <div class="flex-div-content">
           <div class="blur-wrapper">
-            <img
-              data-aos="slide-up"
-              src="../assets/flight/ship-deck-cleaning.jpg"
-              alt=""
-            />
+            <img data-aos="slide-up" src="~/assets/flight/ship-deck-cleaning.jpg" alt="" />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                data-aos="slide-up"
-                src="../assets/flight/office-cleaning.jpg"
-                alt=""
-              />
+              <img data-aos="slide-up" src="~/assets/flight/office-cleaning.jpg" alt="" />
             </div>
           </div>
 
@@ -158,7 +122,7 @@
     <div class="display-div">
       <div class="display-wrapper">
         <div class="image-wrapper">
-          <img src="../assets/flight/cleaning-services.jpg" alt="" />
+          <img src="~/assets/flight/cleaning-services.jpg" alt="" />
         </div>
       </div>
     </div>
@@ -187,21 +151,15 @@
               <a href="https://wa.link/wrxet8"> whatsapp: (+237) 679 450 640</a>
             </p>
             <p data-aos="slide-up">
-              <a href="mailto:biscamcleaning@gmail.com"
-                >Email:biscamcleaning@gmail.com</a
-              >
+              <a href="mailto:biscamcleaning@gmail.com">Email:biscamcleaning@gmail.com</a>
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="contact-container" id="contactForm">
-      <contactForm
-        whatsappLink="https://wa.link/wrxet8"
-        whatsappTel="+237679450640"
-        tel="+237683079785"
-        email="biscamcleaning@gmail.com"
-      />
+      <contactForm whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
+        email="biscamcleaning@gmail.com" />
     </div>
   </main>
 </template>
@@ -212,7 +170,7 @@
   width: 100vw;
   height: 94vh;
   position: relative;
-  background: url(../assets/flight/cleaning.jpg);
+  background: url(~assets/flight/cleaning.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -341,7 +299,7 @@
 .section {
   width: 100%;
   height: fit-content;
-  background: url(../assets/flight/cleaning-equipmens-2.jpg);
+  background: url(~assets/flight/cleaning-equipmens-2.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -505,7 +463,7 @@
 }
 
 .address-container {
-  background: url(../assets/flight/office-cleaning.jpg);
+  background: url(~assets/flight/office-cleaning.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

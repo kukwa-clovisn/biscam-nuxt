@@ -8,17 +8,14 @@
           <a href="http://">shop now</a>
         </div>
         <div class="image">
-          <img src="../assets/car-engines/car-key-transparent.png" alt="" />
+          <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
         </div>
       </div>
       <div class="right-content">
         <div class="wrapper">
           <div class="content">
             <div class="img">
-              <img
-                src="../assets/car-engines/engine-block-transparent.png"
-                alt=""
-              />
+              <img src="~/assets/car-engines/engine-block-transparent.png" alt="" />
             </div>
             <div class="info">
               <h2>engine block</h2>
@@ -28,7 +25,7 @@
           </div>
           <div class="content">
             <div class="img">
-              <img src="../assets/car-engines/car-key-transparent.png" alt="" />
+              <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
             </div>
             <div class="info">
               <h2>car key starter</h2>
@@ -38,10 +35,7 @@
           </div>
           <div class="content">
             <div class="img">
-              <img
-                src="../assets/car-engines/manifold-1-transparent.png"
-                alt=""
-              />
+              <img src="~/assets/car-engines/manifold-1-transparent.png" alt="" />
             </div>
             <div class="info">
               <h2>manifold</h2>
@@ -51,7 +45,7 @@
           </div>
           <div class="content">
             <div class="img">
-              <img src="../assets/car-engines/shaft.png" alt="" />
+              <img src="~/assets/car-engines/shaft.png" alt="" />
             </div>
             <div class="info">
               <h2>shaft</h2>
@@ -70,12 +64,8 @@
         <div class="right-header">
           <nav>
             <NuxtLink to="/spare-part" class="route">all</NuxtLink>
-            <NuxtLink to="/spare-part/key-starter" class="route"
-              >car key starter</NuxtLink
-            >
-            <NuxtLink to="/spare-part/manifold" class="route"
-              >manifold</NuxtLink
-            >
+            <NuxtLink to="/spare-part/key-starter" class="route">car key starter</NuxtLink>
+            <NuxtLink to="/spare-part/manifold" class="route">manifold</NuxtLink>
             <NuxtLink to="/spare-part/engine" class="route">engines</NuxtLink>
             <NuxtLink to="/spare-part/shaft" class="route">shaft</NuxtLink>
           </nav>
@@ -104,51 +94,31 @@
           <div class="category-list" data-aos="slide-left">
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="../assets/car-engines/camshaft.jpeg"
-                  alt=""
-                />
+                <img data-aos="slide-up" src="~/assets/car-engines/camshaft.jpeg" alt="" />
               </div>
               <h3 data-aos="slide-up">camshaft</h3>
             </div>
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="../assets/car-engines/car-key-transparent.png"
-                  alt=""
-                />
+                <img data-aos="slide-up" src="~/assets/car-engines/car-key-transparent.png" alt="" />
               </div>
               <h3 data-aos="slide-up">car key starter</h3>
             </div>
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="../assets/car-engines/engine-1.jpg"
-                  alt=""
-                />
+                <img data-aos="slide-up" src="~/assets/car-engines/engine-1.jpg" alt="" />
               </div>
               <h3 data-aos="slide-up">engine</h3>
             </div>
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="../assets/car-engines/manifold.jpeg"
-                  alt=""
-                />
+                <img data-aos="slide-up" src="~/assets/car-engines/manifold.jpeg" alt="" />
               </div>
               <h3 data-aos="slide-up">manifold</h3>
             </div>
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="../assets/car-engines/shaft-1.jpeg"
-                  alt=""
-                />
+                <img data-aos="slide-up" src="~/assets/car-engines/shaft-1.jpeg" alt="" />
               </div>
               <h3 data-aos="slide-up">shaft</h3>
             </div>
@@ -180,433 +150,253 @@
             <div class="product" data-aos="slide-up">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/camshaft-many.jpeg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/camshaft-many.jpeg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>camshaft</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="flip-left">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/engine.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/engine.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>engines</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="flip-right">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/key-starter.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/key-starter.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>car key starter</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="slide-up">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/top-cylinder.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>top cylinder</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="flip-left">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/top-cylinder-2.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder-2.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>top cylinder</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="slide-up">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/crank-shaft-2.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/crank-shaft-2.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>camshaft</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="flip-left">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/engine-1.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/engine-1.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>engines</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="flip-right">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/key-starter-1.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/key-starter-1.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>car key starter</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="slide-up">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/top-cylinder-1.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/top-cylinder-1.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>top cylinder</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="flip-left">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/engine-3.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/engine-3.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>engine</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="slide-up">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/crank-shaft-4.jpg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/crank-shaft-4.jpg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>crankshaft</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
             <div class="product" data-aos="flip-left">
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    data-aos="slide-up"
-                    src="../assets/car-engines/car-key-starter-1.jpeg"
-                    alt=""
-                  />
+                  <img data-aos="slide-up" src="~/assets/car-engines/car-key-starter-1.jpeg" alt="" />
                 </div>
                 <div class="blur-wrapper"></div>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-phone"></i></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"><i class="fa-solid fa-envelope"></i></a>
                 </div>
               </div>
               <div class="details">
                 <h2>car key starter</h2>
                 <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now <i class="fa-brands fa-shopify"></i></a>
               </div>
             </div>
           </div>
@@ -623,9 +413,7 @@
             Browse our amazing spare part store and find the product that suits
             your need
           </p>
-          <a href="http://" data-aos="flip-right" class="hover-animation"
-            >shop now</a
-          >
+          <a href="http://" data-aos="flip-right" class="hover-animation">shop now</a>
         </div>
       </div>
 
@@ -637,12 +425,8 @@
             <a href="https://wa.link/rt49uv">
               <i class="fa-brands fa-whatsapp"> </i> +237677387714
             </a>
-            <a href="mailto:garagebiscam@gmail.com"
-              ><i class="fa-solid fa-envelope"></i> garagebiscam@gmail.com</a
-            >
-            <a href="tel:+237695569565"
-              ><i class="fa-solid fa-phone"></i> +237695569565</a
-            >
+            <a href="mailto:garagebiscam@gmail.com"><i class="fa-solid fa-envelope"></i> garagebiscam@gmail.com</a>
+            <a href="tel:+237695569565"><i class="fa-solid fa-phone"></i> +237695569565</a>
           </div>
         </div>
       </div>
@@ -652,39 +436,35 @@
         <h2>accepted payment methods</h2>
         <div class="payment-modes">
           <div class="img">
-            <img src="../assets/flight/mtn-momo.png" alt="" />
+            <img src="~/assets/flight/mtn-momo.png" alt="" />
           </div>
           <div class="img">
-            <img src="../assets/flight/orange-money.png" alt="" />
+            <img src="~/assets/flight/orange-money.png" alt="" />
           </div>
           <div class="img">
-            <img src="../assets/flight/visa-card.png" alt="" />
+            <img src="~/assets/flight/visa-card.png" alt="" />
           </div>
           <div class="img">
-            <img src="../assets/flight/paypal.png" alt="" />
+            <img src="~/assets/flight/paypal.png" alt="" />
           </div>
         </div>
       </div>
     </div>
     <div class="contact-container">
-      <contactForm
-        whatsappLink="https://wa.link/rt49uv"
-        whatsappTel="+237677387714"
-        tel="+237695569565"
-        email="garagebiscam@gmail.com"
-      />
+      <contactForm whatsappLink="https://wa.link/rt49uv" whatsappTel="+237677387714" tel="+237695569565"
+        email="garagebiscam@gmail.com" />
     </div>
   </main>
 </template>
 
 <script setup>
 // bringing in car images
-import car from "../assets/car-images/car.jpg";
-import car1 from "../assets/car-images/car-1.jpg";
-import car2 from "../assets/car-images/car-2.jpg";
-import car3 from "../assets/car-images/car-3.jpg";
-import car4 from "../assets/car-images/car-4.jpg";
-import car5 from "../assets/car-images/car-5.jpg";
+import car from "~/assets/car-images/car.jpg";
+import car1 from "~/assets/car-images/car-1.jpg";
+import car2 from "~/assets/car-images/car-2.jpg";
+import car3 from "~/assets/car-images/car-3.jpg";
+import car4 from "~/assets/car-images/car-4.jpg";
+import car5 from "~/assets/car-images/car-5.jpg";
 
 const router = useRouter();
 const car_images = ref([car, car1, car2, car3, car4, car5]);
@@ -1226,7 +1006,7 @@ main {
         .right-content {
           width: 40%;
           height: 60vh;
-          background: url(../assets/car-images/car-4.jpg);
+          background: url(~assets/car-images/car-4.jpg);
           background-repeat: no-repeat;
           background-size: cover;
           border-radius: 5px;
@@ -1237,7 +1017,7 @@ main {
     .link-container {
       width: 100%;
       height: fit-content;
-      background: url(../assets/car-images/car-8.jpg);
+      background: url(~assets/car-images/car-8.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;

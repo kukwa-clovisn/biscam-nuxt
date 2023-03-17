@@ -14,15 +14,8 @@
               <div class="form-data">
                 <label for="name" class="label">departure:</label>
                 <div class="form-input">
-                  <label for="departure"
-                    ><i class="fa-solid fa-plane"></i
-                  ></label>
-                  <input
-                    name="departure"
-                    type="text"
-                    placeholder="Origin"
-                    required
-                  />
+                  <label for="departure"><i class="fa-solid fa-plane"></i></label>
+                  <input name="departure" type="text" placeholder="Origin" required />
                 </div>
               </div>
               <div class="form-data">
@@ -31,58 +24,28 @@
                   <label for="destination">
                     <i class="fa-solid fa-location-dot"></i>
                   </label>
-                  <input
-                    type="text"
-                    name="destination"
-                    id="destination"
-                    placeholder="Enter Your destination"
-                    required
-                  />
+                  <input type="text" name="destination" id="destination" placeholder="Enter Your destination" required />
                 </div>
               </div>
               <div class="form-data">
-                <label for="departure-date" class="label"
-                  >departure-date:</label
-                >
+                <label for="departure-date" class="label">departure-date:</label>
                 <div class="form-input">
-                  <label for="departure-date"
-                    ><i class="fa-regular fa-calendar-days"></i
-                  ></label>
-                  <input
-                    type="date"
-                    name="departure-date"
-                    id="departure-date"
-                    placeholder="Departure Date"
-                  />
+                  <label for="departure-date"><i class="fa-regular fa-calendar-days"></i></label>
+                  <input type="date" name="departure-date" id="departure-date" placeholder="Departure Date" />
                 </div>
               </div>
               <div class="form-data">
                 <label for="return-date" class="label">return-date:</label>
                 <div class="form-input">
-                  <label for="return-date"
-                    ><i class="fa-regular fa-calendar-days"></i
-                  ></label>
-                  <input
-                    type="date"
-                    name="return-date"
-                    id="return-date"
-                    placeholder="Return Date"
-                  />
+                  <label for="return-date"><i class="fa-regular fa-calendar-days"></i></label>
+                  <input type="date" name="return-date" id="return-date" placeholder="Return Date" />
                 </div>
               </div>
               <div class="form-data">
                 <label for="passangers" class="label">passangers</label>
                 <div class="form-input">
-                  <label for="passangers"
-                    ><i class="fa-solid fa-person-walking-luggage"></i
-                  ></label>
-                  <input
-                    type="number"
-                    name="passangers"
-                    min="1"
-                    id="passangers"
-                    placeholder="Departure Date"
-                  />
+                  <label for="passangers"><i class="fa-solid fa-person-walking-luggage"></i></label>
+                  <input type="number" name="passangers" min="1" id="passangers" placeholder="Departure Date" />
                 </div>
               </div>
             </div>
@@ -90,22 +53,11 @@
             <div class="form-wrapper" v-if="stepTwo">
               <div class="form-data">
                 <label for="date">date</label>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                  placeholder="Select Date"
-                  required
-                />
+                <input type="date" name="date" id="date" placeholder="Select Date" required />
               </div>
               <div class="form-data">
                 <label for="time">time</label>
-                <input
-                  type="time"
-                  name="time"
-                  id="time"
-                  placeholder="Select Time"
-                />
+                <input type="time" name="time" id="time" placeholder="Select Time" />
               </div>
             </div>
 
@@ -118,27 +70,12 @@
               <p>time:</p>
             </div>
 
-            <el-button
-              style="margin-top: 12px"
-              @click="next"
-              v-if="stepOne"
-              class="form-button"
-              >Next step <i class="fa-solid fa-forward"></i
-            ></el-button>
-            <el-button
-              style="margin-top: 12px"
-              @click="next"
-              v-if="stepTwo"
-              class="form-button"
-              >Next step <i class="fa-solid fa-forward"></i
-            ></el-button>
-            <el-button
-              style="margin-top: 12px"
-              @click="next"
-              v-if="confirm"
-              class="form-button"
-              >confirm booking <i class="fa-solid fa-circle-check"></i
-            ></el-button>
+            <el-button style="margin-top: 12px" @click="next" v-if="stepOne" class="form-button">Next step <i
+                class="fa-solid fa-forward"></i></el-button>
+            <el-button style="margin-top: 12px" @click="next" v-if="stepTwo" class="form-button">Next step <i
+                class="fa-solid fa-forward"></i></el-button>
+            <el-button style="margin-top: 12px" @click="next" v-if="confirm" class="form-button">confirm booking <i
+                class="fa-solid fa-circle-check"></i></el-button>
           </form>
         </div>
         <div class="payment-methods">
@@ -146,16 +83,16 @@
             <h2>accepted payment methods</h2>
             <div class="payment-modes">
               <div class="img">
-                <img src="../assets/flight/mtn-momo.png" alt="" />
+                <img src="~/assets/flight/mtn-momo.png" alt="" />
               </div>
               <div class="img">
-                <img src="../assets/flight/orange-money.png" alt="" />
+                <img src="~/assets/flight/orange-money.png" alt="" />
               </div>
               <div class="img">
-                <img src="../assets/flight/visa-card.png" alt="" />
+                <img src="~/assets/flight/visa-card.png" alt="" />
               </div>
               <div class="img">
-                <img src="../assets/flight/paypal.png" alt="" />
+                <img src="~/assets/flight/paypal.png" alt="" />
               </div>
             </div>
           </div>
@@ -199,7 +136,7 @@ const next = () => {
     height: fit-content;
     padding: 30px 0;
     padding-bottom: 0;
-    background: url(../assets/flight/airport-terminal.jpg);
+    background: url(~assets/flight/airport-terminal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

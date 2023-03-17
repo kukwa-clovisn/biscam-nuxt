@@ -45,18 +45,10 @@
         </p>
 
         <div class="flex-div">
-          <div
-            class="flex-div-content"
-            data-aos="slide-right"
-            @click="$router.push({ path: '/car-repairs' })"
-          >
+          <div class="flex-div-content" data-aos="slide-right" @click="$router.push({ path: '/car-repairs' })">
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img
-                  src="../assets/flight/download.jpg"
-                  data-aos="fade"
-                  alt=""
-                />
+                <img src="~/assets/flight/download.jpg" data-aos="fade" alt="" />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -67,18 +59,10 @@
               <button>learn more</button>
             </div>
           </div>
-          <div
-            class="flex-div-content"
-            data-aos="fade"
-            @click="$router.push({ path: '/car-repairs' })"
-          >
+          <div class="flex-div-content" data-aos="fade" @click="$router.push({ path: '/car-repairs' })">
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img
-                  src="../assets/flight/car-programming.png"
-                  data-aos="fade"
-                  alt=""
-                />
+                <img src="~/assets/flight/car-programming.png" data-aos="fade" alt="" />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -90,18 +74,10 @@
               <button>learn more</button>
             </div>
           </div>
-          <div
-            class="flex-div-content"
-            data-aos="slide-up"
-            @click="$router.push({ path: '/car-repairs' })"
-          >
+          <div class="flex-div-content" data-aos="slide-up" @click="$router.push({ path: '/car-repairs' })">
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img
-                  src="../assets/flight/car-wash.jpg"
-                  data-aos="fade"
-                  alt=""
-                />
+                <img src="~/assets/flight/car-wash.jpg" data-aos="fade" alt="" />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -113,18 +89,10 @@
               <button>learn more</button>
             </div>
           </div>
-          <div
-            class="flex-div-content"
-            data-aos="slide-left"
-            @click="$router.push({ path: '/car-repairs' })"
-          >
+          <div class="flex-div-content" data-aos="slide-left" @click="$router.push({ path: '/car-repairs' })">
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img
-                  src="../assets/flight/car-wiring.png"
-                  data-aos="fade"
-                  alt=""
-                />
+                <img src="~/assets/flight/car-wiring.png" data-aos="fade" alt="" />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -135,18 +103,10 @@
               <button>learn more</button>
             </div>
           </div>
-          <div
-            class="flex-div-content"
-            data-aos="slide-up"
-            @click="$router.push({ path: '/car-repairs' })"
-          >
+          <div class="flex-div-content" data-aos="slide-up" @click="$router.push({ path: '/car-repairs' })">
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img
-                  src="../assets/flight/pana-biting.png"
-                  data-aos="fade"
-                  alt=""
-                />
+                <img src="~/assets/flight/pana-biting.png" data-aos="fade" alt="" />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -169,18 +129,10 @@
         services such as Hotel reservation and Meet and Greet services.
       </p>
       <div class="flex-div">
-        <div
-          class="flex-div-content"
-          data-aos="slide-right"
-          @click="$router.push({ path: '/flight' })"
-        >
+        <div class="flex-div-content" data-aos="slide-right" @click="$router.push({ path: '/flight' })">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                src="../assets/flight/ticket-booking.png"
-                data-aos="fade"
-                alt=""
-              />
+              <img src="~/assets/flight/ticket-booking.png" data-aos="fade" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -191,14 +143,10 @@
             <button>learn more</button>
           </div>
         </div>
-        <div
-          class="flex-div-content"
-          data-aos="fade"
-          @click="$router.push({ path: '/flight' })"
-        >
+        <div class="flex-div-content" data-aos="fade" @click="$router.push({ path: '/flight' })">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="../assets/flight/hotel.png" data-aos="fade" alt="" />
+              <img src="~/assets/flight/hotel.png" data-aos="fade" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -210,18 +158,10 @@
             <button>learn more</button>
           </div>
         </div>
-        <div
-          class="flex-div-content"
-          data-aos="slide-left"
-          @click="$router.push({ path: '/flight' })"
-        >
+        <div class="flex-div-content" data-aos="slide-left" @click="$router.push({ path: '/flight' })">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img
-                src="../assets/flight/persons-greet.jpg"
-                data-aos="fade"
-                alt=""
-              />
+              <img src="~/assets/flight/persons-greet.jpg" data-aos="fade" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -285,89 +225,40 @@
       <p data-aos="slide-up">Yes We knew you would...</p>
       <div class="buttons">
         <NuxtLink to="/about-us" data-aos="slide-up">browse services</NuxtLink>
-        <button
-          @click="(event) => ($store.state.appointment = true)"
-          class="appointment"
-          data-aos="slide-up"
-        >
+        <button @click="(event) => ($store.state.appointment = true)" class="appointment" data-aos="slide-up">
           book an appointment
         </button>
       </div>
     </div>
     <div class="contact-container" id="contactForm">
-      <NuxtLayout
-        name="contact"
-        whatsappLink="https://wa.link/wrxet8"
-        whatsappTel="+237679450640"
-        tel="+237683079785"
-        email="biscamcleaning@gmail.com"
-      />
+      <NuxtLayout name="contact" whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
+        email="biscamcleaning@gmail.com" />
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-import maritime_zero from "../assets/maritime/port-pic.jpg";
-import maritime_one from "../assets/flight/boat-floating-sea.jpg";
-import maritime_two from "../assets/flight/maritime-coast.jpg";
-import maritime_three from "../assets/maritime/woman-jacket.jpg";
-import digital_zero from "../assets/flight/digital-ideas.jpg";
-import digital_one from "../assets/flight/empty-modern-creative-agency-office.jpg";
-import flightView from "../assets/flight/airplane-sunset.jpg";
-import flightView1 from "../assets/flight/airport-terminal.jpg";
-import maritimeView from "../assets/flight/boat-floating-sea.jpg";
-import maritimeView1 from "../assets/flight/maritime-coast.jpg";
-import garageView from "../assets/flight/mechanic-servicing-car.jpg";
-import garageView1 from "../assets/flight/artificial-lighting-employee-blue.jpg";
-import cleaningView from "../assets/flight/black-woman-with-suitcase-airport.jpg";
-import cleaningView1 from "../assets/flight/office-cleaning.jpg";
-import ecommerceView from "../assets/flight/auto-elect-two.webp";
 
 const HomeViewImages = ref([
-  flightView,
-  flightView1,
-  maritimeView,
-  maritimeView1,
-  garageView,
-  garageView1,
-  cleaningView,
-  cleaningView1,
-  ecommerceView,
+  'airplane-sunset.jpg',
+  'airport-terminal.jpg',
+  'boat-floating-sea.jpg',
+  'maritime-coast.jpg',
+  'mechanic-servicing-car.jpg',
+  'artificial-lighting-employee-blue.jpg',
+  'black-woman-with-suitcase-airport.jpg',
+  'office-cleaning.jpg',
+  'auto-elect-two.webp',
 ]);
 const maritime_images = ref([
-  {
-    src: maritime_one,
-    title: "maritime one",
-  },
-  {
-    src: maritime_two,
-    title: "maritime two",
-  },
-  {
-    src: maritime_zero,
-    title: "maritime three",
-  },
+  'port-pic.jpg',
+ 'boat-floating-sea.jpg',
+ 'maritime-coast.jpg',
 ]);
 
 const dg_images = ref([
-  {
-    src: digital_zero,
-    title: "digital center one",
-  },
-  {
-    src: digital_one,
-    title: "digital center two",
-  },
-  {
-    src: maritime_two,
-    title: "digital center three",
-  },
-  {
-    src: maritime_three,
-    title: "digital center four",
-  },
+'digital-ideas.jpg',
+ 'empty-modern-creative-agency-office.jpg'
 ]);
 </script>
 <style lang="scss" scoped>
@@ -397,7 +288,7 @@ const dg_images = ref([
       width: 100%;
       height: 94vh;
       position: relative;
-      background: url(../assets/flight/boat-floating-sea.jpg);
+      background: url(~assets/flight/boat-floating-sea.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -648,12 +539,10 @@ const dg_images = ref([
   .garage-section {
     width: 100vw;
     height: fit-content;
-    background: linear-gradient(
-      to bottom,
-      rgb(20, 15, 94),
-      rgb(17, 8, 119),
-      rgb(8, 4, 58)
-    );
+    background: linear-gradient(to bottom,
+        rgb(20, 15, 94),
+        rgb(17, 8, 119),
+        rgb(8, 4, 58));
     margin: 0;
     padding-top: 30px;
 
@@ -682,7 +571,7 @@ const dg_images = ref([
     width: 100vw;
     height: fit-content;
     margin: 0;
-    background: url(../assets/flight/airplane-sunset.jpg);
+    background: url(~assets/flight/airplane-sunset.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -714,12 +603,10 @@ const dg_images = ref([
     width: 100vw;
     height: fit-content;
     padding: 20px 0;
-    background: linear-gradient(
-      to bottom,
-      rgb(14, 6, 106),
-      rgb(14, 46, 106),
-      rgb(9, 31, 72)
-    );
+    background: linear-gradient(to bottom,
+        rgb(14, 6, 106),
+        rgb(14, 46, 106),
+        rgb(9, 31, 72));
 
     .wrapper {
       width: 90%;
@@ -870,7 +757,7 @@ const dg_images = ref([
     width: 100%;
     height: fit-content;
     padding: 20px;
-    background: url(../assets/flight/low-angle-greyscale-shot-airplane-flying-high-rise-buildings.jpg);
+    background: url(~assets/flight/low-angle-greyscale-shot-airplane-flying-high-rise-buildings.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

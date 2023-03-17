@@ -19,12 +19,12 @@
       <div class="flex-div">
         <div class="flex-div-content" data-aos="slide-up">
           <div class="blur-wrapper">
-            <img data-aos="slide-up" src="../assets/flight/offshore.jpg" alt="">
+            <img data-aos="slide-up" src="~/assets/flight/offshore.jpg" alt="">
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="../assets/flight/offshore.jpg" alt="" />
+              <img data-aos="fade" src="~/assets/flight/offshore.jpg" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -34,11 +34,11 @@
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="../assets/flight/import-export.jpg" alt=""></div>
+          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/import-export.jpg" alt=""></div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="../assets/flight/import-export.jpg" alt="" />
+              <img data-aos="fade" src="~/assets/flight/import-export.jpg" alt="" />
             </div>
           </div>
 
@@ -49,11 +49,11 @@
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="../assets/flight/ship-chandling.jpg" alt=""></div>
+          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/ship-chandling.jpg" alt=""></div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="../assets/flight/ship-chandling.jpg" alt="" />
+              <img data-aos="fade" src="~/assets/flight/ship-chandling.jpg" alt="" />
             </div>
           </div>
 
@@ -64,11 +64,11 @@
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img src="../assets/flight/garbage-removal.jpg" alt=""></div>
+          <div class="blur-wrapper"><img src="~/assets/flight/garbage-removal.jpg" alt=""></div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="../assets/flight/garbage-removal.jpg" alt="" />
+              <img data-aos="fade" src="~/assets/flight/garbage-removal.jpg" alt="" />
             </div>
           </div>
 
@@ -79,11 +79,11 @@
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="../assets/flight/ship-weilding.jpg" alt=""></div>
+          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/ship-weilding.jpg" alt=""></div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="../assets/flight/ship-weilding.jpg" alt="" />
+              <img data-aos="fade" src="~/assets/flight/ship-weilding.jpg" alt="" />
             </div>
           </div>
 
@@ -94,11 +94,11 @@
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="../assets/flight/tank-cleaning.jpg" alt=""></div>
+          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/tank-cleaning.jpg" alt=""></div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="../assets/flight/tank-cleaning.jpg" alt="" />
+              <img data-aos="fade" src="~/assets/flight/tank-cleaning.jpg" alt="" />
             </div>
           </div>
 
@@ -109,12 +109,12 @@
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="../assets/flight/do-to-door-delivery-1.jpg" alt="">
+          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/do-to-door-delivery-1.jpg" alt="">
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="../assets/flight/door-to-door-delivery.jpg" alt="" />
+              <img data-aos="fade" src="~/assets/flight/door-to-door-delivery.jpg" alt="" />
             </div>
           </div>
 
@@ -159,30 +159,30 @@
 </template>
 
 <script setup>
-import maritime_zero from "../assets/maritime/port-pic.jpg";
-import maritime_one from "../assets/flight/boat-floating-sea.jpg";
-import maritime_two from "../assets/flight/maritime-coast.jpg";
-import maritime_three from "../assets/maritime/woman-jacket.jpg";
+import maritime_zero from "~/assets/maritime/port-pic.jpg";
+import maritime_one from "~/assets/flight/boat-floating-sea.jpg";
+import maritime_two from "~/assets/flight/maritime-coast.jpg";
+import maritime_three from "~/assets/maritime/woman-jacket.jpg";
 
 
-    const images = ref([
-      {
-        src: maritime_zero,
-        title: "maritime zero",
-      },
-      {
-        src: maritime_one,
-        title: "maritime one",
-      },
-      {
-        src: maritime_two,
-        title: "maritime two",
-      },
-      {
-        src: maritime_three,
-        title: "maritime three",
-      },
-    ]);
+const images = ref([
+  {
+    src: maritime_zero,
+    title: "maritime zero",
+  },
+  {
+    src: maritime_one,
+    title: "maritime one",
+  },
+  {
+    src: maritime_two,
+    title: "maritime two",
+  },
+  {
+    src: maritime_three,
+    title: "maritime three",
+  },
+]);
 
 </script>
 
@@ -290,7 +290,7 @@ import maritime_three from "../assets/maritime/woman-jacket.jpg";
   }
 
   .address-container {
-    background: url(../assets/flight/ship-weilding.jpg);
+    background: url(~assets/flight/ship-weilding.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

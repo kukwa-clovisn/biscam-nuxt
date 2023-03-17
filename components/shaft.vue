@@ -7,7 +7,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/crank-shaft-1.jpg"
+                src="~/assets/car-engines/crank-shaft-1.jpg"
                 alt=""
               />
             </div>
@@ -41,7 +41,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/shaft.png"
+                src="~/assets/car-engines/shaft.png"
                 alt=""
               />
             </div>
@@ -75,7 +75,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/crank-shaft.jpg"
+                src="~/assets/car-engines/crank-shaft.jpg"
                 alt=""
               />
             </div>
@@ -109,7 +109,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/crank-shaft.jpg"
+                src="~/assets/car-engines/crank-shaft.jpg"
                 alt=""
               />
             </div>
@@ -143,7 +143,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/crank-shaft-1.jpg"
+                src="~/assets/car-engines/crank-shaft-1.jpg"
                 alt=""
               />
             </div>
@@ -177,7 +177,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/crank-shaft-3.jpg"
+                src="~/assets/car-engines/crank-shaft-3.jpg"
                 alt=""
               />
             </div>
@@ -212,7 +212,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/shaft-1.png"
+                src="~/assets/car-engines/shaft-1.png"
                 alt=""
               />
             </div>
@@ -246,7 +246,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/shaft.jpeg"
+                src="~/assets/car-engines/shaft.jpeg"
                 alt=""
               />
             </div>
@@ -280,7 +280,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/shaft-3.png"
+                src="~/assets/car-engines/shaft-3.png"
                 alt=""
               />
             </div>
@@ -314,7 +314,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/shaft-1.jpeg"
+                src="~/assets/car-engines/shaft-1.jpeg"
                 alt=""
               />
             </div>
@@ -348,7 +348,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/shaft-5.png"
+                src="~/assets/car-engines/shaft-5.png"
                 alt=""
               />
             </div>
@@ -382,7 +382,7 @@
             <div class="image">
               <img
                 data-aos="slide-up"
-                src="../assets/car-engines/shaft-6.png"
+                src="~/assets/car-engines/shaft-6.png"
                 alt=""
               />
             </div>

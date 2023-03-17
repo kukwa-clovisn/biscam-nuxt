@@ -20,7 +20,7 @@
       <h2>flight ticket</h2>
       <div class="section-flex">
         <div class="section-flex-img">
-          <img src="../assets/flight/man-preparing-travel.jpg" alt="" />
+          <img src="~/assets/flight/man-preparing-travel.jpg" alt="" />
         </div>
         <div class="section-flex-content">
           <h3>make a hotel reservation</h3>
@@ -33,7 +33,9 @@
             well by a dedicated travel professional. We therefore offer both
             corporate flight tickets and personal flight tickets.
           </p>
-          <button><NuxtLink to="/ticket-booking">book now</NuxtLink></button>
+          <button>
+            <NuxtLink to="/ticket-booking">book now</NuxtLink>
+          </button>
         </div>
       </div>
     </div>
@@ -41,10 +43,7 @@
       <h2>hotel reservation</h2>
       <div class="section-flex">
         <div class="section-flex-img">
-          <img
-            src="../assets/flight/black-woman-with-suitcase-airport.jpg"
-            alt=""
-          />
+          <img src="~/assets/flight/black-woman-with-suitcase-airport.jpg" alt="" />
         </div>
         <div class="section-flex-content">
           <h3>book for a traveling ticket</h3>
@@ -58,7 +57,9 @@
             in the most reasonable hotel rates. Guests are given a VIP treatment
             and even have cancelation flexibility at select hotels worldwide.
           </p>
-          <button><NuxtLink to="/ticket-booking">book now</NuxtLink></button>
+          <button>
+            <NuxtLink to="/ticket-booking">book now</NuxtLink>
+          </button>
         </div>
       </div>
     </div>
@@ -66,10 +67,7 @@
       <h2>meet and greet</h2>
       <div class="section-flex">
         <div class="section-flex-img">
-          <img
-            src="../assets/flight/two-african-businessman-meeting-together.jpg"
-            alt=""
-          />
+          <img src="~/assets/flight/two-african-businessman-meeting-together.jpg" alt="" />
         </div>
         <div class="section-flex-content">
           <h3>meet and greet someone</h3>
@@ -87,7 +85,9 @@
             hospitality and thorough escorting. Special assistance for travels
             with reduced mobility. Collection of excess baggage.
           </p>
-          <button><NuxtLink to="/ticket-booking">book now</NuxtLink></button>
+          <button>
+            <NuxtLink to="/ticket-booking">book now</NuxtLink>
+          </button>
         </div>
       </div>
     </div>
@@ -120,22 +120,20 @@
         <h2>accepted payment methods</h2>
         <div class="payment-modes">
           <div class="img">
-            <img src="../assets/flight/mtn-momo.png" alt="" />
+            <img src="~/assets/flight/mtn-momo.png" alt="" />
           </div>
           <div class="img">
-            <img src="../assets/flight/orange-money.png" alt="" />
+            <img src="~/assets/flight/orange-money.png" alt="" />
           </div>
           <div class="img">
-            <img src="../assets/flight/visa-card.png" alt="" />
+            <img src="~/assets/flight/visa-card.png" alt="" />
           </div>
           <div class="img">
-            <img src="../assets/flight/paypal.png" alt="" />
+            <img src="~/assets/flight/paypal.png" alt="" />
           </div>
         </div>
 
-        <NuxtLink to="/ticket-booking" class="route"
-          >book your tickets now</NuxtLink
-        >
+        <NuxtLink to="/ticket-booking" class="route">book your tickets now</NuxtLink>
       </div>
     </div>
     <div class="address-container" data-aos="slide-left">
@@ -163,29 +161,23 @@
               <a href="https://wa.link/290wme">whatsapp: 654 213 803</a>
             </p>
             <p data-aos="slide-up">
-              <a href="mailto:biscamflight@gmail.com"
-                >Email: biscamflight@gmail.com</a
-              >
+              <a href="mailto:biscamflight@gmail.com">Email: biscamflight@gmail.com</a>
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="contact-container">
-      <contactForm
-        whatsappLink="https://wa.link/290wme"
-        whatsappTel="+237654213803"
-        tel="+237683079785"
-        email="biscamcleaning@gmail.com"
-      />
+      <contactForm whatsappLink="https://wa.link/290wme" whatsappTel="+237654213803" tel="+237683079785"
+        email="biscamcleaning@gmail.com" />
     </div>
   </div>
 </template>
 
 <script setup>
-import img from "../assets/flight/airplane-sunset.jpg";
-import img1 from "../assets/flight/airport-terminal.jpg";
-import img2 from "../assets/flight/sky-plane.jpg";
+import img from "~/assets/flight/airplane-sunset.jpg";
+import img1 from "~/assets/flight/airport-terminal.jpg";
+import img2 from "~/assets/flight/sky-plane.jpg";
 
 const dg_images = ref([
   {
@@ -495,7 +487,7 @@ const dg_images = ref([
   }
 
   .address-container {
-    background: url(../assets/flight/airplane-sunset.jpg);
+    background: url(~assets/flight/airplane-sunset.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

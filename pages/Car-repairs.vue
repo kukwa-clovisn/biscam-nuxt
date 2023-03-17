@@ -16,7 +16,7 @@
       </div>
       <div class="image-wrapper">
         <div class="step-div">
-          <img src="../assets/car-engines/car-key-transparent.png" alt="" />
+          <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
         </div>
       </div>
     </div>
@@ -27,78 +27,90 @@
         <div class="flex-div-content">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="../assets/flight/car-programming.png" alt="" />
+              <img src="~/assets/flight/car-programming.png" alt="" />
             </div>
           </div>
           <div class="flex-div-content-bottom">
             <h2>car programming</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
+            <button>
+              <NuxtLink to="/contact-page">contact us</NuxtLink>
+            </button>
           </div>
         </div>
         <div class="flex-div-content">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="../assets/flight/auto-elect-two.webp" alt="" />
+              <img src="~/assets/flight/auto-elect-two.webp" alt="" />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2>mechanic</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
+            <button>
+              <NuxtLink to="/contact-page">contact us</NuxtLink>
+            </button>
           </div>
         </div>
         <div class="flex-div-content">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="../assets/flight/car-wash.jpg" alt="" />
+              <img src="~/assets/flight/car-wash.jpg" alt="" />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2>car wash</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
+            <button>
+              <NuxtLink to="/contact-page">contact us</NuxtLink>
+            </button>
           </div>
         </div>
         <div class="flex-div-content">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="../assets/flight/download.jpg" alt="" />
+              <img src="~/assets/flight/download.jpg" alt="" />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2>painting</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
+            <button>
+              <NuxtLink to="/contact-page">contact us</NuxtLink>
+            </button>
           </div>
         </div>
         <div class="flex-div-content">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="../assets/flight/auto-elect-pic.jpg" alt="" />
+              <img src="~/assets/flight/auto-elect-pic.jpg" alt="" />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2>auto elect</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
+            <button>
+              <NuxtLink to="/contact-page">contact us</NuxtLink>
+            </button>
           </div>
         </div>
         <div class="flex-div-content">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="../assets/flight/pana-biting.png" alt="" />
+              <img src="~/assets/flight/pana-biting.png" alt="" />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2>pana biting</h2>
             <p>We deal with the programming of all sorts of cars.</p>
-            <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
+            <button>
+              <NuxtLink to="/contact-page">contact us</NuxtLink>
+            </button>
           </div>
         </div>
       </div>
@@ -112,11 +124,11 @@
           <p><a href="tel: +237699391316"> Tel : +237699 391 316</a></p>
           <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
           <p>
-            <a href="mailto:garagebiscam@gmail.com"
-              >Email: garagebiscam@gmail.com</a
-            >
+            <a href="mailto:garagebiscam@gmail.com">Email: garagebiscam@gmail.com</a>
           </p>
-          <button><NuxtLink to="/contact-page">contact us</NuxtLink></button>
+          <button>
+            <NuxtLink to="/contact-page">contact us</NuxtLink>
+          </button>
           <button @click="$store.state.appointment = true">
             book an appointment
           </button>
@@ -126,50 +138,41 @@
     <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.476450402208!2d9.683616696410493!3d4.073660796947459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106112367afdf705%3A0x52e8d4cda626c755!2sBonassama%2C%20Bonab%C3%A9ri!5e0!3m2!1sen!2scm!4v1678543793445!5m2!1sen!2scm"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="contact-container">
-      <contactForm
-        whatsappLink="https://wa.link/rt49uv"
-        whatsappTel="+237677387714"
-        tel="+237699391316"
-        email="garagebiscam@gmail.com"
-      />
+      <contactForm whatsappLink="https://wa.link/rt49uv" whatsappTel="+237677387714" tel="+237699391316"
+        email="garagebiscam@gmail.com" />
     </div>
   </div>
 </template>
 
 <script setup>
-import img from "../assets/flight/artificial-lighting-employee-blue.jpg";
-import img1 from "../assets/flight/auto-elect-pic.jpg";
-import img2 from "../assets/flight/auto-elect-two.webp";
-import img3 from "../assets/flight/mechanic-servicing-car.jpg";
+import img from "~/assets/flight/artificial-lighting-employee-blue.jpg";
+import img1 from "~/assets/flight/auto-elect-pic.jpg";
+import img2 from "~/assets/flight/auto-elect-two.webp";
+import img3 from "~/assets/flight/mechanic-servicing-car.jpg";
 
-    const dg_images = ref([
-      {
-        src: img,
-        title: "digital center one",
-      },
-      {
-        src: img1,
-        title: "digital center two",
-      },
-      {
-        src: img2,
-        title: "digital center three",
-      },
-      {
-        src: img3,
-        title: "digital center four",
-      },
-    ]);
-  
+const dg_images = ref([
+  {
+    src: img,
+    title: "digital center one",
+  },
+  {
+    src: img1,
+    title: "digital center two",
+  },
+  {
+    src: img2,
+    title: "digital center three",
+  },
+  {
+    src: img3,
+    title: "digital center four",
+  },
+]);
+
 </script>
 <style lang="scss" scoped>
 .main {
@@ -272,7 +275,7 @@ import img3 from "../assets/flight/mechanic-servicing-car.jpg";
   .address-div {
     width: 100%;
     height: 70vh;
-    background: url(../assets/flight/auto-elect-two.webp);
+    background: url(~assets/flight/auto-elect-two.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -353,5 +356,4 @@ import img3 from "../assets/flight/mechanic-servicing-car.jpg";
       width: 100vw;
     }
   }
-}
-</style>
+}</style>

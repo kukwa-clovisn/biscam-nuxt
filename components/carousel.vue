@@ -10,21 +10,13 @@
   </div>
 </template>
 
-<script>
-import { ref } from "vue";
+<script setup>
 
-export default {
-  name: "Carousel",
-  props: {
-    images: { type: Array },
-  },
-  setup(props) {
-    const images = ref(props.images);
-    return {
-      images,
-    };
-  },
-};
+const props = defineProps({
+  images: Array
+})
+const images = ref(props.images);
+
 </script>
 
 <style lang="scss" scoped>
@@ -52,6 +44,7 @@ h1 {
   font-size: 16px;
   z-index: 1;
 }
+
 button.el-carousel_arrow {
   display: flex !important;
   visibility: visible;
