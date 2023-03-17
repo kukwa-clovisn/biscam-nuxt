@@ -4,18 +4,19 @@
       <el-carousel-item v-for="(image, index) in images" :key="index">
         <div class="blur-wrapper"></div>
 
-        <img class="carousel-image" :src="require(`~/assets/${image}`)" />
+        <img
+          class="carousel-image"
+          :src="require(`~/assets/flight/${image}`)"
+        />
       </el-carousel-item>
     </el-carousel>
   </div>
 </template>
 
 <script setup>
-
-
 const props = defineProps({
   images: Array,
-})
+});
 
 const images = ref(props.images);
 </script>

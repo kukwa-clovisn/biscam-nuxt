@@ -4,6 +4,6 @@ export default defineNuxtConfig({
   plugins: [{ src: "@/plugins/aos", ssr: false, mode: "client" }],
   css: [
     // SCSS file in the project
-    "~/assets/styles/main.scss", // you should add main.scss somewhere in your app
+    "~/assets/styles/main.scss",
   ],
 });
