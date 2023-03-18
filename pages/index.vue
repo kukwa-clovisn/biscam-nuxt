@@ -8,20 +8,18 @@
         </div>
         <div class="wrapper">
           <div class="left-wrapper">
-            <h1>BISCAM INVESTMENT SARL</h1>
             <h2>become our highly esteem customer today</h2>
-            <p>
-              Biscam sarl is a multi-service company that deals with the sales
-              of cars, spare parts of cars, maritime services, flight services,
-              digital services and printing.
-            </p>
+            <h1>BISCAM INVESTMENT SARL</h1>
+
             <div class="text-animation">
               <div class="text-wrapper">
                 <ul>
-                  <li>We are Biscam Investment Sarl</li>
-                  <li>We offer Car repair, maritime</li>
-                  <li>We book you flight tickets,and do you house cleaning</li>
-                  <li>We're confidential and trusthworthy.</li>
+                  <li>Biscam sarl is a multi-service company</li>
+                  <li>
+                    that deals with the sales of cars, spare parts of cars,
+                  </li>
+                  <li>maritime services, flight services,</li>
+                  <li>digital services and printing.</li>
                 </ul>
               </div>
             </div>
@@ -44,10 +42,18 @@
         </p>
 
         <div class="flex-div">
-          <div class="flex-div-content" data-aos="slide-right" @click="$router.push({ path: '/car-repairs' })">
+          <div
+            class="flex-div-content"
+            data-aos="slide-right"
+            @click="$router.push({ path: '/car-repairs' })"
+          >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img src="~/assets/flight/download.jpg" data-aos="fade" alt="" />
+                <img
+                  src="~/assets/flight/download.jpg"
+                  data-aos="fade"
+                  alt=""
+                />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -58,10 +64,18 @@
               <button>learn more</button>
             </div>
           </div>
-          <div class="flex-div-content" data-aos="fade" @click="$router.push({ path: '/car-repairs' })">
+          <div
+            class="flex-div-content"
+            data-aos="fade"
+            @click="$router.push({ path: '/car-repairs' })"
+          >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img src="~/assets/flight/car-programming.png" data-aos="fade" alt="" />
+                <img
+                  src="~/assets/flight/car-programming.png"
+                  data-aos="fade"
+                  alt=""
+                />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -73,10 +87,18 @@
               <button>learn more</button>
             </div>
           </div>
-          <div class="flex-div-content" data-aos="slide-up" @click="$router.push({ path: '/car-repairs' })">
+          <div
+            class="flex-div-content"
+            data-aos="slide-up"
+            @click="$router.push({ path: '/car-repairs' })"
+          >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img src="~/assets/flight/car-wash.jpg" data-aos="fade" alt="" />
+                <img
+                  src="~/assets/flight/car-wash.jpg"
+                  data-aos="fade"
+                  alt=""
+                />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -88,10 +110,18 @@
               <button>learn more</button>
             </div>
           </div>
-          <div class="flex-div-content" data-aos="slide-left" @click="$router.push({ path: '/car-repairs' })">
+          <div
+            class="flex-div-content"
+            data-aos="slide-left"
+            @click="$router.push({ path: '/car-repairs' })"
+          >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img src="~/assets/flight/car-wiring.png" data-aos="fade" alt="" />
+                <img
+                  src="~/assets/flight/car-wiring.png"
+                  data-aos="fade"
+                  alt=""
+                />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -102,10 +132,18 @@
               <button>learn more</button>
             </div>
           </div>
-          <div class="flex-div-content" data-aos="slide-up" @click="$router.push({ path: '/car-repairs' })">
+          <div
+            class="flex-div-content"
+            data-aos="slide-up"
+            @click="$router.push({ path: '/car-repairs' })"
+          >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
-                <img src="~/assets/flight/pana-biting.png" data-aos="fade" alt="" />
+                <img
+                  src="~/assets/flight/pana-biting.png"
+                  data-aos="fade"
+                  alt=""
+                />
               </div>
             </div>
             <div class="flex-div-content-bottom">
@@ -128,10 +166,18 @@
         services such as Hotel reservation and Meet and Greet services.
       </p>
       <div class="flex-div">
-        <div class="flex-div-content" data-aos="slide-right" @click="$router.push({ path: '/flight' })">
+        <div
+          class="flex-div-content"
+          data-aos="slide-right"
+          @click="$router.push({ path: '/flight' })"
+        >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="~/assets/flight/ticket-booking.png" data-aos="fade" alt="" />
+              <img
+                src="~/assets/flight/ticket-booking.png"
+                data-aos="fade"
+                alt=""
+              />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -142,7 +188,11 @@
             <button>learn more</button>
           </div>
         </div>
-        <div class="flex-div-content" data-aos="fade" @click="$router.push({ path: '/flight' })">
+        <div
+          class="flex-div-content"
+          data-aos="fade"
+          @click="$router.push({ path: '/flight' })"
+        >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="~/assets/flight/hotel.png" data-aos="fade" alt="" />
@@ -157,10 +207,18 @@
             <button>learn more</button>
           </div>
         </div>
-        <div class="flex-div-content" data-aos="slide-left" @click="$router.push({ path: '/flight' })">
+        <div
+          class="flex-div-content"
+          data-aos="slide-left"
+          @click="$router.push({ path: '/flight' })"
+        >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img src="~/assets/flight/persons-greet.jpg" data-aos="fade" alt="" />
+              <img
+                src="~/assets/flight/persons-greet.jpg"
+                data-aos="fade"
+                alt=""
+              />
             </div>
           </div>
           <div class="flex-div-content-bottom">
@@ -224,40 +282,50 @@
       <p data-aos="slide-up">Yes We knew you would...</p>
       <div class="buttons">
         <NuxtLink to="/about-us" data-aos="slide-up">browse services</NuxtLink>
-        <button @click="(event) => ($store.state.appointment = true)" class="appointment" data-aos="slide-up">
+        <button
+          @click="($event) => (appointmentState = true)"
+          class="appointment"
+          data-aos="slide-up"
+        >
           book an appointment
         </button>
       </div>
     </div>
     <div class="contact-container" id="contactForm">
-      <contact-form whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
-        email="biscamcleaning@gmail.com" />
+      <contact-form
+        whatsappLink="https://wa.link/wrxet8"
+        whatsappTel="+237679450640"
+        tel="+237683079785"
+        email="biscamcleaning@gmail.com"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+const appointmentState = useAppointmentState();
 
 const HomeViewImages = ref([
-  'airplane-sunset.jpg',
-  'airport-terminal.jpg',
-  'boat-floating-sea.jpg',
-  'maritime-coast.jpg',
-  'mechanic-servicing-car.jpg',
-  'artificial-lighting-employee-blue.jpg',
-  'black-woman-with-suitcase-airport.jpg',
-  'office-cleaning.jpg',
-  'auto-elect-two.webp',
+  "airplane-sunset.jpg",
+  "airport-terminal.jpg",
+  "boat-floating-sea.jpg",
+  "maritime-coast.jpg",
+  "mechanic-servicing-car.jpg",
+  "artificial-lighting-employee-blue.jpg",
+  "black-woman-with-suitcase-airport.jpg",
+  "office-cleaning.jpg",
+  "auto-elect-two.webp",
 ]);
-const maritime_images = ref(['~/assets/flight/airplane-sunset.jpg',
-  'port-pic.jpg',
- 'boat-floating-sea.jpg',
- 'maritime-coast.jpg',
+const maritime_images = ref([
+  "~/assets/flight/airplane-sunset.jpg",
+  "port-pic.jpg",
+  "boat-floating-sea.jpg",
+  "maritime-coast.jpg",
 ]);
 
 const dg_images = ref([
-'digital-ideas.jpg',
- 'empty-modern-creative-agency-office.jpg'
+  "digital-ideas.jpg",
+  "empty-modern-creative-agency-office.jpg",
 ]);
 </script>
 <style lang="scss" scoped>
@@ -280,7 +348,6 @@ const dg_images = ref([
       position: absolute;
       top: 0;
       left: 0;
-      /* z-index: 1; */
     }
 
     .landing-page {
@@ -301,15 +368,15 @@ const dg_images = ref([
         position: relative;
 
         .left-wrapper {
-          width: 85%;
+          width: 90%;
           height: fit-content;
-          padding-top: 30px;
           position: relative;
+          padding-top: 13vh;
 
           h1 {
             font-size: 55px;
-            text-align: left;
-            padding: 20px 0;
+
+            padding: 10px;
             color: rgb(14, 6, 106);
             color: white;
             font-weight: 900;
@@ -318,41 +385,33 @@ const dg_images = ref([
 
           h2 {
             text-transform: capitalize;
-            text-align: left;
-            font-size: 35px;
-            font-weight: 300;
+            font-size: 20px;
+            font-weight: 500;
             color: rgb(210, 208, 208);
-            font-family: "Nunito Sans", sans-serif;
-          }
-
-          p {
-            font-size: 15px;
-            text-align: left;
-            padding: 10px;
-            color: rgb(221, 218, 218);
-            line-height: 27px;
-            font-family: "Nunito Sans", sans-serif;
+            font-family: "Montserrat", "Nunito Sans", sans-serif;
+            margin: 0;
           }
 
           .text-animation {
             width: fit-content;
             height: 35px;
             position: relative;
-            margin-top: 8vh;
+            margin: 20px auto;
             background: transparent;
 
             .text-wrapper {
               width: fit-content;
-              height: 100%;
+              height: 35px;
               overflow: hidden;
-
               position: relative;
+              padding: 0;
 
               ul {
                 list-style: none;
                 width: max-content;
                 height: 140px;
                 animation: step_up 16s steps(4) infinite;
+                margin: 0;
                 position: relative;
                 transition: all 0.5s ease;
                 background: transparent;
@@ -360,16 +419,13 @@ const dg_images = ref([
                 li {
                   text-align: left;
                   width: max-content;
-
                   height: 35px;
-                  padding: 0 3px 0 10px;
-                  font-weight: 600;
+                  padding: 0;
                   display: flex;
-
-                  color: rgb(255, 255, 255);
+                  color: rgb(232, 219, 201);
                   justify-content: flex-start;
                   align-items: center;
-                  font-family: Poppins, "Nunito Sans", sans-serif;
+                  font: 500 19px "Poppins", "Nunito Sans", sans-serif;
                   text-transform: capitalize;
                 }
 
@@ -434,7 +490,7 @@ const dg_images = ref([
             width: fit-content;
             height: fit-content;
 
-            margin: 15px 0;
+            margin: 15px auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -538,10 +594,12 @@ const dg_images = ref([
   .garage-section {
     width: 100vw;
     height: fit-content;
-    background: linear-gradient(to bottom,
-        rgb(20, 15, 94),
-        rgb(17, 8, 119),
-        rgb(8, 4, 58));
+    background: linear-gradient(
+      to bottom,
+      rgb(20, 15, 94),
+      rgb(17, 8, 119),
+      rgb(8, 4, 58)
+    );
     margin: 0;
     padding-top: 30px;
 
@@ -602,10 +660,12 @@ const dg_images = ref([
     width: 100vw;
     height: fit-content;
     padding: 20px 0;
-    background: linear-gradient(to bottom,
-        rgb(14, 6, 106),
-        rgb(14, 46, 106),
-        rgb(9, 31, 72));
+    background: linear-gradient(
+      to bottom,
+      rgb(14, 6, 106),
+      rgb(14, 46, 106),
+      rgb(9, 31, 72)
+    );
 
     .wrapper {
       width: 90%;

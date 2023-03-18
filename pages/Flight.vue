@@ -43,7 +43,10 @@
       <h2>hotel reservation</h2>
       <div class="section-flex">
         <div class="section-flex-img">
-          <img src="~/assets/flight/black-woman-with-suitcase-airport.jpg" alt="" />
+          <img
+            src="~/assets/flight/black-woman-with-suitcase-airport.jpg"
+            alt=""
+          />
         </div>
         <div class="section-flex-content">
           <h3>book for a traveling ticket</h3>
@@ -67,7 +70,10 @@
       <h2>meet and greet</h2>
       <div class="section-flex">
         <div class="section-flex-img">
-          <img src="~/assets/flight/two-african-businessman-meeting-together.jpg" alt="" />
+          <img
+            src="~/assets/flight/two-african-businessman-meeting-together.jpg"
+            alt=""
+          />
         </div>
         <div class="section-flex-content">
           <h3>meet and greet someone</h3>
@@ -133,7 +139,9 @@
           </div>
         </div>
 
-        <NuxtLink to="/ticket-booking" class="route">book your tickets now</NuxtLink>
+        <NuxtLink to="/ticket-booking" class="route"
+          >book your tickets now</NuxtLink
+        >
       </div>
     </div>
     <div class="address-container" data-aos="slide-left">
@@ -161,23 +169,29 @@
               <a href="https://wa.link/290wme">whatsapp: 654 213 803</a>
             </p>
             <p data-aos="slide-up">
-              <a href="mailto:biscamflight@gmail.com">Email: biscamflight@gmail.com</a>
+              <a href="mailto:biscamflight@gmail.com"
+                >Email: biscamflight@gmail.com</a
+              >
             </p>
           </div>
         </div>
       </div>
     </div>
     <div class="contact-container">
-      <contactForm whatsappLink="https://wa.link/290wme" whatsappTel="+237654213803" tel="+237683079785"
-        email="biscamcleaning@gmail.com" />
+      <contactForm
+        whatsappLink="https://wa.link/290wme"
+        whatsappTel="+237654213803"
+        tel="+237683079785"
+        email="biscamcleaning@gmail.com"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
-import img from "~/assets/flight/airplane-sunset.jpg";
-import img1 from "~/assets/flight/airport-terminal.jpg";
-import img2 from "~/assets/flight/sky-plane.jpg";
+import img from "../assets/flight/airplane-sunset.jpg";
+import img1 from "../assets/flight/airport-terminal.jpg";
+import img2 from "../assets/flight/sky-plane.jpg";
 
 const dg_images = ref([
   {
@@ -204,17 +218,25 @@ const dg_images = ref([
     width: 100vw;
     height: 90vh;
     position: relative;
+    background: url(../assets/flight/black-woman-with-suitcase-airport.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
     .carousel-div {
       width: 100%;
       height: 90vh;
     }
 
+    .blur-wrapper {
+      opacity: 0.5;
+    }
+
     .landing-page-content {
       width: 100%;
       height: 80vh;
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       display: flex;
       justify-content: space-evenly;
@@ -264,7 +286,7 @@ const dg_images = ref([
 
       button {
         width: 200px;
-        height: 40px;
+        height: 45px;
         padding: 10px;
         background: rgb(241, 162, 42);
         border: none;
@@ -368,9 +390,9 @@ const dg_images = ref([
   .section-2,
   .others {
     width: 100%;
-    min-height: 60vh;
+    height: fit-content;
     margin: 10px auto;
-    padding-top: 20px;
+    padding: 20px 0;
 
     h2 {
       font-size: 40px;

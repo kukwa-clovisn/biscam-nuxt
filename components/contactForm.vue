@@ -104,7 +104,7 @@
             </nav>
             <button
               class="appointment hover-animation"
-              @click="(event) => ($store.state.appointment = true)"
+              @click="(event) => (appointmentState = true)"
             >
               book an appointment <i class="fa-solid fa-arrow-right"></i>
             </button>
@@ -119,16 +119,14 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  whatsappLink: String,
+  whatsappTel: String,
+  tel: String,
+  email: String,
+});
 
-
-  const props = defineProps({ 
-     whatsappLink: String,
-    whatsappTel: String,
-    tel: String,
-    email: String,
-  })
- 
-
+const appointmentState = useAppointmentState();
 </script>
 
 <style lang="scss" scoped>

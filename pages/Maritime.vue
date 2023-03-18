@@ -2,24 +2,26 @@
   <div class="main">
     <div class="landing-page">
       <div class="blur-wrapper"></div>
-      <div class="slider-div">
-        <slider :images="images" />
-      </div>
+
       <div class="landing-page-content">
         <h1>maritime services</h1>
         <button>
-          <a href="#contactForm">contact us</a>
+          <a href="#services-container">get started</a>
         </button>
       </div>
     </div>
-    <div class="services-container">
+    <div class="services-container" id="services-container">
       <h1>our maritime services</h1>
       <p>Lets get you offshore</p>
 
       <div class="flex-div">
         <div class="flex-div-content" data-aos="slide-up">
           <div class="blur-wrapper">
-            <img data-aos="slide-up" src="~/assets/flight/offshore.jpg" alt="">
+            <img
+              data-aos="slide-up"
+              src="~/assets/flight/offshore.jpg"
+              alt=""
+            />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
@@ -30,98 +32,160 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">offshore services</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a></button>
+              <a href="#contactForm">contact us</a>
+            </button>
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/import-export.jpg" alt=""></div>
+          <div class="blur-wrapper">
+            <img
+              data-aos="slide-up"
+              src="~/assets/flight/import-export.jpg"
+              alt=""
+            />
+          </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="~/assets/flight/import-export.jpg" alt="" />
+              <img
+                data-aos="fade"
+                src="~/assets/flight/import-export.jpg"
+                alt=""
+              />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">import and export</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a></button>
+              <a href="#contactForm">contact us</a>
+            </button>
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/ship-chandling.jpg" alt=""></div>
+          <div class="blur-wrapper">
+            <img
+              data-aos="slide-up"
+              src="~/assets/flight/ship-chandling.jpg"
+              alt=""
+            />
+          </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="~/assets/flight/ship-chandling.jpg" alt="" />
+              <img
+                data-aos="fade"
+                src="~/assets/flight/ship-chandling.jpg"
+                alt=""
+              />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">ship chandling</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a></button>
+              <a href="#contactForm">contact us</a>
+            </button>
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img src="~/assets/flight/garbage-removal.jpg" alt=""></div>
+          <div class="blur-wrapper">
+            <img src="~/assets/flight/garbage-removal.jpg" alt="" />
+          </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="~/assets/flight/garbage-removal.jpg" alt="" />
+              <img
+                data-aos="fade"
+                src="~/assets/flight/garbage-removal.jpg"
+                alt=""
+              />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">garbage removal</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a></button>
+              <a href="#contactForm">contact us</a>
+            </button>
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/ship-weilding.jpg" alt=""></div>
+          <div class="blur-wrapper">
+            <img
+              data-aos="slide-up"
+              src="~/assets/flight/ship-weilding.jpg"
+              alt=""
+            />
+          </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="~/assets/flight/ship-weilding.jpg" alt="" />
+              <img
+                data-aos="fade"
+                src="~/assets/flight/ship-weilding.jpg"
+                alt=""
+              />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">ship paintng and weilding</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a></button>
+              <a href="#contactForm">contact us</a>
+            </button>
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/tank-cleaning.jpg" alt=""></div>
+          <div class="blur-wrapper">
+            <img
+              data-aos="slide-up"
+              src="~/assets/flight/tank-cleaning.jpg"
+              alt=""
+            />
+          </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="~/assets/flight/tank-cleaning.jpg" alt="" />
+              <img
+                data-aos="fade"
+                src="~/assets/flight/tank-cleaning.jpg"
+                alt=""
+              />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">tank and deep cleaning</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a></button>
+              <a href="#contactForm">contact us</a>
+            </button>
           </div>
         </div>
         <div class="flex-div-content" data-aos="slide-up">
-          <div class="blur-wrapper"><img data-aos="slide-up" src="~/assets/flight/do-to-door-delivery-1.jpg" alt="">
+          <div class="blur-wrapper">
+            <img
+              data-aos="slide-up"
+              src="~/assets/flight/do-to-door-delivery-1.jpg"
+              alt=""
+            />
           </div>
           <div class="blur-wrapper cover"></div>
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
-              <img data-aos="fade" src="~/assets/flight/door-to-door-delivery.jpg" alt="" />
+              <img
+                data-aos="fade"
+                src="~/assets/flight/door-to-door-delivery.jpg"
+                alt=""
+              />
             </div>
           </div>
 
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">door to door delivery</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a></button>
+              <a href="#contactForm">contact us</a>
+            </button>
           </div>
         </div>
       </div>
@@ -152,39 +216,15 @@
       </div>
     </div>
     <div class="contact-container" id="contactForm">
-      <contactForm whatsappLink="https://wa.link/wrxet8" whatsappTel="+237679450640" tel="+237683079785"
-        email="biscamcleaning@gmail.com" />
+      <contactForm
+        whatsappLink="https://wa.link/wrxet8"
+        whatsappTel="+237679450640"
+        tel="+237683079785"
+        email="biscamcleaning@gmail.com"
+      />
     </div>
   </div>
 </template>
-
-<script setup>
-import maritime_zero from "~/assets/maritime/port-pic.jpg";
-import maritime_one from "~/assets/flight/boat-floating-sea.jpg";
-import maritime_two from "~/assets/flight/maritime-coast.jpg";
-import maritime_three from "~/assets/maritime/woman-jacket.jpg";
-
-
-const images = ref([
-  {
-    src: maritime_zero,
-    title: "maritime zero",
-  },
-  {
-    src: maritime_one,
-    title: "maritime one",
-  },
-  {
-    src: maritime_two,
-    title: "maritime two",
-  },
-  {
-    src: maritime_three,
-    title: "maritime three",
-  },
-]);
-
-</script>
 
 <style lang="scss" scoped>
 .main {
@@ -195,11 +235,19 @@ const images = ref([
     width: 100%;
     height: 90vh;
     position: relative;
+    background: url(../assets/flight/ship-weilding.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 
     .slider-div {
       width: 100%;
       height: 90vh;
       position: relative;
+    }
+
+    .blur-wrapper {
+      opacity: 0.5;
     }
 
     .landing-page-content {
@@ -209,7 +257,7 @@ const images = ref([
       top: 10%;
       left: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
       z-index: 1;
@@ -223,7 +271,7 @@ const images = ref([
 
       button {
         width: 200px;
-        height: 40px;
+        height: 45px;
         border: none;
         background: rgb(241, 162, 42);
 
@@ -253,7 +301,6 @@ const images = ref([
       color: rgb(240, 148, 10);
       padding: 10px;
     }
-
 
     .flex-div-content {
       position: relative;

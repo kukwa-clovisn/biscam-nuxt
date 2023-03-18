@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div :class="[{ 'show-header': '' }, 'header-wrapper']">
+    <div :class="[{ 'show-header': headerActive }, 'header-wrapper']">
       <div class="logo-wrapper">
         <div class="logo-image-wrapper">
           <img src="../assets/biscam-logo.png" alt="" />
@@ -15,23 +15,17 @@
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/car-repairs" class="route">
-                car repair
-              </NuxtLink>
+              <NuxtLink to="/car-repairs" class="route"> car repair </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/maritime" class="route">
-                maritime
-              </NuxtLink>
+              <NuxtLink to="/maritime" class="route"> maritime </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/flight" class="route">
-                flight
-              </NuxtLink>
+              <NuxtLink to="/flight" class="route"> flight </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
@@ -64,7 +58,7 @@
           <div class="header-wrapper-content-services-service">
             <button
               class="header-route special"
-              @click="($event) => (appointment = true)"
+              @click="($event) => (appointmentState = true)"
             >
               book and appointment
             </button>
@@ -72,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div :class="[{ 'hide-header':  '' }, 'header-container']">
+    <div :class="[{ 'hide-header': headerActive }, 'header-container']">
       <div class="header-wrapper-content">
         <div class="header-wrapper-content-services">
           <div class="header-wrapper-content-services-service lg">
@@ -82,23 +76,17 @@
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/car-repairs" class="route">
-                car repair
-              </NuxtLink>
+              <NuxtLink to="/car-repairs" class="route"> car repair </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/maritime" class="route">
-                maritime
-              </NuxtLink>
+              <NuxtLink to="/maritime" class="route"> maritime </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/flight" class="route">
-                flight
-              </NuxtLink>
+              <NuxtLink to="/flight" class="route"> flight </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
@@ -136,7 +124,7 @@
 <script setup>
 const appointmentState = useAppointmentState();
 const menuState = useMenuState();
-
+const headerActive = useHeaderState();
 </script>
 
 <style lang="scss" scoped>

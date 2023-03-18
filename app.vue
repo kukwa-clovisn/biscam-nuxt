@@ -1,61 +1,93 @@
 <template>
   <main id="main">
-    <header>
-      <NuxtLayout name="app-header" />
-    </header>
-    <!-- <router-view v-slot="{ Component }" data-aos="slide-left">
-      <transition name="routes">
-        <component :is="Component" :class="['componentContainer']" />
-      </transition>
-    </router-view> -->
-    <transition name="routes">
-      <NuxtPage data-aos="slide-left" class="componentContainer" /></transition>
-   
+    <NuxtLayout name="app-header" />
+
+    <div id="componentContainer">
+      <NuxtPage data-aos="slide-left" />
+    </div>
 
     <div class="menu-container" v-if="menuState">
-      <div class="blur-wrapper"></div>
-      <div :class="[{'is-active':menuState},'menu-wrapper']">
-        <button class="close"  @click="($event) => menuState = false">
+      <div class="blur-wrapper" @click="($event) => (menuState = false)"></div>
+      <div :class="[{ 'is-active': menuState }, 'menu-wrapper']">
+        <button class="close" @click="($event) => (menuState = false)">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="menu-header">
           <div class="logo">
-            <img  @click="($event) => $router.push('/')" src="./assets/flight/logo_biscam-transparent.png" alt="" />
+            <img
+              @click="($event) => $router.push('/')"
+              src="./assets/flight/logo_biscam-transparent.png"
+              alt=""
+            />
           </div>
           <p>Book and appointment with us today.</p>
-          <button class="appointment" @click="($event) => appointmentState = true">book an appointment now!</button>
+          <button
+            class="appointment"
+            @click="($event) => (appointmentState = true)"
+          >
+            book an appointment now!
+          </button>
         </div>
 
         <div class="services">
           <h2>Browse our services</h2>
           <div class="service-wrapper">
-            <NuxtLink to="/" @click="($event) => menuState = false">home <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/car-repairs" @click="($event) => menuState = false">car repair <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/maritime" @click="($event) => menuState = false">maritime <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/flight" @click="($event) => menuState = false">flight <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/cleaning-agency" @click="($event) => menuState = false">cleaning agency <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/spare-part" @click="($event) => menuState = false">spare part <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/" @click="($event) => (menuState = false)"
+              >home <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/car-repairs" @click="($event) => (menuState = false)"
+              >car repair <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/maritime" @click="($event) => (menuState = false)"
+              >maritime <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/flight" @click="($event) => (menuState = false)"
+              >flight <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink
+              to="/cleaning-agency"
+              @click="($event) => (menuState = false)"
+              >cleaning agency <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink to="/spare-part" @click="($event) => (menuState = false)"
+              >spare part <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
           </div>
           <hr />
           <h2><i class="fa-solid fa-phone"></i> contact us</h2>
           <div class="service-wrapper">
-            <NuxtLink to="/about-us" @click="($event) => menuState = false">about us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
-            <NuxtLink to="/contact-page" @click="($event) => menuState = false">contact us <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+            <NuxtLink to="/about-us" @click="($event) => (menuState = false)"
+              >about us <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
+            <NuxtLink
+              to="/contact-page"
+              @click="($event) => (menuState = false)"
+              >contact us <i class="fa-solid fa-arrow-right"></i
+            ></NuxtLink>
           </div>
           <h2>follow us on:</h2>
           <div class="media-wrapper">
-            <a href="#" class="link" title="Give us a call"><i class="fa-solid fa-phone"></i></a>
-            <a href="#" class="link" title="Chat us on whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="link"><i class="fa-brands fa-facebook" title="Follow on facebook"></i></a>
+            <a href="#" class="link" title="Give us a call"
+              ><i class="fa-solid fa-phone"></i
+            ></a>
+            <a href="#" class="link" title="Chat us on whatsapp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="#" class="link"
+              ><i class="fa-brands fa-facebook" title="Follow on facebook"></i
+            ></a>
           </div>
         </div>
       </div>
     </div>
     <div class="appointment-container" v-if="appointmentState">
-      <div class="blurred-wrapper" @click="($event) => appointmentState = false"></div>
+      <div
+        class="blurred-wrapper"
+        @click="($event) => (appointmentState = false)"
+      ></div>
       <div class="appointment-wrapper">
         <form @submit="event.preventDefault()">
-          <button class="close" @click="($event) => appointmentState = false">
+          <button class="close" @click="($event) => (appointmentState = false)">
             <i class="fa-solid fa-xmark"></i>
           </button>
           <h1>book an appointment</h1>
@@ -67,26 +99,53 @@
           <div class="form-wrapper" v-if="stepOne">
             <div class="form-data">
               <label for="name">Name:</label>
-              <input name="name" type="text" placeholder="Enter Your Name" required />
+              <input
+                name="name"
+                type="text"
+                placeholder="Enter Your Name"
+                required
+              />
             </div>
             <div class="form-data">
               <label for="email">email:</label>
-              <input type="email" name="email" id="email" placeholder="Enter Your Email" required />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Your Email"
+                required
+              />
             </div>
             <div class="form-data">
               <label for="tel">tel:</label>
-              <input type="tel" name="tel" id="tel" placeholder="Enter You Phone Number" />
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder="Enter You Phone Number"
+              />
             </div>
           </div>
 
           <div class="form-wrapper" v-if="stepTwo">
             <div class="form-data">
               <label for="date">date</label>
-              <input type="date" name="date" id="date" placeholder="Select Date" required />
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="Select Date"
+                required
+              />
             </div>
             <div class="form-data">
               <label for="time">time</label>
-              <input type="time" name="time" id="time" placeholder="Select Time" />
+              <input
+                type="time"
+                name="time"
+                id="time"
+                placeholder="Select Time"
+              />
             </div>
           </div>
 
@@ -99,9 +158,15 @@
             <p>time:</p>
           </div>
 
-          <el-button style="margin-top: 12px" @click="next" v-if="stepOne">Next step</el-button>
-          <el-button style="margin-top: 12px" @click="next" v-if="stepTwo">Next step</el-button>
-          <el-button style="margin-top: 12px" @click="next" v-if="confirm">Next step</el-button>
+          <el-button style="margin-top: 12px" @click="next" v-if="stepOne"
+            >Next step</el-button
+          >
+          <el-button style="margin-top: 12px" @click="next" v-if="stepTwo"
+            >Next step</el-button
+          >
+          <el-button style="margin-top: 12px" @click="next" v-if="confirm"
+            >Next step</el-button
+          >
         </form>
       </div>
     </div>
@@ -109,45 +174,64 @@
 </template>
 
 <script setup>
-
-useHead({ 
-  title:'Biscam Investment Sarl',
-  viewport:'width:device-width, initial-scale=1',
-  charset:'utf-8',
-  meta:[
+useHead({
+  title: "Biscam Investment Sarl",
+  viewport: "width:device-width, initial-scale=1",
+  charset: "utf-8",
+  meta: [
     {
-      name:'description',
-      content:'Biscam companies with multi purpose services like flight ticket booking, cleaning services, car spare part purchase, car repairs, maritime services and more.'
-    }
+      name: "description",
+      content:
+        "Biscam companies with multi purpose services like flight ticket booking, cleaning services, car spare part purchase, car repairs, maritime services and more.",
+    },
   ],
   link: [
     {
-      rel:"icon",
-       type:"image/png",
-        href:"./assets/biscam-logo.png"
+      rel: "icon",
+      type: "image/png",
+      href: "./assets/biscam-logo.png",
     },
     {
-      href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
-      rel:"stylesheet", integrity:"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==",
-    crossorigin:"anonymous",
-     referrerpolicy:"no-referrer" 
-    },{
-      rel:"preconnect",
-    href:"https://fonts.gstatic.com",
-     crossorigin:'anonymous'
+      href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
+      rel: "stylesheet",
+      integrity:
+        "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==",
+      crossorigin: "anonymous",
+      referrerpolicy: "no-referrer",
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossorigin: "anonymous",
+    },
+    {
+      href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap",
+      rel: "stylesheet",
+    },
+  ],
+});
 
-    },{
-      href:"https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap",
-       rel:"stylesheet"
-    }
-  ]
-})
+onBeforeMount(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+const headerActive = useHeaderState();
+
+const handleScroll = (e) => {
+  if (window.scrollY >= 30) {
+    headerActive.value = true;
+  }
+};
+
+// onMounted(() => {
+//   window.removeEventListener("scroll", handleScroll);
+// });
 
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
-const appointmentState = useAppointmentState()
-const menuState = useMenuState()
+const appointmentState = useAppointmentState();
+const menuState = useMenuState();
 const active = ref(0);
 
 const next = () => {
@@ -175,8 +259,8 @@ const next = () => {
 #main {
   width: 100vw;
   height: fit-content;
-  overflow:hidden;
-  overflow-y:scroll;
+  overflow: hidden;
+  overflow-y: scroll;
 
   header {
     width: 100vw;
@@ -187,11 +271,11 @@ const next = () => {
     z-index: 1;
   }
 
-  .componentContainer {
+  #componentContainer {
     width: 100%;
     height: fit-content;
     position: relative;
-    top: 13vh;
+    top: 0;
     left: 0;
   }
 
@@ -211,10 +295,14 @@ const next = () => {
 
     .menu-wrapper {
       width: 28vw;
-      height: 100%;
+      height: 100vh;
       background: rgb(9, 31, 72);
       position: relative;
       padding-left: 3%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
 
       .close {
         width: 100px;
@@ -227,8 +315,8 @@ const next = () => {
         font-size: 25px;
         color: rgb(237, 236, 236);
         // background:red;
-        i{ 
-          color:white;
+        i {
+          color: white;
         }
 
         &:hover {
@@ -239,19 +327,18 @@ const next = () => {
 
       .menu-header {
         width: 95%;
-        height: 36vh;
+        height: 35vh;
         padding-top: 30px;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
         border-bottom: 2px solid orange;
-        overflow:hidden;
 
         .logo {
           width: fit-content;
-          height: 15vh;
+          height: 13vh;
           overflow: hidden;
           display: flex;
           justify-content: flex-start;
@@ -308,8 +395,8 @@ const next = () => {
 
       .services {
         width: 100%;
-        height: 62vh;
-        padding: 30px 0;
+        height: 65vh;
+        padding: 10px 0 20px 0;
         overflow: hidden;
         overflow-y: scroll;
         background: rgb(9, 31, 72);
@@ -418,8 +505,8 @@ const next = () => {
     align-items: center;
     z-index: 1;
     animation: popUp 1s 1 linear alternate forwards;
-    overflow:hidden;
-    overflow-y:scroll;
+    overflow: hidden;
+    overflow-y: scroll;
 
     .blurred-wrapper {
       opacity: 0.6;
@@ -518,7 +605,6 @@ const next = () => {
     width: 100%;
     height: fit-content;
     position: relative;
-    top: 13vh;
   }
 }
 
@@ -805,6 +891,7 @@ const next = () => {
         border-radius: 1px;
         overflow: hidden;
         border: 1px solid rgb(234, 236, 245);
+        cursor: pointer;
 
         .wrapper {
           width: 100%;
@@ -873,7 +960,7 @@ const next = () => {
 
           h2 {
             text-transform: capitalize;
-text-align: center;
+            text-align: center;
             font: 500 17px "Nunito Sans", sans-serif;
             padding: 10px 0;
           }
@@ -978,8 +1065,6 @@ text-align: center;
       }
     }
 
-
-
     @media screen and (max-width: 950px) {
       width: 95%;
     }
@@ -1044,25 +1129,23 @@ text-align: center;
   border-radius: 30px;
 }
 
-#__nuxt{
-  font-family: "Montserrat","Poppins", sans-serif;
+#__nuxt {
+  font-family: "Montserrat", "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  overflow:hidden;
-  overflow-y:scroll;
-  width:100vw;
-  height:fit-content;
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+  width: 100vw;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 * {
   transition: all 0.3s ease;
-  text-align:center;
-  font-family:"Montserrat","Poppins",sans-serif;
+  text-align: center;
+  font-family: "Montserrat", "Poppins", sans-serif;
 }
 
 html {

@@ -1,22 +1,16 @@
 <template>
   <div class="main">
     <div class="landing-page">
-      <div class="slider-wrapper">
-        <slider :images="dg_images" />
-      </div>
       <div class="content">
-        <h1>
-          biscam <br />
-          multi-purpose <br />
-          garage
-        </h1>
+        <h1>biscam multi-purpose garage</h1>
+        <p>Let us service your car</p>
         <button>
           <NuxtLink to="/contact-page">contact us</NuxtLink>
         </button>
       </div>
       <div class="image-wrapper">
         <div class="step-div">
-          <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
+          <!-- <img src="~/assets/flight/pana-biting.png" alt="" /> -->
         </div>
       </div>
     </div>
@@ -124,12 +118,14 @@
           <p><a href="tel: +237699391316"> Tel : +237699 391 316</a></p>
           <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
           <p>
-            <a href="mailto:garagebiscam@gmail.com">Email: garagebiscam@gmail.com</a>
+            <a href="mailto:garagebiscam@gmail.com"
+              >Email: garagebiscam@gmail.com</a
+            >
           </p>
           <button>
             <NuxtLink to="/contact-page">contact us</NuxtLink>
           </button>
-          <button @click="$store.state.appointment = true">
+          <button @click="($event) => (appointmentState = true)">
             book an appointment
           </button>
         </div>
@@ -138,42 +134,28 @@
     <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.476450402208!2d9.683616696410493!3d4.073660796947459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106112367afdf705%3A0x52e8d4cda626c755!2sBonassama%2C%20Bonab%C3%A9ri!5e0!3m2!1sen!2scm!4v1678543793445!5m2!1sen!2scm"
-        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen="true"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
     <div class="contact-container">
-      <contactForm whatsappLink="https://wa.link/rt49uv" whatsappTel="+237677387714" tel="+237699391316"
-        email="garagebiscam@gmail.com" />
+      <contactForm
+        whatsappLink="https://wa.link/rt49uv"
+        whatsappTel="+237677387714"
+        tel="+237699391316"
+        email="garagebiscam@gmail.com"
+      />
     </div>
   </div>
 </template>
-
 <script setup>
-import img from "~/assets/flight/artificial-lighting-employee-blue.jpg";
-import img1 from "~/assets/flight/auto-elect-pic.jpg";
-import img2 from "~/assets/flight/auto-elect-two.webp";
-import img3 from "~/assets/flight/mechanic-servicing-car.jpg";
-
-const dg_images = ref([
-  {
-    src: img,
-    title: "digital center one",
-  },
-  {
-    src: img1,
-    title: "digital center two",
-  },
-  {
-    src: img2,
-    title: "digital center three",
-  },
-  {
-    src: img3,
-    title: "digital center four",
-  },
-]);
-
+const appointmentState = useAppointmentState();
 </script>
+
 <style lang="scss" scoped>
 .main {
   width: 100vw;
@@ -186,6 +168,10 @@ const dg_images = ref([
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url(../assets/flight/mechanic-servicing-car.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 
     .slider-wrapper {
       width: 100vw;
@@ -193,62 +179,60 @@ const dg_images = ref([
     }
 
     .content {
-      width: 50%;
-      height: 90%;
+      width: 65%;
+      height: fit-content;
       padding: 10px;
-      position: absolute;
-      top: 10%;
-      left: 10%;
+      padding-left: 9%;
+      position: relative;
       display: flex;
       justify-content: space-evenly;
       align-items: flex-start;
       flex-direction: column;
+      gap: 20px;
 
       h1 {
-        font-size: 50px;
-        font-weight: 700;
-        white-space: pre-wrap;
+        font: 800 60px "Montserrat", "Nunito Sans", sans-serif;
+        letter-spacing: 1px;
         color: white;
         text-transform: uppercase;
         text-align: left;
+        padding: 0;
+        margin: 0;
+      }
+
+      p {
+        text-align: left;
+        color: white;
+        text-transform: capitalize;
+        padding: 10px;
+        letter-spacing: 1px;
       }
 
       button {
         width: 200px;
-        height: 40px;
+        height: 50px;
         background: rgb(241, 162, 42);
         border: none;
+        border-radius: 4px;
 
         a {
           text-decoration: none;
           color: white;
           text-transform: uppercase;
+          font: 600 18px "Nunito Sans", sans-serif;
         }
       }
     }
 
     .image-wrapper {
-      width: 40%;
+      width: 34%;
       height: fit-content;
-
-      position: absolute;
-      top: 10%;
-      right: 10%;
-      overflow: hidden;
-
-      .step-div {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+      position: relative;
 
       img {
-        width: 70%;
+        width: 80%;
         height: auto;
-        display: block;
+        animation: move 3s infinite linear alternate forwards;
       }
     }
   }
@@ -356,4 +340,5 @@ const dg_images = ref([
       width: 100vw;
     }
   }
-}</style>
+}
+</style>
