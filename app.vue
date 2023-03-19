@@ -5,7 +5,7 @@
     <div id="componentContainer">
       <NuxtPage data-aos="slide-left" />
     </div>
-
+    <NuxtLayout name="app-footer" />
     <div class="menu-container" v-if="menuState">
       <div class="blur-wrapper" @click="($event) => (menuState = false)"></div>
       <div :class="[{ 'is-active': menuState }, 'menu-wrapper']">
