@@ -18,7 +18,7 @@
       <h1>services we offer</h1>
       <p>Find out the amazing services we offer almost for free</p>
       <div class="flex-div">
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="~/assets/flight/car-programming.png" alt="" />
@@ -32,7 +32,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="~/assets/flight/auto-elect-two.webp" alt="" />
@@ -47,7 +47,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="~/assets/flight/car-wash.jpg" alt="" />
@@ -62,7 +62,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="~/assets/flight/download.jpg" alt="" />
@@ -77,7 +77,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="~/assets/flight/auto-elect-pic.jpg" alt="" />
@@ -92,7 +92,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
               <img src="~/assets/flight/pana-biting.png" alt="" />

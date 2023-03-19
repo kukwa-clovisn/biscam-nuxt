@@ -49,7 +49,7 @@
     <div class="services-div" id="services">
       <h1>our cleaning services</h1>
       <div class="flex-div">
-        <div class="flex-div-content" data-aos="slide-up">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="blur-wrapper">
             <img
               data-aos="slide-up"
@@ -75,7 +75,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="blur-wrapper">
             <img
               data-aos="slide-up"
@@ -101,7 +101,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="blur-wrapper">
             <img
               data-aos="slide-up"
@@ -127,7 +127,7 @@
             </button>
           </div>
         </div>
-        <div class="flex-div-content">
+        <div class="flex-div-content" data-aos="flip-left">
           <div class="blur-wrapper">
             <img
               data-aos="slide-up"

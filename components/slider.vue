@@ -4,7 +4,7 @@
       <el-carousel-item v-for="(image, index) in images" :key="index">
         <div class="blur-wrapper"></div>
 
-        <img class="carousel-image" :src="'../assets/flight/' + image" />
+        <img class="carousel-image" :src="image" />
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -14,7 +14,6 @@
 const props = defineProps({
   images: Array,
 });
-
 </script>
 
 

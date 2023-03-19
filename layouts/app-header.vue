@@ -215,7 +215,7 @@ header {
           }
         }
 
-        a.NuxtLink-active.NuxtLink-exact-active {
+        a.router-link-active.router-link-exact-active {
           color: rgb(233, 175, 14);
           padding: 5px;
           border-bottom: 2px solid rgb(250, 170, 20);
@@ -257,7 +257,7 @@ header {
           }
         }
 
-        @media screen and (max-width: 790px) {
+        @media screen and (max-width: 1000px) {
           background: transparent;
           color: rgb(34, 34, 34);
 
@@ -335,9 +335,9 @@ header {
           }
         }
 
-        @media screen and (max-width: 790px) {
+        @media screen and (max-width: 1000px) {
           flex-direction: row-reverse;
-          justify-content: space-between;
+          justify-content: space-evenly;
           padding-right: 5%;
 
           .header-wrapper-content-services-service.lg {
@@ -407,13 +407,9 @@ header {
           border: none;
           border-bottom: 1px solid rgb(183, 143, 10);
         }
-
-        @media screen and (max-width: 1025px) {
-          font-size: 11px;
-        }
       }
 
-      a.NuxtLink-active.NuxtLink-exact-active {
+      a.router-link-active.router-link-exact-active {
         color: rgb(233, 175, 14);
         padding: 5px;
         border-bottom: 2px solid rgb(250, 170, 20);
@@ -480,7 +476,7 @@ header {
         }
       }
 
-      @media screen and (max-width: 790px) {
+      @media screen and (max-width: 1000px) {
         flex-direction: row-reverse;
         justify-content: space-between;
         padding-right: 5%;

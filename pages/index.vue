@@ -303,30 +303,46 @@
 </template>
 
 <script setup>
+import maritime_zero from "assets/flight/offshore.jpg";
+import maritime_one from "assets/flight/boat-floating-sea.jpg";
+import maritime_two from "assets/flight/maritime-coast.jpg";
+import maritime_three from "assets/flight/import-export.jpg";
+import digital_zero from "assets/flight/digital-ideas.jpg";
+import digital_one from "assets/flight/empty-modern-creative-agency-office.jpg";
+import flightView from "assets/flight/airplane-sunset.jpg";
+import flightView1 from "assets/flight/airport-terminal.jpg";
+import maritimeView from "assets/flight/boat-floating-sea.jpg";
+import maritimeView1 from "assets/flight/maritime-coast.jpg";
+import garageView from "assets/flight/mechanic-servicing-car.jpg";
+import garageView1 from "assets/flight/artificial-lighting-employee-blue.jpg";
+import cleaningView from "assets/flight/black-woman-with-suitcase-airport.jpg";
+import cleaningView1 from "assets/flight/cleaning-equipments-1.jpg";
+import ecommerceView from "assets/flight/auto-elect-two.webp";
 const appointmentState = useAppointmentState();
 
 const HomeViewImages = ref([
-  "airplane-sunset.jpg",
-  "airport-terminal.jpg",
-  "boat-floating-sea.jpg",
-  "maritime-coast.jpg",
-  "mechanic-servicing-car.jpg",
-  "artificial-lighting-employee-blue.jpg",
-  "black-woman-with-suitcase-airport.jpg",
-  "office-cleaning.jpg",
-  "auto-elect-two.webp",
+  cleaningView,
+  maritime_three,
+  ecommerceView,
+  garageView,
+  maritimeView,
+  flightView,
+  digital_one,
+  cleaningView1,
+  garageView1,
+  maritimeView1,
+  flightView1,
 ]);
 const maritime_images = ref([
-  "~/assets/flight/airplane-sunset.jpg",
-  "port-pic.jpg",
-  "boat-floating-sea.jpg",
-  "maritime-coast.jpg",
+  maritimeView,
+  maritimeView1,
+  maritime_zero,
+  maritime_one,
+  maritime_two,
+  maritime_three,
 ]);
 
-const dg_images = ref([
-  "digital-ideas.jpg",
-  "empty-modern-creative-agency-office.jpg",
-]);
+const dg_images = ref([digital_zero, digital_one]);
 </script>
 <style lang="scss" scoped>
 .main {
@@ -387,7 +403,7 @@ const dg_images = ref([
             text-transform: capitalize;
             font-size: 20px;
             font-weight: 500;
-            color: rgb(210, 208, 208);
+            color: rgb(238, 238, 238);
             font-family: "Montserrat", "Nunito Sans", sans-serif;
             margin: 0;
           }
@@ -422,7 +438,7 @@ const dg_images = ref([
                   height: 35px;
                   padding: 0;
                   display: flex;
-                  color: rgb(232, 219, 201);
+                  color: rgb(231, 231, 231);
                   justify-content: flex-start;
                   align-items: center;
                   font: 500 19px "Poppins", "Nunito Sans", sans-serif;

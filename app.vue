@@ -272,7 +272,7 @@ const next = () => {
   }
 
   #componentContainer {
-    width: 100%;
+    width: 100vw;
     height: fit-content;
     position: relative;
     top: 0;
@@ -892,6 +892,7 @@ const next = () => {
         overflow: hidden;
         border: 1px solid rgb(234, 236, 245);
         cursor: pointer;
+        transition: all 0.3s ease-in;
 
         .wrapper {
           width: 100%;
@@ -1150,6 +1151,14 @@ const next = () => {
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 .cafe-mode {

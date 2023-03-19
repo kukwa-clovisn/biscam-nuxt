@@ -17,25 +17,21 @@
                   <label for="departure"
                     ><i class="fa-solid fa-plane"></i
                   ></label>
-                  <select
-                    name="departure"
-                    id="departure"
+
+                  <el-select
                     v-model="ticketBody.departure"
-                    required
-                  >
-                    <option value="Douala">Douala</option>
-                    <option value="Yaounde">Yaounde</option>
-                    <option value="Garoua">Garoua</option>
-                    <option value="Bamenda">Bamenda</option>
-                  </select>
-                  <!-- <input
-                    name="departure"
                     id="departure"
-                    type="text"
                     placeholder="Origin"
-                    v-model="ticketBody.departure"
-                    required
-                  /> -->
+                    size="large"
+                    class="form-select"
+                  >
+                    <el-option
+                      v-for="item in options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value"
+                    />
+                  </el-select>
                 </div>
               </div>
               <div class="form-data">
@@ -44,17 +40,20 @@
                   <label for="destination">
                     <i class="fa-solid fa-location-dot"></i>
                   </label>
-                  <select
-                    name="destination"
-                    id="destination"
+                  <el-select
                     v-model="ticketBody.destination"
-                    required
+                    id="destination"
+                    placeholder="Destination"
+                    size="large"
+                    class="form-select"
                   >
-                    <option value="Canada">Canada</option>
-                    <option value="Dubai">Dubai</option>
-                    <option value="UAE">UAE</option>
-                    <option value="Asia">Asia</option>
-                  </select>
+                    <el-option
+                      v-for="item in options"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value"
+                    />
+                  </el-select>
                 </div>
               </div>
               <div class="form-data">
@@ -112,16 +111,22 @@
             <div class="form-wrapper" v-if="stepTwo">
               <div class="form-data">
                 <label for="date">date</label>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                  placeholder="Select Date"
-                  required
-                />
+                <div class="form-input">
+                  <label for="date"><i class="fa-solid fa-date"></i></label>
+                  <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    placeholder="Select Date"
+                    required
+                  />
+                </div>
               </div>
               <div class="form-data">
                 <label for="time">time</label>
+                <div class="form-input">
+                  <label for="time"><i></i></label>
+                </div>
                 <input
                   type="time"
                   name="time"
@@ -131,7 +136,7 @@
               </div>
             </div>
 
-            <div class="form-wrpper" v-if="confirm">
+            <div class="form-wrapper" v-if="confirm">
               <h2>check your info before submitting</h2>
               <p>Departure: {{ ticketBody.departure }}</p>
               <p>Destination: {{ ticketBody.destination }}</p>
@@ -177,7 +182,7 @@
         whatsappLink="https://wa.link/290wme"
         whatsappTel="+237654213803"
         tel="+237683079785"
-        email="biscamcleaning@gmail.com"
+        email="biscamflight@gmail.com"
       />
     </div>
   </div>
@@ -191,6 +196,29 @@ const ticketBody = reactive({
   returnDate: "",
   passangers: 1,
 });
+
+const options = ref([
+  {
+    value: "Yaounde",
+    label: "Yaounde",
+  },
+  {
+    value: "Douala",
+    label: "Douala",
+  },
+  {
+    value: "Bamenda",
+    label: "Bamenda",
+  },
+  {
+    value: "Garoua",
+    label: "Garoua",
+  },
+  {
+    value: "Ngoundere",
+    label: "Ngoundere",
+  },
+]);
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
@@ -208,12 +236,21 @@ const phaseOne = (e) => {
     ticketBody.returnDate != "" &&
     ticketBody.passangers >= 1
   ) {
+    ElNotification.success({
+      title: "step one complete",
+      message: "Loading step two...",
+      offset: 100,
+    });
     active.value = 1;
     stepOne.value = false;
     stepTwo.value = true;
     confirm.value = false;
   } else {
-    alert("fill in the form correctly dude;");
+    ElNotification.warning({
+      title: "warning",
+      message: "fill in the form correctly dude",
+      offset: 100,
+    });
   }
 };
 
@@ -240,8 +277,6 @@ const submitForm = (e) => {
   .main-wrapper {
     width: 100%;
     height: fit-content;
-    padding: 30px 0;
-    padding-bottom: 0;
     background: url(../assets/flight/airport-terminal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -250,12 +285,16 @@ const submitForm = (e) => {
     .ticket-container {
       width: 100%;
       height: fit-content;
-      padding-top: 8vh;
+      padding-top: 12vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
 
       .ticket-wrapper {
         width: 85%;
         height: fit-content;
-        margin: 10px auto;
 
         h1 {
           padding: 10px 20px;
@@ -266,13 +305,14 @@ const submitForm = (e) => {
         }
 
         form {
-          width: 100%;
+          width: 90%;
           height: fit-content;
           background: white;
           border-radius: 1px;
           padding: 30px 20px;
           position: relative;
           z-index: 1;
+          margin: 0 auto;
 
           h1 {
             text-transform: uppercase;
@@ -334,15 +374,20 @@ const submitForm = (e) => {
                 }
 
                 input,
-                select {
+                select,
+                .el-input__wrapper {
                   width: 100%;
                   height: 45px;
                   outline: none;
-                  border: none;
                   padding: 10px 15px;
                   font-family: "Nunito sans", sans-serif;
                   color: rgb(58, 57, 57);
+                  box-shadow: none;
                 }
+              }
+
+              @media screen and (max-width: 800px) {
+                width: 90%;
               }
             }
           }
@@ -377,6 +422,10 @@ const submitForm = (e) => {
           to {
             transform: translateX(10px);
           }
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
         }
       }
 

@@ -128,11 +128,11 @@
       </div>
 
       <div id="categories">
-        <LazySpare-Part-All v-if="allParts" data-aos="slide-left" />
-        <LazySpare-Part-Keystarter v-if="keystarter" data-aos="slide-left" />
-        <LazySpare-Part-Manifold v-if="manifold" data-aos="slide-left" />
-        <LazySpare-Part-Engine v-if="engine" data-aos="slide-left" />
-        <LazySpare-Part-Shaft v-if="shaft" data-aos="slide-left" />
+        <LazySpare-Part-All v-if="allParts" data-aos="fade" />
+        <LazySpare-Part-Keystarter v-if="keystarter" data-aos="fade" />
+        <LazySpare-Part-Manifold v-if="manifold" data-aos="fade" />
+        <LazySpare-Part-Engine v-if="engine" data-aos="fade" />
+        <LazySpare-Part-Shaft v-if="shaft" data-aos="fade" />
       </div>
 
       <div class="category-display">

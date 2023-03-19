@@ -182,31 +182,19 @@
         whatsappLink="https://wa.link/290wme"
         whatsappTel="+237654213803"
         tel="+237683079785"
-        email="biscamcleaning@gmail.com"
+        email="biscamflight@gmail.com"
       />
     </div>
   </div>
 </template>
 
 <script setup>
-import img from "../assets/flight/airplane-sunset.jpg";
-import img1 from "../assets/flight/airport-terminal.jpg";
-import img2 from "../assets/flight/sky-plane.jpg";
+import img from "assets/flight/airplane-sunset.jpg";
+import img1 from "assets/flight/airport-terminal.jpg";
+import img2 from "assets/flight/sky-plane.jpg";
+import img3 from "assets/flight/black-woman-with-suitcase-airport.jpg";
 
-const dg_images = ref([
-  {
-    src: img,
-    title: "digital center one",
-  },
-  {
-    src: img1,
-    title: "digital center two",
-  },
-  {
-    src: img2,
-    title: "digital center three",
-  },
-]);
+const dg_images = ref([img, img1, img2, img3]);
 </script>
 
 <style lang="scss" scoped>
@@ -287,16 +275,20 @@ const dg_images = ref([
       button {
         width: 200px;
         height: 45px;
-        padding: 10px;
         background: rgb(241, 162, 42);
         border: none;
         border-radius: 4px;
 
         a {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color: white;
           text-decoration: none;
           text-transform: capitalize;
-          font-size: 11px;
+          font-size: 15px;
         }
       }
     }
