@@ -861,13 +861,13 @@ main {
           word-spacing: 5px;
           letter-spacing: 1px;
           text-align: left;
-          padding: 20px;
-          font: 700 50px "Montserrat", "Nunito Sans", sans-serif;
+          padding: 10px;
+          font: 700 40px "Montserrat", "Nunito Sans", sans-serif;
         }
 
         p {
           color: rgb(19, 16, 13);
-          padding: 20px;
+          padding: 10px;
           text-align: left;
         }
 
@@ -880,7 +880,7 @@ main {
           font: 700 20px "Poppins", sans-serif;
           width: max-content;
           height: max-content;
-          margin-left: 20px;
+          margin-left: 10px;
           color: rgb(19, 16, 13);
 
           &:hover {
