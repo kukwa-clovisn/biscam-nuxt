@@ -15,7 +15,7 @@
         <div class="menu-header">
           <div class="logo">
             <img
-              @click="($event) => $router.push('/')"
+              @click="($event) => navigateTo('/')"
               src="./assets/flight/logo_biscam-transparent.png"
               alt=""
             />
@@ -105,6 +105,7 @@
               <input
                 name="name"
                 type="text"
+                v-model="appointmentBody.name"
                 placeholder="Enter Your Name"
                 required
               />
@@ -114,6 +115,7 @@
               <input
                 type="email"
                 name="email"
+                v-model="appointmentBody.email"
                 id="email"
                 placeholder="Enter Your Email"
                 required
@@ -125,6 +127,7 @@
                 type="tel"
                 name="tel"
                 id="tel"
+                v-model="appointmentBody.tel"
                 placeholder="Enter You Phone Number"
               />
             </div>
@@ -134,17 +137,18 @@
             <div class="form-data">
               <label for="appointment-category">service</label>
               <el-select
-                v-model="appointmentBody.service"
-                id="destination"
+                v-model="appointmentBody.userService"
+                id="appointment-category"
                 placeholder="Choose Service"
                 size="large"
                 class="form-select"
+                name="appointmentService"
               >
                 <el-option
-                  v-for="service in services"
-                  :key="service.value"
-                  :label="service.label"
-                  :value="service.value"
+                  v-for="item in services"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
                 />
               </el-select>
             </div>
@@ -152,8 +156,9 @@
               <label for="date">date</label>
               <input
                 type="date"
-                name="date"
+                name="appointmentDate"
                 id="date"
+                v-model="appointmentBody.date"
                 placeholder="Select Date"
                 required
               />
@@ -162,30 +167,78 @@
               <label for="time">time</label>
               <input
                 type="time"
-                name="time"
+                name="appointmentTime"
                 id="time"
+                v-model="appointmentBody.time"
                 placeholder="Select Time"
               />
             </div>
+            <div class="form-data full-width">
+              <label for="appointment-message"
+                >Tell us about you appointment</label
+              ><textarea
+                name="appointmentMesaage"
+                id="appointment-message"
+                cols="30"
+                v-model="appointmentBody.message"
+                rows="10"
+                placeholder="Tell us about your appointment..."
+              ></textarea>
+            </div>
           </div>
 
-          <div class="form-wrpper" v-if="confirm">
-            <h2>check your info before submitting</h2>
-            <p>Name:</p>
-            <p>email:</p>
-            <p>tel:</p>
-            <p>date:</p>
-            <p>time:</p>
+          <div class="form-wrapper" v-if="confirm">
+            <p>
+              Name:<span> {{ appointmentBody.name }}</span>
+            </p>
+            <p>
+              email: <span>{{ appointmentBody.email }}</span>
+            </p>
+            <p>
+              tel: <span>{{ appointmentBody.tel }}</span>
+            </p>
+            <p>
+              date: <span>{{ appointmentBody.date }}</span>
+            </p>
+            <p>
+              time : <span>{{ appointmentBody.time }}</span>
+            </p>
+            <p>
+              service: <span>{{ appointmentBody.userService }}</span>
+            </p>
+            <p>
+              message: <span>{{ appointmentBody.message }}</span>
+            </p>
           </div>
 
-          <el-button class="form-button" @click="next" v-if="stepOne"
+          <el-button class="form-button" @click="phaseOne" v-if="stepOne"
             >Next step</el-button
           >
-          <el-button class="form-button" @click="next" v-if="stepTwo"
+          <el-button
+            class="form-button form-prev-button"
+            v-if="stepTwo"
+            @click="
+              ($event) => {
+                (stepOne = true), (stepTwo = false), (confirm = false);
+              }
+            "
+            >previous step</el-button
+          >
+          <el-button class="form-button" @click="phaseTwo" v-if="stepTwo"
             >Next step</el-button
           >
-          <el-button class="form-button" @click="next" v-if="confirm"
-            >Next step</el-button
+          <el-button
+            class="form-button form-prev-button"
+            v-if="confirm"
+            @click="
+              ($event) => {
+                (stepOne = false), (stepTwo = true), (confirm = false);
+              }
+            "
+            >previous step</el-button
+          >
+          <el-button class="form-button" @click="submitForm" v-if="confirm"
+            >book appointment</el-button
           >
         </form>
       </div>
@@ -235,9 +288,10 @@ const appointmentBody = reactive({
   name: "",
   email: "",
   tel: "",
-  service: "",
+  userService: "",
   date: "",
   time: "",
+  message: "",
 });
 
 const services = ref([
@@ -265,21 +319,81 @@ const appointmentState = useAppointmentState();
 const menuState = useMenuState();
 const active = ref(0);
 
-const next = () => {
-  if (active.value++ > 2) {
-    active.value = 0;
+const phaseOne = (e) => {
+  if (
+    appointmentBody.name != "" &&
+    appointmentBody.email != "" &&
+    appointmentBody.tel != ""
+  ) {
+    ElNotification.success({
+      title: "step one complete",
+      message: "Loading step two...",
+      offset: 100,
+    });
+    active.value = 1;
     stepOne.value = false;
     stepTwo.value = true;
     confirm.value = false;
-  } else if (stepTwo.value) {
-    confirm.value = true;
+  } else {
+    ElNotification.warning({
+      title: "Oooooooppppsss!!",
+      message:
+        "Make sure all input fields are filled correctly before proceeding.",
+      offset: 100,
+    });
+  }
+};
+
+const phaseTwo = (e) => {
+  if (
+    appointmentBody.date != "" &&
+    appointmentBody.time != "" &&
+    appointmentBody.userService != "" &&
+    appointmentBody.message != ""
+  ) {
+    active.value = 2;
     stepOne.value = false;
     stepTwo.value = false;
-  } else if (confirm.value) {
-    stepOne.value = true;
-    stepTwo.value = false;
-    confirm.value = false;
+    confirm.value = true;
+    ElNotification.success({
+      title: "Step Two Complete",
+      message: "Assembling Your Info..",
+      offset: 100,
+    });
+  } else {
+    ElNotification.warning({
+      title: "Oooooooppppsss!!",
+      message:
+        "Make sure all input fields are filled correctly before proceeding.",
+      offset: 100,
+    });
   }
+};
+
+const submitForm = (e) => {
+  active.value = 0;
+
+  ElMessageBox.alert(
+    "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
+    "Appointment Submitted",
+    {
+      // if you want to disable its autofocus
+      // autofocus: false,
+      confirmButtonText: "OK",
+      callback: (action) => {
+        appointmentState.value = false;
+        appointmentBody.name = "";
+        appointmentBody.email = "";
+        appointmentBody.tel = "";
+        appointmentBody.date = "";
+        appointmentBody.time = "";
+        appointmentBody.userService = "";
+        stepOne.value = true;
+        stepTwo.value = false;
+        confirm.value = false;
+      },
+    }
+  );
 };
 </script>
 
@@ -562,7 +676,7 @@ const next = () => {
 
       form {
         width: 90%;
-        height: 90vh;
+        height: 95vh;
         background: white;
         border-radius: 5px;
         padding: 10px 20px;
@@ -603,14 +717,16 @@ const next = () => {
         }
 
         .form-wrapper {
-          width: 90%;
-          height: 33vh;
-          background: #ececec;
+          width: 95%;
+          height: 36vh;
+          background: #f5f5f5;
+          background: rgb(6, 46, 105);
           margin: 10px auto;
           border-radius: 5px;
           overflow: hidden;
           overflow-y: scroll;
           padding: 10px 20px;
+          box-shadow: 0 0 10px 3px rgb(190, 190, 190);
 
           display: flex;
           justify-content: space-between;
@@ -626,6 +742,7 @@ const next = () => {
               display: block;
               text-align: left;
               padding: 3px;
+              color: white;
               font: 400 16px "Montserrat", "Nunito Sans", sans-serif;
               text-transform: capitalize;
             }
@@ -634,27 +751,77 @@ const next = () => {
               width: 100%;
               height: 40px;
               outline: none;
-              border: 1px solid rgb(200, 200, 200);
+              border: none;
+              border: 1px solid rgb(235, 235, 235);
               text-align: left;
               padding: 0 0 0 10px;
               border-radius: 1px;
               background: rgb(240, 240, 240);
               background: white;
+              color: rgb(54, 54, 54);
+            }
+            textarea {
+              width: 100%;
+              height: 90px;
+              border: none;
+              background: white;
+              text-align: left;
+              outline: none;
+              border: 1px solid rgb(235, 235, 235);
+              padding: 15px 0 15px 10px;
+
+              &:hover {
+                height: 100px;
+              }
+
+              &:active,
+              &:focus {
+                height: 100px;
+              }
+            }
+          }
+          .full-width {
+            width: 100%;
+          }
+
+          p {
+            width: 48%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            text-transform: capitalize;
+            color: rgb(235, 235, 235);
+
+            span {
+              font-weight: 700;
+              text-transform: none;
+              color: white;
             }
           }
         }
         .form-button {
-          width: 150px;
+          width: 250px;
           height: 45px;
           border-radius: 30px;
           margin: 20px auto;
+          margin-right: 15px;
+          padding: 0 20px;
           color: white;
+          text-transform: capitalize;
           transition: all 0.3s ease;
           background: repeating-linear-gradient(
             to bottom right,
             rgb(26, 84, 135),
             rgb(6, 46, 105),
             rgb(20, 67, 132)
+          );
+        }
+        .form-button.form-prev-button {
+          background: repeating-linear-gradient(
+            to bottom right,
+            rgb(193, 126, 3),
+            rgb(221, 144, 2)
           );
         }
       }
@@ -1207,6 +1374,7 @@ const next = () => {
   transition: all 0.3s ease;
   text-align: center;
   font-family: "Montserrat", "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 html {
