@@ -96,6 +96,9 @@
             <el-step title="Step 2" />
             <el-step title="Step 3" />
           </el-steps>
+          <h2 v-if="stepOne">Personal info</h2>
+          <h2 v-if="stepTwo">appointment category</h2>
+          <h2 v-if="confirm">Your appointment details</h2>
           <div class="form-wrapper" v-if="stepOne">
             <div class="form-data">
               <label for="name">Name:</label>
@@ -129,6 +132,23 @@
 
           <div class="form-wrapper" v-if="stepTwo">
             <div class="form-data">
+              <label for="appointment-category">service</label>
+              <el-select
+                v-model="appointmentBody.service"
+                id="destination"
+                placeholder="Choose Service"
+                size="large"
+                class="form-select"
+              >
+                <el-option
+                  v-for="service in services"
+                  :key="service.value"
+                  :label="service.label"
+                  :value="service.value"
+                />
+              </el-select>
+            </div>
+            <div class="form-data">
               <label for="date">date</label>
               <input
                 type="date"
@@ -158,13 +178,13 @@
             <p>time:</p>
           </div>
 
-          <el-button style="margin-top: 12px" @click="next" v-if="stepOne"
+          <el-button class="form-button" @click="next" v-if="stepOne"
             >Next step</el-button
           >
-          <el-button style="margin-top: 12px" @click="next" v-if="stepTwo"
+          <el-button class="form-button" @click="next" v-if="stepTwo"
             >Next step</el-button
           >
-          <el-button style="margin-top: 12px" @click="next" v-if="confirm"
+          <el-button class="form-button" @click="next" v-if="confirm"
             >Next step</el-button
           >
         </form>
@@ -189,7 +209,7 @@ useHead({
     {
       rel: "icon",
       type: "image/png",
-      href: "./assets/biscam-logo.png",
+      href: "/logo.png",
     },
     {
       href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
@@ -211,22 +231,33 @@ useHead({
   ],
 });
 
-onBeforeMount(() => {
-  window.addEventListener("scroll", handleScroll);
+const appointmentBody = reactive({
+  name: "",
+  email: "",
+  tel: "",
+  service: "",
+  date: "",
+  time: "",
 });
 
-const headerActive = useHeaderState();
-
-const handleScroll = (e) => {
-  if (window.scrollY >= 30) {
-    headerActive.value = true;
-  }
-};
-
-// onMounted(() => {
-//   window.removeEventListener("scroll", handleScroll);
-// });
-
+const services = ref([
+  {
+    label: "Car Repair",
+    value: "Car Repair",
+  },
+  {
+    label: "Flight",
+    value: "Flight",
+  },
+  {
+    label: "Maritime",
+    value: "Maritime",
+  },
+  {
+    label: "Spare Part",
+    value: "Spare Part",
+  },
+]);
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
@@ -500,21 +531,22 @@ const next = () => {
     position: fixed;
     top: 0;
     left: 0;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
     animation: popUp 1s 1 linear alternate forwards;
     overflow: hidden;
-    overflow-y: scroll;
 
     .blurred-wrapper {
       opacity: 0.6;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       background: rgb(31, 31, 31);
       cursor: pointer;
       z-index: 1;
@@ -530,13 +562,14 @@ const next = () => {
 
       form {
         width: 90%;
-        height: fit-content;
+        height: 90vh;
         background: white;
         border-radius: 5px;
-        padding: 30px 20px;
+        padding: 10px 20px;
         position: relative;
         box-shadow: 0px 0px 10px 5px rgb(39, 39, 39);
         z-index: 1;
+        overflow: hidden;
 
         button.close {
           position: absolute;
@@ -562,40 +595,67 @@ const next = () => {
         h1 {
           text-transform: uppercase;
           padding: 20px 10px;
-          font: 700 35px "Montserrat", sans-serif;
+          font: 900 30px "Montserrat", sans-serif;
+        }
+        h2 {
+          text-transform: capitalize;
+          font: 700 19px "Montserrat", "Nunito Sans", sans-serif;
         }
 
         .form-wrapper {
           width: 90%;
-          height: fit-content;
+          height: 33vh;
+          background: #ececec;
           margin: 10px auto;
+          border-radius: 5px;
+          overflow: hidden;
+          overflow-y: scroll;
+          padding: 10px 20px;
 
           display: flex;
-          justify-content: space-evenly;
+          justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
           gap: 15px;
 
           .form-data {
-            width: 300px;
+            width: 45%;
             height: fit-content;
 
             label {
               display: block;
               text-align: left;
-              padding: 5px 0;
+              padding: 3px;
+              font: 400 16px "Montserrat", "Nunito Sans", sans-serif;
               text-transform: capitalize;
             }
 
             input {
               width: 100%;
-              height: 45px;
+              height: 40px;
               outline: none;
-              border: 1px solid black;
-              padding: 10px 15px;
-              border-radius: 4px;
+              border: 1px solid rgb(200, 200, 200);
+              text-align: left;
+              padding: 0 0 0 10px;
+              border-radius: 1px;
+              background: rgb(240, 240, 240);
+              background: white;
             }
           }
+        }
+        .form-button {
+          width: 150px;
+          height: 45px;
+          border-radius: 30px;
+          margin: 20px auto;
+          color: white;
+          transition: all 0.3s ease;
+          background: repeating-linear-gradient(
+            to bottom right,
+            rgb(26, 84, 135),
+            rgb(6, 46, 105),
+            rgb(20, 67, 132)
+          );
         }
       }
     }
@@ -1159,6 +1219,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .cafe-mode {

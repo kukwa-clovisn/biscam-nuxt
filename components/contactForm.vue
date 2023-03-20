@@ -5,21 +5,20 @@
       make business with us! <i class="fa-solid fa-arrow-down"></i>
     </h1>
     <div class="content">
-      <div class="left-content">
-        <form class="contact-form" id="contact">
-          <h1>contact us now</h1>
-          <p>Contact us directly:</p>
-          <div class="direct-contacts">
-            <a :href="'tel:' + tel" title="give us a call"
-              ><i class="fa-solid fa-phone"></i> {{ tel }}</a
-            >
-            <a :href="'mailto:' + email" title="send us an email"
-              ><i class="fa-solid fa-envelope"></i> {{ email }}</a
-            >
-            <a :href="whatsappLink" title="chat with us on whatsapp"
-              ><i class="fa-brands fa-whatsapp"></i> {{ whatsappTel }}</a
-            >
-          </div>
+      <form class="contact-form" id="contact">
+        <p>Contact us directly:</p>
+        <div class="direct-contacts">
+          <a :href="'tel:' + tel" title="give us a call"
+            ><i class="fa-solid fa-phone"></i> {{ tel }}</a
+          >
+          <a :href="'mailto:' + email" title="send us an email"
+            ><i class="fa-solid fa-envelope"></i> {{ email }}</a
+          >
+          <a :href="whatsappLink" title="chat with us on whatsapp"
+            ><i class="fa-brands fa-whatsapp"></i> {{ whatsappTel }}</a
+          >
+        </div>
+        <div class="form-data-wrapper">
           <div class="form-data">
             <label for="name">name</label>
             <input type="text" placeholder="Enter Name..." id="name" required />
@@ -37,84 +36,23 @@
             <label for="tel">tel</label>
             <input type="tel" placeholder="Enter tel..." id="tel" required />
           </div>
-          <div class="form-data">
+          <div class="form-data full-width">
             <label for="message">message</label>
             <textarea
               name="message"
               id="message"
               cols="30"
-              rows="10"
+              rows="5"
               placeholder="Leave a message...."
               required
             ></textarea>
           </div>
-          <div class="form-button">
+          <div class="form-button full-width">
             <button type="submit" class="hover-animation">submit</button>
           </div>
-        </form>
-      </div>
-      <div class="right-content">
-        <div class="media-links">
-          <h1>connect with biscam</h1>
-          <div class="links">
-            <div class="link"><i class="fa-solid fa-phone"></i></div>
-            <div class="link"><i class="fa-brands fa-whatsapp"></i></div>
-            <div class="link"><i class="fa-brands fa-facebook"></i></div>
-          </div>
-          <h2>useful links</h2>
-          <div class="nav-links">
-            <nav>
-              <NuxtLink to="/car-repairs"
-                >car repair <i class="fa-solid fa-arrow-right"></i
-              ></NuxtLink>
-            </nav>
-
-            <nav>
-              <NuxtLink to="/maritime"
-                >maritime <i class="fa-solid fa-arrow-right"></i
-              ></NuxtLink>
-            </nav>
-
-            <nav>
-              <NuxtLink to="/flight"
-                >flight <i class="fa-solid fa-arrow-right"></i
-              ></NuxtLink>
-            </nav>
-
-            <nav>
-              <NuxtLink to="/cleaning-agency"
-                >cleaning agency <i class="fa-solid fa-arrow-right"></i
-              ></NuxtLink>
-            </nav>
-            <nav>
-              <NuxtLink to="/spare-part"
-                >spare part <i class="fa-solid fa-arrow-right"></i
-              ></NuxtLink>
-            </nav>
-            <nav>
-              <NuxtLink to="/about-us"
-                >about us <i class="fa-solid fa-arrow-right"></i
-              ></NuxtLink>
-            </nav>
-
-            <nav>
-              <NuxtLink to="#contact"
-                >contact <i class="fa-solid fa-arrow-right"></i>
-              </NuxtLink>
-            </nav>
-            <button
-              class="appointment hover-animation"
-              @click="(event) => (appointmentState = true)"
-            >
-              book an appointment <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
         </div>
-      </div>
+      </form>
     </div>
-    <footer>
-      <span>YUHAZON COMPANY</span> Copyright 2023 All rights reserved.
-    </footer>
   </div>
 </template>
 
@@ -125,8 +63,6 @@ const props = defineProps({
   tel: String,
   email: String,
 });
-
-const appointmentState = useAppointmentState();
 </script>
 
 <style lang="scss" scoped>
@@ -135,7 +71,7 @@ const appointmentState = useAppointmentState();
   height: fit-content;
   margin: 0;
   background: #0e066a;
-  padding: 30px 10px;
+  padding: 30px 0;
   padding-bottom: 0;
   background: url(../assets/flight/team-work.jpg);
   background-repeat: no-repeat;
@@ -143,353 +79,211 @@ const appointmentState = useAppointmentState();
   position: relative;
 
   .heading-1 {
-    color: rgb(255, 249, 241);
-    padding: 20px;
+    color: white;
     text-transform: capitalize;
-    font: 600 26px "Montserrat", "Nunito Sans", sans-serif;
+    font-weight: 600;
     position: relative;
-  }
 
+    @media screen and (max-width: 600px) {
+      font-size: 15px;
+    }
+  }
   .content {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 30px 10px;
     position: relative;
+    margin: 0;
+    padding: 0;
 
-    .left-content {
-      width: 45%;
-      height: 100%;
-      padding: 30px 20px;
-      border-radius: 3px;
-      background: rgb(255, 255, 255);
+    .contact-form {
+      width: 80%;
+      height: fit-content;
+      padding: 20px 0;
 
-      .contact-form {
-        width: 100%;
-        height: fit-content;
-        padding: 20px 0;
-
-        h1 {
-          padding: 10px;
-          text-transform: capitalize;
-          text-align: left;
-          color: rgb(243, 164, 17);
-          font-family: "Montserrat", "Poppins", sans-serif;
-          font-size: 40px;
-          font-weight: 700;
-        }
-
-        p {
-          text-transform: capitalize;
-          padding: 20px 10px;
-          color: rgb(214, 140, 3);
-          font: 600 17px "Montserrat", "Poppins", sans-serif;
-        }
-
-        .direct-contacts {
-          width: 96%;
-          height: fit-content;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 10px 5px;
-
-          a {
-            text-decoration: none;
-            color: rgb(63, 63, 63);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 5px;
-            font: 500 12px "Montserrat", "Nunito Sans", sans-serif;
-            padding: 5px;
-
-            &:hover {
-              border-bottom: 3px solid rgb(208, 137, 5);
-              color: rgb(225, 154, 1);
-            }
-          }
-        }
-
-        .form-data {
-          width: 96%;
-          height: fit-content;
-          margin: 20px auto;
-
-          label {
-            padding: 10px 20px 4px 2px;
-            text-transform: uppercase;
-            color: rgb(241, 162, 42);
-            text-align: left;
-            margin: 0;
-            display: block;
-          }
-
-          input {
-            width: 94%;
-            height: 45px;
-            outline: none;
-
-            border: 1px solid rgb(221, 163, 2);
-
-            padding: 10px 16px;
-            font-size: 15px;
-            border-radius: 4px;
-            background: transparent;
-            color: rgb(122, 121, 121);
-          }
-
-          textarea {
-            width: 94%;
-            height: 200px;
-            padding: 20px;
-            outline: none;
-            font-size: 16px;
-            border-radius: 2px;
-            color: rgb(156, 156, 156);
-            background: transparent;
-            border: none;
-            border: 1px solid rgb(221, 163, 2);
-          }
-        }
-
-        .form-button {
-          width: 95%;
-          height: fit-content;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin: 10px auto;
-
-          button {
-            width: 45%;
-            height: 48px;
-            cursor: pointer;
-            border-radius: 2px;
-            font-size: 17px;
-            text-transform: uppercase;
-            padding: 5px;
-            position: relative;
-            overflow: hidden;
-            border: none;
-            background: rgb(249, 163, 42);
-            color: white;
-
-            &:hover {
-              background: rgb(21, 77, 122);
-              color: white;
-            }
-          }
-        }
-      }
-    }
-
-    .right-content {
-      width: 30%;
-      height: 100%;
-      background: rgb(15, 48, 109);
-      border-radius: 5px;
-
-      .media-links {
-        width: 100%;
-        height: fit-content;
-        padding: 10px;
-
-        h1 {
-          text-transform: uppercase;
-          padding: 20px;
-          text-align: left;
-          color: rgb(249, 163, 42);
-          line-height: 55px;
-          font: 600 22px "Montserrat", "Poppins", sans-serif;
-        }
-
-        .links {
-          width: 80%;
-          height: fit-content;
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-          flex-wrap: wrap;
-          margin: 10px 0;
-
-          .link {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 100%;
-            background: rgb(250, 222, 169);
-            cursor: pointer;
-
-            i {
-              font-size: 23px;
-              color: rgb(40, 39, 39);
-            }
-
-            &:hover {
-              i {
-                transform: scale(1.1);
-              }
-            }
-          }
-        }
-      }
-
-      h2 {
-        color: rgb(254, 176, 68);
-        padding: 20px;
-        text-align: left;
+      p {
         text-transform: capitalize;
-        font: 500 19px "Nunito Sans", sans-serif;
+        padding: 20px 10px;
+        color: rgb(220, 220, 220);
+        font: 600 17px "Montserrat", "Poppins", sans-serif;
       }
 
-      .nav-links {
-        width: 80%;
+      .direct-contacts {
+        width: 90%;
         height: fit-content;
-        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px auto;
 
-        nav {
-          width: 100%;
-          margin: 5px auto;
-          padding: 10px;
-
-          a {
-            color: white;
-            text-transform: uppercase;
-            text-align: left;
-            text-decoration: none;
-            font-family: "Montserrat", "Poppins", sans-serif;
-            letter-spacing: 1px;
-            font: 600 16px "Nunito Sans", sans-serif;
-            height: fit-content;
-            display: block;
-
-            i {
-              color: rgb(240, 142, 22);
-              font-size: 14px;
-              visibility: hidden;
-            }
-          }
+        a {
+          text-decoration: none;
+          color: rgb(253, 253, 253);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 5px;
+          font: 500 12px "Montserrat", "Nunito Sans", sans-serif;
+          padding: 5px;
 
           &:hover {
-            a {
-              color: rgb(241, 162, 42);
+            border-bottom: 3px solid rgb(208, 137, 5);
+            color: rgb(252, 232, 188);
+          }
+        }
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          a {
+            font-size: 9px;
+          }
+        }
+      }
+      .form-data-wrapper {
+        width: 90%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
 
-              i {
-                color: rgb(241, 162, 42);
-                visibility: visible;
-              }
-            }
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+      .form-data {
+        width: 47%;
+        height: fit-content;
+        margin-bottom: 10px;
+
+        label {
+          padding: 10px 20px 4px 2px;
+          text-transform: capitalize;
+          font-weight: 600;
+          color: rgb(234, 234, 234);
+          text-align: left;
+          margin: 0;
+          display: block;
+        }
+
+        input {
+          width: 100%;
+          height: 45px;
+          outline: none;
+          text-align: left;
+          border: none;
+          border-bottom: 1px solid rgb(187, 187, 187);
+          display: block;
+          margin: 0;
+          font-size: 15px;
+          background: transparent;
+          color: rgb(203, 201, 201);
+          font-weight: 500;
+          &:hover {
+            border-left: 5px solid rgb(10, 103, 232);
+          }
+          &:active {
+            border-left: 5px solid rgb(239, 101, 2);
+          }
+          &:focus {
+            background: white;
+            padding: 0 10px;
+            color: rgb(28, 28, 28);
+            border-left: 5px solid orange;
           }
         }
 
-        .appointment {
-          width: 80%;
-          height: 45px;
-          border-radius: 5px;
+        textarea {
+          width: 100%;
+          height: 50px;
+          padding: 20px 0;
+          outline: none;
+          text-align: left;
+          font-size: 16px;
+          border-radius: 2px;
+          color: rgb(232, 232, 232);
+          background: transparent;
           border: none;
-          background: rgb(227, 149, 4);
-          color: rgb(229, 244, 254);
-          margin: 10px 0;
-          text-transform: capitalize;
-          font: 600 15px "Nunito Sans", sans-serif;
-
-          i {
-            visibility: hidden;
-          }
+          border-bottom: 1px solid rgb(229, 229, 229);
 
           &:hover {
-            i {
-              visibility: visible;
-            }
+            height: 80px;
+          }
 
-            background: rgb(11, 55, 120);
-            box-shadow: 0 0 5px 5px rgb(13, 45, 80);
+          &:active,
+          &:focus {
+            background: white;
+            color: rgb(28, 28, 28);
+            padding: 0 10px;
+            height: 100px;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+        }
+      }
+
+      .full-width {
+        width: 100%;
+      }
+
+      .form-button {
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px auto;
+
+        button {
+          width: 100%;
+          height: 50px;
+          padding: 0 10px;
+          cursor: pointer;
+          border-radius: 32px;
+          font-size: 17px;
+          text-transform: uppercase;
+          padding: 5px;
+          position: relative;
+          overflow: hidden;
+          border: none;
+          background: transparent;
+          border: 1px solid white;
+          color: white;
+
+          &:hover {
+            transform: none;
+            background: rgb(218, 145, 0);
+            color: white;
+            border: none;
           }
         }
       }
     }
 
     @media screen and (max-width: 900px) {
-      flex-direction: column;
-      gap: 30px;
-      .left-content,
-      .right-content {
-        width: 95%;
-
-        @media screen and (max-width: 400px) {
-          width: 100%;
+      .contact-form {
+        h1 {
+          text-align: center;
+          font-size: 40px;
         }
-      }
 
-      .left-content {
-        .contact-form {
-          h1 {
-            text-align: center;
-            font-size: 40px;
-          }
+        .form-button {
+          @media screen and (max-width: 500px) {
+            flex-direction: column;
 
-          .form-button {
-            @media screen and (max-width: 500px) {
-              flex-direction: column;
-
-              button {
-                width: 100%;
-                margin: 15px auto;
-              }
+            button {
+              width: 100%;
+              margin: 15px auto;
             }
           }
         }
       }
-
-      .right-content {
-        padding-top: 30px;
-
-        .media-links {
-          h1 {
-            text-align: center;
-            font-size: 40px;
-          }
-        }
-
-        h2 {
-          text-align: center;
-          padding: 20px 10px;
-        }
-
-        .nav-links {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          flex-wrap: wrap;
-          gap: 20px;
-
-          nav {
-            width: 300px;
-          }
-        }
-      }
-    }
-  }
-
-  footer {
-    width: 100%;
-    height: fit-content;
-    padding: 10px;
-    background: #ececec;
-    font-weight: 600;
-    position: relative;
-
-    span {
-      padding-right: 20px;
     }
   }
 }

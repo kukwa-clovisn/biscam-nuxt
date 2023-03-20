@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div :class="[{ 'show-header': headerActive }, 'header-wrapper']">
+    <div class="header-wrapper">
       <div class="logo-wrapper">
         <div class="logo-image-wrapper">
           <img src="../assets/biscam-logo.png" alt="" />
@@ -66,65 +66,11 @@
         </div>
       </div>
     </div>
-    <div :class="[{ 'hide-header': headerActive }, 'header-container']">
-      <div class="header-wrapper-content">
-        <div class="header-wrapper-content-services">
-          <div class="header-wrapper-content-services-service lg">
-            <button class="header-route">
-              <NuxtLink to="/" class="route">Home</NuxtLink>
-            </button>
-          </div>
-          <div class="header-wrapper-content-services-service lg">
-            <button class="header-route">
-              <NuxtLink to="/car-repairs" class="route"> car repair </NuxtLink>
-            </button>
-          </div>
-          <div class="header-wrapper-content-services-service lg">
-            <button class="header-route">
-              <NuxtLink to="/maritime" class="route"> maritime </NuxtLink>
-            </button>
-          </div>
-          <div class="header-wrapper-content-services-service lg">
-            <button class="header-route">
-              <NuxtLink to="/flight" class="route"> flight </NuxtLink>
-            </button>
-          </div>
-          <div class="header-wrapper-content-services-service lg">
-            <button class="header-route">
-              <NuxtLink
-                to="/cleaning-agency"
-                class="route"
-                title="Biscam cleaning agency"
-              >
-                cleaning agency
-              </NuxtLink>
-            </button>
-          </div>
-          <div class="header-wrapper-content-services-service lg">
-            <button class="header-route">
-              <NuxtLink
-                to="/Spare-Part"
-                class="route"
-                title="Biscam car spare parts"
-              >
-                spare part
-              </NuxtLink>
-            </button>
-          </div>
-          <div class="menu-button-wrapper">
-            <button @click="($event) => (menuState = true)">
-              <i class="fa-solid fa-align-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
   </header>
 </template>
 <script setup>
 const appointmentState = useAppointmentState();
 const menuState = useMenuState();
-const headerActive = useHeaderState();
 </script>
 
 <style lang="scss" scoped>
@@ -142,7 +88,7 @@ header {
   .header-wrapper {
     width: 100%;
     height: 13vh;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background: #ffffff;
@@ -357,155 +303,6 @@ header {
           }
         }
       }
-    }
-  }
-  .header-wrapper.show-header {
-    display: flex;
-    animation: slide_down 1s linear 1 alternate forwards;
-  }
-
-  .header-container {
-    width: 80%;
-    height: 13vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    box-shadow: 0px 0px 2px 1px rgb(237, 237, 237);
-    border-bottom: 1px solid rgb(221, 219, 219);
-
-    .header-wrapper-content {
-      width: 100%;
-      height: 100%;
-    }
-    button.header-route {
-      background: inherit;
-      border: none;
-      width: 100%;
-      height: 100%;
-      display: block;
-      margin: 0;
-      position: relative;
-      overflow: hidden;
-
-      a.route {
-        text-decoration: none;
-        color: rgb(11, 30, 63);
-        font-weight: 600;
-        font-size: 14px;
-        text-transform: capitalize;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "Montserrat", "Nunito Sans", sans-serif;
-        position: relative;
-
-        &:hover {
-          color: rgb(227, 172, 21);
-          border: none;
-          border-bottom: 1px solid rgb(183, 143, 10);
-        }
-      }
-
-      a.router-link-active.router-link-exact-active {
-        color: rgb(233, 175, 14);
-        padding: 5px;
-        border-bottom: 2px solid rgb(250, 170, 20);
-      }
-
-      @keyframes hovering {
-        from {
-          width: 0;
-        }
-
-        to {
-          width: 100%;
-        }
-      }
-    }
-    .header-wrapper-content-services {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      gap: 15px;
-
-      .header-wrapper-content-services-service {
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        width: max-content;
-        padding: 5px;
-        height: 70%;
-      }
-
-      .menu-button-wrapper {
-        height: 100%;
-
-        button {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          border: none;
-          background: transparent;
-
-          i {
-            font-size: 30px;
-            color: rgb(13, 31, 64);
-          }
-
-          &:hover {
-            color: rgb(230, 161, 3);
-          }
-        }
-
-        @media screen and (max-width: 1000px) {
-          display: block;
-
-          @media screen and (max-width: 768px) {
-            width: 30%;
-          }
-        }
-      }
-
-      @media screen and (max-width: 1000px) {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        padding-right: 5%;
-
-        .header-wrapper-content-services-service.lg {
-          display: none;
-        }
-      }
-    }
-  }
-  .header-container.hide-header {
-    display: none;
-    animation: slide_up 1s 1 linear alternate forwards;
-  }
-
-  @keyframes slide_up {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-100%);
-    }
-  }
-  @keyframes slide_down {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
     }
   }
 }

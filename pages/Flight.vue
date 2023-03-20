@@ -501,7 +501,7 @@ const dg_images = ref([img, img1, img2, img3]);
   }
 
   .address-container {
-    background: url(~assets/flight/airplane-sunset.jpg);
+    background: url(../assets/flight/airplane-sunset.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

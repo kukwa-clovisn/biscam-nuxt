@@ -5,7 +5,7 @@
         <div class="info">
           <h1>Biscam spare part agency</h1>
           <p>Purchase you car spare parts now</p>
-          <a href="http://">shop now</a>
+          <a href="https://wa.link/rt49uv">shop now</a>
         </div>
         <div class="image">
           <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
@@ -23,7 +23,7 @@
             <div class="info">
               <h2>engine block</h2>
               <p>available</p>
-              <a href="http://">shop now</a>
+              <a href="https://wa.link/rt49uv">shop now</a>
             </div>
           </div>
           <div class="content">
@@ -33,7 +33,7 @@
             <div class="info">
               <h2>car key starter</h2>
               <p>available</p>
-              <a href="http://">shop now</a>
+              <a href="https://wa.link/rt49uv">shop now</a>
             </div>
           </div>
           <div class="content">
@@ -46,7 +46,7 @@
             <div class="info">
               <h2>manifold</h2>
               <p>available</p>
-              <a href="http://">shop now</a>
+              <a href="https://wa.link/rt49uv">shop now</a>
             </div>
           </div>
           <div class="content">
@@ -202,9 +202,9 @@
             <p data-aos="slide-up">
               contact us to find more of our available and quality products.
             </p>
-            <a href="http://" data-aos="flip-left">shop now</a>
+            <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now</a>
           </div>
-          <div class="right-content" data-aos="flip-left"></div>
+          <div class="right-content" data-aos="slide-left"></div>
         </div>
       </div>
       <div class="product-body">
@@ -654,15 +654,15 @@
       <div class="link-container" data-aos="flip-left">
         <div class="wrapper">
           <div class="blur-wrapper"></div>
-          <h1 data-aos="slife-right">
-            tons of spare part products to <br />
-            <span dtat-aos="flip-left">shop</span>
-          </h1>
+          <h1 data-aos="slife-right">Find spare parts for all cars you want</h1>
           <p data-aos="fade-up">
             Browse our amazing spare part store and find the product that suits
             your need
           </p>
-          <a href="http://" data-aos="flip-right" class="hover-animation"
+          <a
+            href="https://wa.link/rt49uv"
+            data-aos="flip-right"
+            class="hover-animation"
             >shop now</a
           >
         </div>
@@ -676,11 +676,12 @@
             <a href="https://wa.link/rt49uv">
               <i class="fa-brands fa-whatsapp"> </i> +237677387714
             </a>
-            <a href="mailto:garagebiscam@gmail.com"
-              ><i class="fa-solid fa-envelope"></i> garagebiscam@gmail.com</a
-            >
+
             <a href="tel:+237695569565"
               ><i class="fa-solid fa-phone"></i> +237695569565</a
+            >
+            <a href="mailto:garagebiscam@gmail.com"
+              ><i class="fa-solid fa-envelope"></i> garagebiscam@gmail.com</a
             >
           </div>
         </div>
@@ -1268,19 +1269,21 @@ main {
     .advert-container {
       width: 100%;
       height: fit-content;
-      background: #ffffff;
+
+      margin: 0;
 
       .wrapper {
         width: 100%;
         height: 100%;
-        padding: 20px 0;
         display: flex;
         justify-content: center;
         align-items: center;
+        background: #ffffff;
 
         .left-content {
           width: 50%;
           height: fit-content;
+          padding: 20px 0;
 
           h2 {
             font: 650 25px "Montserrat", "Nunito Sans", sans-serif;
@@ -1316,10 +1319,12 @@ main {
             background: rgb(10, 34, 45);
             color: white;
             padding: 10px 20px;
+            position: relative;
+            transition: all 0.3s ease;
 
             &:hover {
               border: none;
-
+              transform: none;
               border-radius: 30px;
             }
           }
@@ -1332,6 +1337,45 @@ main {
           background-repeat: no-repeat;
           background-size: cover;
           border-radius: 5px;
+        }
+
+        @media screen and (max-width: 1000px) {
+          min-height: 60vh;
+          background: rgb(10, 34, 45);
+          .left-content {
+            width: 100%;
+            padding: 30px 0;
+
+            h2,
+            h3,
+            p {
+              text-align: center;
+              margin: 10px auto;
+              width: 95%;
+            }
+
+            h2,
+            p {
+              color: white;
+            }
+
+            a {
+              background: rgb(226, 148, 2);
+              margin: auto;
+            }
+
+            @media screen and (max-width: 500px) {
+              h2 {
+                font-size: 17px;
+              }
+              h2 {
+                font-size: 23px;
+              }
+            }
+          }
+          .right-content {
+            display: none;
+          }
         }
       }
     }
@@ -1356,21 +1400,22 @@ main {
         }
 
         h1 {
+          width: 90%;
+          margin: auto;
           padding: 20px;
           position: relative;
           font: 700 45px "Poppins", sans-serif;
           text-transform: capitalize;
           color: white;
 
-          span {
-            color: rgb(221, 99, 0);
-            text-transform: uppercase;
-            font-size: 1.1em;
-            font-family: "Montserrat", sans-serif;
+          @media screen and (max-width: 500px) {
+            font-size: 35px;
           }
         }
 
         p {
+          width: 90%;
+          margin: auto;
           padding: 10px;
           color: white;
           position: relative;
@@ -1408,14 +1453,24 @@ main {
         align-items: center;
         flex-direction: column;
         gap: 20px;
-        padding: 100px 10px;
+        padding: 100px 0;
         position: relative;
 
         h1 {
+          width: 90%;
+          margin: 0 auto;
           color: white;
           font: 700 50px "Montserrat", sans-serif;
           position: relative;
           text-transform: capitalize;
+
+          @media screen and (max-width: 519px) {
+            font-size: 35px;
+
+            @media screen and (max-width: 390px) {
+              font-size: 25px;
+            }
+          }
         }
 
         p {
@@ -1448,6 +1503,7 @@ main {
             justify-content: center;
             align-items: center;
             gap: 10px;
+            margin: 10px;
             background: rgb(233, 152, 3);
 
             &:hover {

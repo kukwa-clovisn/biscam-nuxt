@@ -337,7 +337,7 @@
   }
 
   .address-container {
-    background: url(~assets/flight/ship-weilding.jpg);
+    background: url(../assets/flight/ship-weilding.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

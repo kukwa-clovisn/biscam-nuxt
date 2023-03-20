@@ -115,7 +115,7 @@
         <div class="address-box">
           <h2>address</h2>
           <p>anciente route, opposite mobile</p>
-          <p><a href="tel: +237699391316"> Tel : +237699 391 316</a></p>
+          <p><a href="tel:+237699391316"> Tel : +237699 391 316</a></p>
           <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
           <p>
             <a href="mailto:garagebiscam@gmail.com"

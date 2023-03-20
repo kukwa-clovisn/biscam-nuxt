@@ -506,7 +506,7 @@
 }
 
 .address-container {
-  background: url(~assets/flight/office-cleaning.jpg);
+  background: url(../assets/flight/office-cleaning.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
