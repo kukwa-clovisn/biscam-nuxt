@@ -9,9 +9,11 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.4",
+    "aos": "^2.3.4",
+    "mongoose": "^7.0.2",
+    "mongoose-bcrypt": "^1.10.1",
     "nuxt": "^3.3.1",
     "sass": "^1.59.3",
-    "aos": "^2.3.4",
     "sass-loader": "^13.2.0"
   },
   "dependencies": {

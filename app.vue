@@ -206,7 +206,7 @@
             <p>
               service: <span>{{ appointmentBody.userService }}</span>
             </p>
-            <p>
+            <p class="full-width">
               message: <span>{{ appointmentBody.message }}</span>
             </p>
           </div>
@@ -667,7 +667,7 @@ const submitForm = (e) => {
     }
 
     .appointment-wrapper {
-      width: 80%;
+      width: 95%;
       height: fit-content;
       display: flex;
       justify-content: center;
@@ -675,8 +675,8 @@ const submitForm = (e) => {
       position: relative;
 
       form {
-        width: 90%;
-        height: 95vh;
+        width: 95%;
+        height: 97vh;
         background: white;
         border-radius: 5px;
         padding: 10px 20px;
@@ -718,65 +718,61 @@ const submitForm = (e) => {
 
         .form-wrapper {
           width: 95%;
-          height: 36vh;
-          background: #f5f5f5;
-          background: rgb(6, 46, 105);
+          height: 43vh;
           margin: 10px auto;
           border-radius: 5px;
           overflow: hidden;
           overflow-y: scroll;
-          padding: 10px 20px;
-          box-shadow: 0 0 10px 3px rgb(190, 190, 190);
-
+          padding: 20px 10px ;
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          justify-content: flex-start;
+          align-items: flex-start;
           flex-wrap: wrap;
-          gap: 15px;
+          gap: 20px;
+          background:rgb(250, 250, 250);
+          box-shadow: 0 0 10px 9px rgb(251,251,251);
 
           .form-data {
-            width: 45%;
+            width: 48%;
             height: fit-content;
 
             label {
               display: block;
               text-align: left;
               padding: 3px;
-              color: white;
               font: 400 16px "Montserrat", "Nunito Sans", sans-serif;
               text-transform: capitalize;
             }
 
             input {
               width: 100%;
-              height: 40px;
+              height: 43px;
               outline: none;
               border: none;
               border: 1px solid rgb(235, 235, 235);
               text-align: left;
-              padding: 0 0 0 10px;
+              padding: 3px 10px;
               border-radius: 1px;
-              background: rgb(240, 240, 240);
-              background: white;
-              color: rgb(54, 54, 54);
+              background: rgb(243, 243, 243);
+              color: rgb(44, 43, 43);
             }
             textarea {
               width: 100%;
-              height: 90px;
+              height: 150px;
               border: none;
-              background: white;
+              background: rgb(243, 243, 243);
               text-align: left;
               outline: none;
               border: 1px solid rgb(235, 235, 235);
               padding: 15px 0 15px 10px;
 
               &:hover {
-                height: 100px;
+                height: 160px;
               }
 
               &:active,
               &:focus {
-                height: 100px;
+                height: 180px;
               }
             }
           }
@@ -791,13 +787,16 @@ const submitForm = (e) => {
             align-items: center;
             gap: 10px;
             text-transform: capitalize;
-            color: rgb(235, 235, 235);
+            color: rgb(39, 39, 39);
 
             span {
               font-weight: 700;
               text-transform: none;
-              color: white;
+              color: rgb(26, 26, 26);
             }
+          }
+          p.full-width{ 
+            width:100%;
           }
         }
         .form-button {

@@ -29,7 +29,7 @@
 
             <div class="links">
               <NuxtLink to="about-us">about us</NuxtLink>
-              <NuxtLink to="contact">contact us</NuxtLink>
+              <NuxtLink to="contact-page">contact us</NuxtLink>
             </div>
             <div class="tasks">
               <button @click="($event) => (appointmentState = true)">

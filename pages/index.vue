@@ -320,6 +320,18 @@ import cleaningView1 from "assets/flight/cleaning-equipments-1.jpg";
 import ecommerceView from "assets/flight/auto-elect-two.webp";
 const appointmentState = useAppointmentState();
 
+
+
+
+
+const getRes = async () => {
+  const res = await $fetch('/api/server')
+
+  console.log(res)
+}
+
+getRes()
+
 const HomeViewImages = ref([
   cleaningView,
   maritime_three,
@@ -387,7 +399,7 @@ const dg_images = ref([digital_zero, digital_one]);
           width: 90%;
           height: fit-content;
           position: relative;
-          padding-top: 13vh;
+          padding-top: 15vh;
 
           h1 {
             font-size: 55px;
@@ -487,7 +499,7 @@ const dg_images = ref([digital_zero, digital_one]);
             }
 
             @media screen and (max-width: 400px) {
-              width: 90vw;
+              width: 97vw;
             }
           }
 
@@ -558,7 +570,6 @@ const dg_images = ref([digital_zero, digital_one]);
           @media screen and (max-width: 1080px) {
             width: 85%;
             height: fit-content;
-            padding-top: 40px;
             padding-bottom: 20px;
 
             h1,
@@ -570,21 +581,37 @@ const dg_images = ref([digital_zero, digital_one]);
               margin-top: 5vh;
             }
 
-            @media screen and (max-width: 700px) {
+            @media screen and (max-width: 768px) {
               h1 {
-                font-size: 40px;
+                font-size: 35px;
               }
 
               h2 {
-                font-size: 30px;
+                font-size: 16px;
+              }
+              
+              .text-animation{ 
+                .text-wrapper{ 
+                  ul{ 
+
+                    li{ 
+                      font-size:15px;
+                    }
+                  }
+                }
               }
 
               @media screen and (max-width: 500px) {
+                h1{ 
+                  font-size:25px;
+                }
                 h2 {
-                  font-size: 25px;
+                  font-size: 12px;
                   padding: 10px;
                 }
-
+.text-animation .text-wrapper ul li{ 
+  font-size:10px;
+}
                 .link-wrapper {
                   flex-direction: column;
                   width: 100%;
@@ -599,10 +626,6 @@ const dg_images = ref([digital_zero, digital_one]);
             }
           }
         }
-      }
-
-      @media screen and (max-width: 1080px) {
-        height: fit-content;
       }
     }
   }
@@ -656,6 +679,11 @@ const dg_images = ref([digital_zero, digital_one]);
     .bur-wrapper {
       background: rgb(14, 6, 106);
       opacity: 0.7l;
+    }
+    h2{ 
+      @media screen and (max-width:768px) {
+        font-size:30px;
+      }
     }
 
     .heading {
