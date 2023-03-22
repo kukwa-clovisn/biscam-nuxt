@@ -7,18 +7,88 @@
 
       <div class="product-details">
         <div class="product-details-wrapper">
-          <h2>{{ productRoute }}</h2>
-          <h4>product category</h4>
+          <div class="product-head">
+            <h2>{{ productRoute }}</h2>
+            <h4>product category <span>>= $5000</span></h4>
+          </div>
           <p>
             product description Lorem ipsum, dolor sit amet consectetur
             adipisicing elit. Inventore, pariatur!
           </p>
-          <button>buy now</button>
+          <div class="product-qualities">
+            <h3>product qualities:</h3>
+            <ul>
+              <li v-for="quality in productQualities" :key="quality">
+                <i class="fa-solid fa-check"></i>
+                <span>{{ quality }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="purchase-div">
+            <h3>
+              Place Your <span>Order</span> Now. We
+              <span>deliver</span> everywhere <span>door</span> to
+              <span>door</span>
+            </h3>
+            <div class="purchase-wrapper">
+              <input
+                type="text"
+                placeholder="Enter Your Name"
+                v-model="booking.name"
+              />
+              <input
+                type="email"
+                placeholder="Enter Your Email Address"
+                v-model="booking.email"
+              />
+              <input
+                type="tel"
+                placeholder="Enter Phone Number (Optional)"
+                v-model="booking.tel"
+              />
+              <input
+                type="number"
+                placeholder="Number Of Items"
+                min="1"
+                v-model="booking.number"
+              />
+              <textarea
+                cols="30"
+                rows="10"
+                placeholder="Additional information"
+                v-model="booking.message"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="preview-info">
+            <p v-if="booking.name.length">
+              name : <span>{{ booking.name }}</span>
+            </p>
+            <p v-if="booking.email.length">
+              email : <span>{{ booking.email }}</span>
+            </p>
+            <p v-if="booking.tel.length">
+              tel: <span>{{ booking.tel }}</span>
+            </p>
+            <p v-if="booking.number">
+              number of {{ productRoute }} : <span>{{ booking.number }}</span>
+            </p>
+            <p v-if="booking.message.length">
+              message : <span>{{ booking.message }}</span>
+            </p>
+          </div>
+          <button
+            v-if="booking.email.length && booking.name.length && booking.number"
+          >
+            order now <i class="fa-solid fa-cart-shopping"></i>
+          </button>
         </div>
       </div>
     </div>
     <div class="other-products">
-      <h1>find other products taht interest you</h1>
+      <h1>find other products that interest you</h1>
       <div class="products-div">
         <div
           class="product"
@@ -48,10 +118,30 @@
 
 <script setup>
 const route = useRoute();
+const mail = useMail();
+
+mail.send({
+  from: "John Doe",
+  subject: "Incredible",
+  text: "This is an incredible test message",
+});
 
 const productRoute = route.params.id;
+const booking = reactive({
+  name: "",
+  email: "",
+  tel: "",
+  number: 1,
+  message: "",
+});
 
 const products = ref([]);
+const productQualities = ref([]);
+for (let i = 0; i < 5; i++) {
+  productQualities.value.push(
+    "this product quality is really really very superb"
+  );
+}
 
 for (let i = 0; i < 15; i++) {
   let newImage = {
@@ -77,13 +167,11 @@ for (let i = 0; i < 15; i++) {
   .product-main-wrapper {
     width: 100%;
     height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
 
     .product-image {
-      width: 60%;
+      width: 70%;
       height: fit-content;
+      margin: 20px auto;
 
       img {
         width: 100%;
@@ -94,32 +182,150 @@ for (let i = 0; i < 15; i++) {
     }
 
     .product-details {
-      width: 35%;
+      width: 70%;
       height: fit-content;
+      margin: 10px auto;
 
       .product-details-wrapper {
         width: 100%;
         height: fit-content;
         padding: 20px 10px;
 
+        .product-head {
+          width: 100%;
+          height: fit-content;
+          border-bottom: 1px solid #d7d7d7;
+          h2 {
+            text-transform: capitalize;
+            font: 700 30px "Montserrat", "Nunito Sans", sans-serif;
+          }
+          h4 {
+            color: rgb(163, 163, 163);
+            text-transform: capitalize;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+              font-weight: bolder;
+              color: black;
+            }
+          }
+        }
+
         h2,
         h4,
         p {
           text-align: left;
         }
+        .product-qualities {
+          width: 100%;
+          height: fit-content;
 
-        h2 {
-          text-transform: capitalize;
+          h3 {
+            text-align: left;
+            text-transform: capitalize;
+            font: 600 17px "Nunito Sans", sans-serif;
+          }
+
+          ul {
+            width: 100%;
+            height: fit-content;
+            list-style: none;
+
+            li {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              list-style-position: inside;
+              gap: 20px;
+              margin: 20px 0;
+            }
+          }
         }
 
-        h4 {
-          text-transform: capitalize;
+        .purchase-div {
+          width: 100%;
+          height: fit-content;
+          margin: 20px 0;
+
+          h3 {
+            text-align: left;
+            text-transform: capitalize;
+            font: 500 17px "Montserrat", "Poppins", sans-serif;
+            padding: 20px 0;
+
+            span {
+              color: rgb(226, 148, 2);
+            }
+          }
+          .purchase-wrapper {
+            width: 100%;
+            height: fit-content;
+
+            input {
+              display: block;
+              width: 100%;
+              border: none;
+              outline: none;
+              border-bottom: 1px solid rgb(134, 133, 133);
+              padding: 10px 15px;
+              margin: 20px 0;
+              text-align: left;
+              border-radius: 3px;
+
+              &:hover {
+                border-bottom: 3px solid rgb(211, 138, 3);
+              }
+
+              &:active,
+              &:focus {
+                border: 1px solid rgb(239, 157, 4);
+              }
+            }
+            textarea {
+              display: block;
+              width: 100%;
+              height: 150px;
+              outline: none;
+              border: 1px solid rgb(148, 148, 148);
+              padding: 20px;
+              text-align: left;
+              margin: 20px auto;
+              &:hover {
+                border: 3px solid rgb(211, 138, 3);
+              }
+              &:focus,
+              &:active {
+                border: 1px solid rgb(239, 157, 4);
+              }
+            }
+          }
+        }
+
+        .preview-info {
+          width: 100%;
+          height: fit-content;
+
+          p {
+            width: fit-content;
+            margin: 15px 0;
+            text-align: left;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            span {
+              font-weight: bold;
+            }
+          }
         }
 
         button {
-          width: max-content;
-          height: max-content;
-          padding: 8px 20px;
+          width: 200px;
+          height: 45px;
           border-radius: 2px;
           background: rgb(232, 152, 2);
           color: white;
@@ -130,11 +336,18 @@ for (let i = 0; i < 15; i++) {
         }
       }
     }
+
+    @media screen and (max-width: 650px) {
+      .product-image,
+      .product-details {
+        width: 90%;
+      }
+    }
   }
   .other-products {
-    width: 100%;
+    width: 90%;
     height: fit-content;
-    padding: 20px 10px;
+    margin: 20px auto;
 
     h1 {
       text-transform: capitalize;
@@ -146,8 +359,8 @@ for (let i = 0; i < 15; i++) {
       width: 100%;
       height: fit-content;
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      justify-content: space-between;
+      align-items: flex-start;
       flex-wrap: wrap;
       gap: 20px;
 

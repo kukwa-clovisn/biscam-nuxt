@@ -1,12 +1,20 @@
 import mongoose from "mongoose";
-import bcrypt from "mongoose-bcrypt";
-const schema = new mongoose.Schema(
+// import bcrypt from "mongoose-bcrypt";
+
+// schema.plugin(bcrypt);
+
+const emailSchema = new mongoose.Schema(
   {
-    email: { type: String, unique: true },
-    password: { type: String, bcrypt: true },
-    name: String,
+    email: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    collection: "emails",
   },
   { timestamps: true, strict: true, strictQuery: true }
 );
-schema.plugin(bcrypt);
-export default mongoose.model("Email", schema, "email");
+const emailModel = mongoose.model("emailSchema", emailSchema);
+
+export default emailModel;
