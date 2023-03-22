@@ -320,18 +320,6 @@ import cleaningView1 from "assets/flight/cleaning-equipments-1.jpg";
 import ecommerceView from "assets/flight/auto-elect-two.webp";
 const appointmentState = useAppointmentState();
 
-
-
-
-
-const getRes = async () => {
-  const res = await $fetch('/api/server')
-
-  console.log(res)
-}
-
-getRes()
-
 const HomeViewImages = ref([
   cleaningView,
   maritime_three,
@@ -589,29 +577,28 @@ const dg_images = ref([digital_zero, digital_one]);
               h2 {
                 font-size: 16px;
               }
-              
-              .text-animation{ 
-                .text-wrapper{ 
-                  ul{ 
 
-                    li{ 
-                      font-size:15px;
+              .text-animation {
+                .text-wrapper {
+                  ul {
+                    li {
+                      font-size: 15px;
                     }
                   }
                 }
               }
 
               @media screen and (max-width: 500px) {
-                h1{ 
-                  font-size:25px;
+                h1 {
+                  font-size: 25px;
                 }
                 h2 {
                   font-size: 12px;
                   padding: 10px;
                 }
-.text-animation .text-wrapper ul li{ 
-  font-size:10px;
-}
+                .text-animation .text-wrapper ul li {
+                  font-size: 10px;
+                }
                 .link-wrapper {
                   flex-direction: column;
                   width: 100%;
@@ -680,9 +667,9 @@ const dg_images = ref([digital_zero, digital_one]);
       background: rgb(14, 6, 106);
       opacity: 0.7l;
     }
-    h2{ 
-      @media screen and (max-width:768px) {
-        font-size:30px;
+    h2 {
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
       }
     }
 
