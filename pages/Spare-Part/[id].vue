@@ -113,6 +113,7 @@
         </div>
       </div>
     </div>
+    <SparePartCategoryHeader />
   </div>
 </template>
 

@@ -1,6 +1,18 @@
-export default defineEventHandler((event) => {
+import products from "../dbModels/product"
+
+export default defineEventHandler( async (event) => {
+  try{
+    const productArr = await products;
+
     return {
-      api: 'hey codingherald this api works pretty well'
+      productArr
     }
+  }
+catch(err){ 
+  console.log(err);
+  return{ 
+    err
+  }
+}
   })
   

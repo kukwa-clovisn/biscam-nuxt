@@ -15,6 +15,12 @@ const emailSchema = new mongoose.Schema(
   },
   { timestamps: true, strict: true, strictQuery: true }
 );
-const emailModel = mongoose.model("emailSchema", emailSchema);
+export const emailModel = mongoose.model("emailSchema", emailSchema);
 
-export default emailModel;
+export default defineEventHandler((event) => {
+
+  const emails = emails.find();
+  return{ 
+    emails
+  }
+});
