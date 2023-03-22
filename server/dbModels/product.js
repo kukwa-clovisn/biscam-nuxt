@@ -26,6 +26,10 @@ const productSchema = new mongoose.Schema(
   },
   { timestamps: true, strict: true, strictQuery: true }
 );
-const productModel = mongoose.model("productSchema", productSchema);
+export const productModel = mongoose.model("productSchema", productSchema);
 
-export default productModel;
+export default defineEventHandler(async (event) => {
+const products = await product.find();
+
+return{ products}
+})

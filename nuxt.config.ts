@@ -3,18 +3,7 @@
 export default defineNuxtConfig({
   modules: [
     "@element-plus/nuxt",
-    [
-      "nuxt-mail",
-      {
-        message: {
-          to: "kcn.123.com@gmail.com",
-        },
-        smtp: {
-          host: "kcn.123.com@gmail.com",
-          port: 587,
-        },
-      },
-    ],
+
   ],
   plugins: [{ src: "@/plugins/aos", ssr: false, mode: "client" }],
   css: [

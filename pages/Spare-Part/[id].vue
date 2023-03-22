@@ -118,13 +118,6 @@
 
 <script setup>
 const route = useRoute();
-const mail = useMail();
-
-mail.send({
-  from: "John Doe",
-  subject: "Incredible",
-  text: "This is an incredible test message",
-});
 
 const productRoute = route.params.id;
 const booking = reactive({
@@ -169,7 +162,7 @@ for (let i = 0; i < 15; i++) {
     height: fit-content;
 
     .product-image {
-      width: 60%;
+      width: 70%;
       height: fit-content;
       margin: 20px auto;
 
@@ -182,7 +175,7 @@ for (let i = 0; i < 15; i++) {
     }
 
     .product-details {
-      width: 35%;
+      width: 70%;
       height: fit-content;
       margin: 10px auto;
 
