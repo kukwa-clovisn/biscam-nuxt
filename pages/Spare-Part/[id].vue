@@ -82,7 +82,7 @@ for (let i = 0; i < 15; i++) {
     align-items: flex-start;
 
     .product-image {
-      width: 60%;
+      width: 90%;
       height: fit-content;
 
       img {
@@ -94,7 +94,7 @@ for (let i = 0; i < 15; i++) {
     }
 
     .product-details {
-      width: 35%;
+      width: 80%;
       height: fit-content;
 
       .product-details-wrapper {
