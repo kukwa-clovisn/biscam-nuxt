@@ -120,6 +120,15 @@
 <script setup>
 const route = useRoute();
 
+const getRes = async () => {
+  const data = await $fetch("/api/product/product");
+
+  console.log(data);
+  console.log(data.products);
+};
+
+getRes();
+
 const productRoute = route.params.id;
 const booking = reactive({
   name: "",

@@ -29,8 +29,7 @@ const productSchema = new mongoose.Schema(
 export const productModel = mongoose.model("productSchema", productSchema);
 
 export default defineEventHandler(async (event) => {
-const products = await product.find();
+  const products = await productModel.find();
 
-
-return{ products}
-})
+  return { products };
+});
