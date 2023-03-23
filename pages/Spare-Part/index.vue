@@ -657,8 +657,6 @@ const category = ref("");
 const productCategory = computed(() => {
   return category.value;
 });
-
-console.log(productCategory.value);
 </script>
 
 <style lang="scss" scoped>

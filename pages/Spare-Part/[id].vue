@@ -19,7 +19,6 @@
             <h3>product qualities:</h3>
             <ul>
               <li v-for="quality in productQualities" :key="quality">
-                <i class="fa-solid fa-check"></i>
                 <span>{{ quality }}</span>
               </li>
             </ul>
@@ -119,15 +118,6 @@
 
 <script setup>
 const route = useRoute();
-
-const getRes = async () => {
-  const data = await $fetch("/api/product/product");
-
-  console.log(data);
-  console.log(data.products);
-};
-
-getRes();
 
 const productRoute = route.params.id;
 const booking = reactive({
