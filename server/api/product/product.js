@@ -20,6 +20,8 @@ const productSchema = new mongoose.Schema(
     priceFrom: String,
     priceTo: String,
     imageurl: String,
+    imgName: String,
+    imgExt: String,
   },
   {
     collection: "product",
@@ -31,5 +33,5 @@ export const productModel = mongoose.model("productSchema", productSchema);
 export default defineEventHandler(async (event) => {
   const products = await productModel.find();
 
-  return { products };
+  return products;
 });
