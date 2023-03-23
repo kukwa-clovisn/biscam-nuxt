@@ -1,5 +1,6 @@
-export default defineEventHandler((event) => {
-  console.log(event.req);
+export default defineEventHandler((req, res) => {
+  console.log("req", req.body);
+  // console.log("res", res.body);
 
   return {
     status: 200,
