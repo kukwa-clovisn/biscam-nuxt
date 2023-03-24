@@ -1,8 +1,8 @@
 
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
 
-    const query = event.context.params.id
+    const query = event.context.params.category;
 
     console.log('query',query)
     return{ 
