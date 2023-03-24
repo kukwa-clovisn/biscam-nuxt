@@ -365,7 +365,6 @@ const menuState = useMenuState();
       transform: translateX(0);
     }
   }
-
   .contact-container {
     width: 100%;
     height: fit-content;

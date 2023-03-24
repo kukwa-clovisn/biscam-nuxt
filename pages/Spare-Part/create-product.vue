@@ -1,7 +1,7 @@
 <template>
   <div class="create-product-main">
     <div class="create-product-wrapper">
-      <form @submit="createProduct">
+      <form @submit="createProduct"  enctype="multipart/form-data" >
         <h1>upload a product.</h1>
 
         <div class="form-data">
@@ -18,13 +18,15 @@
             v-model="productData.name"
             placeholder="Enter product name:"
             required
-          /><input
-            type="text"
-            name="product-category"
-            v-model="productData.category"
-            placeholder="Enter product category:"
-            required
-          /><input
+          />
+          <select name="product-category" v-model="productData.category"
+            placeholder="Enter product category:">
+            <option value="engines">engines</option>
+            <option value="manifold">manifold</option>
+            <option value="keyStarter">key starter</option>
+            <option value="shaft">shaft</option>
+          </select>
+          <input
             type="text"
             name="product-description"
             v-model="productData.description"
@@ -171,15 +173,28 @@ const createProduct = (e) => {
 
   const formdata = new FormData();
   formdata.append("image", preview.value, preview.value.name);
-  axios
-    .post(`/api/product/createProduct`, formdata, {
+  formdata.append("name",productData.name)
+  formdata.append("category", productData.category)
+
+  console.log(formdata)
+  axios(`/api/product/createProduct`, {
+    method:'POST',
+    body: JSON.stringify({ 
+      formData:formdata,
+      productData
+    }),
+     headers:{ 
+        'Content-Type':'multipart/form-data'
+      }
+      }, {
       onUploadProgress: () => {
         ElNotification.success({
           title: "Loading Product Image",
           message: "Loading Image pleae wait...",
           offset: 100,
         });
-      },
+      }
+     
     })
     .then((res) => {
       if (res) {
@@ -225,7 +240,7 @@ const createProduct = (e) => {
       width: 90%;
       margin: 20px auto;
 
-      input {
+      input,select {
         width: 70%;
         height: 45px;
         margin: 15px auto;
