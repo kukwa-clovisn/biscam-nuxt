@@ -119,7 +119,7 @@
       </div>
       <div class="footer-copy-right">
         <p>
-          <span>YUHAZON COMPANY</span> &copy;Copyright 2023 All rights reserved.
+          <span>YUAAZON COMPANY</span> &copy;Copyright 2023 All rights reserved.
         </p>
       </div>
     </div>

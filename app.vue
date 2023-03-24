@@ -81,10 +81,7 @@
       </div>
     </div>
     <div class="appointment-container" v-if="appointmentState">
-      <div
-        class="blurred-wrapper"
-        @click="($event) => (appointmentState = false)"
-      ></div>
+     
       <div class="appointment-wrapper">
         <form @submit="event.preventDefault()">
           <button class="close" @click="($event) => (appointmentState = false)">
@@ -642,6 +639,7 @@ const submitForm = (e) => {
   .appointment-container {
     width: 100vw;
     height: 100vh;
+    background:rgb(245, 245, 245);
     position: fixed;
     top: 0;
     left: 0;
@@ -654,17 +652,6 @@ const submitForm = (e) => {
     animation: popUp 1s 1 linear alternate forwards;
     overflow: hidden;
 
-    .blurred-wrapper {
-      opacity: 0.6;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgb(31, 31, 31);
-      cursor: pointer;
-      z-index: 1;
-    }
 
     .appointment-wrapper {
       width: 95%;
@@ -677,11 +664,10 @@ const submitForm = (e) => {
       form {
         width: 95%;
         height: 97vh;
-        background: white;
+        background: inherit;
         border-radius: 5px;
         padding: 10px 20px;
         position: relative;
-        box-shadow: 0px 0px 10px 5px rgb(39, 39, 39);
         z-index: 1;
         overflow: hidden;
 
@@ -725,15 +711,13 @@ const submitForm = (e) => {
           overflow-y: scroll;
           padding: 20px 10px ;
           display: flex;
-          justify-content: flex-start;
+          justify-content: space-between;
           align-items: flex-start;
           flex-wrap: wrap;
           gap: 20px;
-          background:rgb(250, 250, 250);
-          box-shadow: 0 0 10px 9px rgb(251,251,251);
 
           .form-data {
-            width: 48%;
+            width: 47%;
             height: fit-content;
 
             label {
@@ -746,33 +730,55 @@ const submitForm = (e) => {
 
             input {
               width: 100%;
-              height: 43px;
+              height: 45px;
               outline: none;
               border: none;
-              border: 1px solid rgb(235, 235, 235);
+             background:transparent;
+        border-bottom: 1px solid rgb(169, 167, 167);
               text-align: left;
               padding: 3px 10px;
-              border-radius: 1px;
-              background: rgb(243, 243, 243);
+              border-radius: 3px;
               color: rgb(44, 43, 43);
+
+              &:hover{ 
+                border-bottom:1px solid rgb(17, 83, 145);
+                box-shadow:0 0 16px 3px rgb(219, 219, 219);
+              }
+
+              &:active, &:focus{ 
+                background:white;
+                border:1px solid rgb(17, 83, 145);
+                border-left:3px solid rgb(17, 83, 145);
+                border-right:10px solid rgb(17, 83, 145);
+              }
             }
             textarea {
               width: 100%;
               height: 150px;
               border: none;
-              background: rgb(243, 243, 243);
               text-align: left;
               outline: none;
-              border: 1px solid rgb(235, 235, 235);
+              border-radius: 4px;
+              background:transparent;
+        border: 1px solid rgb(196, 196, 196);
               padding: 15px 0 15px 10px;
 
               &:hover {
                 height: 160px;
+                background:white;
+               
+                box-shadow:0 0 16px 3px rgb(219, 219, 219);
               }
 
               &:active,
               &:focus {
                 height: 180px;
+              }
+            }
+
+            &:hover, &:active, &:focus{ 
+              label{
+                font-weight:bold;
               }
             }
           }
