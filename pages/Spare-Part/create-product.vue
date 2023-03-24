@@ -1,7 +1,7 @@
 <template>
   <div class="create-product-main">
     <div class="create-product-wrapper">
-      <form @submit="createProduct"  enctype="multipart/form-data" id="formEl" ref="formEl">
+      <form @submit="createProduct"  enctype="multipart/form-data" >
         <h1>upload a product.</h1>
 
         <div class="form-data">
@@ -170,16 +170,13 @@ watch(preview, (preview) => {
 });
 const createProduct = (e) => {
   e.preventDefault();
-  const formEl = ref(null)
 
   const formdata = new FormData();
-  const fromData = new FormData(formEl)
   formdata.append("image", preview.value, preview.value.name);
   formdata.append("name",productData.name)
   formdata.append("category", productData.category)
 
   console.log(formdata)
-  console.log(formData)
   axios(`/api/product/createProduct`, {
     method:'POST',
     body: JSON.stringify({ 
