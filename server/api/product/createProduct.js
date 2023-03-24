@@ -1,6 +1,7 @@
-export default defineEventHandler((req, res) => {
-  console.log("req", req.body);
-  // console.log("res", res.body);
+export default defineEventHandler(async (event) => {
+  const body = await readBody(event);
+
+  console.log(body);
 
   return {
     status: 200,

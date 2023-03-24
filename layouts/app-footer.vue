@@ -32,7 +32,7 @@
               <NuxtLink to="contact-page">contact us</NuxtLink>
             </div>
             <div class="tasks">
-              <button @click="($event) => (appointmentState = true)">
+              <button @click="($event) => navigateTo('/appointment')">
                 book an appointment
               </button>
             </div>
@@ -119,15 +119,13 @@
       </div>
       <div class="footer-copy-right">
         <p>
-          <span>YUHAZON COMPANY</span> &copy;Copyright 2023 All rights reserved.
+          <span>YUAAZON COMPANY</span> &copy;Copyright 2023 All rights reserved.
         </p>
       </div>
     </div>
   </footer>
 </template>
-<script setup>
-const appointmentState = useAppointmentState();
-</script>
+
 <style lang="scss" scoped>
 footer {
   width: 100vw;

@@ -283,7 +283,7 @@
       <div class="buttons">
         <NuxtLink to="/about-us" data-aos="slide-up">browse services</NuxtLink>
         <button
-          @click="($event) => (appointmentState = true)"
+          @click="($event) => navigateTo('/')"
           class="appointment"
           data-aos="slide-up"
         >
@@ -318,7 +318,6 @@ import garageView1 from "assets/flight/artificial-lighting-employee-blue.jpg";
 import cleaningView from "assets/flight/black-woman-with-suitcase-airport.jpg";
 import cleaningView1 from "assets/flight/cleaning-equipments-1.jpg";
 import ecommerceView from "assets/flight/auto-elect-two.webp";
-const appointmentState = useAppointmentState();
 
 const HomeViewImages = ref([
   cleaningView,

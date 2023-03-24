@@ -2,7 +2,7 @@
   <header>
     <div class="header-wrapper">
       <div class="logo-wrapper">
-        <div class="logo-image-wrapper">
+        <div class="logo-image-wrapper" @click="($event) => navigateTo('/')">
           <img src="../assets/biscam-logo.png" alt="" />
         </div>
       </div>
@@ -58,7 +58,7 @@
           <div class="header-wrapper-content-services-service">
             <button
               class="header-route special"
-              @click="($event) => (appointmentState = true)"
+              @click="($event) => navigateTo('/appointment')"
             >
               book and appointment
             </button>
@@ -69,7 +69,6 @@
   </header>
 </template>
 <script setup>
-const appointmentState = useAppointmentState();
 const menuState = useMenuState();
 </script>
 
