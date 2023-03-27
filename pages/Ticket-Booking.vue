@@ -138,11 +138,11 @@
 
             <div class="form-wrapper" v-if="confirm">
               <h2>check your info before submitting</h2>
-              <p>Departure: {{ ticketBody.departure }}</p>
-              <p>Destination: {{ ticketBody.destination }}</p>
-              <p>Departure Date: {{ ticketBody.departureDate }}</p>
-              <p>Return Date: {{ ticketBody.returnDate }}</p>
-              <p>Passangers: {{ ticketBody.passangers }}</p>
+              <p>Departure: <span>{{ ticketBody.departure }}</span> </p>
+              <p>Destination: <span> {{ ticketBody.destination }}</span></p>
+              <p>Departure Date: <span>{{ ticketBody.departureDate }}</span> </p>
+              <p>Return Date: <span>{{ ticketBody.returnDate }}</span> </p>
+              <p>Passangers: <span>{{ ticketBody.passangers }}</span> </p>
             </div>
 
             <el-button @click="phaseOne()" v-if="stepOne" class="form-button"
@@ -313,6 +313,7 @@ const submitForm = (e) => {
           position: relative;
           z-index: 1;
           margin: 0 auto;
+          border-radius:5px;
 
           h1 {
             text-transform: uppercase;
@@ -330,6 +331,20 @@ const submitForm = (e) => {
             flex-wrap: wrap;
             gap: 15px;
 
+            h2{
+              text-transform:capitalize;
+            }
+
+            p{ 
+              display:block;
+              width:90%;
+              text-align: left;
+              span{ 
+                font-weight:bolder;
+                font-size:1.1em;
+              }
+
+            }
             .form-data {
               width: 300px;
               height: fit-content;

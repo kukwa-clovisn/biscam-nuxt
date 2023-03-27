@@ -6,7 +6,7 @@
         <div
           class="product"
           data-aos="flip-left"
-          v-for="product in productsList"
+          v-for="product in products"
           :key="product._id"
         >
           <div
@@ -50,12 +50,12 @@
   </div>
 </template>
 <script setup>
-// import axios from "axios";
-const productsList = ref([]);
-// function useFetch("/api/category/manifold") {
+import axios from "axios";
+const products = ref([]);
+
+
+  axios('/api/product').then(res => console.log(res)).catch(err => console.log(err))
+
   
-  onMounted(async () => {
-  const data = await $fetch('/api/category/manifold')
-console.log(data)
-})
+
 </script>
