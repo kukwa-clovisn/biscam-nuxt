@@ -66,7 +66,7 @@
       <SparePartCategoryHeader />
 
       <div id="categories">
-        <LazySpare-Part-All data-aos="fade" />
+        <Spare-Part-All data-aos="fade" />
       </div>
 
       <div class="category-display">
@@ -653,10 +653,6 @@
 
 <script setup>
 const category = ref("");
-
-const productCategory = computed(() => {
-  return category.value;
-});
 </script>
 
 <style lang="scss" scoped>

@@ -152,9 +152,7 @@
     </div>
   </div>
 </template>
-<script setup>
-const appointmentState = useAppointmentState();
-</script>
+
 
 <style lang="scss" scoped>
 .main {

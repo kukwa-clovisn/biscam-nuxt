@@ -50,17 +50,12 @@
   </div>
 </template>
 <script setup>
-import axios from "axios";
-let productsList = ref([]);
-const getRes = () => {
-  axios("/api/product/product").then((res) => {
-    productsList.value = res.data;
-  });
-};
-
-onMounted(() => {
-  getRes();
-
-  console.log(productsList.value);
-});
+// import axios from "axios";
+const productsList = ref([]);
+// function useFetch("/api/category/manifold") {
+  
+  onMounted(async () => {
+  const data = await $fetch('/api/category/manifold')
+console.log(data)
+})
 </script>

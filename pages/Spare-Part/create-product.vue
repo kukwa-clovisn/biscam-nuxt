@@ -1,7 +1,7 @@
 <template>
   <div class="create-product-main">
     <div class="create-product-wrapper">
-      <form @submit="createProduct"  enctype="multipart/form-data" >
+      <form @submit="createProduct">
         <h1>upload a product.</h1>
 
         <div class="form-data">
@@ -19,8 +19,11 @@
             placeholder="Enter product name:"
             required
           />
-          <select name="product-category" v-model="productData.category"
-            placeholder="Enter product category:">
+          <select
+            name="product-category"
+            v-model="productData.category"
+            placeholder="Enter product category:"
+          >
             <option value="engines">engines</option>
             <option value="manifold">manifold</option>
             <option value="keyStarter">key starter</option>
@@ -116,11 +119,19 @@
         </div>
       </form>
     </div>
+    <!-- <vue-dropzone
+      ref="myVueDropzone"
+      id="dropzone"
+      :options="dropzoneOptions"
+    /> -->
   </div>
 </template>
 
 <script setup>
 import axios from "axios";
+
+// import vueDropzone from "vue2-dropzone-vue3";
+
 const productData = reactive({
   name: "",
   category: "",
@@ -131,9 +142,17 @@ const productData = reactive({
   priceTo: "",
   qualitiesArr: [],
   price: "",
+  imageBuffer: null,
 });
 
-const preview = ref(null);
+// const dropzoneOptions = ref({
+//   url: "http://localhost:3000/api/product/product",
+//   thumbnailWidth: 150,
+//   maxFilesize: 0.5,
+//   headers: { "My-Awesome-Header": "biscam" },
+// });
+
+const preview = ref({});
 
 const productImage = reactive({
   image: null,
@@ -147,7 +166,6 @@ const splitQualities = (e) => {
 
 function onChangeFunc(e) {
   if (e.target.files[0].size < 1048576) {
-    console.log(e.target.files[0]);
     productData.imgExt = e.target.files[0].type;
     productData.imgName = e.target.files[0].name;
     productImage.preview = e.target.files[0];
@@ -173,29 +191,23 @@ const createProduct = (e) => {
 
   const formdata = new FormData();
   formdata.append("image", preview.value, preview.value.name);
-  formdata.append("name",productData.name)
-  formdata.append("category", productData.category)
+  productData.imageBuffer = formdata;
 
-  console.log(formdata)
-  axios(`/api/product/createProduct`, {
-    method:'POST',
-    body: JSON.stringify({ 
-      formData:formdata,
-      productData
-    }),
-     headers:{ 
-        'Content-Type':'multipart/form-data'
+  axios
+    .post(
+      `/api/product/product`,
+
+      formdata,
+      {
+        onUploadProgress: () => {
+          ElNotification.success({
+            title: "Loading Product Image",
+            message: "Loading Image pleae wait...",
+            offset: 100,
+          });
+        },
       }
-      }, {
-      onUploadProgress: () => {
-        ElNotification.success({
-          title: "Loading Product Image",
-          message: "Loading Image pleae wait...",
-          offset: 100,
-        });
-      }
-     
-    })
+    )
     .then((res) => {
       if (res) {
         // profile.image = `data:image/png;base64,` + res.data.image;
@@ -240,7 +252,8 @@ const createProduct = (e) => {
       width: 90%;
       margin: 20px auto;
 
-      input,select {
+      input,
+      select {
         width: 70%;
         height: 45px;
         margin: 15px auto;

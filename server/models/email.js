@@ -15,12 +15,4 @@ const emailSchema = new mongoose.Schema(
   },
   { timestamps: true, strict: true, strictQuery: true }
 );
-export const emailModel = mongoose.model("emailSchema", emailSchema);
-
-export default defineEventHandler((event) => {
-
-  const emails = emails.find();
-  return{ 
-    emails
-  }
-});
+export default mongoose.model("emailSchema", emailSchema);

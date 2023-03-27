@@ -1,16 +1,5 @@
 
-<script setup>
-const route = useRoute()
-const getRes = async () => {
-  const data = await $fetch(`/api/product/${route.params.category}`);
 
-  console.log(data);
-};
-onMounted(() => {
-  getRes();
-})
-
-</script>
 <template>
   <div class="category-container">
     <h1>{{ $route.params.category }}</h1>
