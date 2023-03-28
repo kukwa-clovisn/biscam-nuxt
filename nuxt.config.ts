@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "~/assets/styles/main.scss",
   ],
   runtimeConfig: {
-    mongoUrl: process.env.mongo_uri,
+    mongoUrl: process.env.MONGODB_URL,
     mail_api_key: process.env.mail_api_key,
     mail_secret_key: process.env.mail_secret_key,
   },

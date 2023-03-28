@@ -117,7 +117,14 @@
 </template>
 
 <script setup>
+import axios from "axios";
 const route = useRoute();
+
+onMounted(() =>
+  axios(`/api/product_${route.params.id}`)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+);
 
 const productRoute = route.params.id;
 const booking = reactive({

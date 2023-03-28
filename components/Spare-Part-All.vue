@@ -54,7 +54,7 @@ import axios from "axios";
 const products = ref([]);
 
 
-  axios('/api/product').then(res => console.log(res)).catch(err => console.log(err))
+  axios('/api/allProduct').then(res => console.log(res)).catch(err => console.log(err))
 
   
 

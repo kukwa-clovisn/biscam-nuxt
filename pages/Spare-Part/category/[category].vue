@@ -9,11 +9,18 @@
 </template>
 
 <script setup>
-import axios from  'axios'
+import axios from "axios";
 
-const data = await axios('/api/product').then(res => console.log(res)).catch(err => console.log(err))
+const data = await axios("/api/category_12234")
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
 
-console.log(data)
+onMounted(() =>
+  axios
+    .post("/api/category", { data: "this is from category" })
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+);
 </script>
 
 <style lang="scss" scoped>

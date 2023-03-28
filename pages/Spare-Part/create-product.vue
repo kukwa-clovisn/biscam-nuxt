@@ -12,6 +12,8 @@
             placeholder="select product image (<1mb):"
             required
           />
+
+          
           <input
             type="text"
             name="product-name"
@@ -190,14 +192,27 @@ const createProduct = (e) => {
   e.preventDefault();
 
   const formdata = new FormData();
+
   formdata.append("image", preview.value, preview.value.name);
-  productData.imageBuffer = formdata;
+  formdata.append("categroy",productData.category)
+  formdata.append("description",productData.description )
+  formdata.append("qualities", productData.qualitiesArr)
+  formdata.append("priceFrom",productData.priceFrom)
+  formdata.append("priceTo",productData.priceTo)
+  formdata.append("price",productData.price)
+ 
 
-  axios
-    .post(
-      `/api/product/product`,
 
-      formdata,
+  axios({
+    url: `/api/product/product`,
+    method: 'post',
+    data: formdata,
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'Access-Control-Allow-Origin': '*',
+      'Accept': 'application/json'
+    }
+  },
       {
         onUploadProgress: () => {
           ElNotification.success({
