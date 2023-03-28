@@ -8,11 +8,6 @@
           <NuxtLink to="/contact-page">contact us</NuxtLink>
         </button>
       </div>
-      <div class="image-wrapper">
-        <div class="step-div">
-          <!-- <img src="~/assets/flight/pana-biting.png" alt="" /> -->
-        </div>
-      </div>
     </div>
     <div class="services">
       <h1>services we offer</h1>
@@ -125,7 +120,7 @@
           <button>
             <NuxtLink to="/contact-page">contact us</NuxtLink>
           </button>
-          <button @click="($event) => (appointmentState = true)">
+          <button @click="($event) => navigateTo('/appointment')">
             book an appointment
           </button>
         </div>
@@ -177,7 +172,7 @@
     }
 
     .content {
-      width: 65%;
+      width: 70%;
       height: fit-content;
       padding: 10px;
       padding-left: 9%;
@@ -220,17 +215,16 @@
           font: 600 18px "Nunito Sans", sans-serif;
         }
       }
-    }
 
-    .image-wrapper {
-      width: 34%;
-      height: fit-content;
-      position: relative;
-
-      img {
+      @media screen and (max-width: 1000px) {
         width: 80%;
-        height: auto;
-        animation: move 3s infinite linear alternate forwards;
+
+        @media screen and (max-width: 768px) {
+          width: 95%;
+          h1 {
+            font-size: 50px;
+          }
+        }
       }
     }
   }
@@ -246,6 +240,9 @@
       text-transform: uppercase;
       font: 700 50px "Montserrat", "Nunito Sans", sans-serif;
       color: rgb(236, 167, 17);
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+      }
     }
 
     p {
@@ -256,7 +253,7 @@
 
   .address-div {
     width: 100%;
-    height: 70vh;
+    height: fit-content;
     background: url(../assets/flight/auto-elect-two.webp);
     background-size: cover;
     background-repeat: no-repeat;
@@ -277,6 +274,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      padding: 30px 0;
 
       .address-box {
         width: 60%;
@@ -321,9 +319,20 @@
             color: white;
           }
 
-          @media screen and (max-width: 400px) {
+          @media screen and (max-width: 768px) {
             display: block;
+            width: 300px;
+            height: 50px;
+            font-size: 1.2em;
+            margin: 20px auto;
+            @media screen and (max-width: 400px) {
+              width: 90%;
+            }
           }
+        }
+        @media screen and (max-width: 768px) {
+          width: 95%;
+          margin: auto;
         }
       }
     }

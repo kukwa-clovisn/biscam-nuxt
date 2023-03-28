@@ -23,7 +23,11 @@
           <p>Book and appointment with us today.</p>
           <button
             class="appointment"
-            @click="($event) => navigateTo('/appointment')"
+            @click="
+              ($event) => {
+                navigateTo('/appointment'), (menuState = false);
+              }
+            "
           >
             book an appointment now!
           </button>
@@ -209,19 +213,19 @@ const menuState = useMenuState();
         border-bottom: 2px solid orange;
 
         .logo {
-          width: fit-content;
-          height: 13vh;
+          width: 70px;
+          height: 70px;
           overflow: hidden;
           display: flex;
-          justify-content: flex-start;
+          justify-content: center;
           align-items: center;
           background: white;
           border-radius: 100%;
 
           img {
-            width: auto;
-            height: 100%;
-            object-fit: cover;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
             cursor: pointer;
           }
         }
@@ -230,13 +234,17 @@ const menuState = useMenuState();
           font-size: 12px;
           text-align: center;
           color: rgb(252, 249, 242);
+
+          @media screen and (max-width: 400px) {
+            margin: 3px 0;
+          }
         }
 
         .appointment {
           border: none;
           background: rgb(231, 174, 3);
           color: white;
-          width: 70%;
+          width: 80%;
           height: 45px;
           text-transform: uppercase;
           border-radius: 4px;
@@ -259,9 +267,13 @@ const menuState = useMenuState();
             }
           }
 
-          &:focus {
-            background: white;
+          @media screen and (max-width: 1000px) {
+            width: 90%;
           }
+        }
+
+        @media screen and (max-width: 1000px) {
+          height: 36vh;
         }
       }
 
@@ -279,6 +291,11 @@ const menuState = useMenuState();
           text-align: left;
           color: rgb(239, 153, 25);
           font-size: 20px;
+          @media screen and (max-width: 1000px) {
+            font-size: 17px;
+            padding: 3px 0;
+            padding-left: 10px;
+          }
         }
 
         .service-wrapper {
@@ -335,6 +352,10 @@ const menuState = useMenuState();
               font-size: 25px;
             }
           }
+        }
+
+        @media screen and (max-width: 1000px) {
+          height: 64vh;
         }
       }
 
@@ -540,6 +561,12 @@ const menuState = useMenuState();
       text-transform: uppercase;
       color: white;
       position: relative;
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+        @media screen and (max-width: 500px) {
+          font-size: 30px;
+        }
+      }
     }
 
     .content {
@@ -573,8 +600,33 @@ const menuState = useMenuState();
             color: rgb(22, 21, 21);
           }
         }
+
+        @media screen and (max-width: 500px) {
+          width: 100%;
+
+          h2,
+          p {
+            text-align: center;
+          }
+        }
+      }
+      @media screen and (max-width: 550px) {
+        flex-direction: column;
+        .address {
+          width: 90%;
+
+          h2,
+          p {
+            text-align: center;
+          }
+        }
       }
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: fit-content;
+    padding: 30px 0;
   }
 }
 
@@ -657,6 +709,7 @@ const menuState = useMenuState();
         border: 1px solid rgb(234, 236, 245);
         cursor: pointer;
         transition: all 0.3s ease-in;
+        box-shadow: 0 0 10px 5px rgb(220, 221, 221);
 
         .wrapper {
           width: 100%;
@@ -666,6 +719,7 @@ const menuState = useMenuState();
 
           .blur-wrapper {
             display: none;
+            background: rgb(97, 64, 3);
           }
 
           .image {
@@ -785,7 +839,7 @@ const menuState = useMenuState();
 
         &:hover {
           transform: translateY(-10px);
-          box-shadow: 0 0 16px 5px rgb(224, 227, 235);
+          box-shadow: 0 0 16px 5px rgb(228, 234, 236);
 
           .blur-wrapper {
             display: block;

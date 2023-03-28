@@ -372,6 +372,10 @@ const submitForm = (e) => {
               border-left: 3px solid orange;
             }
           }
+
+          @media screen and (max-width: 768px) {
+            width: 90%;
+          }
         }
       }
 
@@ -400,9 +404,21 @@ const submitForm = (e) => {
             color: rgb(26, 26, 26);
             font-size: 20px;
             padding-left: 20px;
+            white-space: pre-wrap;
+          }
+
+          @media screen and (max-width: 500px) {
+            font-size: 16px;
+            span {
+              font-size: 16px;
+            }
           }
         }
         p.full-width {
+          width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
           width: 100%;
         }
       }
@@ -427,6 +443,13 @@ const submitForm = (e) => {
             rgb(6, 46, 105),
             rgb(20, 67, 132)
           );
+
+          @media screen and (max-width: 768px) {
+            width: 95%;
+            height: 60px;
+            margin: 20px auto;
+            font-size: 1.2em;
+          }
         }
         .form-button.form-prev-button {
           background: repeating-linear-gradient(
@@ -434,6 +457,10 @@ const submitForm = (e) => {
             rgb(193, 126, 3),
             rgb(221, 144, 2)
           );
+        }
+
+        @media screen and (max-width: 768px) {
+          width: 90%;
         }
       }
     }

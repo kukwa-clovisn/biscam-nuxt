@@ -60,7 +60,7 @@
               class="header-route special"
               @click="($event) => navigateTo('/appointment')"
             >
-              book and appointment
+              book appointment
             </button>
           </div>
         </div>
@@ -111,6 +111,11 @@ header {
         img {
           height: 90%;
           width: auto;
+        }
+
+        @media screen and (max-width: 1000px) {
+          width: 50px;
+          height: 50px;
         }
       }
 
@@ -204,17 +209,14 @@ header {
 
         @media screen and (max-width: 1000px) {
           background: transparent;
-          color: rgb(34, 34, 34);
-
-          &:hover {
-            color: white;
-          }
+          color: rgb(255, 255, 255);
+          font-size: 1.1em;
 
           @media screen and (max-width: 500px) {
-            font-size: 8px;
             width: max-content;
             height: max-content;
             padding: 10px 20px;
+            font-size: 15px;
           }
         }
       }
@@ -263,11 +265,11 @@ header {
 
             i {
               font-size: 30px;
-              color: rgb(13, 31, 64);
+              color: rgb(255, 255, 255);
             }
 
             &:hover {
-              color: rgb(230, 161, 3);
+              color: rgb(16, 37, 129);
             }
           }
 
@@ -302,6 +304,9 @@ header {
           }
         }
       }
+    }
+    @media screen and (max-width: 1000px) {
+      background: rgb(216, 141, 2);
     }
   }
 }

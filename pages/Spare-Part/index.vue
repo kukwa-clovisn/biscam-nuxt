@@ -71,59 +71,42 @@
 
       <div class="category-display">
         <div class="category-wrapper">
-          <h2 data-aos="slide-right">shop with <span>us</span></h2>
+          <h2 data-aos="slide-up">shop with <span>us</span></h2>
           <p data-aos="slide-up">reserved spare parts just for you.</p>
 
-          <div class="category-list" data-aos="slide-left">
+          <div class="category-list">
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="~/assets/car-engines/camshaft.jpeg"
-                  alt=""
-                />
+                <img src="~/assets/car-engines/camshaft.jpeg" alt="" />
               </div>
-              <h3 data-aos="slide-up">camshaft</h3>
+              <h3>camshaft</h3>
             </div>
             <div class="content">
               <div class="image">
                 <img
-                  data-aos="slide-up"
                   src="~/assets/car-engines/car-key-transparent.png"
                   alt=""
                 />
               </div>
-              <h3 data-aos="slide-up">car key starter</h3>
+              <h3>car key starter</h3>
             </div>
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="~/assets/car-engines/engine-1.jpg"
-                  alt=""
-                />
+                <img src="~/assets/car-engines/engine-1.jpg" alt="" />
               </div>
-              <h3 data-aos="slide-up">engine</h3>
+              <h3>engine</h3>
             </div>
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="~/assets/car-engines/manifold.jpeg"
-                  alt=""
-                />
+                <img src="~/assets/car-engines/manifold.jpeg" alt="" />
               </div>
-              <h3 data-aos="slide-up">manifold</h3>
+              <h3>manifold</h3>
             </div>
             <div class="content">
               <div class="image">
-                <img
-                  data-aos="slide-up"
-                  src="~/assets/car-engines/shaft-1.jpeg"
-                  alt=""
-                />
+                <img src="~/assets/car-engines/shaft-1.jpeg" alt="" />
               </div>
-              <h3 data-aos="slide-up">shaft</h3>
+              <h3>shaft</h3>
             </div>
           </div>
         </div>
@@ -136,7 +119,7 @@
             <p data-aos="slide-up">
               contact us to find more of our available and quality products.
             </p>
-            <a href="https://wa.link/rt49uv" data-aos="slide-up">shop now</a>
+            <a href="https://wa.link/rt49uv">shop now</a>
           </div>
           <div class="right-content" data-aos="slide-left"></div>
         </div>
@@ -974,6 +957,14 @@ main {
                 object-fit: cover;
                 cursor: pointer;
               }
+              @media screen and (max-width: 600px) {
+                width: 250px;
+                height: 250px;
+                @media screen and (max-width: 400px) {
+                  width: 200px;
+                  height: 200px;
+                }
+              }
             }
 
             h3 {
@@ -982,6 +973,15 @@ main {
               color: rgb(222, 219, 219);
               text-align: center;
               font: 600 17px "Nunito Sans", sans-serif;
+              position: relative;
+              @media screen and (max-width: 600px) {
+                font-size: 1.3em;
+              }
+            }
+            @media screen and (max-width: 600px) {
+              width: 100%;
+              height: fit-content;
+              gap: 10px;
             }
           }
         }
@@ -996,7 +996,7 @@ main {
 
       .wrapper {
         width: 100%;
-        height: 100%;
+        height: fit-content;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1062,10 +1062,12 @@ main {
         }
 
         @media screen and (max-width: 1000px) {
-          min-height: 60vh;
+          height: fit-content;
+          padding: 30px 0;
           background: rgb(10, 34, 45);
           .left-content {
             width: 100%;
+            height: fit-content;
             padding: 30px 0;
 
             h2,
@@ -1084,6 +1086,8 @@ main {
             a {
               background: rgb(226, 148, 2);
               margin: auto;
+              width: 300px;
+              display: block;
             }
 
             @media screen and (max-width: 500px) {
@@ -1092,6 +1096,11 @@ main {
               }
               h2 {
                 font-size: 23px;
+              }
+              a {
+                width: 80%;
+                height: 55px;
+                font-size: 1.2em;
               }
             }
           }

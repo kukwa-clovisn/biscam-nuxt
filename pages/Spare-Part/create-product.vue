@@ -5,61 +5,76 @@
         <h1>upload a product.</h1>
 
         <div class="form-data">
-          <input
-            type="file"
-            name="product-image"
-            @change="onChangeFunc"
-            placeholder="select product image (<1mb):"
-            required
-          />
-
-          
+          <label for="product-name">Product Name:</label>
           <input
             type="text"
-            name="product-name"
+            name="name"
             v-model="productData.name"
             placeholder="Enter product name:"
+            id="product-name"
             required
           />
+          <label for="product-category">choose category:</label>
           <select
-            name="product-category"
+            name="category"
             v-model="productData.category"
+            id="product-category"
             placeholder="Enter product category:"
+            required
           >
+            <option value="" disabled>choose a category</option>
             <option value="engines">engines</option>
             <option value="manifold">manifold</option>
             <option value="keyStarter">key starter</option>
             <option value="shaft">shaft</option>
           </select>
+          <label for="product-description">Description:</label>
           <input
             type="text"
-            name="product-description"
+            name="description"
             v-model="productData.description"
+            id="product-description"
             placeholder="Product Description:"
           />
+          <label for="product-quality">product qualities:</label>
           <input
             type="text"
-            name="product-qualities"
+            name="qualities"
             @input="splitQualities"
+            id="product-quality"
             placeholder="Enter product Qualities. Separate each quality with a full stop (.)"
           />
+          <label for="price-from">price from</label>
           <input
             type="text"
-            name="price-from"
+            name="priceFrom"
+            id="price-from"
             v-model="productData.priceFrom"
             placeholder="Enter price range from:($)"
           />
+          <label for="price-to">price to</label>
           <input
             type="text"
-            name="price-to"
+            name="priceTo"
+            id="price-to"
             v-model="productData.priceTo"
             placeholder="Enter Price range to:($)"
           />
+          <label for="price">Standard price:</label>
           <input
             type="text"
             name="price"
             v-model="productData.price"
+            id="price"
             placeholder="Enter Standard price ($)"
+          />
+          <input
+            type="file"
+            name="image"
+            @change="onChangeFunc"
+            placeholder="select product image (<1mb):"
+            id="upload-field"
+            required
           />
         </div>
         <div class="product-preview">
@@ -170,7 +185,6 @@ function onChangeFunc(e) {
   if (e.target.files[0].size < 1048576) {
     productData.imgExt = e.target.files[0].type;
     productData.imgName = e.target.files[0].name;
-    productImage.preview = e.target.files[0];
     preview.value = e.target.files[0];
   } else {
     ElNotification.error({
@@ -181,6 +195,7 @@ function onChangeFunc(e) {
     });
   }
 }
+
 watch(preview, (preview) => {
   let fileReader = new FileReader();
   fileReader.readAsDataURL(preview);
@@ -194,35 +209,29 @@ const createProduct = (e) => {
   const formdata = new FormData();
 
   formdata.append("image", preview.value, preview.value.name);
-  formdata.append("categroy",productData.category)
-  formdata.append("description",productData.description )
-  formdata.append("qualities", productData.qualitiesArr)
-  formdata.append("priceFrom",productData.priceFrom)
-  formdata.append("priceTo",productData.priceTo)
-  formdata.append("price",productData.price)
- 
+  formdata.append("categroy", productData.category);
+  formdata.append("description", productData.description);
+  formdata.append("qualities", productData.qualitiesArr);
+  formdata.append("priceFrom", productData.priceFrom);
+  formdata.append("priceTo", productData.priceTo);
+  formdata.append("price", productData.price);
 
-
-  axios({
-    url: `/api/product/product`,
-    method: 'post',
-    data: formdata,
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      'Access-Control-Allow-Origin': '*',
-      'Accept': 'application/json'
+  axios(
+    "/api/product",
+    {
+      method: "post",
+      data: formdata,
+    },
+    {
+      onUploadProgress: () => {
+        ElNotification.success({
+          title: "Loading Product Image",
+          message: "Loading Image pleae wait...",
+          offset: 100,
+        });
+      },
     }
-  },
-      {
-        onUploadProgress: () => {
-          ElNotification.success({
-            title: "Loading Product Image",
-            message: "Loading Image pleae wait...",
-            offset: 100,
-          });
-        },
-      }
-    )
+  )
     .then((res) => {
       if (res) {
         // profile.image = `data:image/png;base64,` + res.data.image;
@@ -248,14 +257,19 @@ const createProduct = (e) => {
 
 <style lang="scss" scoped>
 .create-product-main {
-  width: 100%;
+  width: 100vw;
   height: fit-content;
+  padding: 0;
   padding-top: 14vh;
   background: rgb(244, 244, 244);
+
+  margin: 0;
 
   .create-product-wrapper {
     width: 100%;
     height: fit-content;
+    padding: 0;
+    margin: 0;
 
     h1 {
       text-transform: capitalize;
@@ -267,13 +281,29 @@ const createProduct = (e) => {
       width: 90%;
       margin: 20px auto;
 
+      label {
+        display: block;
+        text-align: left;
+        text-transform: capitalize;
+        font-weight: bold;
+        cursor: pointer;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 0;
+        margin-top: 30px;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
       input,
       select {
         width: 70%;
         height: 45px;
         margin: 15px auto;
         border: none;
-        border-bottom: 1px solid rgb(169, 167, 167);
+        border-bottom: 1px solid rgb(196, 196, 196);
         display: block;
         text-align: left;
         outline: none;
@@ -293,6 +323,57 @@ const createProduct = (e) => {
 
           border-left: 3px solid orange;
         }
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      option {
+        text-align: left;
+      }
+
+      #upload-field {
+        width: 40%;
+        height: 60px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 40px auto;
+        box-shadow: 4px 4px 10px 4px rgb(193, 193, 193);
+        padding: 0;
+        background: white;
+        font-weight: bold;
+
+        &:hover {
+          background: rgb(230, 177, 5);
+          border: none;
+        }
+        @media screen and (max-width: 768px) {
+          width: 90%;
+        }
+      }
+
+      ::-webkit-file-upload-button {
+        height: 100%;
+        width: 35%;
+        border-radius: 50px;
+        background: rgb(197, 124, 8);
+        color: white;
+        outline: none;
+        border: none;
+        box-shadow: 0 0 9px 3px rgb(109, 71, 2);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgb(230, 177, 5);
+          border: none;
+        }
+      }
+
+      ::-webkit-input-placeholder {
+        text-transform: capitalize;
+        color: rgb(103, 103, 103);
       }
 
       .product-preview {
@@ -306,6 +387,11 @@ const createProduct = (e) => {
           width: 70%;
           height: fit-content;
           margin: 20px auto;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 3px;
 
           img {
             width: auto;
@@ -314,6 +400,10 @@ const createProduct = (e) => {
             cursor: pointer;
             margin: 0;
             display: block;
+            background: white;
+          }
+          @media screen and (max-width: 768px) {
+            width: 100%;
           }
         }
 
@@ -380,6 +470,9 @@ const createProduct = (e) => {
               }
             }
           }
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
         }
 
         @media screen and (max-width: 650px) {
@@ -397,7 +490,7 @@ const createProduct = (e) => {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        margin: 10px auto;
+        margin: 20px auto;
 
         button {
           width: 47%;
@@ -405,7 +498,7 @@ const createProduct = (e) => {
           border: none;
           background: rgb(21, 57, 137);
           color: white;
-          margin: 10px auto;
+          margin: 20px auto;
           font-weight: bold;
           text-transform: capitalize;
           display: block;
@@ -422,7 +515,24 @@ const createProduct = (e) => {
 
           @media screen and (max-width: 500px) {
             width: 100%;
+            height: 60px;
+            border-radius: 50px;
           }
+        }
+        @media screen and (max-width: 768px) {
+          width: 100%;
+
+          button {
+            width: 90%;
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        width: 80%;
+        margin: 20px auto;
+
+        @media screen and (max-width: 500px) {
+          width: 90%;
         }
       }
     }

@@ -250,6 +250,18 @@ const dg_images = ref([img, img1, img2, img3]);
       span {
         color: rgb(241, 162, 42);
       }
+
+      @media screen and (max-width: 768px) {
+        font-size: 50px;
+
+        @media screen and (max-width: 500px) {
+          font-size: 40px;
+
+          @media screen and (max-width: 400px) {
+            font-size: 30px;
+          }
+        }
+      }
     }
 
     p {
@@ -291,6 +303,10 @@ const dg_images = ref([img, img1, img2, img3]);
           font-size: 15px;
         }
       }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
     }
   }
 
@@ -298,10 +314,11 @@ const dg_images = ref([img, img1, img2, img3]);
     width: 90%;
     height: 50vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     margin: 0 auto;
     padding: 10px 0;
+    padding-top: 0;
 
     .section-flex-img {
       height: 100%;
@@ -317,7 +334,7 @@ const dg_images = ref([img, img1, img2, img3]);
     }
 
     .section-flex-content {
-      width: 60%;
+      width: 58%;
       height: fit-content;
       padding: 5px;
       padding-top: 0;
@@ -345,6 +362,50 @@ const dg_images = ref([img, img1, img2, img3]);
         a {
           text-decoration: none;
           text-transform: uppercase;
+        }
+      }
+    }
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      height: fit-content;
+      align-items: center;
+
+      .section-flex-img {
+        height: 50vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          height: 100%;
+          margin: auto;
+        }
+      }
+
+      .section-flex-content {
+        width: 100%;
+        height: fit-content;
+
+        h3,
+        p {
+          text-align: center;
+        }
+
+        h3 {
+          font-size: 28px;
+          font-weight: bolder;
+        }
+        p {
+          font-size: 18px;
+          line-height: 27px;
+        }
+
+        button {
+          width: 80%;
+          margin: 20px auto;
+          height: 55px;
+          font-size: 1.2em;
         }
       }
     }
@@ -409,6 +470,16 @@ const dg_images = ref([img, img1, img2, img3]);
 
     h2 {
       color: white;
+
+      @media screen and (max-width: 500px) {
+        font-size: 26px;
+      }
+    }
+
+    p {
+      @media screen and (max-width: 500px) {
+        font-size: 1.1em;
+      }
     }
 
     button {
@@ -416,6 +487,9 @@ const dg_images = ref([img, img1, img2, img3]);
 
       a {
         color: rgb(241, 162, 42);
+      }
+      @media screen and (max-width: 500px) {
+        width: 90%;
       }
     }
   }
@@ -437,6 +511,12 @@ const dg_images = ref([img, img1, img2, img3]);
         font-weight: 600;
         font-size: 20px;
         line-height: 40px;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      width: 80%;
+      @media screen and (max-width: 500px) {
+        width: 90%;
       }
     }
   }

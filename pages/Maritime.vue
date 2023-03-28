@@ -267,6 +267,12 @@
         text-transform: uppercase;
         color: white;
         font-size: 60px;
+        @media screen and (max-width: 768px) {
+          font-size: 50px;
+          @media screen and (max-width: 400px) {
+            font-size: 40px;
+          }
+        }
       }
 
       button {
@@ -280,6 +286,10 @@
           color: white;
           text-transform: uppercase;
           padding: 10px;
+        }
+
+        @media screen and (max-width: 400px) {
+          width: 85%;
         }
       }
     }
@@ -295,6 +305,10 @@
       text-transform: uppercase;
       font: 800 50px "Montserrat", sans-serif;
       padding: 20px;
+
+      @media screen and (max-width: 400px) {
+        font-size: 30px;
+      }
     }
 
     p {
@@ -348,6 +362,11 @@
 
     h1 {
       color: rgb(253, 168, 41);
+      line-height: 70px;
+
+      @media screen and (max-width: 500px) {
+        font-size: 30px;
+      }
     }
 
     .address h2 {

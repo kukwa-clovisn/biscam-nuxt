@@ -235,7 +235,7 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 20px;
-
+    position: relative;
     h1 {
       font: 800 60px "Montserrat", "Nunito Sans", sans-serif;
       letter-spacing: 1px;
@@ -244,6 +244,17 @@
       text-align: left;
       padding: 0;
       margin: 0;
+      position: relative;
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+        @media screen and (max-width: 500px) {
+          font-size: 35px;
+          line-height: 60px;
+          @media screen and (max-width: 420px) {
+            text-align: center;
+          }
+        }
+      }
     }
 
     p {
@@ -251,7 +262,11 @@
       color: white;
       text-transform: capitalize;
       padding: 10px;
+      position: relative;
       letter-spacing: 1px;
+      @media screen and (max-width: 420px) {
+        text-align: center;
+      }
     }
 
     button {
@@ -260,6 +275,7 @@
       background: rgb(241, 162, 42);
       border: none;
       border-radius: 4px;
+      position: relative;
 
       a {
         text-decoration: none;
@@ -267,6 +283,14 @@
         text-transform: uppercase;
         font: 600 18px "Nunito Sans", sans-serif;
       }
+      @media screen and (max-width: 420px) {
+        margin: 20px auto;
+        width: 90%;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      width: 95%;
+      padding-left: 2%;
     }
   }
 
@@ -279,6 +303,12 @@
       width: 80%;
       height: auto;
       animation: move 3s infinite linear alternate forwards;
+    }
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      right: 1%;
+      top: 30%;
+      width: 60%;
     }
   }
 }
@@ -318,6 +348,9 @@
         text-transform: uppercase;
         color: rgb(238, 146, 9);
         font: 800 50px "Montserrat", "Nunito Sans", sans-serif;
+        @media screen and (max-width: 400px) {
+          font-size: 35px;
+        }
       }
 
       p {
@@ -334,6 +367,18 @@
       img {
         width: 90%;
         height: auto;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      flex-direction: column-reverse;
+      .content,
+      .about-img {
+        width: 100%;
+
+        h1,
+        p {
+          text-align: center;
+        }
       }
     }
   }
@@ -366,6 +411,9 @@
       padding: 0 5px;
       font-size: 1.2em;
     }
+    @media screen and (max-width: 400px) {
+      font-size: 24px;
+    }
   }
 
   .image-wrapper {
@@ -386,6 +434,10 @@
       width: auto;
       height: 100%;
       cursor: pointer;
+    }
+    @media screen and (max-width: 400px) {
+      width: 200px;
+      height: 200px;
     }
   }
 
