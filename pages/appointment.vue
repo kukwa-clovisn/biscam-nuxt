@@ -1,7 +1,7 @@
 <template>
   <div class="appointment-container">
     <div class="appointment-wrapper">
-      <form @submit="event.preventDefault()">
+      <form @submit="event.preventDefault()" ref="formdata">
         <h1>book an appointment</h1>
         <el-steps :active="active" finish-status="success">
           <el-step title="Step 1" />
@@ -157,11 +157,13 @@
   </div>
 </template>
 <script setup>
+import emailjs from "@emailjs/browser";
 const router = useRouter();
 const active = ref(0);
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
+const formdata = ref(null);
 
 const appointmentBody = reactive({
   name: "",
@@ -246,27 +248,48 @@ const phaseTwo = (e) => {
 const submitForm = (e) => {
   active.value = 0;
 
-  ElMessageBox.alert(
-    "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
-    "Appointment Submitted",
-    {
-      // if you want to disable its autofocus
-      // autofocus: false,
-      confirmButtonText: "OK",
-      callback: () => {
-        router.push("/");
-        appointmentBody.name = "";
-        appointmentBody.email = "";
-        appointmentBody.tel = "";
-        appointmentBody.date = "";
-        appointmentBody.time = "";
-        appointmentBody.userService = "";
-        stepOne.value = true;
-        stepTwo.value = false;
-        confirm.value = false;
+  var templateParams = {
+    name: "codingherald",
+    notes: "texting email js api",
+  };
+
+  emailjs
+    .send(
+      "service_ep4i5d9",
+      "template_p18qg84",
+      templateParams,
+      "GnFR9bf1unlodMFZG"
+    )
+    .then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+
+        ElMessageBox.alert(
+          "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
+          "Appointment Submitted",
+          {
+            // if you want to disable its autofocus
+            // autofocus: false,
+            confirmButtonText: "OK",
+            callback: () => {
+              router.push("/");
+              appointmentBody.name = "";
+              appointmentBody.email = "";
+              appointmentBody.tel = "";
+              appointmentBody.date = "";
+              appointmentBody.time = "";
+              appointmentBody.userService = "";
+              stepOne.value = true;
+              stepTwo.value = false;
+              confirm.value = false;
+            },
+          }
+        );
       },
-    }
-  );
+      (error) => {
+        console.log("FAILED...", error);
+      }
+    );
 };
 </script>
 <style lang="scss" scoped>

@@ -11,12 +11,12 @@ export default defineNuxtConfig({
     "~/assets/styles/main.scss",
   ],
   runtimeConfig: {
-    mongoUrl: process.env.MONGODB_URL,
+    mongoUrl: process.env.mongo_uri,
     mail_api_key: process.env.mail_api_key,
     mail_secret_key: process.env.mail_secret_key,
-    mailerUser: "",
-    mailerPass: "",
-    mailerLog: "",
+    mailerUser: process.env.MAILER_USER,
+    mailerPass: process.env.MAILER_PASS,
+    mailerLog: process.env.MAILER_LOG,
   },
   nitro: {
     plugins: ["~/server/db.js"],

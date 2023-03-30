@@ -52,7 +52,8 @@
           </div>
           <div class="menu-button-wrapper">
             <button @click="($event) => (menuState = true)">
-              <i class="fa-solid fa-align-right"></i>
+              <i class="fa-solid fa-bars-staggered" v-if="!menuState"></i>
+              <i class="fa-solid fa-xmark" v-else></i>
             </button>
           </div>
           <div class="header-wrapper-content-services-service">
@@ -265,7 +266,7 @@ header {
 
             i {
               font-size: 30px;
-              color: rgb(255, 255, 255);
+              color: rgb(67, 66, 66);
             }
 
             &:hover {

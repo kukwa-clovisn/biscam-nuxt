@@ -8,7 +8,7 @@
           <a href="https://wa.link/rt49uv">shop now</a>
         </div>
         <div class="image">
-          <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
+          <img src="~/assets/car-engines/engine.jpg" alt="" />
         </div>
       </div>
       <div class="right-content">
@@ -28,7 +28,7 @@
           </div>
           <div class="content">
             <div class="img">
-              <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
+              <img src="~/assets/car-engines/car-generator.jpeg" alt="" />
             </div>
             <div class="info">
               <h2>car key starter</h2>

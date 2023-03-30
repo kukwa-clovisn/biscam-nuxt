@@ -88,6 +88,7 @@
 </template>
 
 <script setup>
+import emailjs from "@emailjs/browser";
 useHead({
   title: "Biscam Investment Sarl",
   viewport: "width:device-width, initial-scale=1",
@@ -123,7 +124,17 @@ useHead({
       rel: "stylesheet",
     },
   ],
+  script: [
+    {
+      type: "text/javascript",
+      src: "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js",
+    },
+  ],
 });
+
+(function () {
+  emailjs.init("GnFR9bf1unlodMFZG");
+})();
 
 const menuState = useMenuState();
 </script>

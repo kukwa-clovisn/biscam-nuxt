@@ -11,7 +11,7 @@ export default async function sendVerificationGmail(email) {
   return await sendGmail({
     template,
     to: email,
-    from: "codingherald@gmail.com",
+    from: "Kukwa Clovis",
     subject: "codingherald email verification",
   });
 }
