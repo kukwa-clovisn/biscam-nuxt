@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="header-wrapper">
+    <div :class="[{ sticky: stickyHeader }, 'header-wrapper']">
       <div class="logo-wrapper">
         <div class="logo-image-wrapper" @click="($event) => navigateTo('/')">
           <img src="../assets/biscam-logo.png" alt="" />
@@ -71,6 +71,13 @@
 </template>
 <script setup>
 const menuState = useMenuState();
+const stickyHeader = ref(false);
+
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
 </script>
 
 <style lang="scss" scoped>
@@ -85,7 +92,7 @@ header {
   align-items: center;
   flex-direction: column;
 
-  .header-wrapper {
+  .header-wrapper.sticky {
     width: 100%;
     height: 13vh;
     display: flex;
@@ -108,6 +115,7 @@ header {
         border-radius: 100%;
         overflow: hidden;
         background: white;
+        cursor: pointer;
 
         img {
           height: 90%;

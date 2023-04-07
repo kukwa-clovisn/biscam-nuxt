@@ -27,9 +27,9 @@
                   >
                     <el-option
                       v-for="item in options"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value"
+                      :key="item"
+                      :label="item"
+                      :value="item"
                     />
                   </el-select>
                 </div>
@@ -49,9 +49,9 @@
                   >
                     <el-option
                       v-for="item in options"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value"
+                      :key="item"
+                      :label="item"
+                      :value="item"
                     />
                   </el-select>
                 </div>
@@ -138,11 +138,21 @@
 
             <div class="form-wrapper" v-if="confirm">
               <h2>check your info before submitting</h2>
-              <p>Departure: <span>{{ ticketBody.departure }}</span> </p>
-              <p>Destination: <span> {{ ticketBody.destination }}</span></p>
-              <p>Departure Date: <span>{{ ticketBody.departureDate }}</span> </p>
-              <p>Return Date: <span>{{ ticketBody.returnDate }}</span> </p>
-              <p>Passangers: <span>{{ ticketBody.passangers }}</span> </p>
+              <p>
+                Departure: <span>{{ ticketBody.departure }}</span>
+              </p>
+              <p>
+                Destination: <span> {{ ticketBody.destination }}</span>
+              </p>
+              <p>
+                Departure Date: <span>{{ ticketBody.departureDate }}</span>
+              </p>
+              <p>
+                Return Date: <span>{{ ticketBody.returnDate }}</span>
+              </p>
+              <p>
+                Passangers: <span>{{ ticketBody.passangers }}</span>
+              </p>
             </div>
 
             <el-button @click="phaseOne()" v-if="stepOne" class="form-button"
@@ -197,32 +207,36 @@ const ticketBody = reactive({
   passangers: 1,
 });
 
-const options = ref([
-  {
-    value: "Yaounde",
-    label: "Yaounde",
-  },
-  {
-    value: "Douala",
-    label: "Douala",
-  },
-  {
-    value: "Bamenda",
-    label: "Bamenda",
-  },
-  {
-    value: "Garoua",
-    label: "Garoua",
-  },
-  {
-    value: "Ngoundere",
-    label: "Ngoundere",
-  },
-]);
+const options = ref([]);
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
 const active = ref(0);
+
+import axios from "axios";
+
+const requestOptions = {
+  method: "GET",
+  url: "https://restcountries.com/v3.1/all",
+};
+
+onMounted(() => {
+  axios
+    .request(requestOptions)
+    .then(function (response) {
+      for (let i = 0; i < response.data.length; i++) {
+        options.value.push(response.data[i].name.common);
+      }
+
+      options.value = options.value.sort();
+
+      console.log(options.value);
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+});
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -313,7 +327,7 @@ const submitForm = (e) => {
           position: relative;
           z-index: 1;
           margin: 0 auto;
-          border-radius:5px;
+          border-radius: 5px;
 
           h1 {
             text-transform: uppercase;
@@ -331,19 +345,18 @@ const submitForm = (e) => {
             flex-wrap: wrap;
             gap: 15px;
 
-            h2{
-              text-transform:capitalize;
+            h2 {
+              text-transform: capitalize;
             }
 
-            p{ 
-              display:block;
-              width:90%;
+            p {
+              display: block;
+              width: 90%;
               text-align: left;
-              span{ 
-                font-weight:bolder;
-                font-size:1.1em;
+              span {
+                font-weight: bolder;
+                font-size: 1.1em;
               }
-
             }
             .form-data {
               width: 300px;
