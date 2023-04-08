@@ -1,5 +1,6 @@
 <template>
   <main>
+    <div class="header-component"></div>
     <div class="main-wrapper">
       <div class="left-content">
         <div class="info">
@@ -642,14 +643,19 @@ const category = ref("");
 main {
   width: 100%;
   height: fit-content;
+  .header-component {
+    width: 100%;
+    height: 13vh;
+    background: rgb(251, 165, 118);
+    background: rgb(15, 48, 109);
+  }
 
   .main-wrapper {
     width: 100%;
-    height: 86vh;
+    height: 87vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 12.6vh;
 
     .left-content {
       width: 50%;

@@ -16,6 +16,31 @@
         <img src="~/assets/flight/cleaning-cartoon-transparent.png" alt="" />
       </div>
     </div>
+    <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+      <div class="navbar-wrapper">
+        <div class="left-navbar">
+          <h3>connect with us:</h3>
+        </div>
+        <div class="right-navbar">
+          <div class="link">
+            <i class="fa-brands fa-facebook"></i>
+            <a href="#">facebook</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-twitter"></i>
+            <a href="#">twitter</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="#">linkedin</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-tiktok"></i>
+            <a href="#">tiktok</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="about-div" id="about">
       <div class="about-wrapper">
         <div class="content">
@@ -205,12 +230,20 @@
     </div>
   </main>
 </template>
+<script setup>
+const stickyHeader = ref(false);
 
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
+</script>
 
 <style lang="scss" scoped>
 .landing-page {
   width: 100vw;
-  height: 94vh;
+  height: 90vh;
   position: relative;
   background: url(../assets/flight/cleaning-equipments-1.jpg);
   background-size: cover;
@@ -311,6 +344,9 @@
       width: 60%;
     }
   }
+}
+.navbar.changeBg {
+  box-shadow: 0 8px 18px 2px rgb(213, 212, 212);
 }
 
 @keyframes move {

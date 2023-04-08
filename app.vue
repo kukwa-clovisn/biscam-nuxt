@@ -955,7 +955,7 @@ const menuState = useMenuState();
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(177, 176, 176);
+  background: rgb(15, 48, 109);
   border-radius: 30px;
 }
 
@@ -1061,6 +1061,111 @@ nav a.NuxtLink-exact-active {
 
   to {
     transform: translateY(-100%);
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: 10%;
+  background: rgb(15, 48, 109);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .navbar-wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+
+    .left-navbar {
+      width: 25%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        color: white;
+        text-transform: capitalize;
+      }
+    }
+
+    .right-navbar {
+      width: 60%;
+      height: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        height: 100%;
+
+        i {
+          color: rgb(226, 226, 226);
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+          text-transform: capitalize;
+        }
+
+        &:hover {
+          i,
+          a {
+            color: gold;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      flex-direction: column;
+      .left-navbar {
+        width: 100%;
+
+        h3 {
+          font-size: 14px;
+        }
+      }
+      .right-navbar {
+        width: 100%;
+
+        .link {
+          a {
+            font-size: 11px;
+
+            @media screen and (max-width: 450px) {
+              font-size: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.navbar.changeBg {
+  background: rgb(241, 162, 42);
+  box-shadow: 0 8px 10px 5px rgb(13, 30, 79);
+  height: 13vh;
+  animation: slide_down 0.5s 1 alternate forwards;
+  position: relative;
+
+  .navbar-wrapper {
+    .left-navbar h3,
+    .right-navbar .link a,
+    .right-navbar .link i {
+      color: rgb(255, 255, 255);
+    }
   }
 }
 </style>

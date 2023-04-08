@@ -8,6 +8,20 @@
           <NuxtLink to="/contact-page">contact us</NuxtLink>
         </button>
       </div>
+      <div class="nav-div">
+        <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
+          <a href="#"> <i class="fa-brands fa-facebook"></i> facebook</a>
+        </div>
+        <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
+          <a href="#"> <i class="fa-brands fa-twitter"></i> twitter</a>
+        </div>
+        <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
+          <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin</a>
+        </div>
+        <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
+          <a href="#"> <i class="fa-brands fa-tiktok"></i> tiktok</a>
+        </div>
+      </div>
     </div>
     <div class="services">
       <h1>services we offer</h1>
@@ -147,7 +161,15 @@
     </div>
   </div>
 </template>
+<script setup>
+const stickyHeader = ref(false);
 
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
+</script>
 
 <style lang="scss" scoped>
 .main {
@@ -156,7 +178,7 @@
 
   .landing-page {
     width: 100vw;
-    height: 94vh;
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -225,6 +247,49 @@
             font-size: 50px;
           }
         }
+      }
+    }
+    .nav-div {
+      width: 25%;
+      height: fit-content;
+
+      .nav-link {
+        width: 150px;
+        height: 70px;
+        border-radius: 2px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        background: rgba(8, 20, 55, 0.475);
+        margin: 15px auto;
+        cursor: pointer;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: white;
+          text-transform: capitalize;
+        }
+
+        &:hover {
+          transform: translateX(-5px);
+
+          background: rgba(146, 91, 2, 0.401);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+
+      .nav-link.changeBg {
+        background: rgba(221, 144, 0, 0.482);
       }
     }
   }

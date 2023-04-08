@@ -30,6 +30,31 @@
           </div>
         </div>
       </div>
+      <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+        <div class="navbar-wrapper">
+          <div class="left-navbar">
+            <h3>connect with us:</h3>
+          </div>
+          <div class="right-navbar">
+            <div class="link">
+              <i class="fa-brands fa-facebook"></i>
+              <a href="#">facebook</a>
+            </div>
+            <div class="link">
+              <i class="fa-brands fa-twitter"></i>
+              <a href="#">twitter</a>
+            </div>
+            <div class="link">
+              <i class="fa-brands fa-linkedin"></i>
+              <a href="#">linkedin</a>
+            </div>
+            <div class="link">
+              <i class="fa-brands fa-tiktok"></i>
+              <a href="#">tiktok</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="garage-section">
@@ -342,6 +367,13 @@ const maritime_images = ref([
 ]);
 
 const dg_images = ref([digital_zero, digital_one]);
+const stickyHeader = ref(false);
+
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
 </script>
 <style lang="scss" scoped>
 .main {
@@ -367,7 +399,7 @@ const dg_images = ref([digital_zero, digital_one]);
 
     .landing-page {
       width: 100%;
-      height: 94vh;
+      height: 90vh;
       position: relative;
       background: url(../assets/flight/boat-floating-sea.jpg);
       background-size: cover;
@@ -376,7 +408,7 @@ const dg_images = ref([digital_zero, digital_one]);
 
       .wrapper {
         width: 100%;
-        height: 100%;
+        height: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -519,11 +551,11 @@ const dg_images = ref([digital_zero, digital_one]);
               height: 50px;
               margin: 30px 40px 10px 0;
               font-size: 15px;
-              color: rgb(55, 53, 53);
               color: white;
               text-decoration: none;
               position: relative;
               overflow: hidden;
+              text-transform: uppercase;
 
               &:last-child {
                 background: transparent;

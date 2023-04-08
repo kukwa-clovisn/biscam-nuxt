@@ -15,6 +15,31 @@
           </button>
         </div>
       </div>
+      <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+        <div class="navbar-wrapper">
+          <div class="left-navbar">
+            <h3>connect with us:</h3>
+          </div>
+          <div class="right-navbar">
+            <div class="link">
+              <i class="fa-brands fa-facebook"></i>
+              <a href="#">facebook</a>
+            </div>
+            <div class="link">
+              <i class="fa-brands fa-twitter"></i>
+              <a href="#">twitter</a>
+            </div>
+            <div class="link">
+              <i class="fa-brands fa-linkedin"></i>
+              <a href="#">linkedin</a>
+            </div>
+            <div class="link">
+              <i class="fa-brands fa-tiktok"></i>
+              <a href="#">tiktok</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section-1">
       <h2>flight ticket</h2>
@@ -195,6 +220,13 @@ import img2 from "assets/flight/sky-plane.jpg";
 import img3 from "assets/flight/black-woman-with-suitcase-airport.jpg";
 
 const dg_images = ref([img, img1, img2, img3]);
+const stickyHeader = ref(false);
+
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
 </script>
 
 <style lang="scss" scoped>
@@ -204,7 +236,7 @@ const dg_images = ref([img, img1, img2, img3]);
 
   .landing-page {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     position: relative;
     background: url(../assets/flight/black-woman-with-suitcase-airport.jpg);
     background-repeat: no-repeat;
@@ -213,7 +245,10 @@ const dg_images = ref([img, img1, img2, img3]);
 
     .carousel-div {
       width: 100%;
-      height: 90vh;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .blur-wrapper {
@@ -222,14 +257,15 @@ const dg_images = ref([img, img1, img2, img3]);
 
     .landing-page-content {
       width: 100%;
-      height: 80vh;
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      height: 90vh;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
+    }
+
+    .navbar.changeBg {
+      box-shadow: 0 8px 18px 2px rgb(213, 212, 212);
     }
 
     h1,

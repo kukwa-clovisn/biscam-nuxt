@@ -292,7 +292,7 @@ header {
 
         @media screen and (max-width: 1000px) {
           flex-direction: row-reverse;
-          justify-content: space-evenly;
+          justify-content: space-between;
           padding-right: 5%;
 
           .header-wrapper-content-services-service.lg {
@@ -325,7 +325,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background: #ffffff;
-    box-shadow: 0px 0px 10px 1px rgb(21, 21, 21);
+    box-shadow: 0px 0px 6px 2px rgb(1, 18, 53);
     animation: slide_down 0.4s 1 alternate forwards;
 
     .logo-wrapper {
@@ -334,19 +334,23 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgb(14, 40, 90);
+      background: rgb(15, 48, 109);
 
       .logo-image-wrapper {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         border-radius: 100%;
         overflow: hidden;
         background: white;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
-          height: 90%;
-          width: auto;
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
         }
 
         @media screen and (max-width: 1000px) {
@@ -419,7 +423,7 @@ header {
       }
 
       .header-route.special {
-        background: rgb(230, 150, 2);
+        background: rgb(241, 162, 42);
         border-radius: 4px;
         height: 100%;
         padding: 5px 10px;
@@ -438,7 +442,7 @@ header {
             position: absolute;
             top: 0;
             left: 0;
-            background: rgb(207, 122, 2);
+            background: rgb(241, 162, 42);
             animation: background_slideX 1s 1 alternate forwards;
           }
         }
@@ -512,6 +516,10 @@ header {
           @media screen and (max-width: 1000px) {
             display: block;
 
+            button i {
+              color: white;
+            }
+
             @media screen and (max-width: 768px) {
               width: 30%;
             }
@@ -540,6 +548,9 @@ header {
           }
         }
       }
+    }
+    @media screen and (max-width: 1000px) {
+      background: rgb(216, 141, 2);
     }
   }
   @keyframes slide_down {

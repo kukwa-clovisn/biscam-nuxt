@@ -1,5 +1,6 @@
 <template>
   <div class="appointment-container">
+    <div class="header-component"></div>
     <div class="appointment-wrapper">
       <form @submit="event.preventDefault()" ref="formdata">
         <h1>book an appointment</h1>
@@ -296,9 +297,14 @@ const submitForm = (e) => {
 .appointment-container {
   width: 100%;
   height: fit-content;
-  padding-top: 14vh;
   background: rgb(255, 255, 255);
   animation: popUp 1s 1 linear alternate forwards;
+
+  .header-component {
+    height: 13vh;
+    width: 100%;
+    background: rgb(16, 48, 110);
+  }
 
   .appointment-wrapper {
     width: 100%;

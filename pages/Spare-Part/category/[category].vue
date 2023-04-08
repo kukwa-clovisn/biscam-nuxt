@@ -2,6 +2,7 @@
 
 <template>
   <div class="category-container">
+    <div class="header-component"></div>
     <h1>{{ $route.params.category }}</h1>
     <SparePartCategoryHeader />
     <Spare-Part-Manifold />
@@ -25,6 +26,10 @@ onMounted(() =>
 
 <style lang="scss" scoped>
 .category-container {
-  padding-top: 14vh;
+  .header-component {
+    width: 100%;
+    height: 13vh;
+    background: rgb(15, 48, 109);
+  }
 }
 </style>

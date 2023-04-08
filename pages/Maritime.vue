@@ -233,7 +233,7 @@
 
   .landing-page {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     position: relative;
     background: url(../assets/flight/ship-weilding.jpg);
     background-repeat: no-repeat;
