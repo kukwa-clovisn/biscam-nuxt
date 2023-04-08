@@ -187,46 +187,27 @@
         </div>
       </div>
     </div>
-    <div class="address-container" data-aos="slide-left">
+    <div class="address-div">
       <div class="blur-wrapper"></div>
-
       <div class="address-wrapper">
-        <h1 data-aos="slide-up">
-          with just a call, <br />
-          you will enjoy our services!
-        </h1>
-
-        <div class="content">
-          <div class="address" data-aos="slide-up">
-            <h2 data-aos="slide-up">address</h2>
-            <p data-aos="slide-up">anciente route</p>
-            <p data-aos="slide-up">bonaberi, douala</p>
-            <p data-aos="slide-up">p.o box 1159 douala</p>
-          </div>
-          <div class="address" data-aos="slide-up">
-            <h2 data-aos="slide-up">contact</h2>
-            <p data-aos="slide-up">
-              <a href="tel:+237683079785">Telephone: (+237) 683 079 785</a>
-            </p>
-            <p data-aos="slide-up">
-              <a href="https://wa.link/wrxet8"> whatsapp: (+237) 679 450 640</a>
-            </p>
-            <p data-aos="slide-up">
-              <a href="mailto:biscamcleaning@gmail.com"
-                >Email:biscamcleaning@gmail.com</a
-              >
-            </p>
-          </div>
+        <div class="address-box">
+          <h2>address</h2>
+          <p>anciente route, opposite mobile</p>
+          <p><a href="tel:+237699391316"> Tel : +237699 391 316</a></p>
+          <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
+          <p>
+            <a href="mailto:garagebiscam@gmail.com"
+              >Email: garagebiscam@gmail.com</a
+            >
+          </p>
+          <button>
+            <NuxtLink to="/contact-page">contact us</NuxtLink>
+          </button>
+          <button @click="($event) => navigateTo('/appointment')">
+            book an appointment
+          </button>
         </div>
       </div>
-    </div>
-    <div class="contact-container" id="contactForm">
-      <contactForm
-        whatsappLink="https://wa.link/wrxet8"
-        whatsappTel="+237679450640"
-        tel="+237683079785"
-        email="biscamcleaning@gmail.com"
-      />
     </div>
   </main>
 </template>

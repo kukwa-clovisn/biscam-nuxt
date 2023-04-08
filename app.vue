@@ -1168,4 +1168,91 @@ nav a.NuxtLink-exact-active {
     }
   }
 }
+
+.address-div {
+  width: 100%;
+  height: fit-content;
+  background: url(./assets/flight/auto-elect-two.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+
+  .blur-wrapper {
+    background: rgb(15, 30, 44);
+    opacity: 0.8;
+  }
+
+  .address-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 30px 0;
+
+    .address-box {
+      width: 60%;
+      height: fit-content;
+      position: relative;
+
+      h2 {
+        color: orange;
+        padding: 10px;
+        text-transform: capitalize;
+        font: 600 40px "Montserrat", "Nunito Sans", sans-serif;
+      }
+
+      p {
+        color: white;
+        padding: 10px;
+        text-transform: capitalize;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+      button {
+        width: max-content;
+        height: max-content;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        margin: 20px;
+        text-transform: capitalize;
+        background: white;
+
+        a {
+          text-decoration: none;
+          color: rgb(36, 35, 35);
+        }
+
+        &:last-child {
+          background: rgb(238, 177, 8);
+          color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+          display: block;
+          width: 300px;
+          height: 50px;
+          font-size: 1.2em;
+          margin: 20px auto;
+          @media screen and (max-width: 400px) {
+            width: 90%;
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        width: 95%;
+        margin: auto;
+      }
+    }
+  }
+}
 </style>

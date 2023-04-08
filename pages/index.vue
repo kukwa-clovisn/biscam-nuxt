@@ -316,14 +316,6 @@
         </button>
       </div>
     </div>
-    <div class="contact-container" id="contactForm">
-      <contact-form
-        whatsappLink="https://wa.link/wrxet8"
-        whatsappTel="+237679450640"
-        tel="+237683079785"
-        email="biscamcleaning@gmail.com"
-      />
-    </div>
   </div>
 </template>
 

@@ -624,13 +624,28 @@
         </div>
       </div>
     </div>
-    <div class="contact-container">
-      <contact-form
-        whatsappLink="https://wa.link/rt49uv"
-        whatsappTel="+237677387714"
-        tel="+237695569565"
-        email="garagebiscam@gmail.com"
-      />
+
+    <div class="address-div">
+      <div class="blur-wrapper"></div>
+      <div class="address-wrapper">
+        <div class="address-box">
+          <h2>address</h2>
+          <p>camp yabassi</p>
+          <p><a href="tel:+237699391316"> Tel : +237677941547</a></p>
+          <p><a href="https://wa.link/rt49uv">whatsapp : +237 677941547 </a></p>
+          <p>
+            <a href="mailto:garagebiscam@gmail.com"
+              >Email: garagebiscam@gmail.com</a
+            >
+          </p>
+          <button>
+            <NuxtLink to="/contact-page">contact us</NuxtLink>
+          </button>
+          <button @click="($event) => navigateTo('/appointment')">
+            book an appointment
+          </button>
+        </div>
+      </div>
     </div>
   </main>
 </template>

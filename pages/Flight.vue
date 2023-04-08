@@ -15,28 +15,28 @@
           </button>
         </div>
       </div>
-      <div :class="[{ changeBg: stickyHeader }, 'navbar']">
-        <div class="navbar-wrapper">
-          <div class="left-navbar">
-            <h3>connect with us:</h3>
+    </div>
+    <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+      <div class="navbar-wrapper">
+        <div class="left-navbar">
+          <h3>connect with us:</h3>
+        </div>
+        <div class="right-navbar">
+          <div class="link">
+            <i class="fa-brands fa-facebook"></i>
+            <a href="#">facebook</a>
           </div>
-          <div class="right-navbar">
-            <div class="link">
-              <i class="fa-brands fa-facebook"></i>
-              <a href="#">facebook</a>
-            </div>
-            <div class="link">
-              <i class="fa-brands fa-twitter"></i>
-              <a href="#">twitter</a>
-            </div>
-            <div class="link">
-              <i class="fa-brands fa-linkedin"></i>
-              <a href="#">linkedin</a>
-            </div>
-            <div class="link">
-              <i class="fa-brands fa-tiktok"></i>
-              <a href="#">tiktok</a>
-            </div>
+          <div class="link">
+            <i class="fa-brands fa-twitter"></i>
+            <a href="#">twitter</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="#">linkedin</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-tiktok"></i>
+            <a href="#">tiktok</a>
           </div>
         </div>
       </div>
@@ -169,46 +169,27 @@
         >
       </div>
     </div>
-    <div class="address-container" data-aos="slide-left">
+    <div class="address-div">
       <div class="blur-wrapper"></div>
-
       <div class="address-wrapper">
-        <h1 data-aos="slide-up">
-          with just a call, <br />
-          you will enjoy our services!
-        </h1>
-
-        <div class="content">
-          <div class="address" data-aos="slide-up">
-            <h2 data-aos="slide-up">address</h2>
-            <p data-aos="slide-up">anciente route</p>
-            <p data-aos="slide-up">bonaberi, douala</p>
-            <p data-aos="slide-up">p.o box 1159 douala</p>
-          </div>
-          <div class="address" data-aos="slide-up">
-            <h2 data-aos="slide-up">contact</h2>
-            <p data-aos="slide-up">
-              <a href="tel:+237683079785">Telephone: (+237) 683 079 785</a>
-            </p>
-            <p data-aos="slide-up">
-              <a href="https://wa.link/290wme">whatsapp: 654 213 803</a>
-            </p>
-            <p data-aos="slide-up">
-              <a href="mailto:biscamflight@gmail.com"
-                >Email: biscamflight@gmail.com</a
-              >
-            </p>
-          </div>
+        <div class="address-box">
+          <h2>address</h2>
+          <p>anciente route, opposite mobile</p>
+          <p><a href="tel:+237699391316"> Tel : +237699 391 316</a></p>
+          <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
+          <p>
+            <a href="mailto:garagebiscam@gmail.com"
+              >Email: garagebiscam@gmail.com</a
+            >
+          </p>
+          <button>
+            <NuxtLink to="/contact-page">contact us</NuxtLink>
+          </button>
+          <button @click="($event) => navigateTo('/appointment')">
+            book an appointment
+          </button>
         </div>
       </div>
-    </div>
-    <div class="contact-container">
-      <contactForm
-        whatsappLink="https://wa.link/290wme"
-        whatsappTel="+237654213803"
-        tel="+237683079785"
-        email="biscamflight@gmail.com"
-      />
     </div>
   </div>
 </template>
@@ -236,7 +217,7 @@ if (process.client) {
 
   .landing-page {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     position: relative;
     background: url(../assets/flight/black-woman-with-suitcase-airport.jpg);
     background-repeat: no-repeat;
@@ -245,7 +226,7 @@ if (process.client) {
 
     .carousel-div {
       width: 100%;
-      height: 100vh;
+      height: 90vh;
       position: absolute;
       top: 0;
       left: 0;
@@ -259,13 +240,9 @@ if (process.client) {
       width: 100%;
       height: 90vh;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       flex-direction: column;
-    }
-
-    .navbar.changeBg {
-      box-shadow: 0 8px 18px 2px rgb(213, 212, 212);
     }
 
     h1,
@@ -344,6 +321,9 @@ if (process.client) {
         flex-direction: column;
       }
     }
+  }
+  .navbar.changeBg {
+    box-shadow: 0 8px 18px 2px rgb(213, 212, 212);
   }
 
   .section-flex {

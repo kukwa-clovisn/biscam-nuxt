@@ -2,12 +2,40 @@
   <div class="main">
     <div class="landing-page">
       <div class="blur-wrapper"></div>
-
+      <div class="carousel-div">
+        <Slider :images="images" />
+      </div>
       <div class="landing-page-content">
         <h1>maritime services</h1>
-        <button>
+        <p>Lets get you offshore</p>
+        <button :class="{ hide: stickyHeader }">
           <a href="#services-container">get started</a>
         </button>
+      </div>
+    </div>
+    <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+      <div class="navbar-wrapper">
+        <div class="left-navbar">
+          <h3>connect with us:</h3>
+        </div>
+        <div class="right-navbar">
+          <div class="link">
+            <i class="fa-brands fa-facebook"></i>
+            <a href="#">facebook</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-twitter"></i>
+            <a href="#">twitter</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="#">linkedin</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-tiktok"></i>
+            <a href="#">tiktok</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="services-container" id="services-container">
@@ -190,41 +218,45 @@
         </div>
       </div>
     </div>
-    <div class="address-container" data-aos="slide-left">
+    <div class="address-div">
       <div class="blur-wrapper"></div>
-
       <div class="address-wrapper">
-        <h1 data-aos="slide-up">
-          with just a call, <br />
-          you will enjoy our services!
-        </h1>
-
-        <div class="content">
-          <div class="address" data-aos="slide-up">
-            <h2 data-aos="slide-up">address</h2>
-            <p data-aos="slide-up">anciente route</p>
-            <p data-aos="slide-up">bonaberi, douala</p>
-            <p data-aos="slide-up">p.o box 1159 douala</p>
-          </div>
-          <div class="address" data-aos="slide-up">
-            <h2 data-aos="slide-up">contact</h2>
-            <p data-aos="slide-up">Telephone: (+237) 683079785</p>
-            <p data-aos="slide-up">Mobile: (+237) 677941547</p>
-            <p data-aos="slide-up">Email:</p>
-          </div>
+        <div class="address-box">
+          <h2>address</h2>
+          <p>anciente route, opposite mobile</p>
+          <p><a href="tel:+237699391316"> Tel : +237699 391 316</a></p>
+          <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
+          <p>
+            <a href="mailto:garagebiscam@gmail.com"
+              >Email: garagebiscam@gmail.com</a
+            >
+          </p>
+          <button>
+            <NuxtLink to="/contact-page">contact us</NuxtLink>
+          </button>
+          <button @click="($event) => navigateTo('/appointment')">
+            book an appointment
+          </button>
         </div>
       </div>
     </div>
-    <div class="contact-container" id="contactForm">
-      <contactForm
-        whatsappLink="https://wa.link/wrxet8"
-        whatsappTel="+237679450640"
-        tel="+237683079785"
-        email="biscamcleaning@gmail.com"
-      />
-    </div>
   </div>
 </template>
+<script setup>
+import img1 from "assets/flight/ship-weilding.jpg";
+import img2 from "assets/flight/offshore.jpg";
+import img3 from "assets/flight/ship-chandling.jpg";
+import img4 from "assets/flight/maritime-coast.jpg";
+
+const images = ref([img4, img1, img2, img3]);
+const stickyHeader = ref(false);
+
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
+</script>
 
 <style lang="scss" scoped>
 .main {
@@ -233,7 +265,7 @@
 
   .landing-page {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     position: relative;
     background: url(../assets/flight/ship-weilding.jpg);
     background-repeat: no-repeat;
@@ -247,7 +279,14 @@
     }
 
     .blur-wrapper {
-      opacity: 0.5;
+      opacity: 0.3;
+    }
+    .carousel-div {
+      width: 100%;
+      height: 90vh;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .landing-page-content {
@@ -263,7 +302,7 @@
       z-index: 1;
 
       h1 {
-        padding: 20px;
+        padding: 10px;
         text-transform: uppercase;
         color: white;
         font-size: 60px;
@@ -273,6 +312,14 @@
             font-size: 40px;
           }
         }
+      }
+
+      p {
+        position: relative;
+        color: white;
+        font: 500 22px "Montserrat", sans-serif;
+        text-transform: capitalize;
+        letter-spacing: 1px;
       }
 
       button {
@@ -292,7 +339,14 @@
           width: 85%;
         }
       }
+
+      button.hide {
+        display: none;
+      }
     }
+  }
+  .navbar.changeBg {
+    box-shadow: 0 8px 18px 2px rgb(213, 212, 212);
   }
 
   .services-container {
@@ -350,32 +404,11 @@
     }
   }
 
-  .address-container {
+  .address-div {
     background: url(../assets/flight/ship-weilding.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-    .blur-wrapper {
-      background: rgb(17, 17, 17);
-    }
-
-    h1 {
-      color: rgb(253, 168, 41);
-      line-height: 70px;
-
-      @media screen and (max-width: 500px) {
-        font-size: 30px;
-      }
-    }
-
-    .address h2 {
-      color: rgb(255, 177, 31);
-    }
-
-    .address p {
-      color: rgb(230, 228, 228);
-    }
   }
 }
 </style>
