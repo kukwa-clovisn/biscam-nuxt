@@ -11,6 +11,36 @@
         <a href="#contact">contact</a>
       </button>
     </div>
+    <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+      <div class="navbar-wrapper">
+        <div class="left-navbar">
+          <h3>connect with us:</h3>
+        </div>
+        <div class="right-navbar">
+          <div class="link">
+            <i class="fa-brands fa-facebook"></i>
+            <Dropdown
+              name="Facebook"
+              message="redirecting..."
+              :items="linkDropdown"
+            />
+          </div>
+
+          <div class="link">
+            <i class="fa-brands fa-twitter"></i>
+            <a href="#">twitter</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="#">linkedin</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-tiktok"></i>
+            <a href="#">tiktok</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="address-div">
       <div class="address-wrapper">
         <div class="left-wrapper">
@@ -71,7 +101,19 @@
     </div>
   </main>
 </template>
+<script setup>
+const stickyHeader = ref(false);
 
+const linkDropdown = useLinkState();
+
+console.log(linkDropdown.value);
+
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
+</script>
 
 <style lang="scss" scoped>
 main {

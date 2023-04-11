@@ -2,7 +2,7 @@
 const router = useRouter();
 
 const getCategorySm = (e) => {
-  router.push("/spare-part/category/products");
+  router.push(`/spare-part/category/${e.target.value}`);
 };
 </script>
 <template>
@@ -14,31 +14,31 @@ const getCategorySm = (e) => {
       <nav>
         <button
           :class="[{ 'category-active category-exact-active': '' }, 'route']"
-          @click="navigateTo('/spare-part/category/proudcts')"
+          @click="navigateTo('/spare-part/category/all')"
         >
           all
         </button>
         <button
           :class="[{ 'category-active category-exact-active': '' }, 'route']"
-          @click="navigateTo('/spare-part/category/proudcts')"
+          @click="navigateTo('/spare-part/category/car key stater')"
         >
           car key starter
         </button>
         <button
           :class="[{ 'category-active category-exact-active': '' }, 'route']"
-          @click="navigateTo('/spare-part/category/proudctsifold')"
+          @click="navigateTo('/spare-part/category/manifold')"
         >
           manifold
         </button>
         <button
           :class="[{ 'category-active category-exact-active': '' }, 'route']"
-          @click="navigateTo('/spare-part/category/proudctsines')"
+          @click="navigateTo('/spare-part/category/engine')"
         >
           engines
         </button>
         <button
           :class="[{ 'category-active category-exact-active': '' }, 'route']"
-          @click="navigateTo('/spare-part/category/proudctsft')"
+          @click="navigateTo('/spare-part/category/shaft')"
         >
           shaft
         </button>

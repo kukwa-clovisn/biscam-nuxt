@@ -3,25 +3,69 @@
 <template>
   <div class="category-container">
     <div class="header-component"></div>
-    <h1>{{ $route.params.category }}</h1>
+    <h1>Browse all {{ $route.params.category }}</h1>
     <SparePartCategoryHeader />
-    <Spare-Part-Manifold />
+    <div class="product-body">
+      <div class="product-body-wrapper">
+        <div class="detail-products sub-category" data-aos="slide-up">
+          <div
+            class="product"
+            data-aos="slide-up"
+            v-for="product in products"
+            :key="product"
+            @click="displayProduct(product.id)"
+          >
+            <div class="wrapper">
+              <div class="image">
+                <img
+                  data-aos="slide-up"
+                  :src="`/_nuxt/assets/car-engines/${product.imageUrl}`"
+                  alt=""
+                />
+              </div>
+              <div class="blur-wrapper"></div>
+              <div class="info">
+                <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                  ><i class="fa-brands fa-whatsapp"></i
+                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                  ><i class="fa-solid fa-phone"></i
+                ></a>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                  ><i class="fa-solid fa-envelope"></i
+                ></a>
+              </div>
+            </div>
+            <div class="details">
+              <h2>{{ product.name }}</h2>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                >shop now <i class="fa-brands fa-shopify"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import axios from "axios";
+const route = useRoute();
+const productsArr = productState();
 
-const data = await axios("/api/category_12234")
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
+const products = productsArr.value.filter((product) => {
+  if (route.params.category === "all") return true;
+  else return product.category === route.params.category;
+});
 
-onMounted(() =>
-  axios
-    .post("/api/category", { data: "this is from category" })
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err))
-);
+const displayProduct = (id) => {
+  navigateTo(`/spare-part/${id}`);
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="flight-main">
     <div class="main-wrapper">
       <div class="ticket-container">
         <div class="ticket-wrapper">
@@ -17,6 +17,12 @@
                   <label for="departure"
                     ><i class="fa-solid fa-plane"></i
                   ></label>
+                  <input
+                    type="search"
+                    name="searchCountry"
+                    id="searchCountry"
+                    @change="filterCountry"
+                  />
 
                   <el-select
                     v-model="ticketBody.departure"
@@ -237,6 +243,9 @@ onMounted(() => {
       console.error(error);
     });
 });
+const filterCountry = (e) => {
+  console.log(e.target.value);
+};
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -284,8 +293,8 @@ const submitForm = (e) => {
 </script>
 
 <style lang="scss" scoped>
-.main {
-  width: 100%;
+.flight-main {
+  width: 100vw;
   height: fit-content;
 
   .main-wrapper {

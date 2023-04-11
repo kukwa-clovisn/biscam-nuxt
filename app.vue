@@ -1107,6 +1107,7 @@ nav a.NuxtLink-exact-active {
         align-items: center;
         gap: 5px;
         height: 100%;
+        color: white;
 
         i {
           color: rgb(226, 226, 226);
@@ -1119,6 +1120,7 @@ nav a.NuxtLink-exact-active {
         }
 
         &:hover {
+          color: gold;
           i,
           a {
             color: gold;

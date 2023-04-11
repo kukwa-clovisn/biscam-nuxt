@@ -3,7 +3,7 @@
     <div class="footer-wrapper">
       <div class="footer-links">
         <div class="left-div">
-          <h2>connected with us on:</h2>
+          <h2>connect with us:</h2>
         </div>
         <div class="right-div">
           <div class="right-div-wrapper">

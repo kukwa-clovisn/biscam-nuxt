@@ -25,7 +25,7 @@
             </div>
             <div class="link-wrapper">
               <NuxtLink to="/about-us">READ MORE</NuxtLink>
-              <a href="#contactForm">contact us</a>
+              <NuxtLink to="/contact-page">contact us</NuxtLink>
             </div>
           </div>
         </div>
@@ -38,8 +38,13 @@
           <div class="right-navbar">
             <div class="link">
               <i class="fa-brands fa-facebook"></i>
-              <a href="#">facebook</a>
+              <Dropdown
+                name="Facebook"
+                :items="linkDropdown"
+                message="redirecting..."
+              />
             </div>
+
             <div class="link">
               <i class="fa-brands fa-twitter"></i>
               <a href="#">twitter</a>
@@ -357,7 +362,7 @@ const maritime_images = ref([
   maritime_two,
   maritime_three,
 ]);
-
+const linkDropdown = useLinkState();
 const dg_images = ref([digital_zero, digital_one]);
 const stickyHeader = ref(false);
 

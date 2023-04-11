@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div class="spare-part-main">
     <div class="header-component"></div>
     <div class="main-wrapper">
       <div class="left-content">
@@ -66,8 +66,53 @@
     <div class="product-section">
       <SparePartCategoryHeader />
 
-      <div id="categories">
-        <Spare-Part-All data-aos="fade" />
+      <div class="product-body">
+        <div class="product-body-wrapper">
+          <div class="detail-products sub-category" data-aos="slide-up">
+            <div
+              class="product"
+              data-aos="slide-up"
+              v-for="product in products"
+              :key="product"
+              @click="displayProduct(product.id)"
+            >
+              <div class="wrapper">
+                <div class="image">
+                  <img
+                    data-aos="slide-up"
+                    :src="`/_nuxt/assets/car-engines/${product.imageUrl}`"
+                    alt=""
+                  />
+                </div>
+                <div class="blur-wrapper"></div>
+                <div class="info">
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    ><i class="fa-brands fa-whatsapp"></i
+                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    ><i class="fa-solid fa-phone"></i
+                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    ><i class="fa-solid fa-envelope"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="details">
+                <h2>{{ product.name }}</h2>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                  >shop now <i class="fa-brands fa-shopify"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="category-display">
@@ -647,22 +692,29 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup>
-const category = ref("");
+const route = useRoute();
+const products = productState();
+
+const displayProduct = (id) => {
+  navigateTo(`/spare-part/${id}`);
+};
 </script>
 
 <style lang="scss" scoped>
-main {
+.spare-part-main {
   width: 100%;
   height: fit-content;
+  box-sizing: border-box;
   .header-component {
     width: 100%;
     height: 13vh;
     background: rgb(251, 165, 118);
     background: rgb(15, 48, 109);
+    position: relative;
   }
 
   .main-wrapper {
@@ -671,6 +723,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 
     .left-content {
       width: 50%;
@@ -839,7 +893,7 @@ main {
 
     @media screen and (max-width: 900px) {
       flex-direction: column;
-
+      height: fit-content;
       .left-content {
         width: 100%;
         padding: 0;
@@ -905,10 +959,6 @@ main {
           }
         }
       }
-    }
-
-    @media screen and (max-width: 900px) {
-      height: fit-content;
     }
   }
 

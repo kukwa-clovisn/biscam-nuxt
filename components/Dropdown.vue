@@ -1,37 +1,40 @@
 <template>
-  <!-- <el-dropdown @command="handleCommand" class="el-dropdown">
+  <el-dropdown @command="handleCommand" class="el-dropdown">
     <span class="el-dropdown-link">
       {{ name }}
       <el-icon class="el-icon--right"><arrow-down /></el-icon>
     </span>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item :command="item.path" v-for="(item, index) in items" :key="index">{{ item.name
-        }}</el-dropdown-item>
+        <el-dropdown-item
+          :command="item.path"
+          v-for="(item, index) in items"
+          :key="index"
+          >{{ item.name }}
+        </el-dropdown-item>
       </el-dropdown-menu>
     </template>
-  </el-dropdown> -->
-  <h1>dropdown</h1>
+  </el-dropdown>
 </template>
 
-<!-- <script setup>
+<script setup>
 import { ElMessage } from "element-plus";
 import { ArrowDown } from "@element-plus/icons-vue";
-import { useRouter } from "vue-router";
 
 const props = defineProps({
   items: Array,
   name: String,
+  message: String,
 });
 
 const router = useRouter();
 
 const handleCommand = (command) => {
-  ElMessage(`welcome to ${command}`);
+  ElMessage.success(`${props.message}`);
   router.push(command);
 };
-</script> -->
-<!-- <style lang="scss" scoped>
+</script> 
+ <style lang="scss" scoped>
 .example-showcase .el-dropdown-link {
   cursor: pointer;
   color: inherit;
@@ -41,16 +44,15 @@ const handleCommand = (command) => {
 
 .el-dropdown {
   color: inherit;
-
-
+  cursor: pointer;
 
   span {
     color: inherit;
+    text-transform: capitalize;
 
     &:hover {
       border: none;
     }
-
   }
 
   &:hover {
@@ -59,4 +61,4 @@ const handleCommand = (command) => {
     box-shadow: none;
   }
 }
-</style> -->
+</style>

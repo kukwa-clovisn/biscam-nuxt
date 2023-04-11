@@ -1,24 +1,30 @@
 <template>
   <div class="product-main">
+    <div class="header-component"></div>
     <div class="product-main-wrapper">
       <div class="product-image">
-        <img :src="`/_nuxt/assets/car-engines/${productRoute}.jpeg`" alt="" />
+        <img
+          :src="`/_nuxt/assets/car-engines/${displayProduct[0].imageUrl}`"
+          alt=""
+        />
       </div>
 
       <div class="product-details">
         <div class="product-details-wrapper">
           <div class="product-head">
-            <h2>{{ productRoute }}</h2>
-            <h4>product category <span>>= $5000</span></h4>
+            <h2>{{ displayProduct[0].name }}</h2>
+            <h4>
+              {{ displayProduct[0].category }}
+              <!--<span>>= $5000</span> -->
+            </h4>
           </div>
           <p>
-            product description Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Inventore, pariatur!
+            {{ displayProduct[0].description }}
           </p>
           <div class="product-qualities">
             <h3>product qualities:</h3>
             <ul>
-              <li v-for="quality in productQualities" :key="quality">
+              <li v-for="quality in displayProduct[0].qualities" :key="quality">
                 <span>{{ quality }}</span>
               </li>
             </ul>
@@ -72,7 +78,8 @@
               tel: <span>{{ booking.tel }}</span>
             </p>
             <p v-if="booking.number">
-              number of {{ productRoute }} : <span>{{ booking.number }}</span>
+              number of {{ displayProduct[0].name }} requested :
+              <span>{{ booking.number }}</span>
             </p>
             <p v-if="booking.message.length">
               message : <span>{{ booking.message }}</span>
@@ -93,7 +100,7 @@
           class="product"
           v-for="product in products"
           :key="product.id"
-          @click="($event) => navigateTo(`/spare-part/${product.imgName}`)"
+          @click="($event) => navigateTo(`/spare-part/${product.id}`)"
         >
           <div class="product-image">
             <img
@@ -117,16 +124,10 @@
 </template>
 
 <script setup>
-import axios from "axios";
 const route = useRoute();
 
-onMounted(() =>
-  axios(`/api/product_${route.params.id}`)
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err))
-);
-
 const productRoute = route.params.id;
+
 const booking = reactive({
   name: "",
   email: "",
@@ -135,47 +136,37 @@ const booking = reactive({
   message: "",
 });
 
-const products = ref([]);
-const productQualities = ref([]);
-for (let i = 0; i < 5; i++) {
-  productQualities.value.push(
-    "this product quality is really really very superb"
-  );
-}
+const products = productState();
 
-for (let i = 0; i < 15; i++) {
-  let newImage = {
-    id: i,
-    name: "engine shaft",
-    category: "engine",
-    description:
-      "this is an engine with a difference good and affordable with quality and insurrance.",
-    imgurl: "",
-    imgName: "car-generator",
-    imgExt: "jpeg",
-  };
-  products.value.push(newImage);
-}
+const displayProduct = products.value.filter((product) => {
+  return product.id.toString() === route.params.id;
+});
+
+console.log(displayProduct, route.params.id);
 </script>
 
 <style lang="scss" scoped>
 .product-main {
   width: 100%;
   height: fit-content;
-  padding-top: 15vh;
+  .header-component {
+    width: 100%;
+    height: 13vh;
+    background: rgb(14, 40, 78);
+  }
 
   .product-main-wrapper {
     width: 100%;
     height: fit-content;
 
     .product-image {
-      width: 70%;
+      width: 80%;
       height: fit-content;
       margin: 20px auto;
 
       img {
-        width: 100%;
-        height: fit-content;
+        width: auto;
+        height: 55vh;
         object-fit: contain;
         cursor: pointer;
       }
