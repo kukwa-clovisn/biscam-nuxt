@@ -141,8 +141,6 @@ const products = productState();
 const displayProduct = products.value.filter((product) => {
   return product.id.toString() === route.params.id;
 });
-
-console.log(displayProduct, route.params.id);
 </script>
 
 <style lang="scss" scoped>
@@ -165,8 +163,8 @@ console.log(displayProduct, route.params.id);
       margin: 20px auto;
 
       img {
-        width: auto;
-        height: 55vh;
+        width: 90%;
+        height: auto;
         object-fit: contain;
         cursor: pointer;
       }
@@ -350,10 +348,10 @@ console.log(displayProduct, route.params.id);
       width: 100%;
       height: fit-content;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 40px 20px;
 
       .product {
         width: 200px;

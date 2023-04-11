@@ -106,9 +106,9 @@
                   ><i class="fa-solid fa-star"></i
                   ><i class="fa-solid fa-star"></i>
                 </div>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                <NuxtLink :to="`/spare-part/${product.id}`"
                   >shop now <i class="fa-brands fa-shopify"></i
-                ></a>
+                ></NuxtLink>
               </div>
             </div>
           </div>
@@ -696,7 +696,6 @@
 </template>
 
 <script setup>
-const route = useRoute();
 const products = productState();
 
 const displayProduct = (id) => {

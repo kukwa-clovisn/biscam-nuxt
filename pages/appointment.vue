@@ -59,6 +59,7 @@
                 v-for="(service, index) in services"
                 :key="index"
                 :value="service.value"
+                :disabled="service.disabled ? service.disabled : false"
               >
                 {{ service.label }}
               </option>
@@ -79,7 +80,7 @@
             <label for="time">time</label>
 
             <input
-              type="date"
+              type="datetime"
               name="appointmentTime"
               v-model="appointmentBody.time"
               placeholder="Select Date and Time"
@@ -123,9 +124,9 @@
           </p>
         </div>
         <div class="form-buttons">
-          <el-button class="form-button" @click="phaseOne" v-if="stepOne"
-            >Next step</el-button
-          >
+          <el-button class="form-button" @click="phaseOne" v-if="stepOne">
+          </el-button>
+
           <el-button
             class="form-button form-prev-button"
             v-if="stepTwo"
@@ -134,11 +135,12 @@
                 (stepOne = true), (stepTwo = false), (confirm = false);
               }
             "
-            >previous step</el-button
-          >
-          <el-button class="form-button" @click="phaseTwo" v-if="stepTwo"
-            >Next step</el-button
-          >
+          ></el-button>
+          <el-button
+            class="form-button"
+            @click="phaseTwo"
+            v-if="stepTwo"
+          ></el-button>
           <el-button
             class="form-button form-prev-button"
             v-if="confirm"
@@ -147,11 +149,12 @@
                 (stepOne = false), (stepTwo = true), (confirm = false);
               }
             "
-            >previous step</el-button
-          >
-          <el-button class="form-button" @click="submitForm" v-if="confirm"
-            >book appointment</el-button
-          >
+          ></el-button>
+          <el-button
+            class="form-button confirm"
+            @click="submitForm"
+            v-if="confirm"
+          ></el-button>
         </div>
       </form>
     </div>
@@ -177,6 +180,11 @@ const appointmentBody = reactive({
 });
 
 const services = ref([
+  {
+    value: "",
+    label: "choose service",
+    disabled: true,
+  },
   {
     value: "Maritime",
     label: "Maritime",
@@ -297,7 +305,7 @@ const submitForm = (e) => {
 .appointment-container {
   width: 100%;
   height: fit-content;
-  background: rgb(255, 255, 255);
+  background: rgb(244, 244, 244);
   animation: popUp 1s 1 linear alternate forwards;
 
   .header-component {
@@ -317,7 +325,7 @@ const submitForm = (e) => {
     form {
       width: 90%;
       height: fit-content;
-      background: white;
+      background: rgb(244, 244, 244);
       border-radius: 5px;
       padding: 10px 20px;
       position: relative;
@@ -330,7 +338,7 @@ const submitForm = (e) => {
       }
       h2 {
         text-transform: capitalize;
-        font: 700 19px "Montserrat", "Nunito Sans", sans-serif;
+        font: 700 21px "Montserrat", "Nunito Sans", sans-serif;
       }
 
       .form-wrapper {
@@ -356,7 +364,8 @@ const submitForm = (e) => {
             height: 45px;
             margin: 15px auto;
             border: none;
-            border-bottom: 1px solid rgb(169, 167, 167);
+            border-bottom: 1px solid rgb(196, 196, 196);
+            box-shadow: 0 0 17px 4px rgb(210, 210, 210);
             display: block;
             text-align: left;
             outline: none;
@@ -375,6 +384,9 @@ const submitForm = (e) => {
               border-right: 10px solid orange;
 
               border-left: 3px solid orange;
+            }
+            @media screen and (max-width: 768px) {
+              width: 100%;
             }
           }
           textarea {
@@ -402,6 +414,11 @@ const submitForm = (e) => {
             }
           }
 
+          ::-webkit-input-placeholder {
+            text-transform: capitalize;
+            color: rgb(103, 103, 103);
+          }
+
           @media screen and (max-width: 768px) {
             width: 90%;
           }
@@ -409,30 +426,35 @@ const submitForm = (e) => {
       }
 
       .form-preview {
-        width: 70%;
+        width: 90%;
         height: fit-content;
-        background: rgb(234, 232, 232);
+        // background: rgb(255, 255, 255);
+        // box-shadow: 0 0 17px 6px rgb(212, 211, 211);
         margin: 20px auto;
         border-radius: 5px;
         padding: 20px;
         p {
-          width: 100%;
+          max-width: 100%;
           display: flex;
           justify-content: flex-start;
-          flex-direction: column;
+          flex-wrap: wrap;
           align-items: flex-start;
-          gap: 5px;
+          background: white;
+          gap: 20px;
+          text-align: left;
           text-transform: capitalize;
-          color: rgb(39, 39, 39);
-          margin: 25px 10px;
-          font-size: 19px;
+          color: rgb(214, 140, 3);
+          margin-bottom: 20px;
+          padding: 20px;
+          font-size: 17px;
+          box-shadow: 0 0 18px 10px rgb(227, 225, 225);
 
           span {
-            font-weight: 700;
+            font-weight: 500;
             text-transform: none;
-            color: rgb(26, 26, 26);
-            font-size: 20px;
-            padding-left: 20px;
+            color: rgb(8, 42, 61);
+            font-size: 21px;
+            padding-left: 10px;
             white-space: pre-wrap;
           }
 
@@ -445,6 +467,7 @@ const submitForm = (e) => {
         }
         p.full-width {
           width: 100%;
+          flex-direction: column;
         }
 
         @media screen and (max-width: 768px) {
@@ -458,14 +481,23 @@ const submitForm = (e) => {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+
         margin: 20px auto;
         .form-button {
-          width: 46%;
-          height: 45px;
-          border-radius: 30px;
+          width: 45%;
+          height: 55px;
+          border-radius: 50px;
           color: white;
+          box-shadow: 0 0 17px 6px rgb(215, 213, 213);
           text-transform: capitalize;
           transition: all 0.3s ease;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: row-reverse;
+          gap: 10px;
+          padding: 0;
+          margin: 0;
           background: repeating-linear-gradient(
             to bottom right,
             rgb(26, 84, 135),
@@ -479,18 +511,61 @@ const submitForm = (e) => {
             margin: 20px auto;
             font-size: 1.2em;
           }
+
+          &::before {
+            content: "next step";
+            height: 100%;
+            width: 100%;
+            border-radius: 50px;
+            background: rgb(197, 124, 8);
+            box-shadow: 15px 0 17px 6px rgb(212, 212, 212);
+            color: white;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 600 20px "Montserrat", sans-serif;
+            border: none;
+            transition: all 0.3s ease;
+          }
+          &:hover {
+            &::before {
+              border: none;
+              animation: sliceBg 0.4s 1 alternate forwards;
+            }
+          }
         }
+
+        .form-button.confirm {
+          &::before {
+            content: "confirm booking";
+          }
+        }
+
+        @keyframes sliceBg {
+          to {
+            width: 80%;
+          }
+        }
+
         .form-button.form-prev-button {
-          background: repeating-linear-gradient(
-            to bottom right,
-            rgb(193, 126, 3),
-            rgb(221, 144, 2)
-          );
+          border-radius: 50px;
+          flex-direction: row;
+
+          &::before {
+            content: "previous step";
+            border-radius: 50px;
+            box-shadow: -17px 0 17px 6px rgb(221, 220, 220);
+          }
         }
 
         @media screen and (max-width: 768px) {
           width: 90%;
         }
+      }
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 20px 10px;
       }
     }
   }

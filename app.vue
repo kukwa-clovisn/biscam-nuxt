@@ -710,7 +710,7 @@ const menuState = useMenuState();
       margin: 30px auto;
 
       .product {
-        width: 31%;
+        width: 23%;
         height: fit-content;
         padding-top: 0;
         padding-bottom: 20px;
@@ -724,13 +724,13 @@ const menuState = useMenuState();
 
         .wrapper {
           width: 100%;
-          height: 350px;
+          height: 250px;
           overflow: hidden;
           position: relative;
 
           .blur-wrapper {
             display: none;
-            background: rgb(97, 64, 3);
+            background: rgb(0, 0, 0);
           }
 
           .image {
@@ -1174,11 +1174,11 @@ nav a.NuxtLink-exact-active {
 .address-div {
   width: 100%;
   height: fit-content;
+  position: relative;
   background: url(./assets/flight/auto-elect-two.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  position: relative;
 
   .blur-wrapper {
     background: rgb(15, 30, 44);

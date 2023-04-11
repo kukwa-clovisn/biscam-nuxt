@@ -1,15 +1,11 @@
 <template>
   <main>
     <div class="landing-page">
-      <div class="blur-wrapper"></div>
-      <h3>
-        Biscam Investment Sarl is a multi-service Company that is die-hardly
-        committed to satisfy her customers with her resources.
-      </h3>
-      <h2>Make Business With Us Today!</h2>
-      <button>
-        <a href="#contact">contact</a>
-      </button>
+      <div class="landing-page-wrapper">
+        <button :class="{ sticky: stickyHeader }">
+          <a href="#address-div-container">view contacts</a>
+        </button>
+      </div>
     </div>
     <div :class="[{ changeBg: stickyHeader }, 'navbar']">
       <div class="navbar-wrapper">
@@ -41,7 +37,8 @@
         </div>
       </div>
     </div>
-    <div class="address-div">
+    <div class="address-div-container" id="address-div-container">
+      <div class="blur-wrapper"></div>
       <div class="address-wrapper">
         <div class="left-wrapper">
           <h2>email</h2>
@@ -123,75 +120,131 @@ main {
   .landing-page {
     width: 100vw;
     height: 90vh;
-    background: url(../assets/flight/how-screen-printing-works.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
-    background-position: center center;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    padding-top: 15vh;
-
-    .blur-wrapper {
-      background: rgb(81, 4, 81);
-    }
-
-    h3 {
-      width: 85%;
-      padding: 15px;
-      color: white;
+    background: rgb(232, 154, 30);
+    .landing-page-wrapper {
+      width: 100%;
+      height: 100%;
+      background: url(../assets/flight/contact-design.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll;
+      background-position: center center;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
       position: relative;
-      font-weight: 300;
+
+      button {
+        width: max-content;
+        height: 50px;
+        background: white;
+        border: none;
+        border-bottom: 3px solid rgb(220, 187, 2);
+        border-radius: 30px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 10%;
+        right: 26%;
+        box-shadow: 0 0 18px 4px rgb(189, 124, 19);
+
+        a {
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: rgb(15, 48, 109);
+          padding: 0 25px;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+
+        @media screen and (max-width: 1000px) {
+          right: 15%;
+
+          @media screen and (max-width: 550px) {
+            right: 9%;
+
+            a {
+              padding: 0 20px;
+              font-size: 9px;
+            }
+          }
+        }
+      }
+      button.sticky {
+        background: white;
+        border-radius: 30px;
+
+        a {
+          padding: 0 35px;
+          color: rgb(211, 138, 2) d;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        background-size: contain;
+      }
     }
+    @media screen and (max-width: 1000px) {
+      height: 70vh;
+      background: rgb(232, 154, 30);
+      @media screen and (max-width: 768px) {
+        height: 50vh;
 
-    h2 {
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      color: white;
-      font-weight: 700;
-      font-size: 35px;
-      text-transform: capitalize;
-      font-family: "Montserrat", "Nunito Sans", sans-serif;
-    }
+        .landing-page-wrapper {
+          background-size: cover;
+        }
 
-    button {
-      width: 150px;
-      height: 50px;
-      background: transparent;
-      border: 1px solid white;
-      cursor: pointer;
-      position: relative;
-      margin: 10px auto;
+        @media screen and (max-width: 500px) {
+          height: 40vh;
 
-      a {
-        text-decoration: none;
-        color: white;
-        text-transform: uppercase;
+          .landing-page-wrapper {
+            background-size: contain;
+            background-position: left bottom;
+          }
+        }
       }
     }
   }
+  .navbar {
+    @media screen and (max-width: 900px) {
+      height: 15vh;
+    }
+  }
+  .navbar.changeBg {
+    @media screen and (max-width: 900px) {
+      height: 17vh;
+    }
+  }
 
-  .address-div {
+  .address-div-container {
     width: 100%;
     height: fit-content;
-
+    position: relative;
+    background: url(./assets/flight/auto-elect-two.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    .blur-wrapper {
+      opacity: 0.6;
+    }
     .address-wrapper {
-      width: 100%;
+      width: 90%;
+      margin: auto;
       height: fit-content;
-      padding: 4% 20px;
+      padding: 20px 0;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       flex-wrap: wrap;
+      position: relative;
 
       h2,
       p,
       a {
         text-align: left;
+        color: white;
       }
 
       .left-wrapper {
@@ -224,6 +277,8 @@ main {
 
         p {
           padding: 10px;
+          color: white;
+          font-size: 16px;
 
           span {
             color: goldenrod;
@@ -261,7 +316,7 @@ main {
       height: fit-content;
 
       .service-wrapper {
-        background: goldenrod;
+        background: rgb(232, 154, 30);
         width: 100%;
         height: fit-content;
         padding: 30px 20px;
@@ -287,9 +342,11 @@ main {
         a {
           width: fit-content;
           height: fit-content;
-          padding: 10px 20px;
+          padding: 10px 30px;
           background: white;
-          color: goldenrod;
+          color: rgb(17, 58, 99);
+          border-radius: 30px;
+          box-shadow: 0 0 18px 5px rgb(191, 126, 23);
           text-transform: uppercase;
           text-decoration: none;
           display: block;

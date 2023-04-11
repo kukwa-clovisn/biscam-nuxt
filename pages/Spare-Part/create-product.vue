@@ -1,5 +1,6 @@
 <template>
   <div class="create-product-main">
+    <div class="header-component"></div>
     <div class="create-product-wrapper">
       <form @submit="createProduct">
         <h1>upload a product.</h1>
@@ -260,11 +261,14 @@ const createProduct = (e) => {
   width: 100vw;
   height: fit-content;
   padding: 0;
-  padding-top: 14vh;
   background: rgb(244, 244, 244);
 
   margin: 0;
-
+  .header-component {
+    width: 100%;
+    height: 13vh;
+    background: rgb(21, 57, 120);
+  }
   .create-product-wrapper {
     width: 100%;
     height: fit-content;

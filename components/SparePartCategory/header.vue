@@ -50,7 +50,7 @@ const getCategorySm = (e) => {
         <option value="manifold">Manifold</option>
         <option value="car key starter">Car Key Starter</option>
         <option value="shaft">Shaft</option>
-        <option value="engines">Engines</option>
+        <option value="engine">Engines</option>
       </select>
     </div>
   </div>
