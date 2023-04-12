@@ -439,15 +439,19 @@ const menuState = useMenuState();
   .flex-div-content {
     background: rgb(242, 248, 251);
     width: 30%;
-    min-height: 300px;
+    min-height: 400px;
     padding: 20px;
     box-shadow: 0 0 2px 1px #313131;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 
     .flex-div-content-top {
       width: 100%;
-      height: 50%;
+      height: 35%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -474,7 +478,7 @@ const menuState = useMenuState();
     }
 
     .flex-div-content-bottom {
-      height: 50%;
+      height: 65%;
       width: 100%;
       padding: 10px;
       position: relative;
@@ -490,8 +494,8 @@ const menuState = useMenuState();
       p {
         width: 100%;
         color: rgb(48, 47, 47);
-        font-weight: 500;
-        font-size: 18px;
+        font-weight: 400;
+        font-size: 15px;
         line-height: 23px;
         text-align: center;
       }
