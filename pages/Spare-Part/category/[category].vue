@@ -7,7 +7,11 @@
     <SparePartCategoryHeader />
     <div class="product-body">
       <div class="product-body-wrapper">
-        <div class="detail-products sub-category" data-aos="slide-up">
+        <div
+          class="detail-products sub-category"
+          data-aos="slide-up"
+          v-if="products.length"
+        >
           <div
             class="product"
             data-aos="slide-up"
@@ -49,6 +53,10 @@
             </div>
           </div>
         </div>
+        <h1 class="empty-msg" v-else>
+          The products will soon be available. You can check other products
+          <NuxtLink to="/spare-part/category/all">here</NuxtLink>....
+        </h1>
       </div>
     </div>
   </div>

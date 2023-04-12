@@ -13,31 +13,61 @@ const getCategorySm = (e) => {
     <div class="right-header">
       <nav>
         <button
-          :class="[{ 'category-active category-exact-active': '' }, 'route']"
+          :class="[
+            {
+              'category-active category-exact-active':
+                $route.params.category === 'all',
+            },
+            'route',
+          ]"
           @click="navigateTo('/spare-part/category/all')"
         >
           all
         </button>
         <button
-          :class="[{ 'category-active category-exact-active': '' }, 'route']"
+          :class="[
+            {
+              'category-active category-exact-active':
+                $route.params.category === 'car key starter',
+            },
+            'route',
+          ]"
           @click="navigateTo('/spare-part/category/car key stater')"
         >
           car key starter
         </button>
         <button
-          :class="[{ 'category-active category-exact-active': '' }, 'route']"
+          :class="[
+            {
+              'category-active category-exact-active':
+                $route.params.category === 'manifold',
+            },
+            'route',
+          ]"
           @click="navigateTo('/spare-part/category/manifold')"
         >
           manifold
         </button>
         <button
-          :class="[{ 'category-active category-exact-active': '' }, 'route']"
+          :class="[
+            {
+              'category-active category-exact-active':
+                $route.params.category === 'engine',
+            },
+            'route',
+          ]"
           @click="navigateTo('/spare-part/category/engine')"
         >
           engines
         </button>
         <button
-          :class="[{ 'category-active category-exact-active': '' }, 'route']"
+          :class="[
+            {
+              'category-active category-exact-active':
+                $route.params.category === 'shaft',
+            },
+            'route',
+          ]"
           @click="navigateTo('/spare-part/category/shaft')"
         >
           shaft
@@ -139,6 +169,11 @@ const getCategorySm = (e) => {
       .category-active.category-exact-active {
         font-weight: 700;
         color: rgb(220, 145, 4);
+        border-bottom: 2px solid rgb(250, 170, 20);
+      }
+      .router-link-active.router-link-exact-active {
+        color: rgb(233, 175, 14);
+        padding: 5px;
         border-bottom: 2px solid rgb(250, 170, 20);
       }
     }

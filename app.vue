@@ -685,6 +685,19 @@ const menuState = useMenuState();
     height: fit-content;
     margin: 10px auto;
 
+    .empty-msg {
+      font: 700 24px "Monserrat", sans-serif;
+      padding: 30px 20px;
+      width: 95%;
+      margin: 20px auto;
+
+      a {
+        width: max-content;
+        height: max-content;
+        color: rgb(221, 160, 7);
+      }
+    }
+
     .category-header {
       padding: 20px;
       text-align: left;
@@ -985,6 +998,12 @@ const menuState = useMenuState();
 
 html {
   scroll-behavior: smooth;
+}
+
+.router-link-active.router-link-exact-active {
+  color: rgb(233, 175, 14);
+  padding: 5px;
+  border-bottom: 2px solid rgb(250, 170, 20);
 }
 
 body {
