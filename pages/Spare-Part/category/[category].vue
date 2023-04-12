@@ -23,7 +23,7 @@
               <div class="image">
                 <img
                   data-aos="slide-up"
-                  :src="`/_nuxt/assets/car-engines/${product.imageUrl}`"
+                  :src="`https://biscaminvestmentsarl.netlify.app/_nuxt/assets/car-engines/${product.imageUrl}`"
                   alt=""
                 />
               </div>
