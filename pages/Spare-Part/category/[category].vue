@@ -54,7 +54,8 @@
           </div>
         </div>
         <h1 class="empty-msg" v-else>
-          The products will soon be available. You can check other products
+          The products for <span>{{ $route.params.category }}</span> will soon
+          be available. You can check other products
           <NuxtLink to="/spare-part/category/all">here</NuxtLink>....
         </h1>
       </div>

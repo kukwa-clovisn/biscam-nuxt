@@ -691,10 +691,17 @@ const menuState = useMenuState();
       width: 95%;
       margin: 20px auto;
 
+      span {
+        text-transform: uppercase;
+        color: orange;
+        padding: 0 10px;
+      }
+
       a {
         width: max-content;
         height: max-content;
         color: rgb(221, 160, 7);
+        text-transform: uppercase;
       }
     }
 
@@ -998,12 +1005,6 @@ const menuState = useMenuState();
 
 html {
   scroll-behavior: smooth;
-}
-
-.router-link-active.router-link-exact-active {
-  color: rgb(233, 175, 14);
-  padding: 5px;
-  border-bottom: 2px solid rgb(250, 170, 20);
 }
 
 body {
