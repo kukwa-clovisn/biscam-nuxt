@@ -8,7 +8,7 @@
           <NuxtLink to="/contact-page">contact us</NuxtLink>
         </button>
       </div>
-      <div class="nav-div">
+      <div class="nav-div lg">
         <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
           <a href="#"> <i class="fa-brands fa-facebook"></i> facebook</a>
         </div>
@@ -20,6 +20,36 @@
         </div>
         <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
           <a href="#"> <i class="fa-brands fa-tiktok"></i> tiktok</a>
+        </div>
+      </div>
+    </div>
+    <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+      <div class="navbar-wrapper">
+        <div class="left-navbar">
+          <h3>connect with us:</h3>
+        </div>
+        <div class="right-navbar">
+          <div class="link">
+            <i class="fa-brands fa-facebook"></i>
+            <Dropdown
+              name="Facebook"
+              :items="linkDropdown"
+              message="redirecting..."
+            />
+          </div>
+
+          <div class="link">
+            <i class="fa-brands fa-twitter"></i>
+            <a href="#">twitter</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="#">linkedin</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-tiktok"></i>
+            <a href="#">tiktok</a>
+          </div>
         </div>
       </div>
     </div>
@@ -284,6 +314,24 @@ if (process.client) {
         background: rgba(221, 144, 0, 0.482);
       }
     }
+    .nav-div.lg {
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 90vh;
+    }
+  }
+  .navbar {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
+  }
+  .navbar.changeBg {
+    box-shadow: 0 8px 18px 2px rgb(213, 212, 212);
   }
 
   .services {

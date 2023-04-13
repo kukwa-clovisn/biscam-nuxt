@@ -1,7 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  modules: ["@element-plus/nuxt", "nuxt-mailer"],
+  modules: [
+    "@element-plus/nuxt",
+
+    // [
+    //   "mailjet",
+    //   {
+    //     apiKey: process.env.mail_api_key,
+    //     apiSecret: process.env.mail_secret_key,
+    //   },
+    // ],
+  ],
   plugins: [
     { src: "@/plugins/aos", ssr: false, mode: "client" },
     "@/plugins/axios",

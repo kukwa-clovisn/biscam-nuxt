@@ -23,7 +23,11 @@
               <div class="image">
                 <img
                   data-aos="slide-up"
-                  :src="`https://biscaminvestmentsarl.netlify.app/_nuxt/assets/car-engines/${product.imageUrl}`"
+                  :src="
+                    `/_nuxt/assets/car-engines/${product.imageUrl}`
+                      ? ''
+                      : `https://biscaminvestmentsarl.netlify.app/_nuxt/assets/car-engines/${product.imageUrl}`
+                  "
                   alt=""
                 />
               </div>
@@ -66,6 +70,10 @@
 <script setup>
 const route = useRoute();
 const productsArr = productState();
+
+const useRuntimeConfig = useRuntimeConfig();
+
+console.log(useRuntimeConfig);
 
 const products = productsArr.value.filter((product) => {
   if (route.params.category === "all") return true;

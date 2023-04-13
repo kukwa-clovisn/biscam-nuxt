@@ -6,6 +6,7 @@
           <div class="blur-wrapper"></div>
           <slider :images="HomeViewImages" />
         </div>
+        <div class="header-component"></div>
         <div class="wrapper">
           <div class="left-wrapper">
             <h2>become our highly esteem customer today</h2>
@@ -266,27 +267,26 @@
     <div class="maritime-section">
       <div class="wrapper">
         <h1>maritime</h1>
-        <div class="carousel-wrapper" data-aos="slide-right">
-          <carousel :images="maritime_images" />
-        </div>
         <div class="wrapper-container" data-aos="slide-up">
-          <h2 class="custom-header-2">maritime</h2>
           <p>
             Maritime Department of Biscam deals with different maritime services
             which include; offshore services, import and export, ship chandling,
             general supply (door to door services etc )
           </p>
 
-          <button class="hover-animation">
+          <button>
             <NuxtLink to="/maritime">visit us now</NuxtLink>
           </button>
+        </div>
+        <div class="carousel-wrapper" data-aos="slide-right">
+          <carousel :images="maritime_images" />
         </div>
       </div>
     </div>
     <div class="maritime-section digi-centre">
       <div class="wrapper">
+        <h1>digital centre</h1>
         <div class="wrapper-container" data-aos="slide-right">
-          <h2 class="custom-header-2">Digital centre</h2>
           <p>
             BISCAM also renders documentation services and Graphic designing/
             printing services. Documentation services includes Typing,
@@ -295,14 +295,13 @@
             printing like banners, stickers, mugs, plates, caps, t-shirts,
             calenders, magazines etc
           </p>
-          <button class="hover-animation">
+          <button>
             <NuxtLink to="/contact-page">visit us now</NuxtLink>
           </button>
         </div>
         <div class="carousel-wrapper" data-aos="slide-up">
           <carousel :images="dg_images" />
         </div>
-        <h1>digital center</h1>
       </div>
     </div>
 
@@ -321,6 +320,7 @@
         </button>
       </div>
     </div>
+    <partners />
   </div>
 </template>
 
@@ -402,10 +402,16 @@ if (process.client) {
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      .header-component {
+        width: 100%;
+        height: 13vh;
+        background: none;
+        position: relative;
+      }
 
       .wrapper {
         width: 100%;
-        height: 90%;
+        height: 87%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -654,6 +660,8 @@ if (process.client) {
       rgb(17, 8, 119),
       rgb(8, 4, 58)
     );
+
+    background: white;
     margin: 0;
     padding-top: 30px;
 
@@ -662,10 +670,14 @@ if (process.client) {
       height: fit-content;
       padding: 50px 10px;
 
+      h2 {
+        color: rgb(15, 46, 107);
+      }
+
       p.desc {
         font-size: 17px;
         line-height: 30px;
-        color: rgb(220, 220, 220);
+        color: rgb(63, 63, 63);
         text-align: center;
         width: 70%;
         margin: 15px auto;
@@ -712,6 +724,7 @@ if (process.client) {
     .flex-div-content {
       padding: 10px;
       border-radius: 2px;
+      box-shadow: none;
     }
   }
 
@@ -725,24 +738,21 @@ if (process.client) {
       rgb(14, 46, 106),
       rgb(9, 31, 72)
     );
+    background: white;
 
     .wrapper {
-      width: 90%;
+      width: 80%;
       height: fit-content;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      background: transparent;
-      padding-top: 4%;
-      padding-bottom: 3%;
+      margin: 20px auto;
 
       h1 {
-        display: none;
+        font: 700 50px "Montserrat", Poppins, sans-serif;
+        text-transform: uppercase;
+        color: rgb(12, 38, 109);
       }
 
       .carousel-wrapper {
-        width: 60%;
+        width: 100%;
         height: 60vh;
         display: flex;
         justify-content: center;
@@ -755,34 +765,30 @@ if (process.client) {
       }
 
       .wrapper-container {
-        width: 40%;
+        width: 100%;
         height: fit-content;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        overflow-x: hidden;
-        gap: 15px;
-
-        h2 {
-          margin: 0;
-        }
 
         p {
-          color: white;
+          color: rgb(52, 50, 50);
           width: 90%;
-          text-align: left;
+          text-align: center;
+          font: 400 17px/30px "Montserrat", "Nunito Sans", sans-serif;
         }
 
         button {
           border: none;
-          width: 200px;
+          width: 250px;
           height: 45px;
-          border-radius: 4px;
-          margin: 0 auto;
+          border-radius: 3px;
+          margin: 20px auto;
           background: rgb(197, 140, 8);
 
           a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: rgb(234, 233, 233);
             text-decoration: none;
             text-transform: capitalize;
@@ -790,17 +796,16 @@ if (process.client) {
           }
 
           &:hover {
-            background: rgb(252, 252, 252);
+            background: rgb(5, 65, 110);
 
             a {
-              color: rgb(43, 43, 43);
+              color: rgb(255, 255, 255);
             }
           }
         }
       }
 
       @media screen and (max-width: 1000px) {
-        flex-direction: column;
         padding-top: 30px;
         padding-bottom: 20px;
 
@@ -811,7 +816,7 @@ if (process.client) {
           text-transform: uppercase;
           width: 100%;
           padding: 20px;
-          color: white;
+          color: rgb(9, 45, 98);
           text-align: center;
           font: 700 50px "Poppins", sans-serif;
 
@@ -829,11 +834,6 @@ if (process.client) {
           padding: 30px auto;
           display: block;
           margin: 10px auto;
-
-          h2 {
-            padding: 20px;
-            display: none;
-          }
 
           p {
             padding: 10px;
@@ -853,10 +853,9 @@ if (process.client) {
   .maritime-section.digi-centre {
     background: linear-gradient(to top, rgb(14, 46, 106), rgb(9, 31, 72));
 
-    .wrapper {
-      @media screen and (max-width: 1000px) {
-        flex-direction: column-reverse;
-      }
+    h1,
+    .wrapper-container p {
+      color: white;
     }
   }
 

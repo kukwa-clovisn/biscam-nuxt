@@ -433,15 +433,15 @@ const menuState = useMenuState();
   justify-content: center;
   flex-wrap: wrap;
   margin: 30px auto;
-  width: 95%;
+  width: 90%;
   gap: 40px 30px;
 
   .flex-div-content {
-    background: rgb(242, 248, 251);
-    width: 30%;
-    min-height: 400px;
+    background: rgb(255, 255, 255);
+    width: 300px;
+    height: 430px;
     padding: 20px;
-    box-shadow: 0 0 2px 1px #313131;
+    box-shadow: 0 0 18px 7px #dedede;
     border-radius: 10px;
     cursor: pointer;
     display: flex;
@@ -1181,7 +1181,7 @@ nav a.NuxtLink-exact-active {
 }
 .navbar.changeBg {
   background: rgb(241, 162, 42);
-  box-shadow: 0 8px 10px 5px rgb(13, 30, 79);
+  box-shadow: 0 8px 10px 3px rgb(237, 236, 236);
   height: 13vh;
   animation: slide_down 0.5s 1 alternate forwards;
   position: relative;

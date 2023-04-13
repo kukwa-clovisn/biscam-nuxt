@@ -137,18 +137,11 @@
         </div>
       </form>
     </div>
-    <!-- <vue-dropzone
-      ref="myVueDropzone"
-      id="dropzone"
-      :options="dropzoneOptions"
-    /> -->
   </div>
 </template>
 
 <script setup>
 import axios from "axios";
-
-// import vueDropzone from "vue2-dropzone-vue3";
 
 const productData = reactive({
   name: "",
@@ -162,13 +155,6 @@ const productData = reactive({
   price: "",
   imageBuffer: null,
 });
-
-// const dropzoneOptions = ref({
-//   url: "http://localhost:3000/api/product/product",
-//   thumbnailWidth: 150,
-//   maxFilesize: 0.5,
-//   headers: { "My-Awesome-Header": "biscam" },
-// });
 
 const preview = ref({});
 
