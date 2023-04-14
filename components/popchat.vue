@@ -1,7 +1,7 @@
 <template>
   <div class="popchat-container" v-if="sticky" title="Leave Us A Message">
     <button @click="openchat = !openchat">
-      <i class="fa-regular fa-comments"></i>
+      <i class="fa-solid fa-comment-sms"></i>
     </button>
   </div>
 </template>
@@ -19,7 +19,7 @@ if (process.client) {
   width: 55px;
   height: 55px;
   position: fixed;
-  right: 1%;
+  right: 1.5%;
   bottom: 3%;
   cursor: pointer;
   overflow: hidden;
@@ -40,6 +40,7 @@ if (process.client) {
 
     i {
       color: white;
+      font-size: 30px;
     }
   }
 }

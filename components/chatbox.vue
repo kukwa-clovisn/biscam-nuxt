@@ -12,7 +12,7 @@
     </div>
     <div class="chatbox-wrapper">
       <h2>leave us a message</h2>
-      <form>
+      <form @submit="submitForm">
         <div class="form-data">
           <label for="name">name:</label>
           <input
@@ -20,6 +20,7 @@
             name="name"
             id="name"
             required
+            v-model="messageBody.name"
             placeholder="Enter Your Name..."
           />
         </div>
@@ -30,6 +31,7 @@
             name="email"
             id="email"
             required
+            v-model="messageBody.email"
             placeholder="Enter Email..."
           />
         </div>
@@ -41,6 +43,7 @@
             cols="30"
             rows="10"
             required
+            v-model="messageBody.message"
             placeholder="Leave A Message..."
           ></textarea>
         </div>
@@ -51,7 +54,61 @@
 </template>
 
 <script setup>
+import axios from "axios";
 const openchat = openChat();
+
+const loader = useLoaderState();
+
+const messageBody = reactive({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const submitForm = (e) => {
+  e.preventDefault();
+
+  loader.value = true;
+
+  axios
+    .post("https://formsubmit.co/6b7db69d0a9a79253fc12b37e74ed923", messageBody)
+    .then((res) => {
+      if (200 <= res.status && res.status < 400) {
+        loader.value = false;
+        setTimeout(() => {
+          ElMessageBox.alert(
+            "Great We've received your message. We'll reply to you via email or phone or whatsapp",
+            "Message Sent",
+            {
+              // if you want to disable its autofocus
+              // autofocus: false,
+              confirmButtonText: "Done",
+              callback: () => {
+                openchat.value = false;
+              },
+            }
+          );
+        }, 3000);
+      }
+    })
+    .catch((err) => {
+      loader.value = false;
+      setTimeout(() => {
+        ElMessageBox.alert(
+          "Message not sent. Please Try again. ",
+          "Message Not Sent",
+          {
+            // if you want to disable its autofocus
+            // autofocus: false,
+            confirmButtonText: "Back",
+            callback: () => {
+              openchat.value = false;
+            },
+          }
+        );
+      }, 3000);
+    });
+};
 </script>
 
 <style lang="scss" scoped>

@@ -150,10 +150,11 @@ useHead({
   ],
 });
 
+const loader = useLoaderState();
 
 const openchat = openChat();
 
-const loader = useLoaderState()
+
 
 
 (function () {

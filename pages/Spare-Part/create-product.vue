@@ -221,9 +221,6 @@ const createProduct = (e) => {
   )
     .then((res) => {
       if (res) {
-        // profile.image = `data:image/png;base64,` + res.data.image;
-        // productImage.preview = `data:image/png;base64,` + res.data.image;
-
         console.log(res);
         ElNotification.success({
           title: "File Upload successful",
