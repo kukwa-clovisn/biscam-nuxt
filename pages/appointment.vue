@@ -76,16 +76,7 @@
               required
             />
           </div>
-          <div class="form-data">
-            <label for="time">time</label>
 
-            <input
-              type="datetime"
-              name="appointmentTime"
-              v-model="appointmentBody.time"
-              placeholder="Select Date and Time"
-            />
-          </div>
           <div class="form-data full-width">
             <label for="appointment-message"
               >Tell us about you appointment</label
@@ -113,9 +104,7 @@
           <p>
             appointment date: <span>{{ appointmentBody.date }}</span>
           </p>
-          <p>
-            appointment time : <span>{{ appointmentBody.time }}</span>
-          </p>
+
           <p>
             appointment for: <span>{{ appointmentBody.userService }}</span>
           </p>
@@ -169,6 +158,7 @@ const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
 const formdata = ref(null);
+const loader = useLoaderState();
 
 const appointmentBody = reactive({
   name: "",
@@ -176,7 +166,6 @@ const appointmentBody = reactive({
   tel: "",
   userService: "",
   date: "",
-  time: "",
   message: "",
 });
 
@@ -232,7 +221,6 @@ const phaseOne = (e) => {
 const phaseTwo = (e) => {
   if (
     appointmentBody.date != "" &&
-    appointmentBody.time != "" &&
     appointmentBody.userService != "" &&
     appointmentBody.message != ""
   ) {
@@ -257,34 +245,62 @@ const phaseTwo = (e) => {
 
 const submitForm = (e) => {
   active.value = 0;
+  loader.value = true;
 
   axios
-    .post("https://formsubmit.co/codingherald@gmail.com", appointmentBody)
+    .post(
+      "https://formsubmit.co/6b7db69d0a9a79253fc12b37e74ed923",
+      appointmentBody
+    )
     .then((res) => {
-      console.log(res);
-      ElMessageBox.alert(
-        "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
-        "Appointment Submitted",
-        {
-          // if you want to disable its autofocus
-          // autofocus: false,
-          confirmButtonText: "OK",
-          callback: () => {
-            router.push("/");
-            appointmentBody.name = "";
-            appointmentBody.email = "";
-            appointmentBody.tel = "";
-            appointmentBody.date = "";
-            appointmentBody.time = "";
-            appointmentBody.userService = "";
-            stepOne.value = true;
-            stepTwo.value = false;
-            confirm.value = false;
-          },
-        }
-      );
+      if (200 <= res.status && res.status < 400) {
+        loader.value = false;
+        setTimeout(() => {
+          ElMessageBox.alert(
+            "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
+            "Appointment Submitted",
+            {
+              // if you want to disable its autofocus
+              // autofocus: false,
+              confirmButtonText: "Homepage",
+              callback: () => {
+                router.push("/");
+                appointmentBody.name = "";
+                appointmentBody.email = "";
+                appointmentBody.tel = "";
+                appointmentBody.date = "";
+                appointmentBody.time = "";
+                appointmentBody.userService = "";
+                stepOne.value = true;
+                stepTwo.value = false;
+                confirm.value = false;
+              },
+            }
+          );
+        }, 3000);
+      }
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      loader.value = false;
+      setTimeout(() => {
+        ElMessageBox.alert(
+          "Your appointment request has not been submitted . Try Again ",
+          "Appointment Failed",
+          {
+            // if you want to disable its autofocus
+            // autofocus: false,
+            confirmButtonText: "OK",
+            callback: () => {
+              router.push("/appointment");
+
+              stepOne.value = true;
+              stepTwo.value = false;
+              confirm.value = false;
+            },
+          }
+        );
+      }, 3000);
+    });
 
   // var templateParams = {
   //   name: "codingherald",

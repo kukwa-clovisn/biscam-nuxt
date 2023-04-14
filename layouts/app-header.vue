@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header @click="openchat = false">
     <div :class="[{ sticky: stickyHeader }, 'header-wrapper']">
       <div class="logo-wrapper">
         <div class="logo-image-wrapper" @click="($event) => navigateTo('/')">
@@ -72,7 +72,7 @@
 <script setup>
 const menuState = useMenuState();
 const stickyHeader = ref(false);
-
+const openchat = openChat();
 if (process.client) {
   window.addEventListener("scroll", () => {
     stickyHeader.value = true ? window.scrollY > 0 : false;

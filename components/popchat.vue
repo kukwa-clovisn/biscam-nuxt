@@ -1,5 +1,5 @@
 <template>
-  <div class="popchat-container" v-if="sticky">
+  <div class="popchat-container" v-if="sticky" title="Leave Us A Message">
     <button @click="openchat = !openchat">
       <i class="fa-regular fa-comments"></i>
     </button>

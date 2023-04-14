@@ -783,7 +783,7 @@ if (process.client) {
           height: 45px;
           border-radius: 3px;
           margin: 20px auto;
-          background: rgb(197, 140, 8);
+          background: rgb(226, 170, 3);
 
           a {
             width: 100%;
@@ -853,7 +853,7 @@ if (process.client) {
   }
 
   .maritime-section.digi-centre {
-    background: linear-gradient(to top, rgb(14, 46, 106), rgb(9, 31, 72));
+    background: linear-gradient(to top, rgb(11, 51, 126), rgb(9, 45, 104));
 
     h1,
     .wrapper-container p {

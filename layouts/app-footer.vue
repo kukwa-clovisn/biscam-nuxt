@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer @click="openchat = false">
     <div class="footer-wrapper">
       <div class="footer-links">
         <div class="left-div">
@@ -125,7 +125,9 @@
     </div>
   </footer>
 </template>
-
+<script setup>
+const openchat = openChat();
+</script>
 <style lang="scss" scoped>
 footer {
   width: 100vw;

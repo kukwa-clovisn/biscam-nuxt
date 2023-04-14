@@ -1,5 +1,5 @@
 <template>
-  <main id="main">
+  <main id="main" v-loading="loader">
     <NuxtLayout name="app-header" />
 
     <div id="componentContainer" @click="openchat = false">
@@ -16,6 +16,7 @@
         { inactive: !menuState },
         'menu-container',
       ]"
+      @click="openchat = false"
     >
       <div class="blur-wrapper" @click="($event) => (menuState = false)"></div>
       <div
@@ -103,6 +104,7 @@
   </main>
 </template>
 
+
 <script setup>
 import emailjs from "@emailjs/browser";
 useHead({
@@ -147,7 +149,13 @@ useHead({
     },
   ],
 });
+
+
 const openchat = openChat();
+
+const loader = useLoaderState()
+
+
 (function () {
   emailjs.init("GnFR9bf1unlodMFZG");
 })();
@@ -159,6 +167,9 @@ const menuState = useMenuState();
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Grand+Hotel&family=Jacques+Francois&family=Jacques+Francois+Shadow&family=Noto+Sans:wght@100;300;400;600;700;900&family=Nunito+Sans:ital,wght@0,300;0,600;0,700;0,900;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&family=Russo+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+.el-loading-mask {
+  z-index: 1000;
+}
 #main {
   width: 100vw;
   height: fit-content;

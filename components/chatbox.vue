@@ -154,6 +154,78 @@ const openchat = openChat();
       }
     }
   }
+
+  @media screen and (max-width: 400px) {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    .chat-header {
+      height: 15%;
+    }
+    .chatbox-wrapper {
+      height: 83%;
+      overflow: hidden;
+      overflow-y: scroll;
+      form {
+        .form-data {
+          label {
+            font-size: 1.1em;
+            padding: 10px 2px;
+          }
+          input {
+            height: 50px;
+          }
+          textarea {
+            height: 160px;
+          }
+          input,
+          textarea {
+            font-size: 18px;
+          }
+        }
+        button {
+          width: 100%;
+          height: 45px;
+        }
+      }
+    }
+  }
+  @media screen and (max-height: 500px) {
+    height: 100vh;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    .chat-header {
+      height: 15%;
+    }
+    .chatbox-wrapper {
+      height: 83%;
+      overflow: hidden;
+      overflow-y: scroll;
+      form {
+        .form-data {
+          label {
+            font-size: 1.1em;
+            padding: 10px 2px;
+          }
+          input {
+            height: 50px;
+          }
+          textarea {
+            height: 160px;
+          }
+          input,
+          textarea {
+            font-size: 18px;
+          }
+        }
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 .active {
   animation: openchat 0.4s linear alternate forwards;
