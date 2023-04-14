@@ -2,13 +2,29 @@
   <main id="main">
     <NuxtLayout name="app-header" />
 
-    <div id="componentContainer">
+    <div id="componentContainer" @click="openchat = false">
       <NuxtPage data-aos="slide-left" />
     </div>
+
+    <chatbox />
+
+    <popchat />
     <NuxtLayout name="app-footer" />
-    <div class="menu-container" v-if="menuState">
+    <div
+      :class="[
+        { active: menuState },
+        { inactive: !menuState },
+        'menu-container',
+      ]"
+    >
       <div class="blur-wrapper" @click="($event) => (menuState = false)"></div>
-      <div :class="[{ 'is-active': menuState }, 'menu-wrapper']">
+      <div
+        :class="[
+          { 'is-active': menuState },
+          { inactive: !menuState },
+          'menu-wrapper',
+        ]"
+      >
         <button class="close" @click="($event) => (menuState = false)">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -131,7 +147,7 @@ useHead({
     },
   ],
 });
-
+const openchat = openChat();
 (function () {
   emailjs.init("GnFR9bf1unlodMFZG");
 })();
@@ -201,7 +217,7 @@ const menuState = useMenuState();
         background: transparent;
         font-size: 25px;
         color: rgb(237, 236, 236);
-        // background:red;
+
         i {
           color: white;
         }
@@ -386,6 +402,16 @@ const menuState = useMenuState();
     .menu-wrapper.is-active {
       animation: menu_active 0.5s 1 linear alternate forwards;
     }
+    .menu-wrapper.inactive {
+      animation: menu_inactive 0.5s linear alternate forwards;
+    }
+  }
+  .menu-container.inactive {
+    animation: menu_inactive 0.5s linear alternate forwards;
+
+    .blur-wrapper {
+      animation: disappear 0.4s linear alternate forwards;
+    }
   }
 
   @keyframes menu_active {
@@ -397,10 +423,27 @@ const menuState = useMenuState();
       transform: translateX(0);
     }
   }
+
+  @keyframes menu_inactive {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-200%);
+      display: none;
+    }
+  }
   .contact-container {
     width: 100%;
     height: fit-content;
     position: relative;
+  }
+}
+@keyframes disappear {
+  to {
+    transform: translateX(100%);
+    display: none;
   }
 }
 
@@ -544,11 +587,12 @@ const menuState = useMenuState();
       }
     }
 
-    @media screen and (max-width: 820px) {
-      width: 46%;
+    @media screen and (max-width: 900px) {
+      width: 48%;
 
       @media screen and (max-width: 500px) {
         width: 90%;
+        height: fit-content;
       }
     }
   }
@@ -727,29 +771,26 @@ const menuState = useMenuState();
       width: 100%;
       height: fit-content;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 40px 10px;
       margin: 30px auto;
 
       .product {
-        width: 23%;
-        height: fit-content;
+        width: 300px;
+        height: 300px;
         padding-top: 0;
         padding-bottom: 20px;
         position: relative;
         border-radius: 1px;
-        overflow: hidden;
-        border: 1px solid rgb(234, 236, 245);
         cursor: pointer;
         transition: all 0.3s ease-in;
-        box-shadow: 0 0 10px 5px rgb(220, 221, 221);
+        box-shadow: 0 0 10px 5px rgb(234, 234, 234);
 
         .wrapper {
           width: 100%;
-          height: 250px;
-          overflow: hidden;
+          height: 300px;
           position: relative;
 
           .blur-wrapper {
@@ -775,7 +816,7 @@ const menuState = useMenuState();
           .info {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: fit-content;
             display: none;
             justify-content: center;
             align-items: center;
@@ -791,7 +832,7 @@ const menuState = useMenuState();
               width: 50px;
               height: 50px;
               color: rgb(19, 16, 13);
-
+              box-shadow: 0 0 10px 7px rgb(225, 224, 224);
               background: white;
               transition: all 0.3s ease;
               border-radius: 100%;
@@ -811,11 +852,12 @@ const menuState = useMenuState();
         .details {
           width: 100%;
           padding-bottom: 10px;
+          display: none;
 
           h2 {
             text-transform: capitalize;
             text-align: center;
-            font: 500 17px "Nunito Sans", sans-serif;
+            font: 500 21px Montserrat, "Nunito Sans", sans-serif;
             padding: 10px 0;
           }
 
@@ -838,19 +880,19 @@ const menuState = useMenuState();
             text-decoration: none;
             text-transform: capitalize;
             display: block;
-            margin: 0 auto;
-            border-bottom: 3px solid rgb(235, 154, 3);
+            margin: 10px auto;
             font: 600 16px "Poppins", sans-serif;
             width: max-content;
             height: max-content;
+            padding: 10px 30px;
             color: rgb(19, 16, 13);
             transition: all 0.3s ease;
+            border-radius: 2px;
+            border: none;
+            background: rgb(238, 184, 7);
 
             &:hover {
-              border: none;
-              background: rgb(238, 184, 7);
-              padding: 10px 20px;
-              border-radius: 2px;
+              color: white;
             }
           }
 
@@ -873,29 +915,41 @@ const menuState = useMenuState();
         }
 
         &:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 0 16px 5px rgb(228, 234, 236);
+          box-shadow: 0 0 16px 9px rgb(213, 212, 211);
+          background: rgb(255, 255, 255);
+          border: 2px solid rgb(238, 184, 7);
 
-          .blur-wrapper {
-            display: block;
-            opacity: 0.2;
-          }
+          .wrapper {
+            .image {
+              position: relative;
+              width: 220px;
+              height: 220px;
+              margin: auto;
+              background: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 3px dotted rgb(238, 184, 7);
+              box-shadow: 0 0 7px 4px rgb(221, 220, 220);
+              border-radius: 100%;
+              transform: translateY(-100px);
 
-          .image {
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            img {
-              width: 100%;
-              height: auto;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                transform: rotateZ(-30deg);
+              }
+            }
+            .info {
+              display: flex;
+              animation: slideUp 0.5s 1 linear alternate forwards;
             }
           }
 
-          .info {
-            display: flex;
-            animation: slideUp 0.5s 1 linear alternate forwards;
+          .details {
+            display: block;
+            animation: detailIn 0.5s ease-in-out forwards;
           }
         }
 
@@ -903,19 +957,89 @@ const menuState = useMenuState();
           width: 44%;
 
           @media screen and (max-width: 600px) {
-            width: 100%;
+            width: 90%;
+            box-shadow: 0 0 16px 9px rgb(221, 220, 220);
+            background: rgb(255, 255, 255);
+
+            .wrapper {
+              .image {
+                width: 250px;
+                height: 250px;
+                position: relative;
+                margin: auto;
+                background: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                box-shadow: 0 0 7px 4px rgb(223, 223, 223);
+                border-radius: 100%;
+                transform: translateY(-100px);
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                  transform: rotateZ(-30deg);
+                }
+              }
+              .info {
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                flex-direction: column;
+                position: absolute;
+                left: 0;
+                top: 1%;
+
+                a {
+                  margin: 10px;
+                  &:hover {
+                    transform: translateX(15px);
+                  }
+                }
+              }
+            }
+
+            .details {
+              display: block;
+              transform: translateY(-165px);
+            }
+            &:hover {
+              .wrapper .info,
+              .details {
+                animation: none;
+              }
+            }
           }
         }
       }
 
       @keyframes slideUp {
         from {
-          transform: translateY(50px);
+          transform: translateX(-100px);
+          visibility: hidden;
         }
 
         to {
-          transform: translateY(0px);
+          transform: translateX(0px) translateY(-100px);
+          visibility: visible;
         }
+      }
+      @keyframes detailIn {
+        from {
+          transform: translateX(-100px);
+          visibility: hidden;
+        }
+
+        to {
+          transform: translateX(0px) translateY(-130px);
+          visibility: visible;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        gap: 150px 10px;
       }
     }
 

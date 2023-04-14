@@ -52,7 +52,7 @@
                 ><i class="fa-solid fa-star"></i>
               </div>
               <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                >shop now <i class="fa-brands fa-shopify"></i
+                >view product<i class="fa-brands fa-shopify"></i
               ></a>
             </div>
           </div>
@@ -70,10 +70,6 @@
 <script setup>
 const route = useRoute();
 const productsArr = productState();
-
-const useRuntimeConfig = useRuntimeConfig();
-
-console.log(useRuntimeConfig);
 
 const products = productsArr.value.filter((product) => {
   if (route.params.category === "all") return true;

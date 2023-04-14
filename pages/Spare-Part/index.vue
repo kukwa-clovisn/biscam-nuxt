@@ -107,7 +107,7 @@
                   ><i class="fa-solid fa-star"></i>
                 </div>
                 <NuxtLink :to="`/spare-part/${product.id}`"
-                  >shop now <i class="fa-brands fa-shopify"></i
+                  >view product <i class="fa-brands fa-shopify"></i
                 ></NuxtLink>
               </div>
             </div>
@@ -211,7 +211,7 @@
                   ><i class="fa-solid fa-star"></i>
                 </div>
                 <NuxtLink :to="`/spare-part/${product.id}`"
-                  >shop now <i class="fa-brands fa-shopify"></i
+                  >view product<i class="fa-brands fa-shopify"></i
                 ></NuxtLink>
               </div>
             </div>

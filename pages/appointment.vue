@@ -527,12 +527,7 @@ const submitForm = (e) => {
           gap: 10px;
           padding: 0;
           margin: 0;
-          background: repeating-linear-gradient(
-            to bottom right,
-            rgb(26, 84, 135),
-            rgb(6, 46, 105),
-            rgb(20, 67, 132)
-          );
+          background: white;
 
           @media screen and (max-width: 768px) {
             width: 95%;

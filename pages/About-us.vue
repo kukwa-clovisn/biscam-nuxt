@@ -8,7 +8,31 @@
         <NuxtLink to="/contact-page">contact us</NuxtLink>
       </button>
     </div>
-
+    <div :class="[{ changeBg: stickyHeader }, 'navbar']">
+      <div class="navbar-wrapper">
+        <div class="left-navbar">
+          <h3>connect with us:</h3>
+        </div>
+        <div class="right-navbar">
+          <div class="link">
+            <i class="fa-brands fa-facebook"></i>
+            <a href="#">facebook</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-twitter"></i>
+            <a href="#">twitter</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="#">linkedin</a>
+          </div>
+          <div class="link">
+            <i class="fa-brands fa-tiktok"></i>
+            <a href="#">tiktok</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="section">
       <section>
         <h2>About Biscam</h2>
@@ -190,7 +214,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-up"
-          @click="$router.push({ path: '/car-repairs' })"
+          @click="$router.push({ path: '/flight' })"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -209,7 +233,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-left"
-          @click="$router.push({ path: '/car-repairs' })"
+          @click="$router.push({ path: '/spare-part' })"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -232,7 +256,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-up"
-          @click="$router.push({ path: '/car-repairs' })"
+          @click="$router.push({ path: '/cleaning-agency' })"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -261,7 +285,15 @@
     </div>
   </main>
 </template>
+<script setup>
+const stickyHeader = ref(false);
 
+if (process.client) {
+  window.addEventListener("scroll", () => {
+    stickyHeader.value = true ? window.scrollY > 0 : false;
+  });
+}
+</script>
 <style lang="scss" scoped>
 main {
   width: 100vw;
@@ -269,8 +301,8 @@ main {
 
   .landing-page {
     width: 100%;
-    height: 87vh;
-    padding: 10px;
+    height: 90vh;
+
     position: relative;
     background: url(../assets/flight/artificial-lighting-employee-blue.jpg);
     background-attachment: scroll;
@@ -309,7 +341,9 @@ main {
       }
     }
   }
-
+  .navbar.changeBg {
+    box-shadow: 0 8px 18px 2px rgb(213, 212, 212);
+  }
   .section {
     width: 100%;
     height: fit-content;
@@ -436,12 +470,17 @@ main {
       text-transform: uppercase;
     }
 
+    .flex-div .flex-div-content {
+      height: fit-content;
+    }
+
     p {
       padding: 10px;
     }
 
     .appointment {
-      width: 160px;
+      width: max-content;
+      padding: 0 20px;
       height: 45px;
       border-radius: 5px;
       border: none;

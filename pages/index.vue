@@ -366,6 +366,8 @@ const linkDropdown = useLinkState();
 const dg_images = ref([digital_zero, digital_one]);
 const stickyHeader = ref(false);
 
+const openchat = openChat();
+
 if (process.client) {
   window.addEventListener("scroll", () => {
     stickyHeader.value = true ? window.scrollY > 0 : false;

@@ -1,5 +1,7 @@
 export const useMenuState = () => useState(() => false);
 
+export const openChat = () => useState(() => false);
+
 export const useLinkState = () =>
   useState(() => [
     {

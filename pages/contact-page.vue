@@ -2,7 +2,7 @@
   <main>
     <div class="landing-page">
       <div class="landing-page-wrapper">
-        <button :class="{ sticky: stickyHeader }">
+        <button :class="[{ sticky: stickyHeader }, { enter: !stickyHeader }]">
           <a href="#address-div-container">view contacts</a>
         </button>
       </div>
@@ -140,7 +140,7 @@ main {
         height: 50px;
         background: white;
         border: none;
-        border-bottom: 3px solid rgb(220, 187, 2);
+        border-bottom: 3px solid rgb(220, 129, 2);
         border-radius: 30px;
         cursor: pointer;
         position: absolute;
@@ -174,10 +174,33 @@ main {
       button.sticky {
         background: white;
         border-radius: 30px;
+        animation: leavePage 0.5s ease forwards;
 
         a {
           padding: 0 35px;
           color: rgb(211, 138, 2) d;
+        }
+      }
+      button.enter {
+        animation: enterPage 0.5s ease-in-out forwards;
+      }
+
+      @keyframes leavePage {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(300%);
+          display: none;
+        }
+      }
+      @keyframes enterPage {
+        from {
+          transform: translateX(300%);
+        }
+        to {
+          transform: translateX(0);
+          display: none;
         }
       }
 
