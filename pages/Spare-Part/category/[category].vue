@@ -45,13 +45,7 @@
                     ><i class="fa-solid fa-envelope"></i
                   ></a>
                 </div>
-                <!-- <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                </div> -->
+                <!-- stars in here -->
                 <a
                   href="https://wa.link/rt49uv"
                   class="product-link"
