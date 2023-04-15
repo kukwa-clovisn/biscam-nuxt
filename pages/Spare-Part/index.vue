@@ -68,7 +68,7 @@
 
       <div class="product-body">
         <div class="product-body-wrapper">
-          <div class="detail-products sub-category" data-aos="slide-up">
+          <div class="detail-products" data-aos="slide-up">
             <div
               class="product"
               data-aos="slide-up"
@@ -84,31 +84,27 @@
                     alt=""
                   />
                 </div>
-                <div class="blur-wrapper"></div>
-                <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+
+                <div class="details">
+                  <h2>{{ product.name }}</h2>
+                  <div class="info">
+                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                      ><i class="fa-brands fa-whatsapp"></i
+                    ></a>
+                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                      ><i class="fa-solid fa-phone"></i
+                    ></a>
+                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                      ><i class="fa-solid fa-envelope"></i
+                    ></a>
+                  </div>
+                  <!-- stars can come in here -->
+                  <NuxtLink
+                    :to="`/spare-part/${product.id}`"
+                    class="product-link"
+                    >view product <i class="fa-brands fa-shopify"></i
+                  ></NuxtLink>
                 </div>
-              </div>
-              <div class="details">
-                <h2>{{ product.name }}</h2>
-                <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                </div>
-                <NuxtLink :to="`/spare-part/${product.id}`"
-                  >view product <i class="fa-brands fa-shopify"></i
-                ></NuxtLink>
               </div>
             </div>
           </div>
@@ -188,31 +184,25 @@
                     alt=""
                   />
                 </div>
-                <div class="blur-wrapper"></div>
-                <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-brands fa-whatsapp"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-phone"></i
-                  ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                    ><i class="fa-solid fa-envelope"></i
-                  ></a>
+                <div class="details">
+                  <h2>{{ product.name }}</h2>
+                  <div class="info">
+                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                      ><i class="fa-brands fa-whatsapp"></i
+                    ></a>
+                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                      ><i class="fa-solid fa-phone"></i
+                    ></a>
+                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                      ><i class="fa-solid fa-envelope"></i
+                    ></a>
+                  </div>
+                  <NuxtLink
+                    :to="`/spare-part/${product.id}`"
+                    class="product-link"
+                    >view product<i class="fa-brands fa-shopify"></i
+                  ></NuxtLink>
                 </div>
-              </div>
-              <div class="details">
-                <h2>{{ product.name }}</h2>
-                <div class="stars">
-                  <i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i>
-                </div>
-                <NuxtLink :to="`/spare-part/${product.id}`"
-                  >view product<i class="fa-brands fa-shopify"></i
-                ></NuxtLink>
               </div>
             </div>
           </div>

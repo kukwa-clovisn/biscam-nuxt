@@ -31,36 +31,41 @@
                   alt=""
                 />
               </div>
-              <div class="blur-wrapper"></div>
-              <div class="info">
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  ><i class="fa-brands fa-whatsapp"></i
-                ></a>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  ><i class="fa-solid fa-phone"></i
-                ></a>
-                <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                  ><i class="fa-solid fa-envelope"></i
+
+              <div class="details">
+                <h2>{{ product.name }}</h2>
+                <div class="info">
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    ><i class="fa-brands fa-whatsapp"></i
+                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    ><i class="fa-solid fa-phone"></i
+                  ></a>
+                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    ><i class="fa-solid fa-envelope"></i
+                  ></a>
+                </div>
+                <!-- <div class="stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div> -->
+                <a
+                  href="https://wa.link/rt49uv"
+                  class="product-link"
+                  data-aos="slide-up"
+                  >view product<i class="fa-brands fa-shopify"></i
                 ></a>
               </div>
-            </div>
-            <div class="details">
-              <h2>{{ product.name }}</h2>
-              <div class="stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i>
-              </div>
-              <a href="https://wa.link/rt49uv" data-aos="slide-up"
-                >view product<i class="fa-brands fa-shopify"></i
-              ></a>
             </div>
           </div>
         </div>
         <h1 class="empty-msg" v-else>
           The products for <span>{{ $route.params.category }}</span> will soon
           be available. You can check other products
-          <NuxtLink to="/spare-part/category/all">here</NuxtLink>....
+          <NuxtLink to="/spare-part/category/all">here...</NuxtLink>
         </h1>
       </div>
     </div>

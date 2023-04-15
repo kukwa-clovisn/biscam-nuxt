@@ -154,9 +154,6 @@ const loader = useLoaderState();
 
 const openchat = openChat();
 
-
-
-
 (function () {
   emailjs.init("GnFR9bf1unlodMFZG");
 })();
@@ -737,7 +734,7 @@ const menuState = useMenuState();
   background: rgb(255, 255, 255);
 
   .product-body-wrapper {
-    width: 80%;
+    width: 90%;
     height: fit-content;
     margin: 10px auto;
 
@@ -786,272 +783,173 @@ const menuState = useMenuState();
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 40px 10px;
+      gap: 50px 20px;
       margin: 30px auto;
 
       .product {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 380px;
         padding-top: 0;
         padding-bottom: 20px;
         position: relative;
-        border-radius: 1px;
+        border-radius: 2px;
         cursor: pointer;
         transition: all 0.3s ease-in;
-        box-shadow: 0 0 10px 5px rgb(234, 234, 234);
+        box-shadow: 0 0 18px 9px rgb(218, 218, 218);
 
         .wrapper {
           width: 100%;
-          height: 300px;
+          height: 100%;
           position: relative;
-
-          .blur-wrapper {
-            display: none;
-            background: rgb(0, 0, 0);
-          }
 
           .image {
             width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow: hidden;
 
             img {
               width: 100%;
               height: 100%;
-              object-fit: cover;
+              object-fit: contain;
             }
           }
 
-          .info {
-            position: relative;
+          .details {
             width: 100%;
-            height: fit-content;
-            display: none;
-            justify-content: center;
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
             align-items: center;
-            gap: 10px;
+            flex-direction: column;
+            gap: 25px;
 
-            a {
-              text-decoration: none;
+            h2 {
+              text-transform: capitalize;
+              text-align: center;
+              font: 500 21px Montserrat, "Nunito Sans", sans-serif;
+              margin: 0;
+            }
+
+            .info {
+              position: relative;
+              width: 100%;
+              height: fit-content;
               display: flex;
               justify-content: center;
               align-items: center;
-              margin: 0;
-              font: 700 15px "Poppins", sans-serif;
-              width: 50px;
-              height: 50px;
-              color: rgb(19, 16, 13);
-              box-shadow: 0 0 10px 7px rgb(225, 224, 224);
-              background: white;
-              transition: all 0.3s ease;
-              border-radius: 100%;
+              gap: 15px;
 
-              &:hover {
-                background: rgb(235, 154, 3);
-                color: white;
+              a {
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                font: 700 15px "Poppins", sans-serif;
+                width: 40px;
+                height: 40px;
+                color: rgb(19, 16, 13);
+                box-shadow: 0 0 10px 7px rgb(225, 224, 224);
+                background: white;
+                transition: all 0.3s ease;
+                border-radius: 100%;
 
-                i {
-                  transform: scale(1.1);
+                &:hover {
+                  background: rgb(235, 154, 3);
+                  color: white;
+
+                  i {
+                    transform: scale(1.1);
+                  }
                 }
               }
             }
-          }
-        }
-
-        .details {
-          width: 100%;
-          padding-bottom: 10px;
-          display: none;
-
-          h2 {
-            text-transform: capitalize;
-            text-align: center;
-            font: 500 21px Montserrat, "Nunito Sans", sans-serif;
-            padding: 10px 0;
-          }
-
-          .stars {
-            width: 90%;
-            height: fit-content;
-            margin: 8px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            i {
-              font-size: 12px;
-              color: rgb(248, 194, 95);
-              cursor: pointer;
-            }
-          }
-
-          a {
-            text-decoration: none;
-            text-transform: capitalize;
-            display: block;
-            margin: 10px auto;
-            font: 600 16px "Poppins", sans-serif;
-            width: max-content;
-            height: max-content;
-            padding: 10px 30px;
-            color: rgb(19, 16, 13);
-            transition: all 0.3s ease;
-            border-radius: 2px;
-            border: none;
-            background: rgb(238, 184, 7);
-
-            &:hover {
-              color: white;
-            }
-          }
-
-          @media screen and (max-width: 600px) {
-            h2 {
-              font-size: 30px;
-            }
-
             .stars {
+              width: 90%;
+              height: fit-content;
+              margin: 8px auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
               i {
-                font-size: 16px;
+                font-size: 12px;
+                color: rgb(248, 194, 95);
+                cursor: pointer;
               }
             }
 
-            a {
-              font-size: 20px;
-              padding: 10px;
+            .product-link {
+              text-decoration: none;
+              text-transform: capitalize;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              font: 600 14px "Poppins", sans-serif;
+              width: 80%;
+              height: 40px;
+              color: rgb(231, 231, 231);
+              transition: all 0.3s ease;
+              border-radius: 5px;
+              border: none;
+              background: rgb(13, 67, 124);
+
+              &:hover {
+                color: white;
+              }
+            }
+
+            @media screen and (max-width: 600px) {
+              h2 {
+                font-size: 30px;
+              }
+
+              .stars {
+                i {
+                  font-size: 16px;
+                }
+              }
+
+              a {
+                font-size: 20px;
+                padding: 10px;
+              }
             }
           }
         }
 
         &:hover {
-          box-shadow: 0 0 16px 9px rgb(213, 212, 211);
+          box-shadow: 0 0 20px 15px rgb(223, 223, 222);
           background: rgb(255, 255, 255);
           border: 2px solid rgb(238, 184, 7);
+          transform: scale(1.05);
+          z-index: 800;
+
+          .wrapper {
+            .details {
+              h2 {
+                color: rgb(231, 152, 5);
+              }
+              .product-link {
+                background: rgb(230, 150, 2);
+              }
+            }
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 90%;
 
           .wrapper {
             .image {
-              position: relative;
-              width: 220px;
-              height: 220px;
-              margin: auto;
-              background: white;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border: 3px dotted rgb(238, 184, 7);
-              box-shadow: 0 0 7px 4px rgb(221, 220, 220);
-              border-radius: 100%;
-              transform: translateY(-100px);
-
-              img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                transform: rotateZ(-30deg);
-              }
-            }
-            .info {
-              display: flex;
-              animation: slideUp 0.5s 1 linear alternate forwards;
-            }
-          }
-
-          .details {
-            display: block;
-            animation: detailIn 0.5s ease-in-out forwards;
-          }
-        }
-
-        @media screen and (max-width: 900px) {
-          width: 44%;
-
-          @media screen and (max-width: 600px) {
-            width: 90%;
-            box-shadow: 0 0 16px 9px rgb(221, 220, 220);
-            background: rgb(255, 255, 255);
-
-            .wrapper {
-              .image {
-                width: 250px;
-                height: 250px;
-                position: relative;
-                margin: auto;
-                background: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                box-shadow: 0 0 7px 4px rgb(223, 223, 223);
-                border-radius: 100%;
-                transform: translateY(-100px);
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: contain;
-                  transform: rotateZ(-30deg);
-                }
-              }
-              .info {
-                display: flex;
-                flex-direction: column;
-                width: fit-content;
-                flex-direction: column;
-                position: absolute;
-                left: 0;
-                top: 1%;
-
-                a {
-                  margin: 10px;
-                  &:hover {
-                    transform: translateX(15px);
-                  }
-                }
-              }
-            }
-
-            .details {
-              display: block;
-              transform: translateY(-165px);
-            }
-            &:hover {
-              .wrapper .info,
-              .details {
-                animation: none;
-              }
+              width: 100%;
             }
           }
         }
-      }
-
-      @keyframes slideUp {
-        from {
-          transform: translateX(-100px);
-          visibility: hidden;
-        }
-
-        to {
-          transform: translateX(0px) translateY(-100px);
-          visibility: visible;
-        }
-      }
-      @keyframes detailIn {
-        from {
-          transform: translateX(-100px);
-          visibility: hidden;
-        }
-
-        to {
-          transform: translateX(0px) translateY(-130px);
-          visibility: visible;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        gap: 150px 10px;
       }
     }
 
