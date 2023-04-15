@@ -1,5 +1,8 @@
 <template>
   <div class="appointment-container">
+    <Head>
+      <Title>BISCAM || Appointment</Title>
+    </Head>
     <div class="header-component"></div>
     <div class="appointment-wrapper">
       <form @submit="(e) => e.preventDefault()">
@@ -277,7 +280,7 @@ const submitForm = (e) => {
               },
             }
           );
-        }, 3000);
+        }, 1000);
       }
     })
     .catch((err) => {
@@ -299,7 +302,7 @@ const submitForm = (e) => {
             },
           }
         );
-      }, 3000);
+      }, 1000);
     });
 
   // var templateParams = {
