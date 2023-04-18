@@ -1,5 +1,8 @@
 <template>
   <div class="main">
+     <Head>
+      <Title>Maritime || BISCAM</Title>
+    </Head>
     <div class="landing-page">
       <div class="blur-wrapper"></div>
       <div class="carousel-div">

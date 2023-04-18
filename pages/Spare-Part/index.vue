@@ -1,15 +1,23 @@
 <template>
   <div class="spare-part-main">
+    <Head>
+      <Title>Spare Part || BISCAM</Title>
+    </Head>
     <div class="header-component"></div>
     <div class="main-wrapper">
       <div class="left-content">
         <div class="info">
           <h1>Biscam spare part agency</h1>
           <p>Purchase you car spare parts now</p>
-          <a href="https://wa.link/rt49uv">shop now</a>
+          <a
+            href="https://wa.link/rt49uv"
+            target="_blank"
+            rel="noopener noreferrer"
+            >shop now</a
+          >
         </div>
         <div class="image">
-          <img src="~/assets/car-engines/engine.jpg" alt="" />
+          <img src="~/assets/car-engines/engine-2.png" alt="" />
         </div>
       </div>
       <div class="right-content">
@@ -24,17 +32,27 @@
             <div class="info">
               <h2>engine block</h2>
               <p>available</p>
-              <a href="https://wa.link/rt49uv">shop now</a>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >shop now</a
+              >
             </div>
           </div>
           <div class="content">
             <div class="img">
-              <img src="~/assets/car-engines/car-generator.jpeg" alt="" />
+              <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
             </div>
             <div class="info">
               <h2>car key starter</h2>
               <p>available</p>
-              <a href="https://wa.link/rt49uv">shop now</a>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >shop now</a
+              >
             </div>
           </div>
           <div class="content">
@@ -47,7 +65,12 @@
             <div class="info">
               <h2>manifold</h2>
               <p>available</p>
-              <a href="https://wa.link/rt49uv">shop now</a>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >shop now</a
+              >
             </div>
           </div>
           <div class="content">
@@ -57,7 +80,12 @@
             <div class="info">
               <h2>shaft</h2>
               <p>available</p>
-              <a href="http://wa.link/rt49uv">shop now</a>
+              <a
+                href="http://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >shop now</a
+              >
             </div>
           </div>
         </div>
@@ -161,7 +189,12 @@
             <p data-aos="slide-up">
               contact us to find more of our available and quality products.
             </p>
-            <a href="https://wa.link/rt49uv">shop now</a>
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >shop now</a
+            >
           </div>
           <div class="right-content" data-aos="slide-left"></div>
         </div>
@@ -187,13 +220,21 @@
                 <div class="details">
                   <h2>{{ product.name }}</h2>
                   <div class="info">
-                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    <a
+                      href="https://wa.link/rt49uv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-aos="slide-up"
                       ><i class="fa-brands fa-whatsapp"></i
                     ></a>
                     <a href="https://wa.link/rt49uv" data-aos="slide-up"
                       ><i class="fa-solid fa-phone"></i
                     ></a>
-                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    <a
+                      href="https://wa.link/rt49uv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-aos="slide-up"
                       ><i class="fa-solid fa-envelope"></i
                     ></a>
                   </div>
@@ -218,6 +259,8 @@
           </p>
           <a
             href="https://wa.link/rt49uv"
+            target="_blank"
+            rel="noopener noreferrer"
             data-aos="flip-right"
             class="hover-animation"
             >shop now</a
@@ -230,7 +273,11 @@
           <h1>can't find your product yet?</h1>
           <p>contact us directly:</p>
           <div class="links">
-            <a href="https://wa.link/rt49uv">
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i class="fa-brands fa-whatsapp"> </i> +237677387714
             </a>
 
@@ -238,7 +285,12 @@
               ><i class="fa-solid fa-phone"></i> +237695569565</a
             >
             <a href="mailto:garagebiscam@gmail.com"
-              ><i class="fa-solid fa-envelope"></i> garagebiscam@gmail.com</a
+              ><i
+                class="fa-solid fa-envelope"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></i>
+              garagebiscam@gmail.com</a
             >
           </div>
         </div>
@@ -271,9 +323,19 @@
           <h2>address</h2>
           <p>camp yabassi</p>
           <p><a href="tel:+237699391316"> Tel : +237677941547</a></p>
-          <p><a href="https://wa.link/rt49uv">whatsapp : +237 677941547 </a></p>
           <p>
-            <a href="mailto:garagebiscam@gmail.com"
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >whatsapp : +237 677941547
+            </a>
+          </p>
+          <p>
+            <a
+              href="mailto:garagebiscam@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               >Email: garagebiscam@gmail.com</a
             >
           </p>

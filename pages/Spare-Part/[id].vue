@@ -1,10 +1,13 @@
 <template>
   <div class="product-main">
+    <Head>
+      <Title>{{ displayProduct[0].name }} || BISCAM</Title>
+    </Head>
     <div class="header-component"></div>
     <div class="product-main-wrapper">
       <div class="product-image">
         <img
-          :src="`/_nuxt/assets/car-engines/${displayProduct[0].imageUrl}`"
+          :src="`https://biscaminvestmentsarl.netlify.app/_nuxt/assets/car-engines/${displayProduct[0].imageUrl}`"
           alt=""
         />
       </div>
@@ -25,7 +28,12 @@
               quasi repellat non dolore quaerat blanditiis, deleniti consequatur
               sunt et hic.
             </p>
-            <button>contact supplier</button>
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >contact supplier</a
+            >
           </div>
         </div>
       </div>
@@ -225,10 +233,11 @@ const displayProduct = products.value.filter((product) => {
           p {
             text-align: left;
           }
-          button {
+          a {
             display: block;
             width: max-content;
             height: max-content;
+            text-decoration: none;
             padding: 10px 20px;
             border: none;
             border-radius: 3px;

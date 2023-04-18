@@ -37,7 +37,7 @@ export const productState = () =>
       description: "camshaft",
       qualities: ["good", "awesome", "quality"],
       imgName: "camshaft",
-      imageUrl: "camshaft.jpeg",
+      imageUrl: "assets/car-engines/camshaft.jpeg",
       imgExt: "jpeg",
     },
     {
@@ -47,8 +47,8 @@ export const productState = () =>
       description: "car generator",
       qualities: ["good", "awesome", "quality"],
       imgName: "car-generator",
-      imageUrl: "car-generator.jpeg",
-      imgExt: "jpeg",
+      imageUrl: "car-generator.png",
+      imgExt: "png",
     },
     {
       id: 3,

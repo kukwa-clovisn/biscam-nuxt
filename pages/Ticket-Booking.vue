@@ -1,5 +1,8 @@
 <template>
   <div class="flight-main">
+    <Head>
+      <Title>Ticket Booking || BISCAM</Title>
+    </Head>
     <div class="main-wrapper">
       <div class="ticket-container">
         <div class="ticket-wrapper">

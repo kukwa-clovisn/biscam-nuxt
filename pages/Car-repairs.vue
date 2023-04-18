@@ -1,5 +1,8 @@
 <template>
   <div class="main">
+    <Head>
+      <Title>Car Repair || BISCAM</Title>
+    </Head>
     <div class="landing-page">
       <div class="content">
         <h1>biscam multi-purpose garage</h1>

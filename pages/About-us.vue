@@ -1,5 +1,8 @@
 <template>
   <main>
+    <Head>
+      <Title>About || BISCAM</Title>
+    </Head>
     <div class="landing-page">
       <div class="blur-wrapper"></div>
       <h1>About Us</h1>

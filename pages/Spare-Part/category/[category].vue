@@ -2,6 +2,9 @@
 
 <template>
   <div class="category-container">
+    <Head>
+      <Title>{{ $route.params.category }} || BISCAM</Title>
+    </Head>
     <div class="header-component"></div>
     <h1>Browse all {{ $route.params.category }}</h1>
     <SparePartCategoryHeader />
@@ -23,11 +26,7 @@
               <div class="image">
                 <img
                   data-aos="slide-up"
-                  :src="
-                    `/_nuxt/assets/car-engines/${product.imageUrl}`
-                      ? ''
-                      : `https://biscaminvestmentsarl.netlify.app/_nuxt/assets/car-engines/${product.imageUrl}`
-                  "
+                  :src="'/_nuxt/assets/car-engines/' + product.imageUrl"
                   alt=""
                 />
               </div>
@@ -35,13 +34,25 @@
               <div class="details">
                 <h2>{{ product.name }}</h2>
                 <div class="info">
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                  <a
+                    href="https://wa.link/rt49uv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-aos="slide-up"
                     ><i class="fa-brands fa-whatsapp"></i
                   ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                  <a
+                    href="https://wa.link/rt49uv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-aos="slide-up"
                     ><i class="fa-solid fa-phone"></i
                   ></a>
-                  <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                  <a
+                    href="https://wa.link/rt49uv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-aos="slide-up"
                     ><i class="fa-solid fa-envelope"></i
                   ></a>
                 </div>
@@ -67,6 +78,7 @@
 </template>
 
 <script setup>
+import "assets/car-engines/car-engine.jpg";
 const route = useRoute();
 const productsArr = productState();
 

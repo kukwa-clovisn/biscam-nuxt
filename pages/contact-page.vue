@@ -1,5 +1,8 @@
 <template>
   <main>
+    <Head>
+      <Title>Contact || BISCAM</Title>
+    </Head>
     <div class="landing-page">
       <div class="landing-page-wrapper">
         <button :class="[{ sticky: stickyHeader }, { enter: !stickyHeader }]">

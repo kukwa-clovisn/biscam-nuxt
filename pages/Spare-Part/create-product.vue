@@ -1,5 +1,8 @@
 <template>
   <div class="create-product-main">
+    <Head>
+      <Title>Create Product || BISCAM</Title>
+    </Head>
     <div class="header-component"></div>
     <div class="create-product-wrapper">
       <form @submit="createProduct">

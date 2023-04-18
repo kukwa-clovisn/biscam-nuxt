@@ -1,5 +1,8 @@
 <template>
   <main>
+    <Head>
+      <Title>Cleaning Agency || BISCAM</Title>
+    </Head>
     <div class="landing-page">
       <div class="blur-wrapper"></div>
       <div class="content">
