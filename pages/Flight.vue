@@ -39,7 +39,7 @@
           </div>
           <div class="link">
             <i class="fa-brands fa-tiktok"></i>
-            <a href="#">tiktok</a>
+            <a href="" target="_blank" rel="noopener noreferrer">whtasapp</a>
           </div>
         </div>
       </div>
@@ -178,21 +178,47 @@
         <div class="address-box">
           <h2>address</h2>
           <p>anciente route, opposite mobile</p>
-          <p><a href="tel:+237699391316"> Tel : +237699 391 316</a></p>
-          <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
           <p>
-            <a href="mailto:garagebiscam@gmail.com"
-              >Email: garagebiscam@gmail.com</a
+            <a
+              href="tel:+237699391316"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tel : +237699 391 316</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >whatsapp : +237654 213 803</a
+            >
+          </p>
+          <p>
+            <a
+              href="mailto:biscamflight@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Email: biscamflight@gmail.com</a
             >
           </p>
           <button>
-            <NuxtLink to="/contact-page">contact us</NuxtLink>
+            <a
+              href="http://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >contact us</a
+            >
           </button>
           <button @click="($event) => navigateTo('/appointment')">
             book an appointment
           </button>
         </div>
       </div>
+    </div>
+    <div>
+      <qrcode :src="codesrc" />
     </div>
   </div>
 </template>
@@ -202,6 +228,7 @@ import img from "assets/flight/airplane-sunset.jpg";
 import img1 from "assets/flight/airport-terminal.jpg";
 import img2 from "assets/flight/sky-plane.jpg";
 import img3 from "assets/flight/black-woman-with-suitcase-airport.jpg";
+import codesrc from "assets/QR_CODES/flight-whatsapp-code.png";
 
 const dg_images = ref([img, img1, img2, img3]);
 const stickyHeader = ref(false);

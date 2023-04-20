@@ -217,7 +217,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-up"
-          @click="$router.push({ path: '/flight' })"
+          @click="navigateTo('/flight')"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -236,7 +236,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-left"
-          @click="$router.push({ path: '/spare-part' })"
+          @click="navigateTo('/spare-part')"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">
@@ -259,7 +259,7 @@
         <div
           class="flex-div-content"
           data-aos="slide-up"
-          @click="$router.push({ path: '/cleaning-agency' })"
+          @click="navigateTo('/cleaning-agency')"
         >
           <div class="flex-div-content-top">
             <div class="flex-div-content-top-img">

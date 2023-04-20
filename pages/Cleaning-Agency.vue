@@ -38,8 +38,13 @@
             <a href="#">linkedin</a>
           </div>
           <div class="link">
-            <i class="fa-brands fa-tiktok"></i>
-            <a href="#">tiktok</a>
+            <i class="fa-brands fa-whatsapp"></i>
+            <a
+              href="https://wa.link/wrxet8"
+              target="_blank"
+              rel="noopener noreferrer"
+              >whatsapp</a
+            >
           </div>
         </div>
       </div>
@@ -70,7 +75,12 @@
           alt=""
         />
         <div class="blur-wrapper">
-          <a href="#contactForm">contact us</a>
+          <a
+            href="https://wa.link/wrxet8"
+            target="_blank"
+            rel="noopener noreferrer"
+            >contact us</a
+          >
         </div>
       </div>
     </div>
@@ -99,7 +109,12 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">custom cleaning</h2>
             <button data-aos="slide-up">
-              <a href="https://wa.link/wrxet8">contact us</a>
+              <a
+                href="https://wa.link/wrxet8"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -125,7 +140,12 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">hotels and office cleaning</h2>
             <button data-aos="slide-up">
-              <a href="https://wa.link/wrxet8">contact us</a>
+              <a
+                href="https://wa.link/wrxet8"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -151,7 +171,12 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">genral house cleaning</h2>
             <button data-aos="slide-up">
-              <a href="https://wa.link/wrxet8">contact us</a>
+              <a
+                href="https://wa.link/wrxet8"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -177,7 +202,12 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">ship deck cleaning</h2>
             <button data-aos="slide-up">
-              <a href="https://wa.link/wrxet8">contact us</a>
+              <a
+                href="https://wa.link/wrxet8"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -196,15 +226,30 @@
         <div class="address-box">
           <h2>address</h2>
           <p>anciente route, opposite mobile</p>
-          <p><a href="tel:+237699391316"> Tel : +237699 391 316</a></p>
-          <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
           <p>
-            <a href="mailto:garagebiscam@gmail.com"
-              >Email: garagebiscam@gmail.com</a
+            <a href="tel:+237699391316" target="_blank">
+              Tel : +237683 079 785</a
+            >
+          </p>
+          <p>
+            <a href="https://wa.link/rt49uv" target="_blank"
+              >whatsapp : +237679 450 640</a
+            >
+          </p>
+          <p>
+            <a
+              href="mailto:biscamcleaning@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Email: biscamcleaning@gmail.com</a
             >
           </p>
           <button>
-            <NuxtLink to="/contact-page">contact us</NuxtLink>
+            <a
+              href="http://wa.link/wrxet8"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button @click="($event) => navigateTo('/appointment')">
             book an appointment
@@ -212,9 +257,14 @@
         </div>
       </div>
     </div>
+    <div>
+      <qrcode :src="codesrc" />
+    </div>
   </main>
 </template>
 <script setup>
+import codesrc from "assets/QR_CODES/cleaning-agency-code.png";
+
 const stickyHeader = ref(false);
 
 if (process.client) {

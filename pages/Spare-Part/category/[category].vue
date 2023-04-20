@@ -6,7 +6,7 @@
       <Title>{{ $route.params.category }} || BISCAM</Title>
     </Head>
     <div class="header-component"></div>
-    <h1>Browse all {{ $route.params.category }}</h1>
+    <h1>Browse {{ $route.params.category }}</h1>
     <SparePartCategoryHeader />
     <div class="product-body">
       <div class="product-body-wrapper">
@@ -26,8 +26,8 @@
               <div class="image">
                 <img
                   data-aos="slide-up"
-                  :src="'/_nuxt/assets/car-engines/' + product.imageUrl"
-                  alt=""
+                  :src="product.imageUrl"
+                  :alt="product.name"
                 />
               </div>
 

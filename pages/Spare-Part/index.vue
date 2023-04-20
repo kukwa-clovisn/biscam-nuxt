@@ -17,7 +17,7 @@
           >
         </div>
         <div class="image">
-          <img src="~/assets/car-engines/engine-2.png" alt="" />
+          <img src="~/assets/car-engines/engine/engine-2.png" alt="" />
         </div>
       </div>
       <div class="right-content">
@@ -25,7 +25,7 @@
           <div class="content">
             <div class="img">
               <img
-                src="~/assets/car-engines/engine-block-transparent.png"
+                src="~/assets/car-engines/engine/engine-block-transparent.png"
                 alt=""
               />
             </div>
@@ -42,7 +42,10 @@
           </div>
           <div class="content">
             <div class="img">
-              <img src="~/assets/car-engines/car-key-transparent.png" alt="" />
+              <img
+                src="~/assets/car-engines/car-key-starter/car-key-transparent.png"
+                alt=""
+              />
             </div>
             <div class="info">
               <h2>car key starter</h2>
@@ -58,7 +61,7 @@
           <div class="content">
             <div class="img">
               <img
-                src="~/assets/car-engines/manifold-1-transparent.png"
+                src="~/assets/car-engines/manifold/manifold-1-transparent.png"
                 alt=""
               />
             </div>
@@ -75,7 +78,7 @@
           </div>
           <div class="content">
             <div class="img">
-              <img src="~/assets/car-engines/shaft.png" alt="" />
+              <img src="~/assets/car-engines/shaft/shaft.png" alt="" />
             </div>
             <div class="info">
               <h2>shaft</h2>
@@ -92,7 +95,7 @@
       </div>
     </div>
     <div class="product-section">
-      <SparePartCategoryHeader />
+      <SparePart-Category-header />
 
       <div class="product-body">
         <div class="product-body-wrapper">
@@ -108,8 +111,8 @@
                 <div class="image">
                   <img
                     data-aos="slide-up"
-                    :src="`/_nuxt/assets/car-engines/${product.imageUrl}`"
-                    alt=""
+                    :src="product.imageUrl"
+                    :alt="product.name"
                   />
                 </div>
 
@@ -145,36 +148,51 @@
           <p data-aos="slide-up">reserved spare parts just for you.</p>
 
           <div class="category-list">
-            <div class="content">
+            <div
+              class="content"
+              @click="navigateTo('/spare-part/category/shaft')"
+            >
               <div class="image">
-                <img src="~/assets/car-engines/camshaft.jpeg" alt="" />
+                <img src="~/assets/car-engines/shaft/camshaft.jpeg" alt="" />
               </div>
               <h3>camshaft</h3>
             </div>
-            <div class="content">
+            <div
+              class="content"
+              @click="navigateTo('/spare-part/category/car key starter')"
+            >
               <div class="image">
                 <img
-                  src="~/assets/car-engines/car-key-transparent.png"
+                  src="~/assets/car-engines/car-key-starter/car-key-transparent.png"
                   alt=""
                 />
               </div>
               <h3>car key starter</h3>
             </div>
-            <div class="content">
+            <div
+              class="content"
+              @click="navigateTo('/spare-part/category/engine')"
+            >
               <div class="image">
-                <img src="~/assets/car-engines/engine-1.jpg" alt="" />
+                <img src="~/assets/car-engines/engine/engine-1.jpg" alt="" />
               </div>
               <h3>engine</h3>
             </div>
-            <div class="content">
+            <div
+              class="content"
+              @click="navigateTo('/spare-part/category/manifold')"
+            >
               <div class="image">
-                <img src="~/assets/car-engines/manifold.jpeg" alt="" />
+                <img src="~/assets/car-engines/manifold/manifold.jpeg" alt="" />
               </div>
               <h3>manifold</h3>
             </div>
-            <div class="content">
+            <div
+              class="content"
+              @click="navigateTo('/spare-part/category/shaft')"
+            >
               <div class="image">
-                <img src="~/assets/car-engines/shaft-1.jpeg" alt="" />
+                <img src="~/assets/car-engines/shaft/shaft-1.jpeg" alt="" />
               </div>
               <h3>shaft</h3>
             </div>
@@ -213,8 +231,8 @@
                 <div class="image">
                   <img
                     data-aos="slide-up"
-                    :src="`/_nuxt/assets/car-engines/${product.imageUrl}`"
-                    alt=""
+                    :src="product.imageUrl"
+                    :alt="product.name"
                   />
                 </div>
                 <div class="details">

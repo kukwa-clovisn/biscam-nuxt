@@ -10,29 +10,78 @@
         <div class="header-wrapper-content-services">
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/" class="route">Home</NuxtLink>
+              <NuxtLink
+                to="/"
+                :class="[
+                  { active: linkActive },
+                  { inActive: !linkActive },
+                  'route',
+                ]"
+                @mouseenter="linkActive = true"
+                @mouseleave="linkActive = false"
+                >Home</NuxtLink
+              >
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/car-repairs" class="route"> car repair </NuxtLink>
+              <NuxtLink
+                to="/car-repairs"
+                :class="[
+                  { active: linkActive1 },
+                  { inActive: !linkActive1 },
+                  'route',
+                ]"
+                @mouseenter="linkActive1 = true"
+                @mouseleave="linkActive1 = false"
+              >
+                car repair
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/maritime" class="route"> maritime </NuxtLink>
+              <NuxtLink
+                to="/maritime"
+                :class="[
+                  { active: linkActive2 },
+                  { inActive: !linkActive2 },
+                  'route',
+                ]"
+                @mouseenter="linkActive2 = true"
+                @mouseleave="linkActive2 = false"
+              >
+                maritime
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
-              <NuxtLink to="/flight" class="route"> flight </NuxtLink>
+              <NuxtLink
+                to="/flight"
+                :class="[
+                  { active: linkActive3 },
+                  { inActive: !linkActive3 },
+                  'route',
+                ]"
+                @mouseenter="linkActive3 = true"
+                @mouseleave="linkActive3 = false"
+              >
+                flight
+              </NuxtLink>
             </button>
           </div>
           <div class="header-wrapper-content-services-service lg">
             <button class="header-route">
               <NuxtLink
                 to="/cleaning-agency"
-                class="route"
+                :class="[
+                  { active: linkActive4 },
+                  { inActive: !linkActive4 },
+                  'route',
+                ]"
+                @mouseenter="linkActive4 = true"
+                @mouseleave="linkActive4 = false"
                 title="Biscam cleaning agency"
               >
                 cleaning agency
@@ -43,7 +92,13 @@
             <button class="header-route">
               <NuxtLink
                 to="/Spare-Part"
-                class="route"
+                :class="[
+                  { active: linkActive5 },
+                  { inActive: !linkActive5 },
+                  'route',
+                ]"
+                @mouseenter="linkActive5 = true"
+                @mouseleave="linkActive5 = false"
                 title="Biscam car spare parts"
               >
                 spare part
@@ -72,6 +127,12 @@
 <script setup>
 const menuState = useMenuState();
 const stickyHeader = ref(false);
+const linkActive = ref(false);
+const linkActive1 = ref(false);
+const linkActive2 = ref(false);
+const linkActive3 = ref(false);
+const linkActive4 = ref(false);
+const linkActive5 = ref(false);
 const openchat = openChat();
 if (process.client) {
   window.addEventListener("scroll", () => {
@@ -165,27 +226,44 @@ header {
           &:hover {
             color: rgb(227, 172, 21);
             border: none;
-            border-bottom: 1px solid rgb(183, 143, 10);
+          }
+
+          &::before {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: rgb(227, 172, 21);
+            border-radius: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: none;
           }
 
           @media screen and (max-width: 1025px) {
             font-size: 11px;
           }
         }
+        a.active {
+          &::before {
+            display: block;
+            animation: enter 0.4s alternate ease-in-out forwards;
+          }
+        }
 
+        a.inActive {
+          &::before {
+            display: block;
+            animation: leave 0.4s alternate ease-in-out forwards;
+          }
+        }
         a.router-link-active.router-link-exact-active {
           color: rgb(233, 175, 14);
           padding: 5px;
           border-bottom: 2px solid rgb(250, 170, 20);
-        }
 
-        @keyframes hovering {
-          from {
-            width: 0;
-          }
-
-          to {
-            width: 100%;
+          &::before {
+            display: none;
           }
         }
       }
@@ -393,11 +471,12 @@ header {
           align-items: center;
           font-family: "Montserrat", "Nunito Sans", sans-serif;
           position: relative;
+          overflow: hidden;
 
           &:hover {
             color: rgb(227, 172, 21);
             border: none;
-            border-bottom: 1px solid rgb(183, 143, 10);
+            // border-bottom: 1px solid ;
           }
 
           @media screen and (max-width: 1025px) {
@@ -409,16 +488,6 @@ header {
           color: rgb(233, 175, 14);
           padding: 5px;
           border-bottom: 2px solid rgb(250, 170, 20);
-        }
-
-        @keyframes hovering {
-          from {
-            width: 0;
-          }
-
-          to {
-            width: 100%;
-          }
         }
       }
 
@@ -560,6 +629,26 @@ header {
     to {
       transform: translateY(0);
     }
+  }
+}
+@keyframes enter {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leave {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(120%);
+    display: none;
   }
 }
 </style>

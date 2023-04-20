@@ -8,7 +8,12 @@
         <h1>biscam multi-purpose garage</h1>
         <p>Let us service your car</p>
         <button>
-          <NuxtLink to="/contact-page">contact us</NuxtLink>
+          <a
+            href="https://wa.link/rt49uv"
+            target="_blank"
+            rel="noopener noreferrer"
+            >contact us</a
+          >
         </button>
       </div>
       <div class="nav-div lg">
@@ -22,7 +27,13 @@
           <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin</a>
         </div>
         <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
-          <a href="#"> <i class="fa-brands fa-tiktok"></i> tiktok</a>
+          <a
+            href="https://wa.link/rt49uv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-whatsapp"></i> whatsapp</a
+          >
         </div>
       </div>
     </div>
@@ -70,7 +81,12 @@
             <h2>car programming</h2>
             <p>We deal with the programming of all sorts of cars.</p>
             <button>
-              <NuxtLink to="/contact-page">contact us</NuxtLink>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -85,7 +101,12 @@
             <h2>mechanic</h2>
             <p>We deal with the programming of all sorts of cars.</p>
             <button>
-              <NuxtLink to="/contact-page">contact us</NuxtLink>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -100,7 +121,12 @@
             <h2>car wash</h2>
             <p>We deal with the programming of all sorts of cars.</p>
             <button>
-              <NuxtLink to="/contact-page">contact us</NuxtLink>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -115,7 +141,12 @@
             <h2>painting</h2>
             <p>We deal with the programming of all sorts of cars.</p>
             <button>
-              <NuxtLink to="/contact-page">contact us</NuxtLink>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -130,7 +161,12 @@
             <h2>auto elect</h2>
             <p>We deal with the programming of all sorts of cars.</p>
             <button>
-              <NuxtLink to="/contact-page">contact us</NuxtLink>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -145,7 +181,12 @@
             <h2>pana biting</h2>
             <p>We deal with the programming of all sorts of cars.</p>
             <button>
-              <NuxtLink to="/contact-page">contact us</NuxtLink>
+              <a
+                href="https://wa.link/rt49uv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >contact us</a
+              >
             </button>
           </div>
         </div>
@@ -157,21 +198,47 @@
         <div class="address-box">
           <h2>address</h2>
           <p>anciente route, opposite mobile</p>
-          <p><a href="tel:+237699391316"> Tel : +237699 391 316</a></p>
-          <p><a href="https://wa.link/rt49uv">whatsapp : +237677 387 714</a></p>
           <p>
-            <a href="mailto:garagebiscam@gmail.com"
+            <a
+              href="tel:+237699391316"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tel : +237699 391 316</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >whatsapp : +237677 387 714</a
+            >
+          </p>
+          <p>
+            <a
+              href="mailto:garagebiscam@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               >Email: garagebiscam@gmail.com</a
             >
           </p>
           <button>
-            <NuxtLink to="/contact-page">contact us</NuxtLink>
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >contact us</a
+            >
           </button>
           <button @click="($event) => navigateTo('/appointment')">
             book an appointment
           </button>
         </div>
       </div>
+    </div>
+    <div>
+      <qrcode :src="codesrc" />
     </div>
     <div class="map-container">
       <iframe
@@ -187,6 +254,7 @@
   </div>
 </template>
 <script setup>
+import codesrc from "assets/QR_CODES/garage-whatsapp-code.png";
 const stickyHeader = ref(false);
 
 if (process.client) {

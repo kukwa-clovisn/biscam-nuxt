@@ -76,7 +76,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-right"
-            @click="$router.push({ path: '/car-repairs' })"
+            @click="navigateTo('/car-repairs')"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -98,7 +98,7 @@
           <div
             class="flex-div-content"
             data-aos="fade"
-            @click="$router.push({ path: '/car-repairs' })"
+            @click="navigateTo('/car-repairs')"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -121,7 +121,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-up"
-            @click="$router.push({ path: '/car-repairs' })"
+            @click="navigateTo('/car-repairs')"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -144,7 +144,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-left"
-            @click="$router.push({ path: '/car-repairs' })"
+            @click="navigateTo('/car-repairs')"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
@@ -166,7 +166,7 @@
           <div
             class="flex-div-content"
             data-aos="slide-up"
-            @click="$router.push({ path: '/car-repairs' })"
+            @click="navigateTo('/car-repairs')"
           >
             <div class="flex-div-content-top">
               <div class="flex-div-content-top-img">
