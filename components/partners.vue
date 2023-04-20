@@ -1,7 +1,7 @@
 <template>
   <div class="partners-container">
     <div class="partners-wrapper">
-      <h1>our partners</h1>
+      <h1>our speciality</h1>
       <div class="partners-content">
         <div class="partner">
           <div class="blur-wrapper"></div>
@@ -39,8 +39,8 @@
             <img src="~/assets/car-images/car-7.jpg" alt="" />
           </div>
           <div class="details">
-            <h2>partner name</h2>
-            <p>partner credentials</p>
+            <h2>bus</h2>
+            <p>Buses of all categories</p>
           </div>
         </div>
         <div class="partner">
@@ -49,8 +49,8 @@
             <img src="~/assets/car-images/car-5.jpg" alt="" />
           </div>
           <div class="details">
-            <h2>partner name</h2>
-            <p>partner credentials</p>
+            <h2>hilux</h2>
+            <p>Hilux and all it's sub types</p>
           </div>
         </div>
         <div class="partner">

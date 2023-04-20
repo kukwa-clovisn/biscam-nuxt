@@ -174,7 +174,7 @@
               @click="navigateTo('/spare-part/category/engine')"
             >
               <div class="image">
-                <img src="~/assets/car-engines/engine/engine-1.jpg" alt="" />
+                <img src="~/assets/car-engines/engine/engine-1.png" alt="" />
               </div>
               <h3>engine</h3>
             </div>
@@ -192,7 +192,7 @@
               @click="navigateTo('/spare-part/category/shaft')"
             >
               <div class="image">
-                <img src="~/assets/car-engines/shaft/shaft-1.jpeg" alt="" />
+                <img src="~/assets/car-engines/shaft/crank-shaft.jpg" alt="" />
               </div>
               <h3>shaft</h3>
             </div>
@@ -370,7 +370,22 @@
 </template>
 
 <script setup>
+const shuffleProducts = (array) => {
+  for (var i = array.length - 1; i > 0; i--) {
+    // Generate random number
+    var j = Math.floor(Math.random() * (i + 1));
+
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+};
+
 const products = productState();
+
+products.value = shuffleProducts(products.value);
 
 const displayProduct = (id) => {
   navigateTo(`/spare-part/${id}`);

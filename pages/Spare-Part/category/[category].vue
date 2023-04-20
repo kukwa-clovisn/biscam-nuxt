@@ -78,18 +78,32 @@
 </template>
 
 <script setup>
-import "assets/car-engines/car-engine.jpg";
 const route = useRoute();
 const productsArr = productState();
-
-const products = productsArr.value.filter((product) => {
-  if (route.params.category === "all") return true;
-  else return product.category === route.params.category;
-});
 
 const displayProduct = (id) => {
   navigateTo(`/spare-part/${id}`);
 };
+
+const shuffleProducts = (array) => {
+  for (var i = array.length - 1; i > 0; i--) {
+    // Generate random number
+    var j = Math.floor(Math.random() * (i + 1));
+
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+};
+
+let products = shuffleProducts(productsArr.value);
+
+products = products.filter((product) => {
+  if (route.params.category === "all") return true;
+  else return product.category === route.params.category;
+});
 </script>
 
 <style lang="scss" scoped>

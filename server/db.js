@@ -3,8 +3,8 @@ const config = useRuntimeConfig();
 export default async () => {
   try {
     await mongoose.connect(config.mongoUrl);
-    console.log("Biscam Sarl Database connected successfully...");
+    console.log("Biscam investment Sarl Database connected successfully...");
   } catch (err) {
-    console.error("Biscam Sarl Database connection failed.", err);
+    console.error("Biscam investment Sarl Database connection failed.", err);
   }
 };

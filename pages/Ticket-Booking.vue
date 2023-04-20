@@ -196,14 +196,6 @@
         </div>
       </div>
     </div>
-    <div class="contact-container">
-      <contactForm
-        whatsappLink="https://wa.link/290wme"
-        whatsappTel="+237654213803"
-        tel="+237683079785"
-        email="biscamflight@gmail.com"
-      />
-    </div>
   </div>
 </template>
 

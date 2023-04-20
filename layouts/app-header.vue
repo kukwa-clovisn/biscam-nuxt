@@ -257,7 +257,7 @@ header {
             animation: leave 0.4s alternate ease-in-out forwards;
           }
         }
-        a.router-link-active.router-link-exact-active {
+        a.router-link-active.router-link-exact-active, .router-link-active {
           color: rgb(233, 175, 14);
           padding: 5px;
           border-bottom: 2px solid rgb(250, 170, 20);

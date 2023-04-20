@@ -21,9 +21,7 @@
           <div class="product-content">
             <h3>product description:</h3>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
-              quasi repellat non dolore quaerat blanditiis, deleniti consequatur
-              sunt et hic.
+              {{ displayProduct[0].description }}
             </p>
             <a
               href="https://wa.link/rt49uv"
@@ -47,7 +45,22 @@ const route = useRoute();
 
 const productRoute = route.params.id;
 
+const shuffleProducts = (array) => {
+  for (var i = array.length - 1; i > 0; i--) {
+    // Generate random number
+    var j = Math.floor(Math.random() * (i + 1));
+
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+};
+
 const products = productState();
+
+products.value = shuffleProducts(products.value);
 
 const displayProduct = products.value.filter((product) => {
   return product.id.toString() === route.params.id;
@@ -147,7 +160,7 @@ const displayProduct = products.value.filter((product) => {
             border-radius: 3px;
             margin: 20px 0 10px 0;
             background: rgb(222, 155, 1);
-            color: rgb(224, 223, 223);
+            color: rgb(238, 238, 238);
             text-transform: capitalize;
           }
         }
