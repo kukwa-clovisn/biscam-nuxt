@@ -20,9 +20,7 @@
         <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
           <a href="#"> <i class="fa-brands fa-facebook"></i> facebook</a>
         </div>
-        <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
-          <a href="#"> <i class="fa-brands fa-twitter"></i> twitter</a>
-        </div>
+
         <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
           <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin</a>
         </div>
@@ -53,16 +51,12 @@
           </div>
 
           <div class="link">
-            <i class="fa-brands fa-twitter"></i>
-            <a href="#">twitter</a>
-          </div>
-          <div class="link">
             <i class="fa-brands fa-linkedin"></i>
             <a href="#">linkedin</a>
           </div>
           <div class="link">
-            <i class="fa-brands fa-tiktok"></i>
-            <a href="#">tiktok</a>
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="#">whatsapp</a>
           </div>
         </div>
       </div>
@@ -256,6 +250,7 @@
 <script setup>
 import codesrc from "assets/QR_CODES/garage-whatsapp-code.png";
 const stickyHeader = ref(false);
+const linkDropdown = useLinkState();
 
 if (process.client) {
   window.addEventListener("scroll", () => {

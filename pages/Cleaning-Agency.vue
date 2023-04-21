@@ -29,10 +29,7 @@
             <i class="fa-brands fa-facebook"></i>
             <a href="#">facebook</a>
           </div>
-          <div class="link">
-            <i class="fa-brands fa-twitter"></i>
-            <a href="#">twitter</a>
-          </div>
+
           <div class="link">
             <i class="fa-brands fa-linkedin"></i>
             <a href="#">linkedin</a>
@@ -249,7 +246,8 @@
               href="http://wa.link/wrxet8"
               target="_blank"
               rel="noopener noreferrer"
-            ></a>
+              >contact us</a
+            >
           </button>
           <button @click="($event) => navigateTo('/appointment')">
             book an appointment

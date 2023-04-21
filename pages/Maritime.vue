@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-     <Head>
+    <Head>
       <Title>Maritime || BISCAM</Title>
     </Head>
     <div class="landing-page">
@@ -26,17 +26,14 @@
             <i class="fa-brands fa-facebook"></i>
             <a href="#">facebook</a>
           </div>
-          <div class="link">
-            <i class="fa-brands fa-twitter"></i>
-            <a href="#">twitter</a>
-          </div>
+
           <div class="link">
             <i class="fa-brands fa-linkedin"></i>
             <a href="#">linkedin</a>
           </div>
           <div class="link">
-            <i class="fa-brands fa-tiktok"></i>
-            <a href="#">tiktok</a>
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.link/rt49uv">whatsapp</a>
           </div>
         </div>
       </div>
@@ -63,7 +60,7 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">offshore services</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a>
+              <a href="https://wa.link/rt49uv">contact us</a>
             </button>
           </div>
         </div>
@@ -89,7 +86,7 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">import and export</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a>
+              <a href="https://wa.link/rt49uv">contact us</a>
             </button>
           </div>
         </div>
@@ -115,7 +112,7 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">ship chandling</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a>
+              <a href="https://wa.link/rt49uv">contact us</a>
             </button>
           </div>
         </div>
@@ -137,7 +134,7 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">garbage removal</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a>
+              <a href="https://wa.link/rt49uv">contact us</a>
             </button>
           </div>
         </div>
@@ -163,7 +160,7 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">ship paintng and weilding</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a>
+              <a href="https://wa.link/rt49uv">contact us</a>
             </button>
           </div>
         </div>
@@ -189,7 +186,7 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">tank and deep cleaning</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a>
+              <a href="https://wa.link/rt49uv">contact us</a>
             </button>
           </div>
         </div>
@@ -215,7 +212,7 @@
           <div class="flex-div-content-bottom">
             <h2 data-aos="slide-up">door to door delivery</h2>
             <button data-aos="slide-up">
-              <a href="#contactForm">contact us</a>
+              <a href="https://wa.link/rt49uv">contact us</a>
             </button>
           </div>
         </div>

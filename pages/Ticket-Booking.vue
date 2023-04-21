@@ -147,6 +147,10 @@
 
             <div class="form-wrapper" v-if="confirm">
               <h2>check your info before submitting</h2>
+              <h5>
+                Flight rates fluctuate always. We'll send you an email with the
+                cost or get to you on phone. STay connected.
+              </h5>
               <p>
                 Departure: <span>{{ ticketBody.departure }}</span>
               </p>
@@ -167,8 +171,28 @@
             <el-button @click="phaseOne()" v-if="stepOne" class="form-button"
               >Next step <i class="fa-solid fa-forward"></i
             ></el-button>
+            <el-button
+              @click="
+                ($event) => {
+                  (stepOne = true), (stepTwo = false), (confirm = false);
+                }
+              "
+              v-if="stepTwo"
+              class="form-button"
+              >prev step <i class="fa-solid fa-backward"></i
+            ></el-button>
             <el-button @click="phaseTwo()" v-if="stepTwo" class="form-button"
               >Next step <i class="fa-solid fa-forward"></i
+            ></el-button>
+            <el-button
+              @click="
+                ($event) => {
+                  (stepOne = false), (stepTwo = true), (confirm = false);
+                }
+              "
+              v-if="confirm"
+              class="form-button"
+              >prev step <i class="fa-solid fa-backward"></i
             ></el-button>
             <el-button @click="submitForm()" v-if="confirm" class="form-button"
               >confirm booking <i class="fa-solid fa-circle-check"></i
@@ -248,8 +272,8 @@ const handleSubmit = (e) => {
 
 const phaseOne = (e) => {
   if (
-    ticketBody.departure != "" &&
-    ticketBody.destination != "" &&
+    // ticketBody.departure != "" &&
+    // ticketBody.destination != "" &&
     ticketBody.departureDate != "" &&
     ticketBody.returnDate != "" &&
     ticketBody.passangers >= 1

@@ -29,17 +29,19 @@
             <i class="fa-brands fa-facebook"></i>
             <a href="#">facebook</a>
           </div>
-          <div class="link">
-            <i class="fa-brands fa-twitter"></i>
-            <a href="#">twitter</a>
-          </div>
+
           <div class="link">
             <i class="fa-brands fa-linkedin"></i>
             <a href="#">linkedin</a>
           </div>
           <div class="link">
             <i class="fa-brands fa-tiktok"></i>
-            <a href="" target="_blank" rel="noopener noreferrer">whtasapp</a>
+            <a
+              href="http://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >whtasapp</a
+            >
           </div>
         </div>
       </div>

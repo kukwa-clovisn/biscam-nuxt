@@ -21,17 +21,14 @@
             <i class="fa-brands fa-facebook"></i>
             <a href="#">facebook</a>
           </div>
-          <div class="link">
-            <i class="fa-brands fa-twitter"></i>
-            <a href="#">twitter</a>
-          </div>
+
           <div class="link">
             <i class="fa-brands fa-linkedin"></i>
             <a href="#">linkedin</a>
           </div>
           <div class="link">
-            <i class="fa-brands fa-tiktok"></i>
-            <a href="#">tiktok</a>
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="#">whatsapp</a>
           </div>
         </div>
       </div>
