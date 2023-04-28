@@ -51,6 +51,7 @@
 <script setup>
 const props = defineProps({
   productName: String,
+  imageurl: String,
 });
 
 const booking = reactive({
@@ -59,6 +60,7 @@ const booking = reactive({
   tel: "",
   number: 1,
   message: "",
+  image: null,
 });
 </script>
 <style lang="scss" scoped>

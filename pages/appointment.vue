@@ -154,13 +154,11 @@
 </template>
 <script setup>
 import axios from "axios";
-// import emailjs from "@emailjs/browser";
 const router = useRouter();
 const active = ref(0);
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
-const formdata = ref(null);
 const loader = useLoaderState();
 
 const appointmentBody = reactive({
@@ -251,11 +249,9 @@ const submitForm = (e) => {
   loader.value = true;
 
   axios
-    .post(
-      "https://formsubmit.co/6b7db69d0a9a79253fc12b37e74ed923",
-      appointmentBody
-    )
+    .post("/api/appointment", appointmentBody)
     .then((res) => {
+      console.log(res)
       if (200 <= res.status && res.status < 400) {
         loader.value = false;
         setTimeout(() => {
@@ -284,6 +280,7 @@ const submitForm = (e) => {
       }
     })
     .catch((err) => {
+      console.log(err)
       loader.value = false;
       setTimeout(() => {
         ElMessageBox.alert(
@@ -304,49 +301,6 @@ const submitForm = (e) => {
         );
       }, 1000);
     });
-
-  // var templateParams = {
-  //   name: "codingherald",
-  //   notes: "texting email js api",
-  // };
-
-  // emailjs
-  //   .send(
-  //     "service_ep4i5d9",
-  //     "template_p18qg84",
-  //     templateParams,
-  //     "GnFR9bf1unlodMFZG"
-  //   )
-  //   .then(
-  //     (response) => {
-  //       console.log("SUCCESS!", response.status, response.text);
-
-  //       ElMessageBox.alert(
-  //         "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
-  //         "Appointment Submitted",
-  //         {
-  //           // if you want to disable its autofocus
-  //           // autofocus: false,
-  //           confirmButtonText: "OK",
-  //           callback: () => {
-  //             router.push("/");
-  //             appointmentBody.name = "";
-  //             appointmentBody.email = "";
-  //             appointmentBody.tel = "";
-  //             appointmentBody.date = "";
-  //             appointmentBody.time = "";
-  //             appointmentBody.userService = "";
-  //             stepOne.value = true;
-  //             stepTwo.value = false;
-  //             confirm.value = false;
-  //           },
-  //         }
-  //       );
-  //     },
-  //     (error) => {
-  //       console.log("FAILED...", error);
-  //     }
-  //   );
 };
 </script>
 <style lang="scss" scoped>

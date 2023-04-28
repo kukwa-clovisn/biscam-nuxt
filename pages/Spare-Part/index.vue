@@ -99,10 +99,9 @@
 
       <div class="product-body">
         <div class="product-body-wrapper">
-          <div class="detail-products" data-aos="slide-up">
+          <div class="detail-products">
             <div
               class="product"
-              data-aos="slide-up"
               v-for="product in products"
               :key="product"
               @click="displayProduct(product.id)"
@@ -219,10 +218,9 @@
       </div>
       <div class="product-body">
         <div class="product-body-wrapper">
-          <div class="detail-products sub-category" data-aos="slide-up">
+          <div class="detail-products sub-category">
             <div
               class="product"
-              data-aos="slide-up"
               v-for="product in products"
               :key="product"
               @click="displayProduct(product.id)"
@@ -230,7 +228,6 @@
               <div class="wrapper">
                 <div class="image">
                   <img
-                    data-aos="slide-up"
                     :src="product.imageUrl"
                     :alt="product.name"
                   />
@@ -242,17 +239,17 @@
                       href="https://wa.link/rt49uv"
                       target="_blank"
                       rel="noopener noreferrer"
-                      data-aos="slide-up"
+                      
                       ><i class="fa-brands fa-whatsapp"></i
                     ></a>
-                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    <a href="https://wa.link/rt49uv" 
                       ><i class="fa-solid fa-phone"></i
                     ></a>
                     <a
                       href="https://wa.link/rt49uv"
                       target="_blank"
                       rel="noopener noreferrer"
-                      data-aos="slide-up"
+                      
                       ><i class="fa-solid fa-envelope"></i
                     ></a>
                   </div>
@@ -396,7 +393,6 @@ const displayProduct = (id) => {
 .spare-part-main {
   width: 100%;
   height: fit-content;
-  box-sizing: border-box;
   .header-component {
     width: 100%;
     height: 13vh;
@@ -412,7 +408,6 @@ const displayProduct = (id) => {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
 
     .left-content {
       width: 50%;

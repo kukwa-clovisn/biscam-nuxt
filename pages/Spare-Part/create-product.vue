@@ -5,7 +5,7 @@
     </Head>
     <div class="header-component"></div>
     <div class="create-product-wrapper">
-      <form @submit="createProduct">
+      <form @submit="createProduct" enctype="multipart/form-data">
         <h1>upload a product.</h1>
 
         <div class="form-data">
@@ -40,14 +40,7 @@
             id="product-description"
             placeholder="Product Description:"
           />
-          <label for="product-quality">product qualities:</label>
-          <input
-            type="text"
-            name="qualities"
-            @input="splitQualities"
-            id="product-quality"
-            placeholder="Enter product Qualities. Separate each quality with a full stop (.)"
-          />
+
           <label for="price-from">price from</label>
           <input
             type="text"
@@ -112,17 +105,7 @@
               <p v-if="productData.description">
                 {{ productData.description }}
               </p>
-              <div class="product-qualities">
-                <h3>product qualities</h3>
-                <ul v-if="productData.qualitiesArr.length">
-                  <li
-                    v-for="(quality, index) in productData.qualitiesArr"
-                    :key="index"
-                  >
-                    {{ quality }}
-                  </li>
-                </ul>
-              </div>
+
               <p>
                 Price Range:
                 <span
@@ -144,19 +127,24 @@
 </template>
 
 <script setup>
+// definePageMeta({
+//   middleware: ["token"],
+//   // or middleware: 'auth'
+// });
 import axios from "axios";
+
+const base64String = ref("");
 
 const productData = reactive({
   name: "",
   category: "",
-  imgExt: "",
+  type: "",
   imgName: "",
   description: "",
   priceFrom: "",
   priceTo: "",
-  qualitiesArr: [],
   price: "",
-  imageBuffer: null,
+  base64String: null,
 });
 
 const preview = ref({});
@@ -167,15 +155,21 @@ const productImage = reactive({
   tempImg: null,
 });
 
-const splitQualities = (e) => {
-  return (productData.qualitiesArr = e.target.value.split("."));
-};
-
 function onChangeFunc(e) {
   if (e.target.files[0].size < 1048576) {
-    productData.imgExt = e.target.files[0].type;
+    productData.type = e.target.files[0].type;
     productData.imgName = e.target.files[0].name;
     preview.value = e.target.files[0];
+
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      base64String.value = reader.result;
+      productData.base64String = reader.result;
+    };
+
+    reader.readAsDataURL(file);
   } else {
     ElNotification.error({
       title: "File Size Exceeded",
@@ -193,24 +187,15 @@ watch(preview, (preview) => {
     productImage.preview = fileReader.result;
   });
 });
+
 const createProduct = (e) => {
   e.preventDefault();
-
-  const formdata = new FormData();
-
-  formdata.append("image", preview.value, preview.value.name);
-  formdata.append("categroy", productData.category);
-  formdata.append("description", productData.description);
-  formdata.append("qualities", productData.qualitiesArr);
-  formdata.append("priceFrom", productData.priceFrom);
-  formdata.append("priceTo", productData.priceTo);
-  formdata.append("price", productData.price);
 
   axios(
     "/api/product",
     {
       method: "post",
-      data: formdata,
+      data: productData,
     },
     {
       onUploadProgress: () => {

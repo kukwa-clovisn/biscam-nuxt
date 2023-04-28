@@ -57,23 +57,23 @@ export const useLinkState = () =>
   useState(() => [
     {
       name: "car repair",
-      path: "/",
+      path: "/car-repairs",
     },
     {
       name: "flight",
-      path: "/",
+      path: "/flight",
     },
     {
       name: "cleaning agency",
-      path: "/",
+      path: "/cleaning-agency",
     },
     {
       name: "spare part",
-      path: "/",
+      path: "/spare-part",
     },
     {
       name: "maritime",
-      path: "/",
+      path: "/maritime",
     },
   ]);
 

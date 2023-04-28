@@ -1,4 +1,6 @@
-// import mailjet from "mailjet";
+export default defineEventHandler(() => {
+  return "server listening...";
+});
 
 // const config = useRuntimeConfig();
 

@@ -74,10 +74,14 @@
         </h1>
       </div>
     </div>
+    <div v-for="image in data" :key="image.id">
+      <img :src="image.data" alt="" />
+    </div>
   </div>
 </template>
 
 <script setup>
+import axios from "axios";
 const route = useRoute();
 const productsArr = productState();
 
@@ -103,6 +107,17 @@ let products = shuffleProducts(productsArr.value);
 products = products.filter((product) => {
   if (route.params.category === "all") return true;
   else return product.category === route.params.category;
+});
+
+const data = ref([]);
+
+onMounted(() => {
+  axios("/api/product")
+    .then((res) => {
+      data.value = res.data;
+      console.log(data.value);
+    })
+    .catch((err) => console.log(err));
 });
 </script>
 
