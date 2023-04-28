@@ -55,22 +55,14 @@ export default defineEventHandler(async (event) => {
           color: rgb(51, 51, 51);
         }
         body {
-          width: 100vw;
+          width: 100%;
           height: fit-content;
           box-sizing: border-box;
           margin: 0;
           padding: 0;
-          background: rgb(230,230,230);
+        
           overflow: hidden;
           overflow-y: scroll;
-        }
-
-        .main {
-          width: 85%;
-          height: fit-content;
-          padding: 0;
-          margin: 5vh auto;  
-          background: rgb(255,255,255);
         }
         p {
           font-size: 15px;
@@ -170,24 +162,17 @@ export default defineEventHandler(async (event) => {
           color: rgb(39, 174, 97);
         }
 
-        .footer {
-          width: 100%;
-          height: fit-content;
-          padding: 10px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+       
 
         p.message {
           text-align: center;
         }
 
-        .footer a {
-          text-decoration: none;
-        }
 
         @media screen and (max-width: 600px) {
+          .main{
+               width:90%;
+          }
           .email-content {
             width: 100%;
             border: none;
@@ -201,8 +186,13 @@ export default defineEventHandler(async (event) => {
       </style>
     </head>
 
-    <body>
-      <div class="main">
+    <body style="  background: rgb(230,230,230);  padding: 20px;">
+      <div class="main" style=" width: 85%;
+          height: fit-content;
+        padding:0;
+        border-radius:5px;
+          margin: 100px auto;  
+          background: rgb(255,255,255);">
         <div class="header-content">
           <h1>biscam investment sarl</h1>
           <div class="line"></div>
@@ -242,11 +232,16 @@ export default defineEventHandler(async (event) => {
         </div>
        
       </div> 
-      <div class="footer">
+      <div class="footer" style="width: 100%;
+          height: fit-content;
+          padding: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;">
           <a
             href="https://advancedtechacademy.onrender.com"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" style="  text-decoration: none;   color: rgb(90, 91, 91);"
             >&copy;codingherald</a
           >
         </div>
