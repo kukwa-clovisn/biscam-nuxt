@@ -83,7 +83,7 @@
 <script setup>
 import axios from "axios";
 const route = useRoute();
-const productsArr = productState();
+const productsArr = ref([]);
 
 const displayProduct = (id) => {
   navigateTo(`/spare-part/${id}`);
@@ -109,13 +109,10 @@ products = products.filter((product) => {
   else return product.category === route.params.category;
 });
 
-const data = ref([]);
-
 onMounted(() => {
   axios("/api/product")
     .then((res) => {
-      data.value = res.data;
-      console.log(data.value);
+      productsArr.value = res.data;
     })
     .catch((err) => console.log(err));
 });

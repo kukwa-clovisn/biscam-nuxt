@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
       Messages: [
         {
           From: {
-            Email: "codingherald@gmail.com",
+            Email: "kcn.123.com@gmail.com",
             Name: "Biscam Investment Sarl",
           },
           To: [

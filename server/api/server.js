@@ -18,7 +18,7 @@ export default defineEventHandler(() => {
 //       Messages: [
 //         {
 //           From: {
-//             Email: "kukwaclovisngong3@gmail.com",
+//             Email: "kcn.123.com@gmail.com",
 //             Name: "codingherald workflow",
 //           },
 //           To: [
