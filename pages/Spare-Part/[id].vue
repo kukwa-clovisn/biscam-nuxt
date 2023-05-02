@@ -34,8 +34,13 @@
       </div>
     </div>
 
-    <product-purchase :productName="displayProduct[0].name" />
+    <product-purchase
+      :productName="displayProduct[0].name"
+      :category="displayProduct[0].category"
+      :imageUrl="displayProduct[0].imageUrl"
+    />
     <product-misc />
+
     <SparePartCategoryHeader />
   </div>
 </template>
@@ -65,6 +70,8 @@ products.value = shuffleProducts(products.value);
 const displayProduct = products.value.filter((product) => {
   return product.id.toString() === route.params.id;
 });
+
+
 </script>
 
 <style lang="scss" scoped>

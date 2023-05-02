@@ -6,9 +6,9 @@
       <NuxtPage data-aos="slide-left" />
     </div>
 
-    <chatbox />
+    <!-- <chatbox />
 
-    <popchat />
+    <popchat /> -->
     <NuxtLayout name="app-footer" />
     <div
       :class="[
@@ -86,15 +86,22 @@
               >contact us <i class="fa-solid fa-arrow-right"></i
             ></NuxtLink>
           </div>
-          <h2>follow us on:</h2>
+          <h2>Connect with us:</h2>
           <div class="media-wrapper">
-            <a href="#" class="link" title="Give us a call"
+            <a href="tel:+679450640" class="link" title="Give us a call"
               ><i class="fa-solid fa-phone"></i
             ></a>
-            <a href="#" class="link" title="Chat us on whatsapp"
+            <a
+              href="https://wa.link/rt49uv"
+              class="link"
+              title="Chat us on whatsapp"
               ><i class="fa-brands fa-whatsapp"></i
             ></a>
-            <a href="#" class="link"
+            <a
+              href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link"
               ><i class="fa-brands fa-facebook" title="Follow on facebook"></i
             ></a>
           </div>

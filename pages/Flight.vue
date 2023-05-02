@@ -27,13 +27,14 @@
         <div class="right-navbar">
           <div class="link">
             <i class="fa-brands fa-facebook"></i>
-            <a href="#">facebook</a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100090158095703&mibextid=ZbWKwL"
+              target="_blank"
+              rel="noopener noreferrer"
+              >facebook</a
+            >
           </div>
 
-          <div class="link">
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="#">linkedin</a>
-          </div>
           <div class="link">
             <i class="fa-brands fa-tiktok"></i>
             <a
@@ -191,7 +192,7 @@
           </p>
           <p>
             <a
-              href="https://wa.link/rt49uv"
+              href="https://wa.link/290wm"
               target="_blank"
               rel="noopener noreferrer"
               >whatsapp : +237654 213 803</a

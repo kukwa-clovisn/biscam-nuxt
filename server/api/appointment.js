@@ -19,8 +19,8 @@ export default defineEventHandler(async (event) => {
           },
           To: [
             {
-              Email: data.email,
-              Name: data.name,
+              Email:"biscaminvestmentsarl@gmail.com",
+              Name: "Biscam Investment Sarl",
             },
           ],
           Subject: "Appointment || Biscam Investment Sarl",

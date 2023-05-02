@@ -31,7 +31,8 @@ const router = useRouter();
 
 const handleCommand = (command) => {
   ElMessage.success(`${props.message}`);
-  router.push(command);
+  // router.push(command);
+  window.location = command;
 };
 </script> 
  <style lang="scss" scoped>

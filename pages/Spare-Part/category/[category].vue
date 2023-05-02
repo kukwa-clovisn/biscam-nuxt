@@ -74,16 +74,13 @@
         </h1>
       </div>
     </div>
-    <div v-for="image in data" :key="image.id">
-      <img :src="image.data" alt="" />
-    </div>
   </div>
 </template>
 
 <script setup>
-import axios from "axios";
+// import axios from "axios";
 const route = useRoute();
-const productsArr = ref([]);
+const productsArr = productState();
 
 const displayProduct = (id) => {
   navigateTo(`/spare-part/${id}`);
@@ -109,13 +106,13 @@ products = products.filter((product) => {
   else return product.category === route.params.category;
 });
 
-onMounted(() => {
-  axios("/api/product")
-    .then((res) => {
-      productsArr.value = res.data;
-    })
-    .catch((err) => console.log(err));
-});
+// onMounted(() => {
+//   axios("/api/product")
+//     .then((res) => {
+//       productsArr.value = res.data;
+//     })
+//     .catch((err) => err);
+// });
 </script>
 
 <style lang="scss" scoped>

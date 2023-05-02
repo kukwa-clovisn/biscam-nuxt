@@ -27,13 +27,14 @@
         <div class="right-navbar">
           <div class="link">
             <i class="fa-brands fa-facebook"></i>
-            <a href="#">facebook</a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100090287600432&mibextid=ZbWKwL"
+              target="_blank"
+              rel="noopener noreferrer"
+              >facebook</a
+            >
           </div>
 
-          <div class="link">
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="#">linkedin</a>
-          </div>
           <div class="link">
             <i class="fa-brands fa-whatsapp"></i>
             <a
@@ -229,7 +230,10 @@
             >
           </p>
           <p>
-            <a href="https://wa.link/rt49uv" target="_blank"
+            <a
+              href="https://wa.link/wrxet8"
+              rel="noopener noreferrer"
+              target="_blank"
               >whatsapp : +237679 450 640</a
             >
           </p>

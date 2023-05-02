@@ -251,7 +251,6 @@ const submitForm = (e) => {
   axios
     .post("/api/appointment", appointmentBody)
     .then((res) => {
-      console.log(res)
       if (200 <= res.status && res.status < 400) {
         loader.value = false;
         setTimeout(() => {
@@ -280,7 +279,6 @@ const submitForm = (e) => {
       }
     })
     .catch((err) => {
-      console.log(err)
       loader.value = false;
       setTimeout(() => {
         ElMessageBox.alert(
@@ -300,6 +298,8 @@ const submitForm = (e) => {
           }
         );
       }, 1000);
+
+      return err;
     });
 };
 </script>

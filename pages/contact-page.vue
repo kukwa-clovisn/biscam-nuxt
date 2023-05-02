@@ -46,8 +46,18 @@
           <p>MARITME: businessinvesmentsarl@gmail.com</p>
 
           <h2>facebook</h2>
-          <a href="#">biscam investment sarl</a>
-          <a href="#">biscam flight agency</a>
+          <a
+            href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
+            target="_blank"
+            rel="noopener noreferrer"
+            >biscam investment sarl</a
+          >
+          <a
+            href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
+            target="_blank"
+            rel="noopener noreferrer"
+            >biscam flight agency</a
+          >
           <h2>whatsapp</h2>
         </div>
         <div class="right-wrapper">

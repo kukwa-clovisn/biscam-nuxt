@@ -45,6 +45,8 @@
       :tel="booking.tel"
       :number="booking.number"
       :message="booking.message"
+      :category="booking.category"
+      :image="props.imageurl"
     />
   </div>
 </template>
@@ -52,6 +54,7 @@
 const props = defineProps({
   productName: String,
   imageurl: String,
+  category: String,
 });
 
 const booking = reactive({
@@ -61,7 +64,9 @@ const booking = reactive({
   number: 1,
   message: "",
   image: null,
+  category: "",
 });
+
 </script>
 <style lang="scss" scoped>
 .purchase-div-container {

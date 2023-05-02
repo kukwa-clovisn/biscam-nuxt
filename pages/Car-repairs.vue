@@ -18,12 +18,15 @@
       </div>
       <div class="nav-div lg">
         <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
-          <a href="#"> <i class="fa-brands fa-facebook"></i> facebook</a>
+          <a
+            href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-facebook"></i> facebook</a
+          >
         </div>
 
-        <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
-          <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin</a>
-        </div>
         <div :class="[{ changeBg: stickyHeader }, 'nav-link']">
           <a
             href="https://wa.link/rt49uv"
@@ -51,12 +54,13 @@
           </div>
 
           <div class="link">
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="#">linkedin</a>
-          </div>
-          <div class="link">
             <i class="fa-brands fa-whatsapp"></i>
-            <a href="#">whatsapp</a>
+            <a
+              href="https://wa.link/rt49uv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >whatsapp</a
+            >
           </div>
         </div>
       </div>

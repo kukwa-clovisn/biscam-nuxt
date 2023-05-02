@@ -45,15 +45,13 @@
                 message="redirecting..."
               />
             </div>
-
-           
-            <div class="link">
-              <i class="fa-brands fa-linkedin"></i>
-              <a href="#">linkedin</a>
-            </div>
             <div class="link">
               <i class="fa-brands fa-whatsapp"></i>
-              <a href="#">whatsapp</a>
+              <Dropdown
+                name="Whatsapp"
+                :items="whatsappLinks"
+                message="Taking you to whatsapp chat..."
+              />
             </div>
           </div>
         </div>
@@ -359,6 +357,8 @@ const maritime_images = ref([
   maritime_two,
   maritime_three,
 ]);
+
+const whatsappLinks = useWhatsappLinkState();
 const linkDropdown = useLinkState();
 const dg_images = ref([digital_zero, digital_one]);
 const stickyHeader = ref(false);

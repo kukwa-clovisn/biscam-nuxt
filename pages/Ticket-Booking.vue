@@ -254,16 +254,13 @@ onMounted(() => {
       }
 
       options.value = options.value.sort();
-
-      console.log(options.value);
-      console.log(response.data);
     })
     .catch(function (error) {
       console.error(error);
     });
 });
 const filterCountry = (e) => {
-  console.log(e.target.value);
+  return e.target.value;
 };
 
 const handleSubmit = (e) => {

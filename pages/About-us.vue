@@ -19,7 +19,12 @@
         <div class="right-navbar">
           <div class="link">
             <i class="fa-brands fa-facebook"></i>
-            <a href="#">facebook</a>
+            <a
+              href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
+              target="_blank"
+              rel="noopener noreferrer"
+              >facebook</a
+            >
           </div>
 
           <div class="link">

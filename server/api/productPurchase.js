@@ -2,20 +2,21 @@ import mailjet from "../mailjet";
 
 export default defineEventHandler(async (event) => {
   const data = await readBody(event);
+
   mailjet.post("send", { version: "v3.1" }).request({
     Messages: [
       {
         From: {
           Email: "kcn.123.com@gmail.com",
-          Name: "codingherald workflow",
+          Name: "Biscam Investment Sarl Product Order",
         },
         To: [
           {
-            Email: data.email,
-            Name: data.name,
+            Email: "biscaminvestmentsarl@gmail.com",
+            Name: "Biscam Product Purchase",
           },
         ],
-        Subject: "Advanced Tech Academy",
+        Subject: "Biscam Investment Sarl",
         TextPart: "<h1>Spare Part Purchase",
         HTMLPart: `
         <!DOCTYPE html>
@@ -239,24 +240,24 @@ export default defineEventHandler(async (event) => {
         </p>
       </div>
       <div class="email-content">
-        <div class="product-image">
-          <img src="./car-generator.png" alt="" />
-        </div>
+        // <div class="product-image">
+        //   <img src="./car-generator.png" alt="" />
+        // </div>
         <div class="details">
-          <h2>product name</h2>
+          <h2>${data.productName}</h2>
           <h3>client details</h3>
           <table>
             <tr>
               <td>NAME</td>
-              <td colspan="2">client name</td>
+              <td colspan="2">${data.name}</td>
             </tr>
             <tr>
               <td>EMAIL</td>
-              <td colspan="2">client email</td>
+              <td colspan="2">${data.email}</td>
             </tr>
             <tr>
               <td>TEL</td>
-              <td colspan="2">client tel</td>
+              <td colspan="2">${data.tel}</td>
             </tr>
           </table>
         </div>
@@ -265,15 +266,15 @@ export default defineEventHandler(async (event) => {
           <table>
             <tr>
               <td>PRODUCT NAME</td>
-              <td colspan="2">client name</td>
+              <td colspan="2">${data.productName}</td>
             </tr>
             <tr>
               <td>CATEGORY</td>
-              <td colspan="2">client email</td>
+              <td colspan="2">${data.category}</td>
             </tr>
             <tr>
               <td colspan="1">QUANTITY</td>
-              <td colspan="2">client tel</td>
+              <td colspan="2">${data.number}</td>
             </tr>
           </table>
         </div>

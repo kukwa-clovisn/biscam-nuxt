@@ -57,23 +57,47 @@ export const useLinkState = () =>
   useState(() => [
     {
       name: "car repair",
-      path: "/car-repairs",
+      path: "https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL",
     },
     {
       name: "flight",
-      path: "/flight",
+      path: "https://www.facebook.com/profile.php?id=100090158095703&mibextid=ZbWKwL",
     },
     {
       name: "cleaning agency",
-      path: "/cleaning-agency",
+      path: "https://www.facebook.com/profile.php?id=100090287600432&mibextid=ZbWKwL",
     },
     {
       name: "spare part",
-      path: "/spare-part",
+      path: "https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL",
     },
     {
       name: "maritime",
-      path: "/maritime",
+      path: "https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL",
+    },
+  ]);
+
+export const useWhatsappLinkState = () =>
+  useState(() => [
+    {
+      name: "car repair",
+      path: "https://wa.link/rt49uv",
+    },
+    {
+      name: "flight",
+      path: "https://wa.link/290wm",
+    },
+    {
+      name: "cleaning agency",
+      path: "https://wa.link/wrxet8",
+    },
+    {
+      name: "spare part",
+      path: "https://wa.link/rt49uv",
+    },
+    {
+      name: "maritime",
+      path: "https://wa.link/rt49uv",
     },
   ]);
 

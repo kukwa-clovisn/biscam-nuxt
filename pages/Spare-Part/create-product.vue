@@ -209,7 +209,6 @@ const createProduct = (e) => {
   )
     .then((res) => {
       if (res) {
-        console.log(res);
         ElNotification.success({
           title: "File Upload successful",
           message: res.data.message,
@@ -223,6 +222,8 @@ const createProduct = (e) => {
         message: err,
         offset: 100,
       });
+
+      return err;
     });
 };
 </script>

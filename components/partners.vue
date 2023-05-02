@@ -9,8 +9,8 @@
             <img src="~/assets/car-images/car-1.jpg" alt="" />
           </div>
           <div class="details">
-            <h2>partner name</h2>
-            <p>partner credentials</p>
+            <h2>Explicit support</h2>
+            <p>all categories of this kind</p>
           </div>
         </div>
         <div class="partner">
@@ -19,8 +19,8 @@
             <img src="~/assets/car-images/car-2.jpg" alt="" />
           </div>
           <div class="details">
-            <h2>partner name</h2>
-            <p>partner credentials</p>
+            <h2>Explicit support</h2>
+            <p>all categories of this kind</p>
           </div>
         </div>
         <div class="partner">
@@ -29,8 +29,8 @@
             <img src="~/assets/car-images/car-6.jpg" alt="" />
           </div>
           <div class="details">
-            <h2>partner name</h2>
-            <p>partner credentials</p>
+            <h2>Explicit support</h2>
+            <p>all categories of this kind</p>
           </div>
         </div>
         <div class="partner">
@@ -59,8 +59,8 @@
             <img src="~/assets/car-images/car.jpg" alt="" />
           </div>
           <div class="details">
-            <h2>partner name</h2>
-            <p>partner credentials</p>
+            <h2>Explicit support</h2>
+            <p>all categories of this kind</p>
           </div>
         </div>
       </div>

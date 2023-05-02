@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
 
     return product;
   } catch (err) {
-    console.log(err);
+   
 
     return {
       res: "error not uploaded",
