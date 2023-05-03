@@ -46,10 +46,7 @@
 </template>
 
 <script setup>
-const route = useRoute();
-
-const productRoute = route.params.id;
-
+import axios from "axios";
 const shuffleProducts = (array) => {
   for (var i = array.length - 1; i > 0; i--) {
     // Generate random number
@@ -63,15 +60,21 @@ const shuffleProducts = (array) => {
   return array;
 };
 
-const products = productState();
+// products.value = shuffleProducts(products.value);
+const displayProduct = ref(null);
+onBeforeMount(() => {
 
-products.value = shuffleProducts(products.value);
+  const id = localStorage.getItem('product_id')
 
-const displayProduct = products.value.filter((product) => {
-  return product.id.toString() === route.params.id;
+  console.log(id)
+  axios
+    .post("/api/singleProduct", localStorage.getItem("product_id"))
+    .then((res) => {
+      displayProduct.value = res.data;
+      console.log(res);
+    })
+    .catch((err) => console.log(err));
 });
-
-
 </script>
 
 <style lang="scss" scoped>

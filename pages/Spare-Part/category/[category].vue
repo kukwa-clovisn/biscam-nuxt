@@ -19,14 +19,14 @@
             class="product"
             data-aos="slide-up"
             v-for="product in products"
-            :key="product"
-            @click="displayProduct(product.id)"
+            :key="product._id"
+            @click="displayProduct(product._id, product.name, product.category)"
           >
             <div class="wrapper">
               <div class="image">
                 <img
                   data-aos="slide-up"
-                  :src="product.imageUrl"
+                  :src="product.data"
                   :alt="product.name"
                 />
               </div>
@@ -78,12 +78,14 @@
 </template>
 
 <script setup>
-// import axios from "axios";
+import axios from "axios";
 const route = useRoute();
-const productsArr = productState();
+const productsArr = ref([]);
+const products = ref([]);
 
-const displayProduct = (id) => {
-  navigateTo(`/spare-part/${id}`);
+const displayProduct = (id, name, category) => {
+  localStorage.setItem("product_id", id);
+  navigateTo(`/spare-part/${category}/product/${name}`);
 };
 
 const shuffleProducts = (array) => {
@@ -99,20 +101,20 @@ const shuffleProducts = (array) => {
   return array;
 };
 
-let products = shuffleProducts(productsArr.value);
+onBeforeMount(() => {
+  axios(`/api/product/${route.params.category}`)
+    .then((res) => {
+      productsArr.value = res.data;
 
-products = products.filter((product) => {
-  if (route.params.category === "all") return true;
-  else return product.category === route.params.category;
+      products.value = shuffleProducts(productsArr.value);
+
+      products.value = products.value.filter((product) => {
+        if (route.params.category === "all") return true;
+        else return product.category === route.params.category;
+      });
+    })
+    .catch((err) => err);
 });
-
-// onMounted(() => {
-//   axios("/api/product")
-//     .then((res) => {
-//       productsArr.value = res.data;
-//     })
-//     .catch((err) => err);
-// });
 </script>
 
 <style lang="scss" scoped>
