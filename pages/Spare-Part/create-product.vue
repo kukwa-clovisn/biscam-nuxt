@@ -132,6 +132,7 @@
 //   // or middleware: 'auth'
 // });
 import axios from "axios";
+const loader = useLoaderState();
 
 const base64String = ref("");
 
@@ -190,6 +191,7 @@ watch(preview, (preview) => {
 
 const createProduct = (e) => {
   e.preventDefault();
+  loader.value = true;
 
   axios(
     "/api/product",
@@ -208,6 +210,7 @@ const createProduct = (e) => {
     }
   )
     .then((res) => {
+      loader.value = false;
       if (res) {
         ElNotification.success({
           title: "File Upload successful",
@@ -217,6 +220,7 @@ const createProduct = (e) => {
       }
     })
     .catch((err) => {
+      loader.value = false;
       ElNotification.error({
         title: "Error",
         message: err,

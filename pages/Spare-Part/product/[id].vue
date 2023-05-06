@@ -1,27 +1,27 @@
 <template>
   <div class="product-main">
     <Head>
-      <Title>{{ displayProduct[0].name }} || BISCAM</Title>
+      <Title>{{ displayProduct.name }} || BISCAM</Title>
     </Head>
     <div class="header-component"></div>
     <div class="product-main-wrapper">
       <div class="product-image">
-        <img :src="displayProduct[0].imageUrl" alt="" />
+        <img :src="displayProduct.data" alt="" />
       </div>
 
       <div class="product-details">
         <div class="product-details-wrapper">
           <div class="product-head">
-            <h1>{{ displayProduct[0].name }}</h1>
+            <h1>{{ displayProduct.name }}</h1>
             <h4>
-              {{ displayProduct[0].category }}
+              {{ displayProduct.category }}
             </h4>
             <p>price -</p>
           </div>
           <div class="product-content">
             <h3>product description:</h3>
             <p>
-              {{ displayProduct[0].description }}
+              {{ displayProduct.description }}
             </p>
             <a
               href="https://wa.link/rt49uv"
@@ -35,9 +35,9 @@
     </div>
 
     <product-purchase
-      :productName="displayProduct[0].name"
-      :category="displayProduct[0].category"
-      :imageUrl="displayProduct[0].imageUrl"
+      :productName="displayProduct.name"
+      :category="displayProduct.category"
+      :imageUrl="displayProduct.data"
     />
     <product-misc />
 
@@ -47,33 +47,23 @@
 
 <script setup>
 import axios from "axios";
-const shuffleProducts = (array) => {
-  for (var i = array.length - 1; i > 0; i--) {
-    // Generate random number
-    var j = Math.floor(Math.random() * (i + 1));
+const loader = useLoaderState();
 
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
+const displayProduct = ref([]);
 
-  return array;
-};
-
-// products.value = shuffleProducts(products.value);
-const displayProduct = ref(null);
-onBeforeMount(() => {
-
-  const id = localStorage.getItem('product_id')
-
-  console.log(id)
+onMounted(() => {
+  const id = localStorage.getItem("product_id");
   axios
-    .post("/api/singleProduct", localStorage.getItem("product_id"))
+    .post(`/api/singleProduct`, { id: id })
     .then((res) => {
+      loader.value = false;
+
       displayProduct.value = res.data;
-      console.log(res);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      loader.value = false;
+      return err;
+    });
 });
 </script>
 

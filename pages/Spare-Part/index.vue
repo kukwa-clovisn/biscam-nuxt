@@ -99,18 +99,20 @@
 
       <div class="product-body">
         <div class="product-body-wrapper">
-          <div class="detail-products">
+          <div class="detail-products" v-if="products.length">
             <div
               class="product"
               v-for="product in products"
               :key="product"
-              @click="displayProduct(product.id)"
+              @click="
+                displayProduct(product._id, product.name, product.category)
+              "
             >
               <div class="wrapper">
                 <div class="image">
                   <img
                     data-aos="slide-up"
-                    :src="product.imageUrl"
+                    :src="product.data"
                     :alt="product.name"
                   />
                 </div>
@@ -137,6 +139,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="detail-products" v-else>
+            Please wait products loading...
           </div>
         </div>
       </div>
@@ -222,15 +227,14 @@
             <div
               class="product"
               v-for="product in products"
-              :key="product"
-              @click="displayProduct(product.id)"
+              :key="product._id"
+              @click="
+                displayProduct(product._id, product.name, product.category)
+              "
             >
               <div class="wrapper">
                 <div class="image">
-                  <img
-                    :src="product.imageUrl"
-                    :alt="product.name"
-                  />
+                  <img :src="product.data" :alt="product.name" />
                 </div>
                 <div class="details">
                   <h2>{{ product.name }}</h2>
@@ -239,17 +243,15 @@
                       href="https://wa.link/rt49uv"
                       target="_blank"
                       rel="noopener noreferrer"
-                      
                       ><i class="fa-brands fa-whatsapp"></i
                     ></a>
-                    <a href="https://wa.link/rt49uv" 
+                    <a href="https://wa.link/rt49uv"
                       ><i class="fa-solid fa-phone"></i
                     ></a>
                     <a
                       href="https://wa.link/rt49uv"
                       target="_blank"
                       rel="noopener noreferrer"
-                      
                       ><i class="fa-solid fa-envelope"></i
                     ></a>
                   </div>
@@ -367,6 +369,21 @@
 </template>
 
 <script setup>
+import axios from "axios";
+const loader = useLoaderState();
+
+onMounted(() => {
+  axios("/api/product")
+    .then((res) => {
+      products.value = res.data;
+
+      products.value = shuffleProducts(products.value);
+    })
+    .catch((err) => {
+      return err;
+    });
+});
+
 const shuffleProducts = (array) => {
   for (var i = array.length - 1; i > 0; i--) {
     // Generate random number
@@ -380,12 +397,13 @@ const shuffleProducts = (array) => {
   return array;
 };
 
-const products = productState();
+const products = ref([]);
 
-products.value = shuffleProducts(products.value);
-
-const displayProduct = (id) => {
-  navigateTo(`/spare-part/${id}`);
+const displayProduct = (id, name, category) => {
+  localStorage.setItem("product_id", id);
+  localStorage.setItem("product name", name);
+  localStorage.setItem("product category", category);
+  navigateTo(`/spare-part/product/${name.replaceAll(" ", "-")}`);
 };
 </script>
 

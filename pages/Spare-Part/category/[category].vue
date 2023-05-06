@@ -82,10 +82,13 @@ import axios from "axios";
 const route = useRoute();
 const productsArr = ref([]);
 const products = ref([]);
+const loader = useLoaderState();
 
 const displayProduct = (id, name, category) => {
   localStorage.setItem("product_id", id);
-  navigateTo(`/spare-part/${category}/product/${name}`);
+  localStorage.setItem("product name", name);
+  localStorage.setItem("product category", category);
+  navigateTo(`/spare-part/product/${name.replaceAll(" ", "-")}`);
 };
 
 const shuffleProducts = (array) => {
@@ -102,8 +105,11 @@ const shuffleProducts = (array) => {
 };
 
 onBeforeMount(() => {
-  axios(`/api/product/${route.params.category}`)
+  loader.value = true;
+  axios(`/api/category/${route.params.category}`)
     .then((res) => {
+      loader.value = false;
+
       productsArr.value = res.data;
 
       products.value = shuffleProducts(productsArr.value);
@@ -113,7 +119,10 @@ onBeforeMount(() => {
         else return product.category === route.params.category;
       });
     })
-    .catch((err) => err);
+    .catch((err) => {
+      loader.value = false;
+      return err;
+    });
 });
 </script>
 

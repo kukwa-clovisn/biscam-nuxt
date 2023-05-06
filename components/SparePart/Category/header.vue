@@ -51,11 +51,11 @@ const getCategorySm = (e) => {
           :class="[
             {
               'category-active category-exact-active':
-                $route.params.category === 'engine',
+                $route.params.category === 'engines',
             },
             'route',
           ]"
-          @click="navigateTo('/spare-part/category/engine')"
+          @click="navigateTo('/spare-part/category/engines')"
         >
           engines
         </button>

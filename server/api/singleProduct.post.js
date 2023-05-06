@@ -1,10 +1,8 @@
 import productModel from "../models/product";
 export default defineEventHandler(async (event) => {
-  const id = await readBody(event);
+  const req = await readBody(event);
 
-  console.log("id...", id);
-
-  const data = productModel.find({ _id: id });
+  const data = await productModel.findById(req.id);
 
   return data;
 });

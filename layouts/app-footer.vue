@@ -119,7 +119,13 @@
       </div>
       <div class="footer-copy-right">
         <p>
-          <span>YUAAZON COMPANY</span> &copy;Copyright 2023 All rights reserved.
+          <a
+            href="https://wa.link/0or9qc"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>YUAAZON COMPANY</span> &copy;Copyright 2023 All rights
+            reserved.</a
+          >
         </p>
       </div>
     </div>
@@ -439,6 +445,11 @@ footer {
         font-weight: 300;
         padding: 10px;
         text-align: center;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
 
         @media screen and (max-width: 550px) {
           font-size: 11px;
