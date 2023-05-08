@@ -302,6 +302,14 @@ const submitForm = (e) => {
       return err;
     });
 };
+
+axios
+  .post("/api/product", {
+    name: "codingherald",
+    id: "web dev",
+  })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
 </script>
 <style lang="scss" scoped>
 .appointment-container {

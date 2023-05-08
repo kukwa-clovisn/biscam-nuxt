@@ -1,27 +1,28 @@
 <template>
   <div class="product-main">
     <Head>
-      <Title>{{ displayProduct.name }} || BISCAM</Title>
+      <Title>Car Spare Part || BISCAM</Title>
     </Head>
     <div class="header-component"></div>
     <div class="product-main-wrapper">
       <div class="product-image">
-        <img :src="displayProduct.data" alt="" />
+        <img :src="displayProduct[0].data" alt="" />
       </div>
 
       <div class="product-details">
         <div class="product-details-wrapper">
           <div class="product-head">
-            <h1>{{ displayProduct.name }}</h1>
-            <h4>
-              {{ displayProduct.category }}
-            </h4>
+            <h1>Car Spare Part</h1>
+            <!-- <h4>
+              {{ displayProduct[0].category }}
+            </h4> -->
+            <h4>Car Spare Parts</h4>
             <p>price -</p>
           </div>
           <div class="product-content">
             <h3>product description:</h3>
             <p>
-              {{ displayProduct.description }}
+              {{ displayProduct[0].description }}
             </p>
             <a
               href="https://wa.link/rt49uv"
@@ -35,9 +36,8 @@
     </div>
 
     <product-purchase
-      :productName="displayProduct.name"
-      :category="displayProduct.category"
-      :imageUrl="displayProduct.data"
+      :productName="displayProduct[0].name"
+      :imageUrl="displayProduct[0].data"
     />
     <product-misc />
 
@@ -46,25 +46,28 @@
 </template>
 
 <script setup>
-import axios from "axios";
-const loader = useLoaderState();
-
+// import axios from "axios";
+// const loader = useLoaderState();
+const products = productState();
 const displayProduct = ref([]);
+const route = useRoute();
 
-onMounted(() => {
-  const id = localStorage.getItem("product_id");
-  axios
-    .post(`/api/singleProduct`, { id: id })
-    .then((res) => {
-      loader.value = false;
+// onMounted(() => {
+displayProduct.value = products.value.filter(
+  (item) => item.id === route.params.id
+);
+// axios
+//   .post(`/api/singleProduct`, { id: id })
+//   .then((res) => {
+//     loader.value = false;
 
-      displayProduct.value = res.data;
-    })
-    .catch((err) => {
-      loader.value = false;
-      return err;
-    });
-});
+//     displayProduct.value = res.data;
+//   })
+//   .catch((err) => {
+//     loader.value = false;
+//     return err;
+//   });
+// });
 </script>
 
 <style lang="scss" scoped>

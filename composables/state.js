@@ -1,51 +1,38 @@
 // importing temporal product assets while integrating database
-// importing shafts
-import shaft1 from "assets/car-engines/shaft/shaft-1.png";
-import shaft2 from "assets/car-engines/shaft/shaft-3.png";
-import shaft3 from "assets/car-engines/shaft/shaft-5.png";
-import shaft4 from "assets/car-engines/shaft/shaft-6.png";
-import shaft5 from "assets/car-engines/shaft/shaft.png";
-import shaft6 from "assets/car-engines/shaft/shaft-2.jpeg";
-import shaft7 from "assets/car-engines/shaft/shaft.jpeg";
-import crankshaft from "assets/car-engines/shaft/crank-shaft.jpg";
-import crankshaft1 from "assets/car-engines/shaft/crank-shaft-1.jpg";
-import crankshaft2 from "assets/car-engines/shaft/crank-shaft-2.jpg";
-import crankshaft3 from "assets/car-engines/shaft/crank-shaft-3.jpg";
-import crankshaft4 from "assets/car-engines/shaft/crank-shaft-4.jpg";
-import camshaft from "assets/car-engines/shaft/camshaft.jpeg";
 
-// importing car key starters
-import carkeystarter from "assets/car-engines/car-key-starter/car-key-many.jpeg";
-import carkeystarter1 from "assets/car-engines/car-key-starter/car-key-starter-1.jpeg";
-import carkeystarter2 from "assets/car-engines/car-key-starter/car-key-transparent.png";
-import carkeystarter3 from "assets/car-engines/car-key-starter/key-starter-1.jpg";
-import carkeystarter4 from "assets/car-engines/car-key-starter/key-starter.png";
-import carkeystarter5 from "assets/car-engines/car-key-starter/key-starter-2.jpg";
-import carkeystarter6 from "assets/car-engines/car-key-starter/car-key-starter.jpeg";
-
-// importing manifold images
-import manifold from "assets/car-engines/manifold/manifold-1-transparent.png";
-import manifold1 from "assets/car-engines/manifold/manifold.jpeg";
-
-// importing engine images
-import engine from "assets/car-engines/engine/engine.png";
-import engine1 from "assets/car-engines/engine/engine-1.png";
-import engine2 from "assets/car-engines/engine/engine-2.png";
-import engine3 from "assets/car-engines/engine/engine-3.jpg";
-import engine4 from "assets/car-engines/engine/engine-block-transparent.png";
-import engine5 from "assets/car-engines/engine/engine-block-1.jpeg";
-import engine6 from "assets/car-engines/engine/engine.jpg";
-
-// importing car generators
-import cargenerator from "assets/car-engines/car-generator/car-generator.png";
-
-// importing top cylinders
-import topcylinder from "assets/car-engines/top-cylinder/top-cylinder.png";
-import topcylinder1 from "assets/car-engines/top-cylinder/top-cylinder-1.jpg";
-import topcylinder2 from "assets/car-engines/top-cylinder/top-cylinder-2.jpg";
-import topcylinder3 from "assets/car-engines/top-cylinder/top-cylinder-3.jpg";
-import topcylinder4 from "assets/car-engines/top-cylinder/top-cylinder-4.jpg";
-import topcylinder5 from "assets/car-engines/top-cylinder/top-cylinder-5.jpg";
+import image1 from "assets/spare-parts/1.jpg";
+import image2 from "assets/spare-parts/2.jpg";
+import image3 from "assets/spare-parts/3.jpg";
+import image4 from "assets/spare-parts/4.jpg";
+import image5 from "assets/spare-parts/5.jpg";
+import image6 from "assets/spare-parts/6.jpg";
+import image7 from "assets/spare-parts/7.jpg";
+import image8 from "assets/spare-parts/8.jpg";
+import image9 from "assets/spare-parts/9.jpg";
+import image10 from "assets/spare-parts/10.jpg";
+import image11 from "assets/spare-parts/11.jpg";
+import image12 from "assets/spare-parts/12.jpg";
+import image13 from "assets/spare-parts/13.jpg";
+import image14 from "assets/spare-parts/14.jpg";
+import image15 from "assets/spare-parts/15.jpg";
+import image16 from "assets/spare-parts/16.jpg";
+import image17 from "assets/spare-parts/17.jpg";
+import image18 from "assets/spare-parts/18.jpg";
+import image19 from "assets/spare-parts/19.jpg";
+import image20 from "assets/spare-parts/20.jpg";
+import image21 from "assets/spare-parts/21.jpg";
+import image22 from "assets/spare-parts/22.jpg";
+import image23 from "assets/spare-parts/23.jpg";
+import image24 from "assets/spare-parts/24.jpg";
+import image25 from "assets/spare-parts/25.jpg";
+import image26 from "assets/spare-parts/26.jpg";
+import image27 from "assets/spare-parts/27.jpg";
+import image28 from "assets/spare-parts/28.jpg";
+import image29 from "assets/spare-parts/29.jpg";
+import image30 from "assets/spare-parts/30.jpg";
+import image31 from "assets/spare-parts/31.jpg";
+import image32 from "assets/spare-parts/32.jpg";
+import image33 from "assets/spare-parts/33.jpg";
 
 export const useMenuState = () => useState(() => false);
 
@@ -104,280 +91,202 @@ export const useWhatsappLinkState = () =>
 export const productState = () =>
   useState(() => [
     {
-      id: "12.pcvvqtwhoi",
-      name: "top cylinder",
-      category: "manifold",
-      description: "top cylinder",
-      imageUrl: topcylinder,
+      id: "idikjf309d",
+      name: "image1",
+      description: "car spare part",
+      data: image1,
     },
     {
-      id: "h.hi63q86pdt",
-      name: "top cylinder",
-      category: "manifold",
-      description: "top cylinder",
-      imageUrl: topcylinder1,
+      name: "image2",
+      id: "dfi23doo",
+      description: "car spare part",
+      data: image2,
     },
     {
-      id: "28.pd2grcb3sfgsf",
-      name: "top cylinder",
-      category: "manifold",
-      description: "top cylinder",
-      imageUrl: topcylinder2,
+      name: "image3",
+      id: "dfi2ggsf3doo",
+      description: "car spare part",
+      data: image3,
     },
     {
-      id: "3.sbvof1nxxg ",
-      name: "top cylinder",
-      category: "manifold",
-      description: "top cylinder",
-      imageUrl: topcylinder3,
+      name: "image4",
+      id: "dfdfdgfi23doo",
+      description: "car spare part",
+      data: image4,
     },
     {
-      id: "9.8da6a9w0gm ",
-      name: "top cylinder",
-      category: "manifold",
-      description: "top cylinder",
-      imageUrl: topcylinder4,
+      name: "image5",
+      id: "fi23ghdgdoo",
+      id: "dfdhr3fi23doo",
+      description: "car spare part",
+      data: image5,
     },
     {
-      id: "y.9n92xyzmvg",
-      name: "top cylinder",
-      category: "manifold",
-      description: "top cylinder",
-      imageUrl: topcylinder5,
+      name: "image6",
+      id: "fi23ghdgdoogh",
+      description: "car spare part",
+      data: image6,
     },
     {
-      id: "1b.o8484vfbnn",
-      name: "manifold",
-      category: "manifold",
-      description: "manifold",
-      imageUrl: manifold,
+      name: "image7",
+      id: "fi546875hdgdoo",
+      description: "car spare part",
+      data: image7,
     },
     {
-      id: "1g.9hjozssx3",
-      name: "manifold",
-      category: "manifold",
-      description: "manifold",
-      imageUrl: manifold1,
+      name: "image8",
+      id: "fi23ghdkj645gdoo",
+      description: "car spare part",
+      data: image8,
     },
     {
-      id: "1e.yj27vl13gh",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: shaft1,
+      name: "image18",
+      id: "gfgsfgs465",
+      description: "car spare part",
+      data: image9,
     },
     {
-      id: "24.8j5aq21vq",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: shaft2,
+      name: "image9",
+      id: "gfhd56j65",
+      description: "car spare part",
+      data: image10,
     },
     {
-      id: "w.otxkyt7my",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: shaft3,
+      name: "image10",
+      id: "jfh86",
+      description: "car spare part",
+      data: image11,
     },
     {
-      id: "2k.fm5w8933i",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: shaft4,
+      name: "image11",
+      id: "fs652",
+      description: "car spare part",
+      data: image12,
     },
     {
-      id: "24.8j5aq21vq",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: shaft5,
+      name: "image12",
+      id: "fnhe54h",
+      description: "car spare part",
+      data: image13,
     },
     {
-      id: "w.otxkyt7my",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: shaft6,
+      name: "image13",
+      id: "jsfhg32th",
+      description: "car spare part",
+      data: image14,
     },
     {
-      id: "2k.fm5w8933i",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: shaft7,
-    },
-
-    {
-      id: "2i.vx6mn4igs",
-      name: "camshaft",
-      category: "shaft",
-      description: "camshaft",
-      imageUrl: camshaft,
+      name: "image14",
+      id: "sfg3653453d",
+      description: "car spare part",
+      data: image15,
     },
     {
-      id: "9.a2tlhs1427",
-      name: "car generator",
-      category: "car generator",
-      description: "car generator",
-      imageUrl: cargenerator,
+      name: "image15",
+      id: "gsfgf3",
+      description: "car spare part",
+      data: image16,
     },
     {
-      id: "2g3.sffgu8nod6",
-      name: "car key starter",
-      category: "car key starter",
-      description: "car key starter",
-
-      imageUrl: carkeystarter,
+      name: "image16",
+      id: "fg43sf",
+      description: "car spare part",
+      data: image17,
     },
     {
-      id: "23.e0du8nod6",
-      name: "car key starter",
-      category: "car key starter",
-      description: "car key starter",
-
-      imageUrl: carkeystarter1,
+      name: "image17",
+      id: "fgsf3643",
+      description: "car spare part",
+      data: image18,
     },
     {
-      id: "1x.jswzlgl06",
-      name: "crank shaft",
-      category: "shaft",
-      description: "crank shaft",
-
-      imageUrl: crankshaft,
+      name: "image19",
+      id: "gfd346jh",
+      description: "car spare part",
+      data: image19,
     },
     {
-      id: "n.k8btyn02cb",
-      name: "crank shaft",
-      category: "shaft",
-      description: "crank shaft",
-
-      imageUrl: crankshaft1,
+      name: "image20",
+      id: "fgsf 35",
+      description: "car spare part",
+      data: image20,
     },
     {
-      id: "1e.zxykf502r",
-      name: "car key starter",
-      category: "car key starter",
-      description: "car key starter",
-
-      imageUrl: carkeystarter2,
+      name: "image21",
+      id: "fgs34657h",
+      description: "car spare part",
+      data: image21,
     },
     {
-      id: "12.gdh23ae95",
-      name: "car key starter",
-      category: "car key starter",
-      description: "car key starter",
-
-      imageUrl: carkeystarter3,
+      name: "image22",
+      id: "1243fgsf4",
+      description: "car spare part",
+      data: image22,
     },
     {
-      id: "q.xhfx8va22",
-      name: "car key starter",
-      category: "car key starter",
-      description: "car key starter",
-
-      imageUrl: carkeystarter4,
+      name: "image23",
+      id: "dafdf54",
+      description: "car spare part",
+      data: image23,
     },
     {
-      id: "p.bnh55kvw2k",
-      name: "car key starter",
-      category: "car key starter",
-      description: "car key starter",
-
-      imageUrl: carkeystarter5,
+      name: "image24",
+      id: "f745gf",
+      description: "car spare part",
+      data: image24,
     },
     {
-      id: "p.bnh55kvw2k",
-      name: "car key starter",
-      category: "car key starter",
-      description: "car key starter",
-
-      imageUrl: carkeystarter6,
-    },
-
-    {
-      id: "2.1u9dri18fm",
-      name: "crank shaft",
-      category: "shaft",
-      description: "crank shaft",
-
-      imageUrl: crankshaft1,
+      name: "image25",
+      id: "df35g",
+      description: "car spare part",
+      data: image25,
     },
     {
-      id: "k.pnxbbm76i",
-      name: "crank shaft",
-      category: "shaft",
-      description: "crank shaft",
-
-      imageUrl: crankshaft2,
+      name: "image26",
+      id: "fgs436js",
+      description: "car spare part",
+      data: image26,
     },
     {
-      id: "2d.1gcesgzns",
-      name: "crank shaft",
-      category: "shaft",
-      description: "crank shaft",
-
-      imageUrl: crankshaft3,
+      name: "image27",
+      id: "fsgf7546f",
+      description: "car spare part",
+      data: image27,
     },
     {
-      id: "2g.h0sig40xy",
-      name: "crank shaft",
-      category: "shaft",
-      description: "crank shaft",
-
-      imageUrl: crankshaft4,
+      name: "image28",
+      id: "fsf5734",
+      description: "car spare part",
+      data: image28,
     },
     {
-      id: "1h.61i2x885h",
-      name: "engine",
-      category: "engine",
-      description: "engine",
-
-      imageUrl: engine,
+      name: "image29",
+      id: "fgs3432sf",
+      description: "car spare part",
+      data: image29,
     },
     {
-      id: "23.ppunzi5ks",
-      name: "engine",
-      category: "engine",
-      description: "engine",
-
-      imageUrl: engine1,
+      name: "image30",
+      id: "fgsjg754f",
+      description: "car spare part",
+      data: image30,
     },
     {
-      id: "1o.kh7vogki3i",
-      name: "engine",
-      category: "engine",
-      description: "engine",
-      imageUrl: engine2,
+      name: "image31",
+      id: "fgsfhj52",
+      description: "car spare part",
+      data: image31,
     },
     {
-      id: "1e.t1h7awjv9f",
-      name: "engine",
-      category: "engine",
-      description: "engine",
-      imageUrl: engine3,
+      name: "image32",
+      id: "fsfwh5",
+      description: "car spare part",
+      data: image32,
     },
     {
-      id: "2m.aol3rdmlw",
-      name: "engine",
-      category: "engine",
-      description: "engine",
-      imageUrl: engine4,
-    },
-
-    {
-      id: "2m.aol3rdmlw",
-      name: "engine",
-      category: "engine",
-      description: "engine",
-      imageUrl: engine5,
-    },
-    {
-      id: "1o.kh7vogki3i",
-      name: "engine",
-      category: "engine",
-      description: "engine",
-      imageUrl: engine6,
+      name: "image33",
+      id: "fsg45hgf",
+      description: "car spare part",
+      data: image33,
     },
   ]);

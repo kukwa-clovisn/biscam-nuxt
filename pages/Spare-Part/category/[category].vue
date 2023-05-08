@@ -20,7 +20,7 @@
             data-aos="slide-up"
             v-for="product in products"
             :key="product._id"
-            @click="displayProduct(product._id, product.name, product.category)"
+            @click="displayProduct(product.id, product.name)"
           >
             <div class="wrapper">
               <div class="image">
@@ -78,17 +78,16 @@
 </template>
 
 <script setup>
-import axios from "axios";
+// import axios from "axios";
 const route = useRoute();
-const productsArr = ref([]);
+const productsArr = productState();
 const products = ref([]);
-const loader = useLoaderState();
+// const loader = useLoaderState();
 
-const displayProduct = (id, name, category) => {
+const displayProduct = (id, productName) => {
   localStorage.setItem("product_id", id);
-  localStorage.setItem("product name", name);
-  localStorage.setItem("product category", category);
-  navigateTo(`/spare-part/product/${name.replaceAll(" ", "-")}`);
+  localStorage.setItem("product name", productName);
+  navigateTo(`/Spare-Part/product/${id}`);
 };
 
 const shuffleProducts = (array) => {
@@ -104,26 +103,28 @@ const shuffleProducts = (array) => {
   return array;
 };
 
-onBeforeMount(() => {
-  loader.value = true;
-  axios(`/api/category/${route.params.category}`)
-    .then((res) => {
-      loader.value = false;
+products.value = shuffleProducts(productsArr.value);
 
-      productsArr.value = res.data;
+// onBeforeMount(() => {
+//   loader.value = true;
+//   axios(`/api/category/${route.params.category}`)
+//     .then((res) => {
+//       loader.value = false;
 
-      products.value = shuffleProducts(productsArr.value);
+//       productsArr.value = res.data;
 
-      products.value = products.value.filter((product) => {
-        if (route.params.category === "all") return true;
-        else return product.category === route.params.category;
-      });
-    })
-    .catch((err) => {
-      loader.value = false;
-      return err;
-    });
-});
+//       products.value = shuffleProducts(productsArr.value);
+
+//       products.value = products.value.filter((product) => {
+//         if (route.params.category === "all") return true;
+//         else return product.category === route.params.category;
+//       });
+//     })
+//     .catch((err) => {
+//       loader.value = false;
+//       return err;
+//     });
+// });
 </script>
 
 <style lang="scss" scoped>

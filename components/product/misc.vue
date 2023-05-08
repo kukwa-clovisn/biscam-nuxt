@@ -6,10 +6,7 @@
         class="product"
         v-for="product in products"
         :key="product.id"
-        @click="
-          ($event) =>
-            displayProduct(product._id, product.name, product.category)
-        "
+        @click="($event) => displayProduct(product.id, product.name)"
       >
         <div class="product-image">
           <img :src="product.data" :alt="product.name" />
@@ -22,29 +19,28 @@
   </div>
 </template>
 <script setup>
-import axios from "axios";
+// import axios from "axios";
 
-const products = ref([]);
+const products = productState();
 
-const displayProduct = (id, name, category) => {
+const displayProduct = (id, name) => {
   localStorage.setItem("product_id", id);
   localStorage.setItem("product name", name);
-  localStorage.setItem("product category", category);
 
-  navigateTo(`/spare-part/product/${id}`);
+  navigateTo(`/Spare-Part/product/${id}`);
 };
 
-onMounted(() => {
-  axios(`/api/category/all`)
-    .then((res) => {
-      products.value = res.data;
+// onMounted(() => {
+//   axios(`/api/category/all`)
+//     .then((res) => {
+//       products.value = res.data;
 
-      products.value = shuffleProducts(products.value);
-    })
-    .catch((err) => {
-      return err;
-    });
-});
+//       products.value = shuffleProducts(products.value);
+//     })
+//     .catch((err) => {
+//       return err;
+//     });
+// });
 </script>
 <style lang="scss" scoped>
 .other-products {

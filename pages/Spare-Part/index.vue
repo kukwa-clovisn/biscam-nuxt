@@ -5,92 +5,18 @@
     </Head>
     <div class="header-component"></div>
     <div class="main-wrapper">
-      <div class="left-content">
-        <div class="info">
-          <h1>Biscam spare part agency</h1>
-          <p>Purchase you car spare parts now</p>
-          <a
-            href="https://wa.link/rt49uv"
-            target="_blank"
-            rel="noopener noreferrer"
-            >shop now</a
-          >
-        </div>
-        <div class="image">
-          <img src="~/assets/car-engines/engine/engine-2.png" alt="" />
-        </div>
+      <div class="blur-wrapper"></div>
+      <div class="carousel-div">
+        <slider :images="dg_images" />
       </div>
-      <div class="right-content">
-        <div class="wrapper">
-          <div class="content">
-            <div class="img">
-              <img
-                src="~/assets/car-engines/engine/engine-block-transparent.png"
-                alt=""
-              />
-            </div>
-            <div class="info">
-              <h2>engine block</h2>
-              <p>available</p>
-              <a
-                href="https://wa.link/rt49uv"
-                target="_blank"
-                rel="noopener noreferrer"
-                >shop now</a
-              >
-            </div>
-          </div>
-          <div class="content">
-            <div class="img">
-              <img
-                src="~/assets/car-engines/car-key-starter/car-key-transparent.png"
-                alt=""
-              />
-            </div>
-            <div class="info">
-              <h2>car key starter</h2>
-              <p>available</p>
-              <a
-                href="https://wa.link/rt49uv"
-                target="_blank"
-                rel="noopener noreferrer"
-                >shop now</a
-              >
-            </div>
-          </div>
-          <div class="content">
-            <div class="img">
-              <img
-                src="~/assets/car-engines/manifold/manifold-1-transparent.png"
-                alt=""
-              />
-            </div>
-            <div class="info">
-              <h2>manifold</h2>
-              <p>available</p>
-              <a
-                href="https://wa.link/rt49uv"
-                target="_blank"
-                rel="noopener noreferrer"
-                >shop now</a
-              >
-            </div>
-          </div>
-          <div class="content">
-            <div class="img">
-              <img src="~/assets/car-engines/shaft/shaft.png" alt="" />
-            </div>
-            <div class="info">
-              <h2>shaft</h2>
-              <p>available</p>
-              <a
-                href="http://wa.link/rt49uv"
-                target="_blank"
-                rel="noopener noreferrer"
-                >shop now</a
-              >
-            </div>
-          </div>
+      <div class="landing-page-content">
+        <h1><span>biscam</span> spare part</h1>
+        <p>Purchase your car Spare part with us!</p>
+        <div class="booking-div">
+          <p>shop now</p>
+          <button class="hover-animation">
+            <a href="#products">view products</a>
+          </button>
         </div>
       </div>
     </div>
@@ -98,15 +24,13 @@
       <SparePart-Category-header />
 
       <div class="product-body">
-        <div class="product-body-wrapper">
+        <div class="product-body-wrapper" id="products">
           <div class="detail-products" v-if="products.length">
             <div
               class="product"
               v-for="product in products"
               :key="product"
-              @click="
-                displayProduct(product._id, product.name, product.category)
-              "
+              @click="displayProduct(product.id, product.name)"
             >
               <div class="wrapper">
                 <div class="image">
@@ -118,15 +42,15 @@
                 </div>
 
                 <div class="details">
-                  <h2>{{ product.name }}</h2>
+                  <!-- <h2>{{ product.name }}</h2> -->
                   <div class="info">
-                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    <a href="https://wa.link/rt49uv" target="_blank" rel="noopener noreferrer" data-aos="slide-up"
                       ><i class="fa-brands fa-whatsapp"></i
                     ></a>
-                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    <a href="https://wa.link/rt49uv" target="_blank" rel="noopener noreferrer" data-aos="slide-up"
                       ><i class="fa-solid fa-phone"></i
                     ></a>
-                    <a href="https://wa.link/rt49uv" data-aos="slide-up"
+                    <a href="mailto:garagebiscam@gmail.com" target="_blank" rel="noopener noreferrer" data-aos="slide-up"
                       ><i class="fa-solid fa-envelope"></i
                     ></a>
                   </div>
@@ -157,48 +81,45 @@
               @click="navigateTo('/spare-part/category/shaft')"
             >
               <div class="image">
-                <img src="~/assets/car-engines/shaft/camshaft.jpeg" alt="" />
+                <img src="~/assets/spare-parts/3.jpg" alt="" />
               </div>
-              <h3>camshaft</h3>
+              <h3>Quality</h3>
             </div>
             <div
               class="content"
               @click="navigateTo('/spare-part/category/car key starter')"
             >
               <div class="image">
-                <img
-                  src="~/assets/car-engines/car-key-starter/car-key-transparent.png"
-                  alt=""
-                />
+                <img src="~/assets/spare-parts/9.jpg" alt="" />
               </div>
-              <h3>car key starter</h3>
+              <h3>Original</h3>
             </div>
             <div
               class="content"
               @click="navigateTo('/spare-part/category/engine')"
             >
               <div class="image">
-                <img src="~/assets/car-engines/engine/engine-1.png" alt="" />
+                <img src="~/assets/spare-parts/7.jpg" alt="" />
               </div>
-              <h3>engine</h3>
+              <h3>Consistency</h3>
             </div>
             <div
               class="content"
               @click="navigateTo('/spare-part/category/manifold')"
             >
               <div class="image">
-                <img src="~/assets/car-engines/manifold/manifold.jpeg" alt="" />
+                <img src="~/assets/spare-parts/17.jpg" alt="" />
               </div>
-              <h3>manifold</h3>
+              <h3>cheap</h3>
             </div>
             <div
               class="content"
               @click="navigateTo('/spare-part/category/shaft')"
             >
               <div class="image">
-                <img src="~/assets/car-engines/shaft/crank-shaft.jpg" alt="" />
+                <img src="~/assets/spare-parts/4.jpg" alt="" />
               </div>
-              <h3>shaft</h3>
+              <h3>effective</h3>
             </div>
           </div>
         </div>
@@ -228,16 +149,14 @@
               class="product"
               v-for="product in products"
               :key="product._id"
-              @click="
-                displayProduct(product._id, product.name, product.category)
-              "
+              @click="displayProduct(product.id, product.name)"
             >
               <div class="wrapper">
                 <div class="image">
                   <img :src="product.data" :alt="product.name" />
                 </div>
                 <div class="details">
-                  <h2>{{ product.name }}</h2>
+                  <!-- <h2>{{ product.name }}</h2> -->
                   <div class="info">
                     <a
                       href="https://wa.link/rt49uv"
@@ -249,7 +168,7 @@
                       ><i class="fa-solid fa-phone"></i
                     ></a>
                     <a
-                      href="https://wa.link/rt49uv"
+                      href="mailto:garagebiscam@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       ><i class="fa-solid fa-envelope"></i
@@ -369,20 +288,30 @@
 </template>
 
 <script setup>
-import axios from "axios";
-const loader = useLoaderState();
+// import axios from "axios";
+import img from "assets/spare-parts/15.jpg";
+import img1 from "assets/spare-parts/9.jpg";
+import img2 from "assets/spare-parts/4.jpg";
+import img3 from "assets/spare-parts/5.jpg";
+import img4 from "assets/spare-parts/6.jpg";
+import img5 from "assets/spare-parts/7.jpg";
+import img6 from "assets/spare-parts/8.jpg";
 
-onMounted(() => {
-  axios("/api/product")
-    .then((res) => {
-      products.value = res.data;
+const dg_images = ref([img, img1, img2, img3,img4,img5,img6]);
+// const loader = useLoaderState();
+const products = productState();
 
-      products.value = shuffleProducts(products.value);
-    })
-    .catch((err) => {
-      return err;
-    });
-});
+// onMounted(() => {
+//   axios("/api/product")
+//     .then((res) => {
+//       products.value = res.data;
+
+//       products.value = shuffleProducts(products.value);
+//     })
+//     .catch((err) => {
+//       return err;
+//     });
+// });
 
 const shuffleProducts = (array) => {
   for (var i = array.length - 1; i > 0; i--) {
@@ -397,16 +326,16 @@ const shuffleProducts = (array) => {
   return array;
 };
 
-const products = ref([]);
+shuffleProducts(products.value);
 
-const displayProduct = (id, name, category) => {
+const displayProduct = (id, productName) => {
   localStorage.setItem("product_id", id);
-  localStorage.setItem("product name", name);
-  localStorage.setItem("product category", category);
-  navigateTo(`/spare-part/product/${name.replaceAll(" ", "-")}`);
+  localStorage.setItem("product name", productName);
+  // localStorage.setItem("product category", category);
+  navigateTo(`/Spare-Part/product/${id}`);
 };
 </script>
-
+ 
 <style lang="scss" scoped>
 .spare-part-main {
   width: 100%;
@@ -420,245 +349,109 @@ const displayProduct = (id, name, category) => {
   }
 
   .main-wrapper {
-    width: 100%;
-    height: 87vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
+    height: 90vh;
     position: relative;
+    background: url(../assets/flight/black-woman-with-suitcase-airport.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
-    .left-content {
-      width: 50%;
-      height: 100%;
+    .carousel-div {
+      width: 100%;
+      height: 90vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .blur-wrapper {
+      opacity: 0.3;
+    }
+
+    .landing-page-content {
+      width: 100%;
+      height: 90vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+    }
+
+    h1,
+    h3,
+    p,
+    button {
+      z-index: 1;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 60px;
+      color: white;
+      font-weight: 800;
       position: relative;
-      background: rgb(250, 227, 215);
+      padding: 10px;
 
-      .image {
-        width: 40%;
-        height: fit-content;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-
-        img {
-          width: auto;
-          height: 80%;
-          object-fit: cover;
-        }
+      span {
+        color: rgb(241, 162, 42);
       }
 
-      .info {
-        width: 55%;
-        height: fit-content;
-        padding: 20px 10px;
-        position: relative;
+      @media screen and (max-width: 768px) {
+        font-size: 50px;
 
-        h1 {
-          color: rgb(19, 16, 13);
-          text-transform: capitalize;
-          word-spacing: 5px;
-          letter-spacing: 1px;
-          text-align: left;
-          padding: 10px;
-          font: 700 40px "Montserrat", "Nunito Sans", sans-serif;
-        }
+        @media screen and (max-width: 500px) {
+          font-size: 40px;
 
-        p {
-          color: rgb(19, 16, 13);
-          padding: 10px;
-          text-align: left;
+          @media screen and (max-width: 400px) {
+            font-size: 30px;
+          }
         }
+      }
+    }
+
+    p {
+      color: white;
+      padding: 10px;
+      text-transform: capitalize;
+    }
+
+    .booking-div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      p {
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 23px;
+      }
+
+      button {
+        width: 200px;
+        height: 45px;
+        background: rgb(241, 162, 42);
+        border: none;
+        border-radius: 4px;
 
         a {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
           text-decoration: none;
           text-transform: capitalize;
-          display: block;
-          margin: 0;
-          border-bottom: 3px solid rgb(235, 154, 3);
-          font: 700 20px "Poppins", sans-serif;
-          width: max-content;
-          height: max-content;
-          margin-left: 10px;
-          color: rgb(19, 16, 13);
-
-          &:hover {
-            border: none;
-            background: white;
-            padding: 10px 20px;
-            border-radius: 2px;
-          }
-        }
-      }
-    }
-
-    .right-content {
-      width: 50%;
-      height: 100%;
-
-      .wrapper {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: white;
-        flex-wrap: wrap;
-
-        // gap: 5px;
-        padding: 0 10px;
-
-        .content {
-          height: 49%;
-          width: 49%;
-          position: relative;
-          background: rgb(189, 227, 216);
-
-          .info {
-            padding: 20px;
-            position: relative;
-
-            h2 {
-              text-transform: capitalize;
-              text-align: left;
-              position: relative;
-            }
-
-            p {
-              text-align: left;
-            }
-
-            a {
-              text-decoration: none;
-              text-transform: capitalize;
-              display: block;
-              margin: 0;
-              border-bottom: 3px solid rgb(235, 154, 3);
-              font: 700 15px "Poppins", sans-serif;
-              width: max-content;
-              height: max-content;
-              color: rgb(19, 16, 13);
-              padding: 5px 0;
-
-              &:hover {
-                border: none;
-                background: white;
-                padding: 5px 20px;
-                border-radius: 2px;
-              }
-            }
-          }
-
-          .img {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            right: 0;
-            overflow: hidden;
-
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: contain;
-              cursor: pointer;
-
-              &:hover {
-                transform: scale(0.9);
-              }
-            }
-          }
-
-          &:nth-child(even) {
-            background: rgb(246, 250, 200);
-          }
-
-          &:nth-child(odd) {
-            background: rgb(248, 204, 184);
-          }
-
-          &:nth-child(3n + 1) {
-            background: rgb(215, 240, 250);
-          }
-
-          @media screen and (max-width: 500px) {
-            width: 95%;
-          }
-        }
-      }
-    }
-
-    @media screen and (max-width: 900px) {
-      flex-direction: column;
-      height: fit-content;
-      .left-content {
-        width: 100%;
-        padding: 0;
-
-        .image {
-          width: 35%;
-        }
-
-        .info {
-          width: 60%;
-
-          h1 {
-            font-size: 40px;
-          }
+          font-size: 15px;
         }
       }
 
-      .right-content {
-        width: 100%;
-
-        .img {
-          width: 60% !important;
-        }
-      }
-
-      @media screen and (max-width: 500px) {
-        .left-content {
-          .image {
-            width: 100%;
-            height: 60%;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-          }
-
-          .info {
-            position: relative;
-            width: 100%;
-          }
-        }
-
-        .right-content {
-          width: 100%;
-          height: fit-content;
-          overflow: hidden;
-
-          .wrapper {
-            width: 100%;
-            flex-direction: column;
-            height: fit-content;
-
-            .content {
-              width: 100%;
-              // height: 300px;
-
-              .img {
-                width: 75%;
-              }
-            }
-          }
-        }
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
       }
     }
   }
