@@ -18,7 +18,7 @@
             id="product-name"
             required
           />
-          <label for="product-category">choose category:</label>
+          <!-- <label for="product-category">choose category:</label>
           <select
             name="category"
             v-model="productData.category"
@@ -31,7 +31,7 @@
             <option value="manifold">manifold</option>
             <option value="keyStarter">key starter</option>
             <option value="shaft">shaft</option>
-          </select>
+          </select> -->
           <label for="product-description">Description:</label>
           <input
             type="text"
@@ -138,9 +138,7 @@ const base64String = ref("");
 
 const productData = reactive({
   name: "",
-  category: "",
   type: "",
-  imgName: "",
   description: "",
   priceFrom: "",
   priceTo: "",
@@ -159,7 +157,6 @@ const productImage = reactive({
 function onChangeFunc(e) {
   if (e.target.files[0].size < 1048576) {
     productData.type = e.target.files[0].type;
-    productData.imgName = e.target.files[0].name;
     preview.value = e.target.files[0];
 
     const file = e.target.files[0];
@@ -192,12 +189,19 @@ watch(preview, (preview) => {
 const createProduct = (e) => {
   e.preventDefault();
   loader.value = true;
+  const formdata = new FormData();
+  formdata.append("image", productImage.preview);
+  formdata.append("name", productData.name);
+  formdata.append("description", productData.description);
+  formdata.append("price", productData.price);
+  formdata.append("priceFrom", productData.priceFrom);
+  formdata.append("priceTo", productData.priceTo);
 
   axios(
-    "/api/product",
+    "https://api.biscaminvestmentsarl.com/api/product/create-product",
     {
       method: "post",
-      data: productData,
+      data: formdata,
     },
     {
       onUploadProgress: () => {

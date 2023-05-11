@@ -5,7 +5,7 @@
     </Head>
     <div class="main-wrapper">
       <div class="ticket-container">
-        <div class="ticket-wrapper">
+        <div class="ticket-wrapper" v-loading="loader">
           <h1>book a flight</h1>
           <form @submit="($event) => handleSubmit">
             <el-steps :active="active" finish-status="success">
@@ -13,34 +13,58 @@
               <el-step title="Step 2" />
               <el-step title="Step 3" />
             </el-steps>
+            <p>
+              Flight prices fluctuate each time. We will communicate flight cost
+              to you via your email or Phone.
+            </p>
             <div class="form-wrapper" v-if="stepOne">
+              <!-- <div class="form-data">
+                <label for="test"> test:</label>
+                <div class="form-input">
+                  <label for="test">
+                    <i class="fa-solid fa-location-dot"></i></label
+                  ><input
+                    type="search"
+                    name="test"
+                    v-model="searchQuery"
+                    @input="filterResult"
+                    id="test"
+                    placeholder="enter test sentence..."
+                  />
+                </div>
+                <div class="results-wrapper" v-if="searchQuery.length">
+                  <div class="results">
+                    <li
+                      v-for="item in options"
+                      :key="item"
+                      @click="searchQuery = item"
+                    >
+                      {{ item }}
+                    </li>
+                  </div>
+                </div>
+              </div> -->
               <div class="form-data">
                 <label for="departure" class="label">departure:</label>
                 <div class="form-input">
                   <label for="departure"
                     ><i class="fa-solid fa-plane"></i
                   ></label>
-                  <input
-                    type="search"
-                    name="searchCountry"
-                    id="searchCountry"
-                    @change="filterCountry"
-                  />
-
-                  <el-select
+                  <select
                     v-model="ticketBody.departure"
                     id="departure"
-                    placeholder="Origin"
-                    size="large"
                     class="form-select"
+                    placeholder="Origin"
                   >
-                    <el-option
+                    <option
                       v-for="item in options"
                       :key="item"
                       :label="item"
                       :value="item"
-                    />
-                  </el-select>
+                    >
+                      {{ item }}
+                    </option>
+                  </select>
                 </div>
               </div>
               <div class="form-data">
@@ -49,20 +73,20 @@
                   <label for="destination">
                     <i class="fa-solid fa-location-dot"></i>
                   </label>
-                  <el-select
+                  <select
                     v-model="ticketBody.destination"
                     id="destination"
                     placeholder="Destination"
                     size="large"
                     class="form-select"
                   >
-                    <el-option
+                    <option
                       v-for="item in options"
                       :key="item"
                       :label="item"
                       :value="item"
                     />
-                  </el-select>
+                  </select>
                 </div>
               </div>
               <div class="form-data">
@@ -119,38 +143,80 @@
 
             <div class="form-wrapper" v-if="stepTwo">
               <div class="form-data">
-                <label for="date">date</label>
+                <label for="name">name</label>
                 <div class="form-input">
-                  <label for="date"><i class="fa-solid fa-date"></i></label>
+                  <label for="name"><i class="fa-solid fa-user"></i></label>
                   <input
-                    type="date"
-                    name="date"
-                    id="date"
-                    placeholder="Select Date"
+                    type="text"
+                    name="name"
+                    id="name"
+                    v-model="ticketBody.name"
+                    placeholder="Enter Full Name..."
                     required
                   />
                 </div>
               </div>
               <div class="form-data">
-                <label for="time">time</label>
+                <label for="email">email</label>
                 <div class="form-input">
-                  <label for="time"><i></i></label>
+                  <label for="email"
+                    ><i class="fa-solid fa-envelope"></i
+                  ></label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    v-model="ticketBody.email"
+                    placeholder="Enter Email address..."
+                  />
                 </div>
-                <input
-                  type="time"
-                  name="time"
-                  id="time"
-                  placeholder="Select Time"
-                />
+              </div>
+              <div class="form-data">
+                <label for="tel">tel</label>
+                <div class="form-input">
+                  <label for="tel"><i class="fa-solid fa-phone"></i></label>
+                  <input
+                    type="tel"
+                    name="tel"
+                    id="tel"
+                    v-model="ticketBody.tel"
+                    placeholder="Enter Phone Number..."
+                  />
+                </div>
+              </div>
+              <div class="form-data textarea">
+                <label for="message">message</label>
+                <div class="form-input">
+                  <label for="message"><i class="fa-solid fa-pen"></i></label>
+                  <textarea
+                    type="text"
+                    name="message"
+                    id="message"
+                    v-model="ticketBody.message"
+                    placeholder="More Info concerning flight..."
+                  ></textarea>
+                </div>
               </div>
             </div>
 
             <div class="form-wrapper" v-if="confirm">
               <h2>check your info before submitting</h2>
-              <h5>
+              <h4>
                 Flight rates fluctuate always. We'll send you an email with the
                 cost or get to you on phone. STay connected.
-              </h5>
+              </h4>
+              <h2>personal info</h2>
+              <p>
+                Name: <span>{{ ticketBody.name }}</span>
+              </p>
+              <p>
+                Email: <span>{{ ticketBody.email }}</span>
+              </p>
+              <p>
+                Tel: <span>{{ ticketBody.tel }}</span>
+              </p>
+
+              <h2>Flight Ticket Details</h2>
               <p>
                 Departure: <span>{{ ticketBody.departure }}</span>
               </p>
@@ -166,6 +232,8 @@
               <p>
                 Passangers: <span>{{ ticketBody.passangers }}</span>
               </p>
+              <h4>More Info</h4>
+              <p>{{ ticketBody.message }}</p>
             </div>
 
             <el-button @click="phaseOne()" v-if="stepOne" class="form-button"
@@ -225,18 +293,23 @@
 
 <script setup>
 const ticketBody = reactive({
+  name: "",
+  email: "",
+  tel: "",
   destination: "",
   departure: "",
   departureDate: "",
   returnDate: "",
   passangers: 1,
+  message: "",
 });
-
+const loader = useLoaderState();
 const options = ref([]);
 const stepOne = ref(true);
 const stepTwo = ref(false);
 const confirm = ref(false);
 const active = ref(0);
+// const searchQuery = ref("");
 
 import axios from "axios";
 
@@ -256,21 +329,29 @@ onMounted(() => {
       options.value = options.value.sort();
     })
     .catch(function (error) {
-      console.error(error);
+      return error;
     });
 });
-const filterCountry = (e) => {
-  return e.target.value;
-};
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-};
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+// };
+
+// const filterResult = (e) => {
+//   searchQuery.value = e.target.value;
+
+//   if (searchQuery.value !== " ") {
+//     options.value = options.value.filter((item) =>
+//       item.includes(searchQuery.value)
+//     );
+
+//   } else return options.value;
+// };
 
 const phaseOne = (e) => {
   if (
-    // ticketBody.departure != "" &&
-    // ticketBody.destination != "" &&
+    ticketBody.departure != "" &&
+    ticketBody.destination != "" &&
     ticketBody.departureDate != "" &&
     ticketBody.returnDate != "" &&
     ticketBody.passangers >= 1
@@ -301,10 +382,34 @@ const phaseTwo = (e) => {
 };
 
 const submitForm = (e) => {
+  loader.value = true;
   stepOne.value = true;
   stepTwo.value = false;
   confirm.value = false;
   active.value = 0;
+
+  axios
+    .post("http://localhost:9005/api/flight/booking", ticketBody)
+    .then((res) => {
+      loader.value = false;
+
+      ElNotification.success({
+        title: "Flight Booking successful",
+        message:
+          "We will get back to you with more details. Redirecting to homepage....",
+        offset: 100,
+      });
+      navigateTo("/");
+    })
+    .catch((err) => {
+      loader.value = false;
+      err;
+      ElNotification.error({
+        title: "Booking failed",
+        message: "check your connection and try again...",
+        offset: 100,
+      });
+    });
 };
 </script>
 
@@ -386,6 +491,7 @@ const submitForm = (e) => {
             .form-data {
               width: 300px;
               height: fit-content;
+              position: relative;
 
               .label {
                 display: block;
@@ -428,7 +534,7 @@ const submitForm = (e) => {
 
                 input,
                 select,
-                .el-input__wrapper {
+                textarea .el-input__wrapper {
                   width: 100%;
                   height: 45px;
                   outline: none;
@@ -436,11 +542,89 @@ const submitForm = (e) => {
                   font-family: "Nunito sans", sans-serif;
                   color: rgb(58, 57, 57);
                   box-shadow: none;
+                  text-align: left;
+                }
+              }
+
+              .form-select {
+                width: 100%;
+                height: 45px;
+                border: 1px solid rgb(232, 232, 232);
+
+                label {
+                  height: 100%;
+                  width: 30%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-right: 1px solid rgb(236, 231, 231);
+                }
+
+                input {
+                  height: 100%;
+                  width: 70%;
+                  text-align: left;
+                }
+              }
+
+              .results-wrapper {
+                position: relative;
+                width: 100%;
+                height: 40px;
+              }
+
+              .results {
+                position: absolute;
+                top: 2px;
+                left: 0;
+                z-index: 1;
+                background-color: white;
+                // border: 1px solid gray;
+                height: 200px;
+                width: 100%;
+                border-radius: 5px;
+                overflow-y: scroll;
+                box-shadow: 0 7px 10px 4px rgb(226, 226, 226);
+
+                li {
+                  color: black;
+                  width: 100%;
+                  padding: 7px;
+                  text-align: left;
+                  list-style-type: none;
+                  cursor: pointer;
+                  list-style-position: inside;
+
+                  &:hover {
+                    background: rgb(3, 47, 104);
+                    color: white;
+                  }
                 }
               }
 
               @media screen and (max-width: 800px) {
                 width: 90%;
+              }
+            }
+
+            .form-data.textarea {
+              width: 80%;
+              height: 200px;
+
+              .form-input {
+                height: 200px;
+                align-items: flex-start;
+                label {
+                  height: 50px;
+                  text-align: left;
+                }
+                textarea {
+                  width: 100%;
+                  height: 100%;
+                  border: none;
+                  outline: none;
+                  padding: 20px;
+                }
               }
             }
           }

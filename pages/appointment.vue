@@ -249,34 +249,36 @@ const submitForm = (e) => {
   loader.value = true;
 
   axios
-    .post("/api/appointment", appointmentBody)
+    .post(
+      "https://api.biscaminvestmentsarl.com/api/appointment",
+      appointmentBody
+    )
     .then((res) => {
-      if (200 <= res.status && res.status < 400) {
-        loader.value = false;
-        setTimeout(() => {
-          ElMessageBox.alert(
-            "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
-            "Appointment Submitted",
-            {
-              // if you want to disable its autofocus
-              // autofocus: false,
-              confirmButtonText: "Homepage",
-              callback: () => {
-                router.push("/");
-                appointmentBody.name = "";
-                appointmentBody.email = "";
-                appointmentBody.tel = "";
-                appointmentBody.date = "";
-                appointmentBody.time = "";
-                appointmentBody.userService = "";
-                stepOne.value = true;
-                stepTwo.value = false;
-                confirm.value = false;
-              },
-            }
-          );
-        }, 1000);
-      }
+      console.log(res);
+      loader.value = false;
+      setTimeout(() => {
+        ElMessageBox.alert(
+          "Your appointment request has been submitted successfully. Anticipate a reply from us any time soon.",
+          "Appointment Submitted",
+          {
+            // if you want to disable its autofocus
+            // autofocus: false,
+            confirmButtonText: "Homepage",
+            callback: () => {
+              router.push("/");
+              appointmentBody.name = "";
+              appointmentBody.email = "";
+              appointmentBody.tel = "";
+              appointmentBody.date = "";
+              appointmentBody.time = "";
+              appointmentBody.userService = "";
+              stepOne.value = true;
+              stepTwo.value = false;
+              confirm.value = false;
+            },
+          }
+        );
+      }, 1000);
     })
     .catch((err) => {
       loader.value = false;
@@ -302,14 +304,6 @@ const submitForm = (e) => {
       return err;
     });
 };
-
-axios
-  .post("/api/product", {
-    name: "codingherald",
-    id: "web dev",
-  })
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
 </script>
 <style lang="scss" scoped>
 .appointment-container {

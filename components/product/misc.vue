@@ -1,12 +1,12 @@
 <template>
   <div class="other-products">
     <h1>find other products that interest you</h1>
-    <div class="products-div">
+    <div class="products-div" v-if="products.length">
       <div
         class="product"
         v-for="product in products"
-        :key="product.id"
-        @click="($event) => displayProduct(product.id, product.name)"
+        :key="product._id"
+        @click="($event) => displayProduct(product._id, product.name)"
       >
         <div class="product-image">
           <img :src="product.data" :alt="product.name" />
@@ -16,12 +16,14 @@
         </div>
       </div>
     </div>
+
+    <div v-else><loader message="products loading please wait...." /></div>
   </div>
 </template>
 <script setup>
-// import axios from "axios";
+import axios from "axios";
 
-const products = productState();
+const products = ref([]);
 
 const displayProduct = (id, name) => {
   localStorage.setItem("product_id", id);
@@ -29,18 +31,27 @@ const displayProduct = (id, name) => {
 
   navigateTo(`/Spare-Part/product/${id}`);
 };
+const shuffleProducts = (array) => {
+  for (var i = array.length - 1; i > 0; i--) {
+    // Generate random number
+    var j = Math.floor(Math.random() * (i + 1));
 
-// onMounted(() => {
-//   axios(`/api/category/all`)
-//     .then((res) => {
-//       products.value = res.data;
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 
-//       products.value = shuffleProducts(products.value);
-//     })
-//     .catch((err) => {
-//       return err;
-//     });
-// });
+  return array;
+};
+onBeforeMount(() => {
+  axios(`https://api.biscaminvestmentsarl.com/api/product/products`)
+    .then((res) => {
+      products.value = shuffleProducts(res.data);
+    })
+    .catch((err) => {
+      return err;
+    });
+});
 </script>
 <style lang="scss" scoped>
 .other-products {

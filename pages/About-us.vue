@@ -19,21 +19,19 @@
         <div class="right-navbar">
           <div class="link">
             <i class="fa-brands fa-facebook"></i>
-            <a
-              href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
-              target="_blank"
-              rel="noopener noreferrer"
-              >facebook</a
-            >
-          </div>
-
-          <div class="link">
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="#">linkedin</a>
+            <Dropdown
+              name="Facebook"
+              :items="facebookLinks"
+              message="redirecting to facebook..."
+            />
           </div>
           <div class="link">
             <i class="fa-brands fa-whatsapp"></i>
-            <a href="#">whatsapp</a>
+            <Dropdown
+              name="whatsapp"
+              :items="linkDropdown"
+              message="redirecting to Whatsapp..."
+            />
           </div>
         </div>
       </div>
@@ -42,16 +40,22 @@
       <section>
         <h2>About Biscam</h2>
         <p>
-          Biscam investment sarl also known as BIS is a multi-service business
-          that has existed since 2010. in these years that followed the company
-          steadily built as network west Africa and beyond. throughout our
-          history BIS has focused in creating new values in the spare part
-          logistic, maritime services, Biscam flight services and Biscam
-          multi-brand garage. All these services are built from successful
-          integrity Biscam investment sarl, founded in the year 2010 has grown
-          in to the leading in Cameroon, employing about 30staffs, manage by Mr.
-          Ninpa Noel the team head of BISCAM INVESTMENT Sarl that provides a
-          wide variety of costumers
+          Biscam Investment Sarl, also known as BIS, is a multi-service company
+          that has been in existence since 2010. In the years following its
+          establishment, the company has gradually built a network throughout
+          West Africa and beyond. Throughout its history, BIS has focused on
+          creating new value in spare parts logistics, maritime services, Biscam
+          flight services, and the Biscam multi-brand garage. All of these
+          services are built on a foundation of successful integrity. Founded in
+          2010, Biscam Investment Sarl has become the leader in Cameroon,
+          employing approximately 30 people and led by Mr. Ninpa Noel, the team
+          leader of BISCAM INVESTMENT Sarl, who provides a wide variety of
+          clients. At BIS, there is a team of professionals offering
+          unparalleled expertise in the development of highly innovative
+          products for the future. Guided by their fundamental values of
+          integrity and responsibility and their commitment to quality service,
+          reliability, and effective solutions tailored to meet the changing
+          needs of their clients.
         </p>
       </section>
       <section>
@@ -92,7 +96,14 @@
         </section>
         <section>
           <h2>Vision</h2>
-          <p>french translation suppose to come in here.</p>
+          <p>
+            Chez BIS, il y a une équipe de professionnels offrant une expertise
+            inégalée dans le développement de produits hautement innovants pour
+            l'avenir. Forts de notre engagement envers la qualité de service, la
+            fiabilité et des solutions efficaces adaptées pour répondre aux
+            besoins changeants de nos clients, guidés par leurs valeurs
+            fondamentales, leur intégrité et leur responsabilité.
+          </p>
         </section>
       </div>
 
@@ -113,14 +124,14 @@
         <section>
           <h2>Mission</h2>
           <p>
-            Leur transaction commerciale est basée sur la confiance. Ils
-            s'engagent à respecter les normes de professionnalisme les plus
-            élevées et notre code d'éthique commerciale. Nous croyons en la
-            transparence comme fondement de notre ambition de créer des valeurs
-            durables, en défendant les intérêts de nos clients, de nos employés
-            et des communautés où nous opérons. Nous agissons avec un sentiment
-            d'urgence pour démontrer les besoins, avec un réel tangible et
-            renforcer la crédibilité du marché
+            Leur transaction commerciale est basée sur la confiance. Ils sont
+            engagés envers les plus hauts standards de professionnalisme et
+            notre code éthique d'entreprise. Nous croyons en la transparence
+            comme fondement de notre ambition de créer des valeurs durables, en
+            défendant l'intérêt de nos clients, de nos employés et des
+            communautés où nous opérons. Nous agissons avec un sentiment
+            d'urgence pour démontrer les besoins, avec des résultats tangibles
+            et pour renforcer la crédibilité du marché.
           </p>
         </section>
       </div>
@@ -298,6 +309,9 @@ if (process.client) {
     stickyHeader.value = true ? window.scrollY > 0 : false;
   });
 }
+
+const linkDropdown = useWhatsappLinkState();
+const facebookLinks = useLinkState();
 </script>
 <style lang="scss" scoped>
 main {
@@ -373,6 +387,7 @@ main {
       p {
         text-align: left;
         font-size: 13px;
+        line-height: 21px;
       }
     }
 

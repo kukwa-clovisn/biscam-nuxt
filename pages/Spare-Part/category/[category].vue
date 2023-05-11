@@ -3,10 +3,10 @@
 <template>
   <div class="category-container">
     <Head>
-      <Title>{{ $route.params.category }} || BISCAM</Title>
+      <Title>Car Spare Part || BISCAM</Title>
     </Head>
     <div class="header-component"></div>
-    <h1>Browse {{ $route.params.category }}</h1>
+    <h1>Browse Our Products</h1>
     <SparePartCategoryHeader />
     <div class="product-body">
       <div class="product-body-wrapper">
@@ -20,7 +20,7 @@
             data-aos="slide-up"
             v-for="product in products"
             :key="product._id"
-            @click="displayProduct(product.id, product.name)"
+            @click="displayProduct(product._id, product.name)"
           >
             <div class="wrapper">
               <div class="image">
@@ -67,22 +67,18 @@
             </div>
           </div>
         </div>
-        <h1 class="empty-msg" v-else>
-          The products for <span>{{ $route.params.category }}</span> will soon
-          be available. You can check other products
-          <NuxtLink to="/spare-part/category/all">here...</NuxtLink>
-        </h1>
+        <h1 class="empty-msg" v-else>Loading Products. Please Wait</h1>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// import axios from "axios";
+import axios from "axios";
 const route = useRoute();
-const productsArr = productState();
+const productsArr = ref([]);
 const products = ref([]);
-// const loader = useLoaderState();
+const loader = useLoaderState();
 
 const displayProduct = (id, productName) => {
   localStorage.setItem("product_id", id);
@@ -105,26 +101,25 @@ const shuffleProducts = (array) => {
 
 products.value = shuffleProducts(productsArr.value);
 
-// onBeforeMount(() => {
-//   loader.value = true;
-//   axios(`/api/category/${route.params.category}`)
-//     .then((res) => {
-//       loader.value = false;
+onBeforeMount(() => {
+  loader.value = true;
+  axios("https://api.biscaminvestmentsarl.com/api/product/products")
+    .then((res) => {
+      loader.value = false;
+      productsArr.value = res.data;
 
-//       productsArr.value = res.data;
+      products.value = shuffleProducts(productsArr.value);
 
-//       products.value = shuffleProducts(productsArr.value);
-
-//       products.value = products.value.filter((product) => {
-//         if (route.params.category === "all") return true;
-//         else return product.category === route.params.category;
-//       });
-//     })
-//     .catch((err) => {
-//       loader.value = false;
-//       return err;
-//     });
-// });
+      products.value = products.value.filter((product) => {
+        if (route.params.category === "all") return true;
+        else return product.category === route.params.category;
+      });
+    })
+    .catch((err) => {
+      loader.value = false;
+      return err;
+    });
+});
 </script>
 
 <style lang="scss" scoped>

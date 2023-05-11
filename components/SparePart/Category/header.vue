@@ -1,17 +1,16 @@
-<script setup>
-const router = useRouter();
-const getCategorySm = (e) => {
-  router.push(`/spare-part/category/${e.target.value}`);
-};
-</script>
+
 <template>
   <div class="product-header">
     <div class="left-header">
       <h1 class="category-header">product <span>categories</span></h1>
     </div>
     <div class="right-header">
-      <nav>
-        <button
+      <nav @click="navigateTo('/spare-part/category/all')">
+        Find Your Choice Products
+        <NuxtLink to="/spare-part/category/all" class="route"
+          >All Products</NuxtLink
+        >
+        <!-- <button
           :class="[
             {
               'category-active category-exact-active':
@@ -70,10 +69,10 @@ const getCategorySm = (e) => {
           @click="navigateTo('/spare-part/category/shaft')"
         >
           shaft
-        </button>
+        </button> -->
       </nav>
     </div>
-    <div class="product-menu-bars">
+    <!-- <div class="product-menu-bars">
       <select name="products" id="products" @change="getCategorySm($event)">
         <option value="all">All</option>
         <option value="manifold">Manifold</option>
@@ -81,7 +80,7 @@ const getCategorySm = (e) => {
         <option value="shaft">Shaft</option>
         <option value="engine">Engines</option>
       </select>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -132,7 +131,7 @@ const getCategorySm = (e) => {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      button.route {
+      .route {
         text-decoration: none;
         border: none;
         background: transparent;
@@ -165,7 +164,8 @@ const getCategorySm = (e) => {
       }
     }
     @media screen and (max-width: 600px) {
-      display: none;
+      // display: none;
+      font-size: 11px;
     }
   }
   .product-menu-bars {

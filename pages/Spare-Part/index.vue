@@ -29,8 +29,8 @@
             <div
               class="product"
               v-for="product in products"
-              :key="product"
-              @click="displayProduct(product.id, product.name)"
+              :key="product._id"
+              @click="displayProduct(product._id, product.name)"
             >
               <div class="wrapper">
                 <div class="image">
@@ -44,13 +44,25 @@
                 <div class="details">
                   <!-- <h2>{{ product.name }}</h2> -->
                   <div class="info">
-                    <a href="https://wa.link/rt49uv" target="_blank" rel="noopener noreferrer" data-aos="slide-up"
+                    <a
+                      href="https://wa.link/rt49uv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-aos="slide-up"
                       ><i class="fa-brands fa-whatsapp"></i
                     ></a>
-                    <a href="https://wa.link/rt49uv" target="_blank" rel="noopener noreferrer" data-aos="slide-up"
+                    <a
+                      href="https://wa.link/rt49uv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-aos="slide-up"
                       ><i class="fa-solid fa-phone"></i
                     ></a>
-                    <a href="mailto:garagebiscam@gmail.com" target="_blank" rel="noopener noreferrer" data-aos="slide-up"
+                    <a
+                      href="mailto:garagebiscam@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-aos="slide-up"
                       ><i class="fa-solid fa-envelope"></i
                     ></a>
                   </div>
@@ -65,7 +77,7 @@
             </div>
           </div>
           <div class="detail-products" v-else>
-            Please wait products loading...
+            <loader message="Loading product.." />
           </div>
         </div>
       </div>
@@ -144,19 +156,19 @@
       </div>
       <div class="product-body">
         <div class="product-body-wrapper">
-          <div class="detail-products sub-category">
+          <div class="detail-products sub-category" v-if="products.length">
             <div
               class="product"
               v-for="product in products"
               :key="product._id"
-              @click="displayProduct(product.id, product.name)"
+              @click="displayProduct(product._id, product.name)"
             >
               <div class="wrapper">
                 <div class="image">
                   <img :src="product.data" :alt="product.name" />
                 </div>
                 <div class="details">
-                  <!-- <h2>{{ product.name }}</h2> -->
+                  <h2>{{ product.name }}</h2>
                   <div class="info">
                     <a
                       href="https://wa.link/rt49uv"
@@ -182,6 +194,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div v-else>
+            <loader message="Loading products..." />
           </div>
         </div>
       </div>
@@ -288,7 +303,7 @@
 </template>
 
 <script setup>
-// import axios from "axios";
+import axios from "axios";
 import img from "assets/spare-parts/15.jpg";
 import img1 from "assets/spare-parts/9.jpg";
 import img2 from "assets/spare-parts/4.jpg";
@@ -297,21 +312,21 @@ import img4 from "assets/spare-parts/6.jpg";
 import img5 from "assets/spare-parts/7.jpg";
 import img6 from "assets/spare-parts/8.jpg";
 
-const dg_images = ref([img, img1, img2, img3,img4,img5,img6]);
-// const loader = useLoaderState();
-const products = productState();
+const loaderState = useLoaderState();
 
-// onMounted(() => {
-//   axios("/api/product")
-//     .then((res) => {
-//       products.value = res.data;
+const dg_images = ref([img, img1, img2, img3, img4, img5, img6]);
+const products = ref([]);
 
-//       products.value = shuffleProducts(products.value);
-//     })
-//     .catch((err) => {
-//       return err;
-//     });
-// });
+onBeforeMount(() => {
+  loaderState.value = false ? products.length : true;
+  axios("https://api.biscaminvestmentsarl.com/api/product/products")
+    .then((res) => {
+      products.value = shuffleProducts(res.data).slice(0, 12);
+    })
+    .catch((err) => {
+      return err;
+    });
+});
 
 const shuffleProducts = (array) => {
   for (var i = array.length - 1; i > 0; i--) {
@@ -326,12 +341,9 @@ const shuffleProducts = (array) => {
   return array;
 };
 
-shuffleProducts(products.value);
-
 const displayProduct = (id, productName) => {
   localStorage.setItem("product_id", id);
   localStorage.setItem("product name", productName);
-  // localStorage.setItem("product category", category);
   navigateTo(`/Spare-Part/product/${id}`);
 };
 </script>

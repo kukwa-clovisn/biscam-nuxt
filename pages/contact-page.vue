@@ -24,14 +24,13 @@
               :items="linkDropdown"
             />
           </div>
-
-          <div class="link">
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="#">linkedin</a>
-          </div>
           <div class="link">
             <i class="fa-brands fa-whatsapp"></i>
-            <a href="#">whatsapp</a>
+            <Dropdown
+              name="whatsapp"
+              message="redirecting to whatsapp..."
+              :items="whatsappLinks"
+            />
           </div>
         </div>
       </div>
@@ -41,24 +40,28 @@
       <div class="address-wrapper">
         <div class="left-wrapper">
           <h2>email</h2>
-          <p>GARAGE: businessinvesmentsarl@gmail.com</p>
+          <p>GARAGE: garagebiscam@gmail.com</p>
           <p>AGENCY: biscamflight@gmail.com</p>
           <p>MARITME: businessinvesmentsarl@gmail.com</p>
 
           <h2>facebook</h2>
-          <a
-            href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
-            target="_blank"
-            rel="noopener noreferrer"
-            >biscam investment sarl</a
-          >
-          <a
-            href="https://www.facebook.com/bisinvestltd?mibextid=ZbWKwL"
-            target="_blank"
-            rel="noopener noreferrer"
-            >biscam flight agency</a
-          >
+          <div class="link">
+            <i class="fa-brands fa-facebook"></i>
+            <Dropdown
+              name="Facebook"
+              message="redirecting to facebook..."
+              :items="linkDropdown"
+            />
+          </div>
           <h2>whatsapp</h2>
+          <div class="link">
+            <i class="fa-brands fa-whatsapp"></i>
+            <Dropdown
+              name="whatsapp"
+              message="redirecting to whatsapp..."
+              :items="linkDropdown"
+            />
+          </div>
         </div>
         <div class="right-wrapper">
           <h2>address</h2>
@@ -111,6 +114,8 @@
 const stickyHeader = ref(false);
 
 const linkDropdown = useLinkState();
+
+const whatsappLinks = useWhatsappLinkState();
 
 if (process.client) {
   window.addEventListener("scroll", () => {
@@ -285,6 +290,37 @@ main {
           color: goldenrod;
           text-transform: uppercase;
           padding: 10px;
+        }
+
+        .link {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 5px;
+          width: fit-content;
+          padding: 10px 20px;
+          border-radius: 5px;
+          height: fit-content;
+          color: white;
+          background: rgb(208, 140, 2);
+
+          i {
+            color: rgb(226, 226, 226);
+          }
+
+          a {
+            text-decoration: none;
+            color: white;
+            text-transform: capitalize;
+          }
+
+          &:hover {
+            color: rgb(3, 55, 176);
+            i,
+            a {
+              color: rgb(4, 35, 160);
+            }
+          }
         }
 
         p,
